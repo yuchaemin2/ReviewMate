@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.reviewmate.databinding.FragmentFiveBinding
+import com.example.reviewmate.databinding.FragmentOneBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,9 @@ class FragmentFive : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_five, container, false)
+        val binding = FragmentFiveBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     companion object {
