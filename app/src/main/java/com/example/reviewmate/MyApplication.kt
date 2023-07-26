@@ -22,6 +22,12 @@ class MyApplication: MultiDexApplication() {
         }
     }
 
+    // 로그아웃 메서드 추가
+    fun signOut() {
+        auth.signOut()
+        email = null
+    }
+
     override fun onCreate() {
         super.onCreate()
         auth = Firebase.auth

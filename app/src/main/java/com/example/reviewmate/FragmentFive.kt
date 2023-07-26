@@ -1,10 +1,13 @@
 package com.example.reviewmate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,7 @@ class FragmentFive : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -29,12 +33,34 @@ class FragmentFive : Fragment() {
         }
     }
 
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_five, container, false)
+//    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_five, container, false)
+        val view = inflater.inflate(R.layout.fragment_five, container, false)
+
+        // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
+        val logoutButton = view.findViewById<Button>(R.id.logoutButton)
+        logoutButton.setOnClickListener {
+            logout()
+        }
+
+        return view
+    }
+
+    // 로그아웃 로직을 처리하는 메서드
+    private fun logout() {
+        val intent = Intent(requireContext(), AuthActivity::class.java)
+        startActivity(intent)
+
     }
 
     companion object {
