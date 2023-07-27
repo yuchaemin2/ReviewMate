@@ -51,12 +51,17 @@
         android:layout_height="match_parent" >
 
         <EditText
+            android:id="@+id/addTitleEditView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="글제목"
-            android:layout_margin="10dp"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="글제목" />
 
         <EditText
+            android:id="@+id/addEditView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -68,6 +73,7 @@
             android:inputType="text" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

@@ -26,8 +26,13 @@ class FragmentOne : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentOneBinding.inflate(inflater, container, false)
 
-        return binding.root
+        if(MyApplication.checkAuth()){
+            binding.HomeEmailView.text = "${MyApplication.email} 환영합니다!"
+        } else {
+            binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
+        }
 
+        return binding.root
     }
 
 }

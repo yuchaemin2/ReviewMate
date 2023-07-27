@@ -1,12 +1,24 @@
 package com.example.reviewmate
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Environment
+import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewmate.databinding.FragmentFourBinding
-import com.example.reviewmate.databinding.FragmentOneBinding
+import com.google.firebase.firestore.Query
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,9 +34,10 @@ class FragmentFour : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var binding: FragmentFourBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -36,10 +49,76 @@ class FragmentFour : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentFourBinding.inflate(inflater, container, false)
+        binding = FragmentFourBinding.inflate(inflater, container, false)
 
+//         myCheckPermission(requireActivity() as AppCompatActivity)
+
+        binding.mainFab.setOnClickListener {
+            if(MyApplication.checkAuth()){
+                val intent = Intent(requireContext(), AddActivity::class.java)
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(requireContext(), "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
+            }
+        }
         return binding.root
     }
+
+    override fun onStart() {
+        super.onStart()
+        if(MyApplication.checkAuth()){
+            MyApplication.db.collection("reviews")
+                .orderBy("date", Query.Direction.DESCENDING)
+                .get()
+                .addOnSuccessListener { result ->
+                    val itemList = mutableListOf<ItemFeedModel>()
+                    for(document in result){
+                        val item = document.toObject(ItemFeedModel::class.java)
+                        item.docId = document.id
+                        itemList.add(item)
+                    }
+                    binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(itemList)
+                    Toast.makeText(requireContext(), "데이터 획득 성공", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener{
+                    Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+//    fun myCheckPermission(activity: AppCompatActivity) {
+//        val requestPermissionLauncher = activity.registerForActivityResult(
+//            ActivityResultContracts.RequestPermission()
+//        ) {
+//            if (it) {
+//                Toast.makeText(activity, "권한 승인", Toast.LENGTH_SHORT).show()
+//            } else {
+//                Toast.makeText(activity, "권한 거부", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//
+//        if (ContextCompat.checkSelfPermission(
+//                activity, Manifest.permission.READ_EXTERNAL_STORAGE
+//            ) !== PackageManager.PERMISSION_GRANTED
+//        ) {
+//            requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+//        }
+//        if (ContextCompat.checkSelfPermission(
+//                activity, Manifest.permission.WRITE_EXTERNAL_STORAGE
+//            ) !== PackageManager.PERMISSION_GRANTED
+//        ) {
+//            requestPermissionLauncher.launch((Manifest.permission.WRITE_EXTERNAL_STORAGE))
+//        }
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            if (!Environment.isExternalStorageManager()) {
+//                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+//                activity.startActivity(intent)
+//            }
+//        }
+//    }
 
     companion object {
         /**
