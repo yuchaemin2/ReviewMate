@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,9 +21,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(R.layout.activity_main)
+        // d이걸ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ
+//        val
+
+
 
         // 채민
     }
@@ -35,8 +42,8 @@ class MainActivity : AppCompatActivity() {
 //            // 확인해봐야함
 //            val intent = Intent(this, AuthActivity::class.java)
 //            startActivity(intent)
-            val intent = Intent(this, AuthActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, AuthActivity::class.java)
+//            startActivity(intent)
 
 
             loadFragment(FragmentOne())
@@ -125,5 +132,6 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
     }
+
 
 }
