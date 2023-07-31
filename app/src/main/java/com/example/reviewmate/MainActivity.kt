@@ -25,43 +25,46 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Home page"
 
-//        supportActionBar?.title = "Home page"
-//
-//        bottomNavigationView = findViewById(R.id.bottomNavigationView)
-//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.nav1 -> {
-//                    updateIcons(item, R.drawable.home_1)
-//                    loadFragment(FragmentOne())
-//                    supportActionBar?.title = "Home page"
-//                }
-//                R.id.nav2 -> {
-//                    loadFragment(FragmentTwo())
-//                    supportActionBar?.title = "Search"
-//                    updateIcons(item, R.drawable.search_1)
-//                }
-//                R.id.nav3 -> {
-//                    loadFragment(FragmentThree())
-//                    supportActionBar?.title = "Character"
-//                    updateIcons(item, R.drawable.paw_1)
-//                }
-//                R.id.nav4 -> {
-//                    loadFragment(FragmentFour())
-//                    supportActionBar?.title = "Review"
-//                    updateIcons(item, R.drawable.satisfaction_1)
-//                }
-//                R.id.nav5 -> {
-//                    loadFragment(FragmentFive())
-//                    supportActionBar?.title = "My page"
-//                    updateIcons(item, R.drawable.user_1)
-//                }
-//            }
-//            true
-//        }
-//
-//        // Set the default fragment to load when the activity is created
-//        loadFragment(FragmentOne())
-//        bottomNavigationView.selectedItemId = R.id.nav1
+        if(MyApplication.checkAuth()){
+            bottomNavigationView = findViewById(R.id.bottomNavigationView)
+            bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav1 -> {
+                        updateIcons(item, R.drawable.home_1)
+                        loadFragment(FragmentOne())
+                        supportActionBar?.title = "Home page"
+                    }
+                    R.id.nav2 -> {
+                        loadFragment(FragmentTwo())
+                        supportActionBar?.title = "Search"
+                        updateIcons(item, R.drawable.search_1)
+                    }
+                    R.id.nav3 -> {
+                        loadFragment(FragmentThree())
+                        supportActionBar?.title = "Character"
+                        updateIcons(item, R.drawable.paw_1)
+                    }
+                    R.id.nav4 -> {
+                        loadFragment(FragmentFour())
+                        supportActionBar?.title = "Review"
+                        updateIcons(item, R.drawable.satisfaction_1)
+                    }
+                    R.id.nav5 -> {
+                        loadFragment(FragmentFive())
+                        supportActionBar?.title = "My page"
+                        updateIcons(item, R.drawable.user_1)
+                    }
+                }
+                true
+            }
+            // Set the default fragment to load when the activity is created
+            loadFragment(FragmentOne())
+            bottomNavigationView.selectedItemId = R.id.nav1
+        }
+        else {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
@@ -104,9 +107,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-            // Set the default fragment to load when the activity is created
-            loadFragment(FragmentOne())
-            bottomNavigationView.selectedItemId = R.id.nav1
         }
         else {
             val intent = Intent(this, AuthActivity::class.java)
