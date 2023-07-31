@@ -1,10 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
-    id 'kotlin-android'
-    // kapt 플러그인 추가
-    id 'kotlin-kapt'
+//    id 'com.google.gms.google-services'
+    id 'kotlin-kapt' // Kotlin Annotation Processing Tool
 }
 
 android {
@@ -29,19 +27,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
     }
-    buildFeatures {
-        // GlideApp 사용을 활성화합니다.
-        // 아래 줄을 추가해주세요.
-        dataBinding true
-        viewBinding true
+    viewBinding{
+        enabled true
     }
-
 }
 
 dependencies {
