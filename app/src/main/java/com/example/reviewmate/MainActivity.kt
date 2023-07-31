@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             //loadFragment(AuthActivity())
 
 //            // 확인해봐야함
-//            val intent = Intent(this, AuthActivity::class.java)
+//            val intent =                                                                cccccccccccccccccccccccccccccccxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Intent(this, AuthActivity::class.java)
 //            startActivity(intent)
 //            val intent = Intent(this, AuthActivity::class.java)
 //            startActivity(intent)
