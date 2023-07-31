@@ -11,7 +11,6 @@ import androidx.preference.PreferenceFragmentCompat
 class MySettingFragment : PreferenceFragmentCompat() {
     companion object{
         var idPreference:EditTextPreference? = null
-
     }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
