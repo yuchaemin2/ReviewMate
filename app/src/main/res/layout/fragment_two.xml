@@ -11,22 +11,22 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/search"
-            android:layout_width="350dp"
+            android:id="@+id/edtNews"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:hint="영화, 배우, 감독 등 검색"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/search"
-            android:layout_toRightOf="@id/search"/>
+        <Button
+            android:id="@+id/btnNewsSearch"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/search"
+            android:layout_toRightOf="@+id/edtNews"/>
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
 
 </LinearLayout>

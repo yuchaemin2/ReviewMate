@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewmate.databinding.FragmentFourBinding
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,6 +39,7 @@ class FragmentFour : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -48,10 +50,9 @@ class FragmentFour : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentFourBinding.inflate(inflater, container, false)
 
-//         myCheckPermission(requireActivity() as AppCompatActivity)
+        //         myCheckPermission(requireActivity() as AppCompatActivity)
 
         binding.mainFab.setOnClickListener {
             if(MyApplication.checkAuth()){
@@ -62,6 +63,7 @@ class FragmentFour : Fragment() {
                 Toast.makeText(requireContext(), "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
             }
         }
+
         return binding.root
     }
 
@@ -79,14 +81,15 @@ class FragmentFour : Fragment() {
                         itemList.add(item)
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    binding.feedRecyclerView.adapter = MyFeedAdapter(itemList)
-                    Toast.makeText(requireContext(), "데이터 획득 성공", Toast.LENGTH_SHORT).show()
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
+                    Log.d("ToyProject", "${itemList}")
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
     }
+
 
 //    fun myCheckPermission(activity: AppCompatActivity) {
 //        val requestPermissionLauncher = activity.registerForActivityResult(

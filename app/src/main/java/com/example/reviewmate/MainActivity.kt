@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
         if(MyApplication.checkAuth()){
-            loadFragment(FragmentOne())
-            Toast.makeText(baseContext, "로그인 성공", Toast.LENGTH_SHORT).show()
+
+//            Toast.makeText(baseContext, "로그인 성공", Toast.LENGTH_SHORT).show()
 
             bottomNavigationView = findViewById(R.id.bottomNavigationView)
             bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -105,6 +105,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             // Set the default fragment to load when the activity is created
+            loadFragment(FragmentOne())
             bottomNavigationView.selectedItemId = R.id.nav1
         }
         else {

@@ -27,7 +27,7 @@ class FragmentOne : Fragment() {
         val binding = FragmentOneBinding.inflate(inflater, container, false)
 
         if(MyApplication.checkAuth()){
-            binding.HomeEmailView.text = "${MyApplication.email} 환영합니다!"
+            binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
         } else {
             binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
         }
