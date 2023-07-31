@@ -1,29 +1,37 @@
 package com.example.reviewmate
 
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.multidex.MultiDexApplication
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 
-class MyApplication: MultiDexApplication() {
-    companion object {
-        lateinit var auth: FirebaseAuth // 어플리케이션이 이곡저곳에서 쉽게 이용하도록 어플리케이션에서 사용하고자
-        var email: String? = null // 이후에 설정할 값 유저의 이메일 값
-        // 인증여부 확인 함수
-        fun checkAuth(): Boolean {
-            var currentUser = auth.currentUser
+class MyApplication : MultiDexApplication() {
+    companion object{
+        lateinit var db : FirebaseFirestore
+        lateinit var storage : FirebaseStorage
+        lateinit var auth : FirebaseAuth
+        var email:String? = null
 
-            return currentUser?.let {
-                email = currentUser.email
-                currentUser.isEmailVerified
-            } ?: let {
-                false
-            }
+        fun checkAuth(): Boolean{
+            var currentuser = auth.currentUser
+            return currentuser?.let{
+                email = currentuser.email
+                if(currentuser.isEmailVerified) true
+                else false
+            } ?: false
         }
     }
 
     override fun onCreate() {
         super.onCreate()
         auth = Firebase.auth
+
+        db = FirebaseFirestore.getInstance()
+        storage = Firebase.storage
     }
 }

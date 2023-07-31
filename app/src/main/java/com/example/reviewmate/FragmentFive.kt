@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,7 +39,20 @@ class FragmentFive : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentFiveBinding.inflate(inflater, container, false)
 
+        binding.logoutButton.setOnClickListener {
+            logout()
+        }
+        if(MyApplication.checkAuth()){
+            binding.CertifyEmailView.text = "${MyApplication.email}"
+        }
+
+
         return binding.root
+    }
+
+    private fun logout() {
+        val intent = Intent(requireContext(), AuthActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

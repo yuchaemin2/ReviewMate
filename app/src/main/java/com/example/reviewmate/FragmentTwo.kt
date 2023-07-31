@@ -1,10 +1,13 @@
 package com.example.reviewmate
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.example.reviewmate.databinding.FragmentOneBinding
 import com.example.reviewmate.databinding.FragmentTwoBinding
 
@@ -37,6 +40,20 @@ class FragmentTwo : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentTwoBinding.inflate(inflater, container, false)
+//        var mutableList: MutableList<ItemSearchModel>
+//
+//        binding.btnNewsSearch.setOnClickListener {
+//            var keyword = binding.edtNews.text.toString()
+//            val url = ""
+//            Log.d("ToyProject", url)
+//            val queue = Volley.newRequestQueue(activity)
+//            val jsonRequest:JsonObjectRequest = object : JsonObjectRequest(
+//                Request.Method.GET,
+//                url,
+//                null,
+//                Response.Listener<JSONObject> { response ->
+//            )
+//        }
 
         return binding.root
     }
