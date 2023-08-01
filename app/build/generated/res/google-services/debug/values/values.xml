@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">351831867321-37elj5pke1ihehd8e23m7j1psjau2t4d.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">351831867321</string>
+    <string name="google_api_key" translatable="false">AIzaSyA0EKTx0UcSBn8uGOcfN5eWvyLuP6BT2Rk</string>
+    <string name="google_app_id" translatable="false">1:351831867321:android:bc254937afb4a45327c068</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA0EKTx0UcSBn8uGOcfN5eWvyLuP6BT2Rk</string>
+    <string name="google_storage_bucket" translatable="false">reviewmate-59794.appspot.com</string>
+    <string name="project_id" translatable="false">reviewmate-59794</string>
+</resources>
