@@ -1,10 +1,15 @@
 package com.example.reviewmate
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.example.reviewmate.databinding.FragmentOneBinding
+import com.example.reviewmate.databinding.FragmentTwoBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +39,23 @@ class FragmentTwo : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false)
+        val binding = FragmentTwoBinding.inflate(inflater, container, false)
+//        var mutableList: MutableList<ItemSearchModel>
+//
+//        binding.btnNewsSearch.setOnClickListener {
+//            var keyword = binding.edtNews.text.toString()
+//            val url = ""
+//            Log.d("ToyProject", url)
+//            val queue = Volley.newRequestQueue(activity)
+//            val jsonRequest:JsonObjectRequest = object : JsonObjectRequest(
+//                Request.Method.GET,
+//                url,
+//                null,
+//                Response.Listener<JSONObject> { response ->
+//            )
+//        }
+
+        return binding.root
     }
 
     companion object {

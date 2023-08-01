@@ -50,14 +50,15 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             }
         }
 
-        //스토리지 이미지 다운로드……………………
+        //스토리지 이미지 다운로드........................
         val imageRef = MyApplication.storage.reference.child("images/${data.docId}.jpg")
         imageRef.downloadUrl.addOnCompleteListener{ task ->
             if(task.isSuccessful){
-//                // 다운로드 이미지를 ImageView에 보여줌
+
+                // 다운로드 이미지를 ImageView에 보여줌
                 GlideApp.with(context)
-                    .load(task.result)
-                    .into(holder.binding.itemImageView)
+                        .load(task.result)
+                        .into(holder.binding.itemImageView)
             }
         }
     }
