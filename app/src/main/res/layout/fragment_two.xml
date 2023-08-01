@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_margin="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,22 +11,22 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/edtNews"
-            android:layout_width="320dp"
+            android:id="@+id/search"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:hint="영화, 배우, 감독 등 검색"/>
 
-        <Button
-            android:id="@+id/btnNewsSearch"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:background="@drawable/search"
-            android:layout_toRightOf="@+id/edtNews"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/search"
+            android:layout_toRightOf="@id/search"/>
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 
 </LinearLayout>
