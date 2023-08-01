@@ -6,6 +6,7 @@
     android:layout_margin="20dp">
 
     <TextView
+        android:id="@+id/reviewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="글제목"
@@ -27,19 +28,21 @@
             android:src="@drawable/img_1" />
 
         <TextView
+            android:id="@+id/userEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사용자이름"
             android:textSize="15dp"/>
 
         <TextView
+            android:id="@+id/reviewDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="July 21, 2023" />
 
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +50,7 @@
         android:layout_margin="10dp" >
 
         <ImageView
-            android:id="@+id/moviePoster"
+            android:id="@+id/addImageView"
             android:layout_width="130dp"
             android:layout_height="170dp"
             android:layout_marginRight="10dp"
@@ -59,6 +62,7 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/movieTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="영화제목"
@@ -66,6 +70,7 @@
                 android:textSize="20dp"/>
 
             <TextView
+                android:id="@+id/movieRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="별점"
@@ -80,6 +85,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="글내용"

@@ -2,18 +2,26 @@ package com.example.reviewmate
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.icu.lang.UCharacter.NumericType
+import android.content.Intent
+import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.reviewmate.databinding.FragmentFourBinding
-import com.example.reviewmate.databinding.FragmentOneBinding
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.example.reviewmate.databinding.FragmentThreeBinding
-import com.google.android.play.integrity.internal.l
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import java.text.SimpleDateFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +39,14 @@ class FragmentThree : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentThreeBinding
 
+//    var auth : FirebaseAuth? = null
+//    var db : FirebaseFirestore? = null
+//    var storage : FirebaseStorage? = null
+//
+//    private var viewProfile : View? = null
+//    var pickImage = 0
+//    val uriPhoto : Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -46,8 +62,32 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
+        binding.userLevel.text = UserModel().userLevel
+
+//        binding.level1.setOnClickListener{
+//            var photoPickerIntent = Intent(Intent.ACTION_PICK)
+//            photoPickerIntent.type = "image/profile/*"
+//            startActivityForResult(photoPickerIntent, pickImage)
+//        }
+
         return binding.root
     }
+
+//    private fun ProfileUpload(view : View){
+//        var timeStamp = SimpleDateFormat("yyyymmdd-hhmmss").format(Date())
+//        var imgFileName = "IMAGE_PROFILE_" + timeStamp + "_.png"
+//        var storageRef = MyApplication.storage?.reference?.child("images/profile")?.child(imgFileName)
+//
+//        storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
+//            storageRef.downloadUrl.addOnSuccessListener {uri ->
+//                var userInfo = UserModel()
+//
+//                userInfo.imageUrl = uri.toString()
+//
+//                MyApplication.db?.collection("users")?.document(MyApplication.auth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
+//            }
+//        }
+//    }
 
     override fun onStart() {
         super.onStart()
@@ -56,6 +96,9 @@ class FragmentThree : Fragment() {
         val IntUL: Int? = UserLevel.toIntOrNull()
 
         if(IntUL !== null){
+            if(IntUL === 1){
+                changeProfile("Level1")
+            }
             if(IntUL === 2){
                 changeVisibility("Level2")
                 changeProfile("Level2")
@@ -103,8 +146,9 @@ class FragmentThree : Fragment() {
         }
     }
 
+
     fun changeProfile(mode: String){
-        if(mode.equals("Level2")){
+        if(mode.equals("Level1")){
             binding.level1.setOnClickListener{
                 AlertDialog.Builder(requireContext()).run{
                     setTitle(binding.level1Text.text.toString())
@@ -112,6 +156,21 @@ class FragmentThree : Fragment() {
                     setPositiveButton("프로필 적용하기",
                         DialogInterface.OnClickListener{ dialog, id ->
                             binding.userProfile.setImageResource(R.drawable.danielle_1)
+//                            ProfileUpload(binding.userProfile)
+                        })
+                    setNegativeButton("OK", alertHandler)
+                    show()
+                }
+            }
+        } else if(mode.equals("Level2")){
+            binding.level1.setOnClickListener{
+                AlertDialog.Builder(requireContext()).run{
+                    setTitle(binding.level1Text.text.toString())
+                    setMessage("영화의 매력을 점차 알아가고 있다.")
+                    setPositiveButton("프로필 적용하기",
+                        DialogInterface.OnClickListener{ dialog, id ->
+                            binding.userProfile.setImageResource(R.drawable.danielle_1)
+//                            ProfileUpload(binding.userProfile)
                         })
                     setNegativeButton("OK", alertHandler)
                     show()
@@ -124,6 +183,7 @@ class FragmentThree : Fragment() {
                     .setPositiveButton("프로필 적용하기",
                         DialogInterface.OnClickListener{ dialog, id ->
                             binding.userProfile.setImageResource(R.drawable.haerin_1)
+//                            ProfileUpload(binding.userProfile)
                         })
                     .setNegativeButton("OK", alertHandler)
                 builder.show()
@@ -718,6 +778,7 @@ class FragmentThree : Fragment() {
             binding.level9Text.text = "영화, 나"
         }
     }
+
 
     companion object {
         /**

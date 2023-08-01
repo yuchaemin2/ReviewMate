@@ -20,6 +20,9 @@
             android:name=".AuthActivity"
             android:exported="false" />
         <activity
+            android:name=".ReviewDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingActivity"
             android:exported="false" />
         <activity

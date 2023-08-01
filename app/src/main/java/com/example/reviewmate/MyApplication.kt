@@ -33,5 +33,14 @@ class MyApplication : MultiDexApplication() {
 
         db = FirebaseFirestore.getInstance()
         storage = Firebase.storage
+
+        if(true) {
+            var userInfo = UserModel()
+
+            userInfo.uid = auth?.uid
+            userInfo.userEmail = auth?.currentUser?.email
+
+            db?.collection("users")?.document(auth?.uid.toString())?.set(userInfo)
+        }
     }
 }
