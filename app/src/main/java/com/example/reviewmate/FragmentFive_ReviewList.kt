@@ -70,12 +70,15 @@ class FragmentFive_ReviewList : Fragment() {
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
                     Log.d("ToyProject", "${itemList}")
+                    //goReviewDtaill()
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
     }
+
+
 
     companion object {
         /**

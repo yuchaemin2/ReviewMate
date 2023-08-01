@@ -21,32 +21,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(R.layout.activity_main)
-        // d이걸ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ
-//        val
+        loadFragment(FragmentOne())
 
-
-
-        // 채민
     }
 
     override fun onStart() {
         super.onStart()
         // 사용자가 이미 로그인되어 있는지 확인
         if(MyApplication.checkAuth()){
-            //loadFragment(AuthActivity())
-
-//            // 확인해봐야함
-//            val intent =                                                                cccccccccccccccccccccccccccccccxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Intent(this, AuthActivity::class.java)
-//            startActivity(intent)
-//            val intent = Intent(this, AuthActivity::class.java)
-//            startActivity(intent)
-
-
-            loadFragment(FragmentOne())
             Toast.makeText(baseContext, "로그인 상태", Toast.LENGTH_SHORT).show()
 
             bottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -81,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                         updateIcons(item, R.drawable.user_1)
 
                         return@setOnNavigationItemSelectedListener true
-
                     }
                 }
                 true

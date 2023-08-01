@@ -30,6 +30,7 @@ drawable img_1
 drawable movie_poster
 drawable paw
 drawable paw_1
+drawable round_button
 drawable satisfaction
 drawable satisfaction_1
 drawable search
@@ -51,6 +52,7 @@ id btnSave
 id btn_move
 id button
 id calendarView
+id content
 id date
 id feedRecyclerView
 id five_layout
@@ -81,7 +83,9 @@ id nav4
 id nav5
 id ok
 id rate
+id reviewDate
 id reviewImg
+id reviewTitle
 id reviewsPage
 id search
 id signBtn
@@ -91,11 +95,13 @@ id textView3
 id tvItemContent
 id tvItemTitle
 id user
+id userEmail
 id user_name
 layout activity_add
 layout activity_add_activiity
 layout activity_auth
 layout activity_main
+layout activity_review_detail
 layout activity_splash
 layout auth_code
 layout fragment_five
@@ -126,6 +132,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
 string project_id
+style LoginTheme
 style SplashTheme
 style Theme.ReviewMate
 xml backup_rules
