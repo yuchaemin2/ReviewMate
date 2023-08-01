@@ -1,294 +1,262 @@
 [
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_img.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\img.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_search_item.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/search_item.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\activity_main.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_baseline_home_24.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/baseline_home_24.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_home_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\home_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_star.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\star.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_home_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/home_1.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_my_review.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\my_review.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_star.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/star.png"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_add_activiity.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/layout/activity_add_activiity.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_paw_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/paw_1.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_img.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/img.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_delete.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\delete.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_auth_code.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/auth_code.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_auth_code.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\auth_code.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_activity_auth.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\activity_auth.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/xml_backup_rules.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_splash.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\splash.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_baseline_home_24.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\baseline_home_24.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_one.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_one.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_movie_poster.jpg.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\movie_poster.jpg"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_movie_poster.jpg.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/movie_poster.jpg"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_add_review_btn.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\add_review_btn.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_baseline_bubble_chart_24.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\baseline_bubble_chart_24.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_delete.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/delete.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\activity_splash.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_four.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_four.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_review_feed_page.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\review_feed_page.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_my_review.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/my_review.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_user_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\user_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_img_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/img_1.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_search_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/search_1.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_search_item.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\search_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_icon.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\icon.png"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_baseline_mode_edit_24.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\baseline_mode_edit_24.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_satisfaction_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/satisfaction_1.png"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_splash.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/layout/activity_splash.xml"
     },
     {
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_search_page.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/search_page.xml"
+    },
+    {
         "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_add.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/layout/activity_add.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_review_detail_page.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\review_detail_page.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_review_detail_page.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/review_detail_page.xml"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_custom_button_shape.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/custom_button_shape.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_activity_add.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\activity_add.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_five.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_activity_add_activiity.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\activity_add_activiity.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_baseline_search_24.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/baseline_search_24.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_five__review_list.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_five__review_list.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_my_review_item.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/my_review_item.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_four.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_four.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_my_review_item.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\my_review_item.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_satisfaction.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\satisfaction.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_two.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_two.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_two.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_two.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_search.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/search.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_paw.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\paw.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_auth.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_auth.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_satisfaction_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\satisfaction_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_user.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/user.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_search.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\search.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_satisfaction.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/satisfaction.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_baseline_search_24.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\baseline_search_24.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_movie_detail_item.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail_item.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_search_page.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\search_page.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_main.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_img_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\img_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_five__review_list.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five__review_list.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_five.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_five.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/menu_bottom_navigation.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/menu/bottom_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_icon.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/icon.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_home.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/home.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_custom_button_shape.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\custom_button_shape.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_user_1.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/user_1.png"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_home.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\home.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_baseline_bubble_chart_24.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/baseline_bubble_chart_24.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_item_feed.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\item_feed.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_layout_movie.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/layout_movie.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_paw_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\paw_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_baseline_mode_edit_24.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/baseline_mode_edit_24.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_search_1.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\search_1.png"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_review_feed_page.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/review_feed_page.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_review_write_page.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\review_write_page.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_review_write_page.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/review_write_page.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_user.png.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\user.png"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_baseline_person_outline_24.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\baseline_person_outline_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_layout_movie.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\layout_movie.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_one.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_one.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_fragment_three.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\fragment_three.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_item_recyclerview.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\item_recyclerview.xml"
-    },
-    {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\menu_bottom_navigation.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\menu\\bottom_navigation.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_add_review_btn.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/add_review_btn.xml"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_splash.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/splash.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_fragment_three.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_three.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\layout_movie_detail_item.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\layout\\movie_detail_item.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-anydpi-v33/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-anydpi-v33\\ic_launcher.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\drawable_splash_back.xml.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\drawable\\splash_back.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_splash_back.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/splash_back.xml"
     },
     {
-        "merged": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-merged_res-45:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\82106\\.gradle\\daemon\\8.0\\com.example.reviewmate.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_baseline_person_outline_24.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/baseline_person_outline_24.xml"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/layout_item_feed.xml.flat",
         "source": "com.example.reviewmate.app-main-47:/layout/item_feed.xml"
+    },
+    {
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_paw.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/paw.png"
     }
 ]
