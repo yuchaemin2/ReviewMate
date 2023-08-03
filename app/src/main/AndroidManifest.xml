@@ -14,11 +14,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReviewMate"
-        tools:targetApi="31"
-        android:name=".MyApplication">
-        <activity
-            android:name=".AuthActivity"
-            android:exported="false" />
+        tools:targetApi="31">
         <activity
             android:name=".ReviewDetailActivity"
             android:exported="false" />
