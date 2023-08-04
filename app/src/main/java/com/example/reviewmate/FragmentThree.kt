@@ -171,6 +171,23 @@ class FragmentThree : Fragment() {
         arrayOf("/profile_images/hyein_2.png", "이름8", "설명8"),
         arrayOf("/profile_images/minji_1.png", "이름9", "설명9")
     )
+    val ex = arrayOf(
+        arrayOf(R.drawable.danielle_1, "이름1", "설명1"),
+        arrayOf(R.drawable.danielle_2, "이름2", "설명2"),
+    )
+
+    val imgResourceIds = arrayOf(
+        R.drawable.danielle_1,
+        R.drawable.danielle_2,
+        R.drawable.haerin_1,
+        R.drawable.haerin_2,
+        R.drawable.hanni_1,
+        R.drawable.hanni_2,
+        R.drawable.hyein_1,
+        R.drawable.hyein_2,
+        R.drawable.minji_1
+        // ... 나머지 이미지 리소스 ID
+    )
 
     fun openLevel1() {
         binding.level1.setImageResource(R.drawable.danielle_1)
@@ -216,7 +233,7 @@ class FragmentThree : Fragment() {
     }
 
     fun openCharacters(level : Int) {
-        val level = 3 //  테스트용!!!!!!!!!!
+        val level = 7 //  테스트용!!!!!!!!!!
         when (level) {
             1 -> openLevel1()
             2-> openLevel2()
@@ -234,21 +251,6 @@ class FragmentThree : Fragment() {
 
 
     fun openDialog(level: Int) {
-
-        // 이미지 리소스 식별자 가져오기
-        val imgResourceIds = arrayOf(
-            R.drawable.danielle_1,
-            R.drawable.danielle_2,
-            R.drawable.haerin_1,
-            R.drawable.haerin_2,
-            R.drawable.hanni_1,
-            R.drawable.hanni_2,
-            R.drawable.hyein_1,
-            R.drawable.hyein_2,
-            R.drawable.minji_1
-            // ... 나머지 이미지 리소스 ID
-        )
-
         val btnLevels = arrayOf(
             binding.level1,
             binding.level2,

@@ -13,6 +13,7 @@
         android:layout_margin="5dp">
 
         <ImageView
+            android:id="@+id/userProfile"
             android:layout_width="40dp"
             android:layout_height="60dp"
             android:layout_marginRight="10dp"
