@@ -7,6 +7,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -23,6 +24,7 @@ import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.db
+import com.example.reviewmate.MyApplication.Companion.storage
 import com.example.reviewmate.databinding.FragmentThreeBinding
 import com.google.android.play.integrity.internal.c
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +35,7 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -50,11 +53,12 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragmentThree : Fragment() {
 
-
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding: FragmentThreeBinding
+    private lateinit var imageView: ImageView
+   // var imageView : ImageView
     //lateinit var userLevel : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +67,6 @@ class FragmentThree : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
 
     }
 
@@ -75,17 +78,21 @@ class FragmentThree : Fragment() {
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
         binding.userLevel.text = UserModel().userLevel
-//        upLoadProfileImg()
-//        Glide.with(requireContext())
-//            .load(user.)
-//            .into(binding.userProfile)
-        //binding.userProfile.setImageResource(R.drawable.hanni_2)
 
+        imageView = binding.userProfile
+
+        // 이미지 다운로드 및 비트맵으로 변환하여 표시
+        downloadAndDisplayImage()
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
+
+        val imageUrl = "gs://reviewmate-59794.appspot.com/profile_images/hyein_2.png"
+        Glide.with(requireContext())
+            .load(imageUrl)
+            .into(binding.userProfile)
 
         val UserLevel = binding.userLevel.text.toString()
         val IntUL: Int? = UserLevel.toIntOrNull()
@@ -102,6 +109,57 @@ class FragmentThree : Fragment() {
 
     }
 
+    fun updateUserProfileImage() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+        if (userId != null) {
+            val userDocumentRef =
+                FirebaseFirestore.getInstance().collection("users").document(userId)
+        }
+    }
+    private fun downloadAndDisplayImage() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            val userDocumentRef =
+                FirebaseFirestore.getInstance().collection("users").document(userId)
+            var imageUrl: String? = null
+
+            userDocumentRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val user = documentSnapshot.toObject(UserModel::class.java)
+
+                        if (!user?.imageUrl.isNullOrEmpty()) {
+                            user?.imageUrl?.let { imageUrl ->
+                                val storageReference = storage.getReferenceFromUrl(imageUrl)
+                                // 이미지 다운로드 및 처리 로직
+
+                                storageReference.getBytes(1024 * 1024)
+                                    .addOnSuccessListener { bytes ->
+                                        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                                        imageView.setImageBitmap(bitmap)
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        // 다운로드 실패 처리
+                                        // 예를 들어, 에러 로그를 출력하거나 기본 이미지를 표시할 수 있습니다.
+                                    }
+                            }
+                        }
+                    } else {
+                        Log.d(TAG, "사용자 문서가 존재하지 않습니다.")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e(TAG, "사용자 데이터 가져오기 중 오류 발생: $exception")
+                }
+
+        }
+
+
+
+    }
+
+
     val characters = arrayOf(
         arrayOf("/profile_images/danielle_1.png", "이름1", "설명1"),
         arrayOf("/profile_images/danielle_2.png", "이름2", "설명2"),
@@ -113,61 +171,67 @@ class FragmentThree : Fragment() {
         arrayOf("/profile_images/hyein_2.png", "이름8", "설명8"),
         arrayOf("/profile_images/minji_1.png", "이름9", "설명9")
     )
+
+    fun openLevel1() {
+        binding.level1.setImageResource(R.drawable.danielle_1)
+    }
+    fun openLevel2() {
+        binding.level2.setImageResource(R.drawable.danielle_2)
+        binding.level2Text.text=characters[1][1]
+    }
+    fun openLevel3() {
+        openLevel2()
+        binding.level3.setImageResource(R.drawable.haerin_1)
+        binding.level3Text.text=characters[2][1]
+    }
+    fun openLevel4() {
+        openLevel3()
+        binding.level4.setImageResource(R.drawable.haerin_2)
+        binding.level4Text.text=characters[3][1]
+    }
+    fun openLevel5() {
+        openLevel4()
+        binding.level5.setImageResource(R.drawable.hanni_1)
+        binding.level5Text.text=characters[4][1]
+    }
+    fun openLevel6() {
+        openLevel5()
+        binding.level6.setImageResource(R.drawable.hanni_2)
+        binding.level6Text.text=characters[5][1]
+    }
+    fun openLevel7() {
+        openLevel6()
+        binding.level7.setImageResource(R.drawable.hyein_1)
+        binding.level7Text.text=characters[6][1]
+    }
+    fun openLevel8() {
+        openLevel7()
+        binding.level8.setImageResource(R.drawable.hyein_2)
+        binding.level8Text.text=characters[7][1]
+    }
+    fun openLevel9() {
+        openLevel8()
+        binding.level9.setImageResource(R.drawable.haerin_2)
+        binding.level9Text.text=characters[8][1]
+    }
+
     fun openCharacters(level : Int) {
         val level = 3 //  테스트용!!!!!!!!!!
         when (level) {
-            1 -> {
-                binding.level1.setImageResource(R.drawable.danielle_1)
-            }
-            2 -> {
-                binding.level2.setImageResource(R.drawable.danielle_2)
-                binding.level2Text.text=characters[1][1]
-            }
-            3 -> {
-                binding.level3.setImageResource(R.drawable.hanni_1)
-                binding.level2.setImageResource(R.drawable.danielle_2)
-                binding.level2Text.text=characters[1][1]
-                binding.level3Text.text=characters[2][1]
-            }
-            3 -> {
-                binding.level3.setImageResource(R.drawable.hanni_1)
-                binding.level2.setImageResource(R.drawable.danielle_2)
-                binding.level4.setImageResource(R.drawable.hyein_1)
-                binding.level2Text.text=characters[1][1]
-                binding.level3Text.text=characters[2][1]
-                binding.level4Text.text=characters[3][1]
-            }// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~9까지
-            else -> {
-                // 기본 이미지 또는 처리할 로직 설정
-            }
-    }}
-
-
-    fun updateUserProfileImage() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-
-        if (userId != null) {
-            val userDocumentRef =
-                FirebaseFirestore.getInstance().collection("users").document(userId)
-
-            userDocumentRef.get()
-                .addOnSuccessListener { documentSnapshot ->
-                    if (documentSnapshot.exists()) {
-                        val user = documentSnapshot.toObject(UserModel::class.java)
-
-                        if (user != null && user.imageUrl.isNullOrEmpty()) {
-                            // 사용자의 이미지 URL을 가져와서 프로필 이미지로 설정
-                            Glide.with(requireContext())
-                                .load(user.imageUrl)
-                                .into(binding.userProfile)
-                        }
-                    }
+            1 -> openLevel1()
+            2-> openLevel2()
+            3-> openLevel3()
+            4 -> openLevel4()
+            5 -> openLevel5()
+            6 -> openLevel6()
+            7 -> openLevel7()
+            8 -> openLevel8()
+            9 -> openLevel9()
+                else -> {
+                    // 기본 이미지 또는 처리할 로직 설정
                 }
-                .addOnFailureListener { exception ->
-                    Log.e(TAG, "사용자 데이터 가져오기 중 오류 발생: $exception")
-                }
-        }
-    }
+            }}
+
 
     fun openDialog(level: Int) {
 
@@ -175,8 +239,13 @@ class FragmentThree : Fragment() {
         val imgResourceIds = arrayOf(
             R.drawable.danielle_1,
             R.drawable.danielle_2,
+            R.drawable.haerin_1,
+            R.drawable.haerin_2,
             R.drawable.hanni_1,
+            R.drawable.hanni_2,
             R.drawable.hyein_1,
+            R.drawable.hyein_2,
+            R.drawable.minji_1
             // ... 나머지 이미지 리소스 ID
         )
 
@@ -193,8 +262,6 @@ class FragmentThree : Fragment() {
         )
         val levelBound = if (level <= 9) level else 1
         Toast.makeText(context, "my level $level, ${btnLevels[levelBound - 1]}", Toast.LENGTH_SHORT).show()
-
-
 
         // 모든 버튼에 리스너 설정
         for (i in 0 until levelBound) {
