@@ -3,6 +3,9 @@ package com.example.reviewmate
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.multidex.MultiDexApplication
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
+import com.example.reviewmate.MyApplication.Companion.storage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +19,7 @@ class MyApplication : MultiDexApplication() {
         lateinit var storage : FirebaseStorage
         lateinit var auth : FirebaseAuth
         var email:String? = null
+        var level:String? = null
 
         fun checkAuth(): Boolean{
             var currentuser = auth.currentUser
@@ -24,6 +28,8 @@ class MyApplication : MultiDexApplication() {
                 if(currentuser.isEmailVerified) true
                 else false
             } ?: false
+
+
         }
     }
 

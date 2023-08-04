@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,6 +22,9 @@ public final class FragmentFiveBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final TextView CertifyEmailView;
+
+  @NonNull
   public final Button btnMove;
 
   @NonNull
@@ -32,10 +36,11 @@ public final class FragmentFiveBinding implements ViewBinding {
   @NonNull
   public final ImageView reviewImg;
 
-  private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull Button btnMove,
-      @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton,
+  private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull TextView CertifyEmailView,
+      @NonNull Button btnMove, @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton,
       @NonNull ImageView reviewImg) {
     this.rootView = rootView;
+    this.CertifyEmailView = CertifyEmailView;
     this.btnMove = btnMove;
     this.fiveLayout = fiveLayout;
     this.logoutButton = logoutButton;
@@ -69,6 +74,12 @@ public final class FragmentFiveBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.CertifyEmailView;
+      TextView CertifyEmailView = ViewBindings.findChildViewById(rootView, id);
+      if (CertifyEmailView == null) {
+        break missingId;
+      }
+
       id = R.id.btn_move;
       Button btnMove = ViewBindings.findChildViewById(rootView, id);
       if (btnMove == null) {
@@ -89,8 +100,8 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFiveBinding((LinearLayout) rootView, btnMove, fiveLayout, logoutButton,
-          reviewImg);
+      return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, btnMove, fiveLayout,
+          logoutButton, reviewImg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

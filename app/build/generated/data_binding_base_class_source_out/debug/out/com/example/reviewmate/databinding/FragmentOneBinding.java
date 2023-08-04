@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager.widget.ViewPager;
 import com.example.reviewmate.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,20 +23,43 @@ public final class FragmentOneBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView HomeEmailView;
+
+  @NonNull
   public final CalendarView calendarView;
 
   @NonNull
-  public final ViewPager mViewPager;
+  public final LinearLayout linearLayout;
 
   @NonNull
-  public final TextView textView3;
+  public final LinearLayout linearLayout2;
 
-  private FragmentOneBinding(@NonNull FrameLayout rootView, @NonNull CalendarView calendarView,
-      @NonNull ViewPager mViewPager, @NonNull TextView textView3) {
+  @NonNull
+  public final RecyclerView popularMovies;
+
+  @NonNull
+  public final RecyclerView recentMovies;
+
+  @NonNull
+  public final TextView textView1;
+
+  @NonNull
+  public final TextView textView2;
+
+  private FragmentOneBinding(@NonNull FrameLayout rootView, @NonNull TextView HomeEmailView,
+      @NonNull CalendarView calendarView, @NonNull LinearLayout linearLayout,
+      @NonNull LinearLayout linearLayout2, @NonNull RecyclerView popularMovies,
+      @NonNull RecyclerView recentMovies, @NonNull TextView textView1,
+      @NonNull TextView textView2) {
     this.rootView = rootView;
+    this.HomeEmailView = HomeEmailView;
     this.calendarView = calendarView;
-    this.mViewPager = mViewPager;
-    this.textView3 = textView3;
+    this.linearLayout = linearLayout;
+    this.linearLayout2 = linearLayout2;
+    this.popularMovies = popularMovies;
+    this.recentMovies = recentMovies;
+    this.textView1 = textView1;
+    this.textView2 = textView2;
   }
 
   @Override
@@ -65,25 +89,56 @@ public final class FragmentOneBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.HomeEmailView;
+      TextView HomeEmailView = ViewBindings.findChildViewById(rootView, id);
+      if (HomeEmailView == null) {
+        break missingId;
+      }
+
       id = R.id.calendarView;
       CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
 
-      id = R.id.mViewPager;
-      ViewPager mViewPager = ViewBindings.findChildViewById(rootView, id);
-      if (mViewPager == null) {
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
         break missingId;
       }
 
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
+      id = R.id.linearLayout2;
+      LinearLayout linearLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout2 == null) {
         break missingId;
       }
 
-      return new FragmentOneBinding((FrameLayout) rootView, calendarView, mViewPager, textView3);
+      id = R.id.popular_movies;
+      RecyclerView popularMovies = ViewBindings.findChildViewById(rootView, id);
+      if (popularMovies == null) {
+        break missingId;
+      }
+
+      id = R.id.recent_movies;
+      RecyclerView recentMovies = ViewBindings.findChildViewById(rootView, id);
+      if (recentMovies == null) {
+        break missingId;
+      }
+
+      id = R.id.textView1;
+      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
+      if (textView1 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      return new FragmentOneBinding((FrameLayout) rootView, HomeEmailView, calendarView,
+          linearLayout, linearLayout2, popularMovies, recentMovies, textView1, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
