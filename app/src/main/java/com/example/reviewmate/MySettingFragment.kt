@@ -29,10 +29,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
                 }
         }
 
-        val bgColorPreference: ListPreference? = findPreference("bg_color")
-        bgColorPreference?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
-
-        val txColorPreference: ListPreference? = findPreference("tx_color")
-        txColorPreference?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
+        val profileIconPreference: ListPreference? = findPreference("profileIcon")
+        profileIconPreference?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
     }
 }

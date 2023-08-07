@@ -17,9 +17,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFourBinding
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,14 +40,18 @@ class FragmentFour : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding: FragmentFourBinding
+
+    lateinit var storage: FirebaseStorage
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        storage = FirebaseStorage.getInstance()
     }
 
     override fun onCreateView(
@@ -82,12 +90,13 @@ class FragmentFour : Fragment() {
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
-                    Log.d("ToyProject", "${itemList}")
+//                    Log.d("ToyProject", "${itemList}")
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
+
     }
 
 

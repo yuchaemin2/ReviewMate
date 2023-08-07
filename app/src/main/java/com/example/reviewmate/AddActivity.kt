@@ -1,21 +1,31 @@
 package com.example.reviewmate
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
 import android.util.Log
+import android.widget.DatePicker
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.reviewmate.databinding.ActivityAddBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import org.checkerframework.checker.units.qual.mm
 import java.io.File
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class AddActivity : AppCompatActivity() {
@@ -61,21 +71,27 @@ class AddActivity : AppCompatActivity() {
 
     }
 
-    fun dateToString(date:Date): String {
-        val now = System.currentTimeMillis()
-        val format = SimpleDateFormat("yyyy-mm-dd hh:ss", Locale.KOREAN).format(now)
-        return format.format(date)
+
+//    fun dateToString(date:Date): String {
+//        val now = System.currentTimeMillis()
+//        val format = SimpleDateFormat("YYYY-MM-DD hh:ss", Locale.KOREAN).format(now)
 //        return format.format(date)
+////        return format.format(date)
+//    }
+
+    fun dateToString(date: Date): String {
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.KOREAN)
+        return format.format(date)
     }
 
     fun saveStore() {
         val data = mapOf(
-            "email" to MyApplication.email,
+            "email" to Firebase.auth.currentUser!!.email,
             "title" to binding.addTitleEditView.text.toString(),
             "content" to binding.addEditView.text.toString(),
             "date" to dateToString(Date()),
             "movie" to binding.movieTitle.text.toString(),
-            "rate" to binding.movieRate.text.toString()
+            "rate" to binding.movieRate.text.toString(),
         )
 
         MyApplication.db.collection("reviews")

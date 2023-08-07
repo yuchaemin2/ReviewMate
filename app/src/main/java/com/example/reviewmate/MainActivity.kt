@@ -1,27 +1,40 @@
 package com.example.reviewmate
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.example.reviewmate.databinding.ActivityMainBinding
+import com.example.reviewmate.databinding.FragmentThreeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     lateinit var binding: ActivityMainBinding
+//    lateinit var binding2: FragmentThreeBinding
+
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var adapter: MyFeedAdapter
+
+    var authMenuItem : MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        binding2= FragmentThreeBinding()
 
         supportActionBar?.title = "Home page"
 
@@ -65,7 +78,36 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
+
+//        //add................................
+//        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+//        val profileIcon: Int = sharedPreferences.getInt("profileIcon", R.drawable.user)
+//        binding2.userProfile.setImageResource(profileIcon)
+//
+//        adapter = MyFeedAdapter(this, itemList = null)
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//
+//        val profileIcon: Int = sharedPreferences.getInt("profileIcon", R.drawable.user)
+//        binding2.userProfile.setImageResource(profileIcon)
+//
+////        adapter.notifyDataSetChanged()
+//    }
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.menu_main, menu)
+//
+//        authMenuItem = menu!!.findItem(R.id.menu_auth)
+//        if(MyApplication.checkAuth()){
+//            authMenuItem!!.title = "${MyApplication.email}님"
+//        }
+//        else {
+//            authMenuItem!!.title = "인증"
+//        }
+//        return super.onCreateOptionsMenu(menu)
+//    }
 
     override fun onStart() {
         // Intent에서 finish() 돌아올 때 실행
@@ -73,8 +115,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
         if(MyApplication.checkAuth()){
-
-//            Toast.makeText(baseContext, "로그인 성공", Toast.LENGTH_SHORT).show()
 
             bottomNavigationView = findViewById(R.id.bottomNavigationView)
             bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -113,6 +153,30 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        if(item.itemId === R.id.menu_auth){
+//            val intent = Intent(this, AuthActivity::class.java)
+//            if(authMenuItem!!.title!!.equals("인증")){
+//                intent.putExtra("data", "logout")
+//            }
+//            else { // 이메일, 구글 계정
+//                intent.putExtra("data", "login")
+//            }
+//            startActivity(intent)
+//        }
+//        else if (item.itemId === R.id.menu_main_setting){
+//            var intent = Intent(this, SettingActivity::class.java)
+//            startActivity(intent)
+//            return true
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun updateIcons(selectedItem: MenuItem, selectedIconRes: Int) {
         // 선택된 항목의 아이콘을 선택된 아이콘으로 변경합니다.

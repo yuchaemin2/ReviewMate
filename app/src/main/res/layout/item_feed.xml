@@ -17,13 +17,23 @@
             android:orientation="horizontal"
             android:gravity="center_vertical" >
 
-            <TextView
-                android:id="@+id/itemTitleView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="글 제목"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/itemTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="글 제목"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/review_delete"
+                    android:visibility="invisible"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="9dp"
+                    android:background="@drawable/round_button"
+                    android:text="삭제" />
 
         </LinearLayout>
 

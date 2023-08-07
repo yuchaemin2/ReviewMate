@@ -1,12 +1,30 @@
 package com.example.reviewmate
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
+import android.provider.MediaStore
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.reviewmate.databinding.ActivityReviewDetailBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import java.io.File
 
 class ReviewDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityReviewDetailBinding
+
+    lateinit var file: File
+    lateinit var filePath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,18 +32,6 @@ class ReviewDetailActivity : AppCompatActivity() {
         binding =ActivityReviewDetailBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-
-/*
-*
-val bundle : Bundle = Bundle()
-                bundle.putString("email", data.email)
-                bundle.putString("title", data.title)
-                bundle.putString("content", data.content)
-                bundle.putString("date", data.date)
-                bundle.putString("movie", data.movie)
-                bundle.putString("rate", data.rate)
-* */
 
         // ------------- API : 영화 제목, 포스터 추가해야 함 --------------
         binding.movieTitle.text = intent.getStringExtra("영화제목API")
@@ -36,12 +42,8 @@ val bundle : Bundle = Bundle()
         binding.reviewDate.text = intent.getStringExtra("date")
         // 영화 API사용하여 데이터 가져와야 함
 
-    }
 
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment)
-//    }
+    }
 
 }
 

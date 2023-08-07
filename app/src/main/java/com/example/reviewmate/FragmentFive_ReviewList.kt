@@ -1,18 +1,16 @@
 package com.example.reviewmate
 
-import android.app.Application
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.size
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewmate.databinding.FragmentFiveReviewListBinding
 import com.google.firebase.firestore.Query
-import org.checkerframework.checker.units.qual.A
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,6 +42,11 @@ class FragmentFive_ReviewList : Fragment() {
     ): View? {
         binding = FragmentFiveReviewListBinding.inflate(inflater, container, false)
 
+        // 수정 필요 
+        if(binding.feedRecyclerView.itemDecorationCount === 0){
+            binding.textView.visibility = View.VISIBLE
+        }
+
         return binding.root
     }
 
@@ -66,7 +69,6 @@ class FragmentFive_ReviewList : Fragment() {
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
-                    Log.d("ToyProject", "${itemList}")
                     //goReviewDtaill()
                 }
                 .addOnFailureListener{

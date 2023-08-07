@@ -4,12 +4,16 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
@@ -20,6 +24,8 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import java.io.File
+import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -88,6 +94,7 @@ class FragmentThree : Fragment() {
 //            }
 //        }
 //    }
+
 
     override fun onStart() {
         super.onStart()
@@ -694,6 +701,50 @@ class FragmentThree : Fragment() {
             }
         }
     }
+
+//    fun changeProfile(mode: String) {
+//        val levels = listOf(
+//            binding.level1 to R.drawable.danielle_1,
+//            binding.level2 to R.drawable.haerin_1,
+//            binding.level3 to R.drawable.hanni_1,
+//            binding.level4 to R.drawable.hyein_1,
+//            binding.level5 to R.drawable.minji_1,
+//            binding.level6 to R.drawable.danielle_2,
+//            binding.level7 to R.drawable.haerin_2,
+//            binding.level8 to R.drawable.hanni_2,
+//            binding.level9 to R.drawable.hyein_2
+//        )
+//
+//        val levelTexts = listOf(
+//            "영화의 매력을 점차 알아가고 있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다.",
+//            "영화의 매력을 알고있다."
+//        )
+//
+//        val index = mode.removePrefix("Level").toIntOrNull() ?: return
+//        if (index < 1 || index > levels.size) return
+//
+//        val (levelView, profileImageResource) = levels[index - 1]
+//
+//        levelView.setOnClickListener {
+//            AlertDialog.Builder(requireContext()).run {
+//                setTitle(levelView.toString())
+//                setMessage(levelTexts[index - 1]) // Alternate between two level texts
+//                setPositiveButton("프로필 적용하기") { dialog, id ->
+//                    binding.userProfile.setImageResource(profileImageResource)
+//                }
+//                setNegativeButton("OK", alertHandler)
+//                show()
+//            }
+//        }
+//    }
+
 
     fun changeVisibility(mode: String){
         if(mode.equals("Level2")){

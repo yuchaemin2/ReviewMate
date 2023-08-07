@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_color">
+        <item>level1</item>
+        <item>잿빛</item>
+        <item>파랑</item>
+        <item>초록</item>
+        <item>군청</item>
+        <item>하양</item>
+    </string-array>
+    <string-array name="my_color_values">
+        <item>R.drawble.minji_1</item>
+        <item>#F9F9F9</item>
+        <item>#76BEDB</item>
+        <item>#74B666</item>
+        <item>#5589C5</item>
+        <item>#ffFFff</item>
+    </string-array>
+</resources>
