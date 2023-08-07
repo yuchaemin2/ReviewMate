@@ -43,17 +43,17 @@ class FragmentOne : Fragment() {
         }
 
 
-        popularMovies = binding.root.findViewById(R.id.popular_movies)
-        popularMoviesLayoutMgr = LinearLayoutManager(
-            context,
-            LinearLayoutManager.HORIZONTAL,
-            false
-        )
-        popularMovies.layoutManager = popularMoviesLayoutMgr
-        popularMoviesAdapter = MovieAdapter(mutableListOf())
-        popularMovies.adapter = popularMoviesAdapter
+            popularMovies = binding.root.findViewById(R.id.popular_movies)
+            popularMoviesLayoutMgr = LinearLayoutManager(
+                context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            popularMovies.layoutManager = popularMoviesLayoutMgr
+            popularMoviesAdapter = MovieAdapter(mutableListOf())
+            popularMovies.adapter = popularMoviesAdapter
 
-        getPopularMovies()
+            getPopularMovies()
 
         return binding.root
     }
