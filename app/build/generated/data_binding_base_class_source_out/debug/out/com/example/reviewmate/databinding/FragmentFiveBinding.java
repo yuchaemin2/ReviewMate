@@ -36,15 +36,19 @@ public final class FragmentFiveBinding implements ViewBinding {
   @NonNull
   public final ImageView reviewImg;
 
+  @NonNull
+  public final ImageView userProfile;
+
   private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull TextView CertifyEmailView,
       @NonNull Button btnMove, @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton,
-      @NonNull ImageView reviewImg) {
+      @NonNull ImageView reviewImg, @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
     this.btnMove = btnMove;
     this.fiveLayout = fiveLayout;
     this.logoutButton = logoutButton;
     this.reviewImg = reviewImg;
+    this.userProfile = userProfile;
   }
 
   @Override
@@ -100,8 +104,14 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.userProfile;
+      ImageView userProfile = ViewBindings.findChildViewById(rootView, id);
+      if (userProfile == null) {
+        break missingId;
+      }
+
       return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, btnMove, fiveLayout,
-          logoutButton, reviewImg);
+          logoutButton, reviewImg, userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

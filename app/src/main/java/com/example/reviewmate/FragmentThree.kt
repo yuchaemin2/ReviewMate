@@ -89,10 +89,6 @@ class FragmentThree : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val imageUrl = "gs://reviewmate-59794.appspot.com/profile_images/hyein_2.png"
-        Glide.with(requireContext())
-            .load(imageUrl)
-            .into(binding.userProfile)
 
         val UserLevel = binding.userLevel.text.toString()
         val IntUL: Int? = UserLevel.toIntOrNull()

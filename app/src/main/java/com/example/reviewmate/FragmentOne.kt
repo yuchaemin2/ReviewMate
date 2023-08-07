@@ -1,12 +1,16 @@
 package com.example.reviewmate
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewmate.common.Movie
+import com.example.reviewmate.common.MoviesRepository
 import com.example.reviewmate.databinding.FragmentOneBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,71 +23,18 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FragmentOne.newInstance] factory method to
  * create an instance of this fragment.
  */
-/*
-@SerializedName("id") val movieId : Long,
-@SerializedName("title") val movieTitle : String,
-@SerializedName("overview") val movieOverview : String, // 설명
-@SerializedName("poster_path") val moviePoster: String,
-@SerializedName("backdrop_path") val movieBackdrop: String, // 배경 이미지
-@SerializedName("vote_average") val movieRate: Float, // 평점
-@SerializedName("release_date") val movieDate: String, //
-@SerializedName("popularity") val movieView: Float //조회수
-
- */
 class FragmentOne : Fragment() {
-    lateinit var binding : FragmentOneBinding
-    private val itemList = listOf<Movie>(
-        // 데이터 api사용!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //Movie("123", "영화1", "")
-        Movie(
-            1,
-            "영화1",
-            "설명",
-            "poster_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            "backdrop_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            6.9f,
-            "2023-08-01",
-            435.0f // float일 시 f붙여야 함
-        ),
-        Movie(
-            2,
-            "영화2",
-            "설명",
-            "poster_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            "backdrop_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            6.9f,
-            "2023-08-02",
-            435.0f // float일 시 f붙여야 함
-        ),
-        Movie(
-            3,
-            "영화3",
-            "설명",
-            "poster_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            "backdrop_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            6.9f,
-            "2023-08-03",
-            435.0f // float일 시 f붙여야 함
-        ),
-        Movie(
-            4,
-            "영화4",
-            "설명",
-            "poster_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            "backdrop_path_string", // drawable 리소스의 이름을 사용하면 안됨
-            6.9f,
-            "2023-08-04",
-            435.0f // float일 시 f붙여야 함
-        )
-    )
 
+    private lateinit var popularMovies: RecyclerView
+    private lateinit var popularMoviesAdapter: MovieAdapter
+    private lateinit var popularMoviesLayoutMgr: LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentOneBinding.inflate(inflater, container, false)
+        val binding = FragmentOneBinding.inflate(inflater, container, false)
 
         if(MyApplication.checkAuth()){
             binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
@@ -91,16 +42,36 @@ class FragmentOne : Fragment() {
             binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
         }
 
+
+        popularMovies = binding.root.findViewById(R.id.popular_movies)
+        popularMoviesLayoutMgr = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        popularMovies.layoutManager = popularMoviesLayoutMgr
+        popularMoviesAdapter = MovieAdapter(mutableListOf())
+        popularMovies.adapter = popularMoviesAdapter
+
+        getPopularMovies()
+
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
-        binding.popularMovies.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.popularMovies.adapter = MovieAdapter(itemList)
-        binding.recentMovies.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.recentMovies.adapter = MovieAdapter(itemList)
+    fun getPopularMovies(){
+        MoviesRepository.getPopularMovies(
+            1,
+            ::onPopularMoviesFetched,
+            ::onError
+        )}
 
+
+    private fun onPopularMoviesFetched(movies: List<Movie>) {
+        popularMoviesAdapter.appendMovies(movies)
+    }
+
+    private fun onError() {
+        Toast.makeText(activity, "error Movies", Toast.LENGTH_SHORT).show()
     }
 
 }
