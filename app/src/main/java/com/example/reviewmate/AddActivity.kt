@@ -61,11 +61,9 @@ class AddActivity : AppCompatActivity() {
 
     }
 
-    fun dateToString(date:Date): String {
-        val now = System.currentTimeMillis()
-        val format = SimpleDateFormat("yyyy-mm-dd hh:ss", Locale.KOREAN).format(now)
+    fun dateToString(date: Date): String {
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.KOREAN)
         return format.format(date)
-//        return format.format(date)
     }
 
     fun saveStore() {

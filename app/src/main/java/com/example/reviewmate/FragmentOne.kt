@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -50,7 +51,7 @@ class FragmentOne : Fragment() {
                 false
             )
             popularMovies.layoutManager = popularMoviesLayoutMgr
-            popularMoviesAdapter = MovieAdapter(mutableListOf())
+            popularMoviesAdapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
             popularMovies.adapter = popularMoviesAdapter
 
             getPopularMovies()
@@ -58,20 +59,31 @@ class FragmentOne : Fragment() {
         return binding.root
     }
 
-    fun getPopularMovies(){
+    private fun showMovieDetails(movie: Movie) {
+        val intent = Intent(activity, MovieDetailsActivity::class.java)
+        intent.putExtra(MainActivity.MOVIE_POSTER, movie.moviePoster)
+        intent.putExtra(MainActivity.MOVIE_TITLE, movie.movieTitle)
+        intent.putExtra(MainActivity.MOVIE_RATING, movie.movieRate)
+        intent.putExtra(MainActivity.MOVIE_OVERVIEW, movie.movieOverview)
+        startActivity(intent)
+    }
+
+    private fun getPopularMovies() {
         MoviesRepository.getPopularMovies(
             1,
             ::onPopularMoviesFetched,
             ::onError
-        )}
-
+        )
+    }
 
     private fun onPopularMoviesFetched(movies: List<Movie>) {
         popularMoviesAdapter.appendMovies(movies)
     }
 
+
     private fun onError() {
         Toast.makeText(activity, "error Movies", Toast.LENGTH_SHORT).show()
     }
+
 
 }
