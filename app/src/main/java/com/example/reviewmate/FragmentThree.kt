@@ -1,5 +1,4 @@
 package com.example.reviewmate
-
 import android.app.AlertDialog
 import android.app.ProgressDialog.show
 import android.content.ContentValues.TAG
@@ -40,17 +39,8 @@ import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentThree.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentThree : Fragment() {
 
     // TODO: Rename and change types of parameters
@@ -113,6 +103,7 @@ class FragmentThree : Fragment() {
                 FirebaseFirestore.getInstance().collection("users").document(userId)
         }
     }
+
     private fun downloadAndDisplayImage() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {

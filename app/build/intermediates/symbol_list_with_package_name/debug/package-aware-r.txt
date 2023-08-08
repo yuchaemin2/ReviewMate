@@ -3438,9 +3438,9 @@ id itemDateView
 id itemEmailView
 id itemImageView
 id itemMovieView
+id itemProfileImageView
 id itemRateView
 id itemTitleView
-id item_img
 id item_movie_poster
 id item_movie_title
 id item_touch_helper_previous_elevation
@@ -3596,6 +3596,7 @@ id preferences_detail
 id preferences_header
 id preferences_sliding_pane_layout
 id pressed
+id profileImage
 id progress_circular
 id progress_horizontal
 id radio
@@ -3608,6 +3609,7 @@ id reverseSawtooth
 id reviewDate
 id reviewImg
 id reviewTitle
+id review_delete
 id reviewsPage
 id right
 id rightToLeft

@@ -64,8 +64,6 @@ class FragmentFive_ReviewList : Fragment() {
                             itemList.add(item)
                         }
 
-
-
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)

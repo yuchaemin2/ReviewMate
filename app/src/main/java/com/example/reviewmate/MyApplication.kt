@@ -1,6 +1,9 @@
 package com.example.reviewmate
 
+import android.content.ContentValues
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.multidex.MultiDexApplication
 import com.example.reviewmate.MyApplication.Companion.auth
@@ -31,6 +34,8 @@ class MyApplication : MultiDexApplication() {
 
 
         }
+
+
     }
 
     override fun onCreate() {

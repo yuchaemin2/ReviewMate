@@ -71,9 +71,9 @@ id itemDateView
 id itemEmailView
 id itemImageView
 id itemMovieView
+id itemProfileImageView
 id itemRateView
 id itemTitleView
-id item_img
 id item_movie_poster
 id item_movie_title
 id level_1
@@ -110,11 +110,13 @@ id nav3
 id nav4
 id nav5
 id popular_movies
+id profileImage
 id rate
 id recent_movies
 id reviewDate
 id reviewImg
 id reviewTitle
+id review_delete
 id reviewsPage
 id search
 id signBtn

@@ -8,6 +8,7 @@
         android:minSdkVersion="25"
         android:targetSdkVersion="33" />
 
+    <!-- 인터넷 연결 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -34,6 +35,9 @@
             android:name="com.example.reviewmate.ReviewDetailActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.reviewmate.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.reviewmate.AuthActivity"
             android:exported="false"
             android:theme="@style/LoginTheme" />
@@ -43,7 +47,11 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.example.reviewmate.MainActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity
+            android:name="com.example.reviewmate.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

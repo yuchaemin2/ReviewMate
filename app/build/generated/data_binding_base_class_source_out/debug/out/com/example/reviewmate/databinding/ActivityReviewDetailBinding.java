@@ -33,6 +33,9 @@ public final class ActivityReviewDetailBinding implements ViewBinding {
   public final TextView movieTitle;
 
   @NonNull
+  public final ImageView profileImage;
+
+  @NonNull
   public final TextView reviewDate;
 
   @NonNull
@@ -43,13 +46,14 @@ public final class ActivityReviewDetailBinding implements ViewBinding {
 
   private ActivityReviewDetailBinding(@NonNull LinearLayout rootView,
       @NonNull ImageView addImageView, @NonNull TextView content, @NonNull TextView movieRate,
-      @NonNull TextView movieTitle, @NonNull TextView reviewDate, @NonNull TextView reviewTitle,
-      @NonNull TextView userEmail) {
+      @NonNull TextView movieTitle, @NonNull ImageView profileImage, @NonNull TextView reviewDate,
+      @NonNull TextView reviewTitle, @NonNull TextView userEmail) {
     this.rootView = rootView;
     this.addImageView = addImageView;
     this.content = content;
     this.movieRate = movieRate;
     this.movieTitle = movieTitle;
+    this.profileImage = profileImage;
     this.reviewDate = reviewDate;
     this.reviewTitle = reviewTitle;
     this.userEmail = userEmail;
@@ -106,6 +110,12 @@ public final class ActivityReviewDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.profileImage;
+      ImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
+        break missingId;
+      }
+
       id = R.id.reviewDate;
       TextView reviewDate = ViewBindings.findChildViewById(rootView, id);
       if (reviewDate == null) {
@@ -125,7 +135,7 @@ public final class ActivityReviewDetailBinding implements ViewBinding {
       }
 
       return new ActivityReviewDetailBinding((LinearLayout) rootView, addImageView, content,
-          movieRate, movieTitle, reviewDate, reviewTitle, userEmail);
+          movieRate, movieTitle, profileImage, reviewDate, reviewTitle, userEmail);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

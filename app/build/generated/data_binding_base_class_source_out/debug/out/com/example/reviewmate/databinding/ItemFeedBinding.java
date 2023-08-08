@@ -4,6 +4,7 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,10 +34,10 @@ public final class ItemFeedBinding implements ViewBinding {
   public final ImageView itemImageView;
 
   @NonNull
-  public final ImageView itemImg;
+  public final TextView itemMovieView;
 
   @NonNull
-  public final TextView itemMovieView;
+  public final ImageView itemProfileImageView;
 
   @NonNull
   public final TextView itemRateView;
@@ -44,19 +45,24 @@ public final class ItemFeedBinding implements ViewBinding {
   @NonNull
   public final TextView itemTitleView;
 
+  @NonNull
+  public final Button reviewDelete;
+
   private ItemFeedBinding(@NonNull LinearLayout rootView, @NonNull TextView itemContentView,
       @NonNull TextView itemDateView, @NonNull TextView itemEmailView,
-      @NonNull ImageView itemImageView, @NonNull ImageView itemImg, @NonNull TextView itemMovieView,
-      @NonNull TextView itemRateView, @NonNull TextView itemTitleView) {
+      @NonNull ImageView itemImageView, @NonNull TextView itemMovieView,
+      @NonNull ImageView itemProfileImageView, @NonNull TextView itemRateView,
+      @NonNull TextView itemTitleView, @NonNull Button reviewDelete) {
     this.rootView = rootView;
     this.itemContentView = itemContentView;
     this.itemDateView = itemDateView;
     this.itemEmailView = itemEmailView;
     this.itemImageView = itemImageView;
-    this.itemImg = itemImg;
     this.itemMovieView = itemMovieView;
+    this.itemProfileImageView = itemProfileImageView;
     this.itemRateView = itemRateView;
     this.itemTitleView = itemTitleView;
+    this.reviewDelete = reviewDelete;
   }
 
   @Override
@@ -110,15 +116,15 @@ public final class ItemFeedBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.item_img;
-      ImageView itemImg = ViewBindings.findChildViewById(rootView, id);
-      if (itemImg == null) {
-        break missingId;
-      }
-
       id = R.id.itemMovieView;
       TextView itemMovieView = ViewBindings.findChildViewById(rootView, id);
       if (itemMovieView == null) {
+        break missingId;
+      }
+
+      id = R.id.itemProfileImageView;
+      ImageView itemProfileImageView = ViewBindings.findChildViewById(rootView, id);
+      if (itemProfileImageView == null) {
         break missingId;
       }
 
@@ -134,8 +140,15 @@ public final class ItemFeedBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.review_delete;
+      Button reviewDelete = ViewBindings.findChildViewById(rootView, id);
+      if (reviewDelete == null) {
+        break missingId;
+      }
+
       return new ItemFeedBinding((LinearLayout) rootView, itemContentView, itemDateView,
-          itemEmailView, itemImageView, itemImg, itemMovieView, itemRateView, itemTitleView);
+          itemEmailView, itemImageView, itemMovieView, itemProfileImageView, itemRateView,
+          itemTitleView, reviewDelete);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

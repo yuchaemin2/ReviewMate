@@ -3,6 +3,7 @@ package com.example.reviewmate
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.reviewmate.databinding.ActivityReviewDetailBinding
 
 class ReviewDetailActivity : AppCompatActivity() {
@@ -34,8 +35,15 @@ val bundle : Bundle = Bundle()
         binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
         binding.reviewDate.text = intent.getStringExtra("date")
-        // 영화 API사용하여 데이터 가져와야 함
+        var profileImageUrl = intent.getStringExtra("image_url")
 
+        // 영화 API사용하여 데이터 가져와야 함
+        if(profileImageUrl != null && profileImageUrl != "null"){
+            // Glide를 사용하여 프로필 이미지 로드
+            Glide.with(baseContext)
+                .load(profileImageUrl)
+                .into(binding.profileImage)
+        }
     }
 
 //    override fun onBackPressed() {
