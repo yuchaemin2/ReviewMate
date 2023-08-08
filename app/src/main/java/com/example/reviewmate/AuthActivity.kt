@@ -139,6 +139,7 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+
     fun changeVisibility(mode: String){
         if(mode.equals("signin")){
             binding.run {

@@ -70,6 +70,10 @@ class FragmentFive : Fragment() {
         logoutButton.setOnClickListener {
             logout()
         }
+        val accountDeleteButton = binding.accountDeleteButton
+        accountDeleteButton.setOnClickListener{
+
+        }
         return binding.root
     }
     private fun downloadAndDisplayImage() {

@@ -97,7 +97,11 @@ class FragmentOne : Fragment() {
                             itemList.add(item)
                         }
                     }
-                    binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    binding.feedRecyclerView.layoutManager = LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
                     Log.d("ToyProject", "${itemList}")
                 }

@@ -29,6 +29,9 @@ public final class FragmentOneBinding implements ViewBinding {
   public final CalendarView calendarView;
 
   @NonNull
+  public final RecyclerView feedRecyclerView;
+
+  @NonNull
   public final LinearLayout linearLayout;
 
   @NonNull
@@ -47,13 +50,14 @@ public final class FragmentOneBinding implements ViewBinding {
   public final TextView textView2;
 
   private FragmentOneBinding(@NonNull FrameLayout rootView, @NonNull TextView HomeEmailView,
-      @NonNull CalendarView calendarView, @NonNull LinearLayout linearLayout,
-      @NonNull LinearLayout linearLayout2, @NonNull RecyclerView popularMovies,
-      @NonNull RecyclerView recentMovies, @NonNull TextView textView1,
-      @NonNull TextView textView2) {
+      @NonNull CalendarView calendarView, @NonNull RecyclerView feedRecyclerView,
+      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
+      @NonNull RecyclerView popularMovies, @NonNull RecyclerView recentMovies,
+      @NonNull TextView textView1, @NonNull TextView textView2) {
     this.rootView = rootView;
     this.HomeEmailView = HomeEmailView;
     this.calendarView = calendarView;
+    this.feedRecyclerView = feedRecyclerView;
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
     this.popularMovies = popularMovies;
@@ -101,6 +105,12 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.feedRecyclerView;
+      RecyclerView feedRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (feedRecyclerView == null) {
+        break missingId;
+      }
+
       id = R.id.linearLayout;
       LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
@@ -138,7 +148,8 @@ public final class FragmentOneBinding implements ViewBinding {
       }
 
       return new FragmentOneBinding((FrameLayout) rootView, HomeEmailView, calendarView,
-          linearLayout, linearLayout2, popularMovies, recentMovies, textView1, textView2);
+          feedRecyclerView, linearLayout, linearLayout2, popularMovies, recentMovies, textView1,
+          textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
