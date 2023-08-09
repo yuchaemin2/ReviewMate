@@ -18,8 +18,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.ActivityAddBinding
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.ktx.Firebase
 import org.checkerframework.checker.units.qual.mm
 import java.io.File
@@ -80,7 +82,7 @@ class AddActivity : AppCompatActivity() {
 //    }
 
     fun dateToString(date: Date): String {
-        val format = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.KOREAN)
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN)
         return format.format(date)
     }
 
@@ -92,6 +94,7 @@ class AddActivity : AppCompatActivity() {
             "date" to dateToString(Date()),
             "movie" to binding.movieTitle.text.toString(),
             "rate" to binding.movieRate.text.toString(),
+            "uid" to auth.uid
         )
 
         MyApplication.db.collection("reviews")
@@ -103,7 +106,36 @@ class AddActivity : AppCompatActivity() {
             .addOnFailureListener {
                 Log.d("ToyProject", "data firestore save error")
             }
+
+        val userDocRef = MyApplication.db.collection("users").document(auth.uid.toString())
+        MyApplication.db.collection("users").document("${MyApplication.auth.uid}")
+            .get()
+            .addOnSuccessListener {  documentSnapshot ->
+                if(documentSnapshot.exists()) {
+                    val currentCount = documentSnapshot.getLong("userReviewCount")
+                    currentCount?.let {
+                        val updatedCount = it + 1
+                        updateCount(userDocRef, updatedCount)
+                    }
+                }
+            }
     }
+
+    fun updateCount(docRef: DocumentReference, updatedValue: Long) {
+        val updates = hashMapOf<String, Any>(
+            "userReviewCount" to updatedValue
+        )
+
+        docRef.update(updates)
+            .addOnSuccessListener {
+                // 업데이트 성공 처리
+            }
+            .addOnFailureListener { e ->
+                // 업데이트 실패 처리
+            }
+
+    }
+
     fun uploadImage(docId:String){
         val storage = MyApplication.storage
         val storageRef = storage.reference

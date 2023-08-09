@@ -17,11 +17,14 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentThreeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File
@@ -45,14 +48,6 @@ class FragmentThree : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentThreeBinding
 
-//    var auth : FirebaseAuth? = null
-//    var db : FirebaseFirestore? = null
-//    var storage : FirebaseStorage? = null
-//
-//    private var viewProfile : View? = null
-//    var pickImage = 0
-//    val uriPhoto : Uri? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -68,33 +63,10 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
-        binding.userLevel.text = UserModel().userLevel
-
-//        binding.level1.setOnClickListener{
-//            var photoPickerIntent = Intent(Intent.ACTION_PICK)
-//            photoPickerIntent.type = "image/profile/*"
-//            startActivityForResult(photoPickerIntent, pickImage)
-//        }
+        binding.userLevel.text = UserModel().userLevel.toString()
 
         return binding.root
     }
-
-//    private fun ProfileUpload(view : View){
-//        var timeStamp = SimpleDateFormat("yyyymmdd-hhmmss").format(Date())
-//        var imgFileName = "IMAGE_PROFILE_" + timeStamp + "_.png"
-//        var storageRef = MyApplication.storage?.reference?.child("images/profile")?.child(imgFileName)
-//
-//        storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
-//            storageRef.downloadUrl.addOnSuccessListener {uri ->
-//                var userInfo = UserModel()
-//
-//                userInfo.imageUrl = uri.toString()
-//
-//                MyApplication.db?.collection("users")?.document(MyApplication.auth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
-//            }
-//        }
-//    }
-
 
     override fun onStart() {
         super.onStart()

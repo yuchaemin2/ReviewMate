@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_margin="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,23 +14,38 @@
 
         <ImageView
             android:layout_width="40dp"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/user"/>
+            android:src="@drawable/img_1"/>
 
-        <TextView
-            android:id="@+id/CertifyEmailView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="사용자 이름"
-            android:textSize="15dp"
-            android:gravity="center_vertical"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/CertifyEmailView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:text="사용자 이메일"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/userLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="Level.1" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="#aaaaaa"
         android:layout_margin="5dp"/>
 
@@ -38,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         android:columnCount="4">
 
         <LinearLayout
@@ -56,9 +72,7 @@
                 android:id="@+id/btn_move"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="내가 쓴 글"
-                android:text="내가 쓴 글"
-                android:title="내가 쓴 글" />
+                android:text="내가 쓴 글" />
 
         </LinearLayout>
 
@@ -69,8 +83,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="bottom">
-        <!--        layout_gravity와 gravity의 차이점-->
-
 
         <Button
             android:id="@+id/logoutButton"

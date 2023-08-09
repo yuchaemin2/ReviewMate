@@ -10,31 +10,27 @@ import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.ActivityMainBinding
 import com.example.reviewmate.databinding.FragmentThreeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     lateinit var binding: ActivityMainBinding
-//    lateinit var binding2: FragmentThreeBinding
-
-    lateinit var sharedPreferences: SharedPreferences
-    lateinit var adapter: MyFeedAdapter
-
-    var authMenuItem : MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        binding2= FragmentThreeBinding()
 
         supportActionBar?.title = "Home page"
 
@@ -79,40 +75,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        //add................................
-//        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-//        val profileIcon: Int = sharedPreferences.getInt("profileIcon", R.drawable.user)
-//        binding2.userProfile.setImageResource(profileIcon)
-//
-//        adapter = MyFeedAdapter(this, itemList = null)
+        MyApplication.db.collection("users").document(auth.uid.toString())
+            .get()
+            .addOnSuccessListener {  }
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//
-//        val profileIcon: Int = sharedPreferences.getInt("profileIcon", R.drawable.user)
-//        binding2.userProfile.setImageResource(profileIcon)
-//
-////        adapter.notifyDataSetChanged()
-//    }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_main, menu)
-//
-//        authMenuItem = menu!!.findItem(R.id.menu_auth)
-//        if(MyApplication.checkAuth()){
-//            authMenuItem!!.title = "${MyApplication.email}님"
-//        }
-//        else {
-//            authMenuItem!!.title = "인증"
-//        }
-//        return super.onCreateOptionsMenu(menu)
-//    }
 
     override fun onStart() {
         // Intent에서 finish() 돌아올 때 실행
         // onCreate -> onStart
         super.onStart()
+
+        updateUserLevelBasedOnReviewCount(auth.uid.toString())
 
         if(MyApplication.checkAuth()){
 
@@ -154,30 +127,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        if(item.itemId === R.id.menu_auth){
-//            val intent = Intent(this, AuthActivity::class.java)
-//            if(authMenuItem!!.title!!.equals("인증")){
-//                intent.putExtra("data", "logout")
-//            }
-//            else { // 이메일, 구글 계정
-//                intent.putExtra("data", "login")
-//            }
-//            startActivity(intent)
-//        }
-//        else if (item.itemId === R.id.menu_main_setting){
-//            var intent = Intent(this, SettingActivity::class.java)
-//            startActivity(intent)
-//            return true
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
-
     private fun updateIcons(selectedItem: MenuItem, selectedIconRes: Int) {
         // 선택된 항목의 아이콘을 선택된 아이콘으로 변경합니다.
         selectedItem.setIcon(selectedIconRes)
@@ -201,5 +150,48 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.main_layout, fragment)
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
+    }
+
+    private fun updateUserLevelBasedOnReviewCount(userId: String) {
+        val userRef = db.collection("users").document(userId)
+
+        userRef.get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    val userReviewCount = documentSnapshot.getLong("userReviewCount") ?: 0
+                    val newUserLevel = calculateUserLevel(userReviewCount)
+
+                    // userLevel 업데이트
+                    userRef.update("userLevel", newUserLevel)
+                        .addOnSuccessListener {
+                            // 업데이트 성공 시 처리
+                        }
+                        .addOnFailureListener { e ->
+                            // 업데이트 실패 시 처리
+                        }
+                }
+            }
+            .addOnFailureListener { e ->
+                // 문서 가져오기 실패 시 처리
+            }
+    }
+
+    private fun calculateUserLevel(userReviewCount: Long): String {
+        val zero: Long = 0
+        if(userReviewCount % 10 == zero && userReviewCount != zero) {
+            Toast.makeText(this, "사용자의 레벨이 올랐습니다!", Toast.LENGTH_SHORT).show()
+        }
+        return when {
+            userReviewCount < 10 -> "1"
+            userReviewCount < 20 -> "2"
+            userReviewCount < 30 -> "3"
+            userReviewCount < 40 -> "4"
+            userReviewCount < 50 -> "5"
+            userReviewCount < 60 -> "6"
+            userReviewCount < 70 -> "7"
+            userReviewCount < 80 -> "8"
+            userReviewCount < 90 -> "9"
+            else -> "1"
+        }
     }
 }

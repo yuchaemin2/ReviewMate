@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ClipData
 import android.content.Context
@@ -11,15 +12,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewmate.MyApplication
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.checkAuth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.MyApplication.Companion.storage
 import com.example.reviewmate.databinding.ItemFeedBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
 import okhttp3.internal.notifyAll
 
 class MyFeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root)
@@ -35,7 +42,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
         return itemList.size
     }
 
-    override fun onBindViewHolder(holder: MyFeedViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyFeedViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val data = itemList.get(position)
 
         holder.binding.run {
@@ -45,6 +52,8 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             itemDateView.text=data.date
             itemMovieView.text=data.movie
             itemRateView.text=data.rate
+
+            if(itemContentView.text.isNotEmpty()) itemContentView.visibility = View.VISIBLE
 
             itemTitleView.setOnClickListener {
                 val bundle : Bundle = Bundle()
@@ -67,14 +76,32 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     when(which) {
                         DialogInterface.BUTTON_POSITIVE -> {
-                            db.collection("reviews").document("${data.docId}")
-                                .delete()
-                                .addOnSuccessListener { Toast.makeText(context, "삭제가 완료되었습니다.", Toast.LENGTH_SHORT).show() }
-                                .addOnFailureListener { Toast.makeText(context, "삭제가 실패하였습니다.", Toast.LENGTH_SHORT).show() }
+                            if(data.docId !== null){
+                                storage.getReference().child("images").child("${data.docId!!}.jpg")
+                                    .delete()
+                                db.collection("reviews").document("${data.docId}")
+                                    .delete()
+                                    .addOnSuccessListener {
+                                        Toast.makeText(context, "삭제가 완료되었습니다.", Toast.LENGTH_SHORT).show()
 
-                            storage.getReference().child("images").child("${data.docId!!}.jpg")
-                                .delete()
-                            notifyItemRemoved(position)
+                                        val userDocRef = MyApplication.db.collection("users").document(auth.uid.toString())
+                                        MyApplication.db.collection("users").document("${MyApplication.auth.uid}")
+                                            .get()
+                                            .addOnSuccessListener {  documentSnapshot ->
+                                                if(documentSnapshot.exists()) {
+                                                    val currentCount = documentSnapshot.getLong("userReviewCount")
+                                                    currentCount?.let {
+                                                        val updatedCount = it - 1
+                                                        updateCount(userDocRef, updatedCount)
+                                                    }
+                                                }
+                                            }
+                                    }
+                                    .addOnFailureListener { Toast.makeText(context, "삭제가 실패하였습니다.", Toast.LENGTH_SHORT).show() }
+                                notifyItemRemoved(position)
+                            }else{
+                                Toast.makeText(context, "문서가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+                            }
                         }
                         DialogInterface.BUTTON_NEGATIVE -> {
                             Log.d("ToyProject", "DialogInterface.BUTTON_NEGATIVE")
@@ -83,18 +110,19 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 }
             }
 
-            if(itemEmailView.text == MyApplication.email){
+            if (data.email == MyApplication.email) {
                 reviewDelete.visibility = View.VISIBLE
-            }
-
-            reviewDelete.setOnClickListener {
-                AlertDialog.Builder(context).run{
-                    setTitle("정말 삭제하시겠습니까?")
-                    setMessage("한 번 삭제하면 되돌릴 수 없습니다.")
-                    setNegativeButton("Cancle", alertHandler)
-                    setPositiveButton("Yes", alertHandler)
-                    show()
+                reviewDelete.setOnClickListener {
+                    AlertDialog.Builder(context).run{
+                        setTitle("정말 삭제하시겠습니까?")
+                        setMessage("한 번 삭제하면 되돌릴 수 없습니다.")
+                        setNegativeButton("Cancle", alertHandler)
+                        setPositiveButton("Yes", alertHandler)
+                        show()
+                    }
                 }
+            } else {
+                reviewDelete.visibility = View.GONE
             }
         }
 
@@ -109,6 +137,22 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             }
         }
     }
+
+    fun updateCount(docRef: DocumentReference, updatedValue: Long) {
+        val updates = hashMapOf<String, Any>(
+            "userReviewCount" to updatedValue
+        )
+
+        docRef.update(updates)
+            .addOnSuccessListener {
+                // 업데이트 성공 처리
+            }
+            .addOnFailureListener { e ->
+                // 업데이트 실패 처리
+            }
+
+    }
+
 
 }
 
