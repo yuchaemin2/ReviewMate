@@ -2,9 +2,6 @@ package com.example.reviewmate
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
-import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,16 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.preference.PreferenceManager
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentThreeBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import java.text.SimpleDateFormat
-import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,14 +29,6 @@ class FragmentThree : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentThreeBinding
 
-//    var auth : FirebaseAuth? = null
-//    var db : FirebaseFirestore? = null
-//    var storage : FirebaseStorage? = null
-//
-//    private var viewProfile : View? = null
-//    var pickImage = 0
-//    val uriPhoto : Uri? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -62,65 +44,41 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
-        binding.userLevel.text = UserModel().userLevel
-
-//        binding.level1.setOnClickListener{
-//            var photoPickerIntent = Intent(Intent.ACTION_PICK)
-//            photoPickerIntent.type = "image/profile/*"
-//            startActivityForResult(photoPickerIntent, pickImage)
-//        }
+        fetchUserLevel()
 
         return binding.root
     }
 
-//    private fun ProfileUpload(view : View){
-//        var timeStamp = SimpleDateFormat("yyyymmdd-hhmmss").format(Date())
-//        var imgFileName = "IMAGE_PROFILE_" + timeStamp + "_.png"
-//        var storageRef = MyApplication.storage?.reference?.child("images/profile")?.child(imgFileName)
-//
-//        storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
-//            storageRef.downloadUrl.addOnSuccessListener {uri ->
-//                var userInfo = UserModel()
-//
-//                userInfo.imageUrl = uri.toString()
-//
-//                MyApplication.db?.collection("users")?.document(MyApplication.auth?.uid.toString())?.update("imageUrl", userInfo.imageUrl.toString())
-//            }
-//        }
-//    }
-
     override fun onStart() {
         super.onStart()
 
-        val UserLevel = binding.userLevel.text.toString()
-        val IntUL: Int? = UserLevel.toIntOrNull()
+        val ul = binding.userLevelTextView.toString()
 
-        if(IntUL !== null){
-            if(IntUL === 1){
+        if(ul !== null){
+            if(ul === "1"){
                 changeProfile("Level1")
-            }
-            if(IntUL === 2){
+            } else if(ul === "2"){
                 changeVisibility("Level2")
                 changeProfile("Level2")
-            } else if(IntUL === 3){
+            } else if(ul === "3"){
                 changeVisibility("Level3")
                 changeProfile("Level3")
-            } else if(IntUL === 4){
+            } else if(ul === "4"){
                 changeVisibility("Level4")
                 changeProfile("Level4")
-            } else if(IntUL === 5){
+            } else if(ul === "5"){
                 changeVisibility("Level5")
                 changeProfile("Level5")
-            } else if(IntUL === 6){
+            } else if(ul === "6"){
                 changeVisibility("Level6")
                 changeProfile("Level6")
-            } else if(IntUL === 7){
+            } else if(ul === "7"){
                 changeVisibility("Level7")
                 changeProfile("Level7")
-            } else if(IntUL === 8){
+            } else if(ul === "8"){
                 changeVisibility("Level8")
                 changeProfile("Level8")
-            } else if(IntUL === 9){
+            } else if(ul === "9"){
                 changeVisibility("Level9")
                 changeProfile("Level9")
             }
@@ -146,6 +104,25 @@ class FragmentThree : Fragment() {
         }
     }
 
+    private fun fetchUserLevel() {
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            val userId = currentUser.uid
+
+            val userRef = db.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val userLevel = documentSnapshot.getString("userLevel")
+                        binding.userLevelTextView.text = userLevel
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
 
     fun changeProfile(mode: String){
         if(mode.equals("Level1")){
@@ -778,7 +755,6 @@ class FragmentThree : Fragment() {
             binding.level9Text.text = "영화, 나"
         }
     }
-
 
     companion object {
         /**

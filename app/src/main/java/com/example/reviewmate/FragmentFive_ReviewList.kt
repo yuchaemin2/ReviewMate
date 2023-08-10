@@ -1,18 +1,23 @@
 package com.example.reviewmate
 
-import android.app.Application
-import android.content.Intent
+import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFiveReviewListBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
-import org.checkerframework.checker.units.qual.A
+import com.google.firebase.firestore.QuerySnapshot
+import okhttp3.internal.notify
+import okhttp3.internal.notifyAll
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,6 +35,7 @@ class FragmentFive_ReviewList : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentFiveReviewListBinding
 
+    private var reviewCountListener: ListenerRegistration? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,7 +50,27 @@ class FragmentFive_ReviewList : Fragment() {
     ): View? {
         binding = FragmentFiveReviewListBinding.inflate(inflater, container, false)
 
+        setHasOptionsMenu(true)
+        setupReviewCountListener()
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_list, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_delete_all -> {
+                showDeleteConfirmationDialog()
+//                deleteAllUserReview(MyApplication.email.toString())
+                return true
+            }
+            // 다른 메뉴 항목 처리를 추가하려면 여기에 추가합니다.
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onStart() {
@@ -66,7 +92,6 @@ class FragmentFive_ReviewList : Fragment() {
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
-                    Log.d("ToyProject", "${itemList}")
                     //goReviewDtaill()
                 }
                 .addOnFailureListener{
@@ -75,6 +100,85 @@ class FragmentFive_ReviewList : Fragment() {
         }
     }
 
+    private fun deleteAllUserReview(userEmail: String) {
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            val userEmail = currentUser.email
+
+            db.collection("reviews")
+                .whereEqualTo("email", userEmail)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    for (documentSnapshot in querySnapshot.documents) {
+                        val reviewId = documentSnapshot.id
+                        db.collection("reviews").document(reviewId)
+                            .delete()
+                            .addOnSuccessListener {
+                                Toast.makeText(requireContext(), "리뷰가 모두 삭제되었습니다.", Toast.LENGTH_SHORT).show()
+                                updateUserReviewCount(auth.uid.toString(), 0)
+                            }
+                            .addOnFailureListener {  }
+                    }
+                }
+                .addOnFailureListener {  }
+        }
+    }
+
+    private fun updateUserReviewCount(uid: String, newCount: Long) {
+        val userRef = db.collection("users").document(uid)
+
+        userRef.update("userReviewCount", newCount)
+            .addOnSuccessListener {
+                // userReviewCount 업데이트 성공 시 처리
+            }
+            .addOnFailureListener { e ->
+                // userReviewCount 업데이트 실패 시 처리
+            }
+    }
+
+    private fun showDeleteConfirmationDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage("정말로 삭제하시겠습니까?")
+            .setPositiveButton("삭제") { _, _ ->
+                deleteAllUserReview(MyApplication.email.toString())
+            }
+            .setNegativeButton("취소") { _, _ ->
+                // "취소" 버튼 클릭 시, 아무 동작 없음
+            }
+            .create()
+            .show()
+    }
+
+    private fun setupReviewCountListener() {
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            val uid = currentUser.uid
+
+            val userRef = db.collection("users").document(uid)
+            reviewCountListener = userRef.addSnapshotListener { snapshot, error ->
+                if (error != null) {
+                    // 리스너에서 오류 처리
+                    return@addSnapshotListener
+                }
+                if(snapshot != null && snapshot.exists()) {
+                    val zero: Long = 0
+                    val reviewCount = snapshot.getLong("userReviewCount") ?: 0
+
+                    if(reviewCount != zero){
+                        binding.textView.visibility = View.INVISIBLE
+                    }
+                }
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // 리스너 해제
+        reviewCountListener?.remove()
+    }
 
 
     companion object {

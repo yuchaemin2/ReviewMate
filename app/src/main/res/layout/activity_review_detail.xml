@@ -1,96 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="20dp">
-
-    <TextView
-        android:id="@+id/reviewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="글제목"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_margin="10dp"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/img_1" />
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/userEmail"
-            android:layout_width="wrap_content"
+            android:id="@+id/reviewTitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="사용자이름"
-            android:textSize="15dp"/>
-
-        <TextView
-            android:id="@+id/reviewDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="July 21, 2023" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp" >
-
-        <ImageView
-            android:id="@+id/addImageView"
-            android:layout_width="130dp"
-            android:layout_height="170dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/img"/>
+            android:text="글제목"
+            android:layout_margin="10dp"
+            android:textSize="23dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/movieTitle"
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_1" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="영화제목"
-                android:textStyle="italic"
-                android:textSize="20dp"/>
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/movieRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="별점"
-                android:textStyle="normal"
-                android:textColor="@android:color/holo_orange_light"
-                android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 이메일"
+                    android:layout_marginBottom="2dp"/>
 
+                <TextView
+                    android:id="@+id/reviewDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023-00-00" />
 
+            </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp" >
+
+            <ImageView
+                android:id="@+id/addImageView"
+                android:layout_width="130dp"
+                android:layout_height="170dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/movieTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="영화제목"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:text="·"
+                    />
+
+                <TextView
+                    android:id="@+id/movieRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="별점"
+                    android:textColor="@android:color/holo_orange_light" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="글내용"
+            android:textSize="15dp"
+            android:layout_margin="10dp" />
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="글내용"
-        android:textSize="15dp"
-        android:layout_margin="10dp" />
-
-
-</LinearLayout>
+</RelativeLayout>

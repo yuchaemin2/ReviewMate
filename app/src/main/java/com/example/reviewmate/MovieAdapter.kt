@@ -10,7 +10,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.reviewmate.common.Movie
 import com.example.reviewmate.databinding.ItemMovieBinding
 
-class MovieAdapter (var movies : MutableList<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
 
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         private val poster: ImageView = itemView.findViewById(R.id.item_movie_poster)
@@ -20,6 +20,8 @@ class MovieAdapter (var movies : MutableList<Movie>) : RecyclerView.Adapter<Movi
                 .transform(CenterCrop())
                 .into(poster)
             binding.itemMovieTitle.text = movie.movieTitle
+            itemView.setOnClickListener { onMovieClick.invoke(movie) }
+
         }
     }
 
