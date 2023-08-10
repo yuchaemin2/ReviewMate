@@ -46,6 +46,10 @@ class MovieDetailsActivity : AppCompatActivity() {
         binding.addReviewBtn.setOnClickListener {
             if(MyApplication.checkAuth()){
                 val intent = Intent(this, AddActivity::class.java)
+                if (extras != null) {
+                    intent.putExtra(MOVIE_TITLE, title.text.toString())
+                    intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
+                }
                 startActivity(intent)
             }
             else {

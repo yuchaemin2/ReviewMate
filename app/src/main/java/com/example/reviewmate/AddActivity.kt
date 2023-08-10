@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
 import android.util.Log
 import android.widget.DatePicker
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -17,7 +18,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
+import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
+import com.example.reviewmate.MainActivity.Companion.MOVIE_TITLE
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.ActivityAddBinding
 import com.google.firebase.auth.ktx.auth
@@ -34,19 +38,22 @@ class AddActivity : AppCompatActivity() {
     lateinit var binding: ActivityAddBinding
     lateinit var filePath: String
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val requestLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if(it.resultCode === android.app.Activity.RESULT_OK) {
-                Glide
-                    .with(applicationContext)
-                    .load(it.data?.data)
-                    .apply(RequestOptions().override(150,230))
-                    .centerCrop()
-                    .into(binding.addImageView)
+//                Glide
+//                    .with(applicationContext)
+//                    .load(it.data?.data)
+//                    .apply(RequestOptions().override(150,230))
+//                    .centerCrop()
+//                    .into(binding.addImageView)
                 val cursor = contentResolver.query(it.data?.data as Uri, arrayOf<String>(MediaStore.Images.Media.DATA), null, null, null)
                 cursor?.moveToFirst().let{
                     filePath = cursor?.getString(0) as String
@@ -55,12 +62,12 @@ class AddActivity : AppCompatActivity() {
             }
         }
 
-        binding.addImageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*") // 갤러리에 있는 이미지 불러오는 방법
-            //intent.type = "image/*"
-            requestLauncher.launch(intent)
-        }
+//        binding.addImageView.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_PICK)
+//            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*") // 갤러리에 있는 이미지 불러오는 방법
+//            //intent.type = "image/*"
+//            requestLauncher.launch(intent)
+//        }
 
         binding.btnSave.setOnClickListener {
             if(binding.addTitleEditView.text.isNotEmpty()){
@@ -70,6 +77,16 @@ class AddActivity : AppCompatActivity() {
             }
             finish()
         }
+
+        val movieTitle = intent.getStringExtra(MOVIE_TITLE)
+        val moviePoster = intent.getStringExtra(MOVIE_POSTER)
+
+        // 영화 제목과 포스터 정보를 UI에 설정
+        binding.movieTitle.text = movieTitle
+        Glide.with(this)
+            .load("https://image.tmdb.org/t/p/w342$moviePoster")
+            .apply(RequestOptions().override(150, 230).centerCrop())
+            .into(binding.addImageView)
 
     }
 
