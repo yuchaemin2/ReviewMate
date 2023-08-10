@@ -1,7 +1,10 @@
 package com.example.reviewmate
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat
 import androidx.multidex.MultiDexApplication
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -37,10 +40,22 @@ class MyApplication : MultiDexApplication() {
         if(true) {
             var userInfo = UserModel()
 
-            userInfo.uid = auth?.uid
-            userInfo.userEmail = auth?.currentUser?.email
+            userInfo.uid = auth.uid
+            userInfo.userEmail = auth.currentUser?.email
 
-            db?.collection("users")?.document(auth?.uid.toString())?.set(userInfo)
+            db.collection("users").document(auth.uid.toString())
+                .get()
+                .addOnCompleteListener{ task ->
+                    if(task.isSuccessful){
+                        val document = task.result
+                        if (document.exists()){ Log.d("ToyProject", "이미 존재하는 계정입니다.") }
+                        else {
+                            db.collection("users").document(auth.uid.toString())
+                                .set(userInfo)
+                        }
+                    }
+                }
         }
     }
+
 }

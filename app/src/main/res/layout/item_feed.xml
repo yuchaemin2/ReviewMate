@@ -17,13 +17,49 @@
             android:orientation="horizontal"
             android:gravity="center_vertical" >
 
-            <TextView
-                android:id="@+id/itemTitleView"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@drawable/img_1"
+                android:layout_gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="글 제목"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemEmailView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 이메일"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:id="@+id/itemDateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023-00-00" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/review_delete"
+                    android:visibility="invisible"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="9dp"
+                    android:background="@drawable/round_button"
+                    android:text="삭제" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -31,28 +67,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/item_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/img_1"
-                android:layout_gravity="center_vertical" />
-
             <TextView
-                android:id="@+id/itemEmailView"
+                android:id="@+id/itemTitleView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="9dp"
-                android:text="사용자 이메일" />
+                android:text="글 제목"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <!--            <Space-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_weight="1" />-->
 
             <TextView
-                android:id="@+id/itemDateView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="2023-00-00" />
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:text="·"
+                />
+
+            <TextView
+                android:id="@+id/itemMovieView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="영화 제목"
+                />
+
+            <TextView
+                android:id="@+id/itemRateView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="별점"
+                android:textColor="@android:color/holo_orange_light" />
 
         </LinearLayout>
 
@@ -67,22 +120,8 @@
                 android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="10dp"
-                android:scaleType="fitXY" />
-
-            <TextView
-                android:id="@+id/itemMovieView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="영화 제목"
-                />
-
-            <TextView
-                android:id="@+id/itemRateView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="별점"
-                android:textColor="@android:color/holo_orange_light" />
+                android:scaleType="fitXY"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -90,6 +129,7 @@
             android:id="@+id/itemContentView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:text="글 내용"
             android:layout_marginTop="10dp" />
 

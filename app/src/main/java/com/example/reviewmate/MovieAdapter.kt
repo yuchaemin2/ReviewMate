@@ -20,7 +20,6 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
                 .transform(CenterCrop())
                 .into(poster)
             binding.itemMovieTitle.text = movie.movieTitle
-
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
 
         }
