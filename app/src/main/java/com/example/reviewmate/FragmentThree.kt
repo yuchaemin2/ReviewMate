@@ -2,35 +2,16 @@ package com.example.reviewmate
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
-import android.content.SharedPreferences
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.preference.PreferenceManager
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentThreeBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import java.io.File
-import java.io.FileOutputStream
-import java.text.SimpleDateFormat
-import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,7 +44,7 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
-        binding.userLevel.text = UserModel().userLevel.toString()
+        fetchUserLevel()
 
         return binding.root
     }
@@ -71,35 +52,33 @@ class FragmentThree : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val UserLevel = binding.userLevel.text.toString()
-        val IntUL: Int? = UserLevel.toIntOrNull()
+        val ul = binding.userLevelTextView.toString()
 
-        if(IntUL !== null){
-            if(IntUL === 1){
+        if(ul !== null){
+            if(ul === "1"){
                 changeProfile("Level1")
-            }
-            if(IntUL === 2){
+            } else if(ul === "2"){
                 changeVisibility("Level2")
                 changeProfile("Level2")
-            } else if(IntUL === 3){
+            } else if(ul === "3"){
                 changeVisibility("Level3")
                 changeProfile("Level3")
-            } else if(IntUL === 4){
+            } else if(ul === "4"){
                 changeVisibility("Level4")
                 changeProfile("Level4")
-            } else if(IntUL === 5){
+            } else if(ul === "5"){
                 changeVisibility("Level5")
                 changeProfile("Level5")
-            } else if(IntUL === 6){
+            } else if(ul === "6"){
                 changeVisibility("Level6")
                 changeProfile("Level6")
-            } else if(IntUL === 7){
+            } else if(ul === "7"){
                 changeVisibility("Level7")
                 changeProfile("Level7")
-            } else if(IntUL === 8){
+            } else if(ul === "8"){
                 changeVisibility("Level8")
                 changeProfile("Level8")
-            } else if(IntUL === 9){
+            } else if(ul === "9"){
                 changeVisibility("Level9")
                 changeProfile("Level9")
             }
@@ -125,6 +104,25 @@ class FragmentThree : Fragment() {
         }
     }
 
+    private fun fetchUserLevel() {
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            val userId = currentUser.uid
+
+            val userRef = db.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val userLevel = documentSnapshot.getString("userLevel")
+                        binding.userLevelTextView.text = userLevel
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
 
     fun changeProfile(mode: String){
         if(mode.equals("Level1")){
@@ -674,50 +672,6 @@ class FragmentThree : Fragment() {
         }
     }
 
-//    fun changeProfile(mode: String) {
-//        val levels = listOf(
-//            binding.level1 to R.drawable.danielle_1,
-//            binding.level2 to R.drawable.haerin_1,
-//            binding.level3 to R.drawable.hanni_1,
-//            binding.level4 to R.drawable.hyein_1,
-//            binding.level5 to R.drawable.minji_1,
-//            binding.level6 to R.drawable.danielle_2,
-//            binding.level7 to R.drawable.haerin_2,
-//            binding.level8 to R.drawable.hanni_2,
-//            binding.level9 to R.drawable.hyein_2
-//        )
-//
-//        val levelTexts = listOf(
-//            "영화의 매력을 점차 알아가고 있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다.",
-//            "영화의 매력을 알고있다."
-//        )
-//
-//        val index = mode.removePrefix("Level").toIntOrNull() ?: return
-//        if (index < 1 || index > levels.size) return
-//
-//        val (levelView, profileImageResource) = levels[index - 1]
-//
-//        levelView.setOnClickListener {
-//            AlertDialog.Builder(requireContext()).run {
-//                setTitle(levelView.toString())
-//                setMessage(levelTexts[index - 1]) // Alternate between two level texts
-//                setPositiveButton("프로필 적용하기") { dialog, id ->
-//                    binding.userProfile.setImageResource(profileImageResource)
-//                }
-//                setNegativeButton("OK", alertHandler)
-//                show()
-//            }
-//        }
-//    }
-
-
     fun changeVisibility(mode: String){
         if(mode.equals("Level2")){
             binding.level2.setImageResource(R.drawable.haerin_1)
@@ -801,7 +755,6 @@ class FragmentThree : Fragment() {
             binding.level9Text.text = "영화, 나"
         }
     }
-
 
     companion object {
         /**

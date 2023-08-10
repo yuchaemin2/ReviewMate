@@ -10,7 +10,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
+import com.example.reviewmate.databinding.FragmentFiveBinding
+import com.example.reviewmate.databinding.FragmentFourBinding
 import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +32,7 @@ class FragmentFive : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: FragmentFiveBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +46,12 @@ class FragmentFive : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_five, container, false)
+        binding = FragmentFiveBinding.inflate(inflater, container, false)
+
+        fetchUserLevel()
 
         // button 클릭시 fragmenrFive_ReviwList로 이동
-        var btn_move: Button = view.findViewById(R.id.btn_move)
-        btn_move.setOnClickListener { // 람다식 리스너 setOnclickListener{}
+        binding.btnMove.setOnClickListener { // 람다식 리스너 setOnclickListener{}
             var bundle : Bundle = Bundle()
             bundle.putString("fromFrag", "프래그먼트1")
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -56,28 +63,20 @@ class FragmentFive : Fragment() {
         }
 
         // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
-        val logoutButton = view.findViewById<Button>(R.id.logoutButton)
-        logoutButton.setOnClickListener {
+        binding.logoutButton.setOnClickListener {
             logout()
         }
 
         if(MyApplication.checkAuth()){
-            val CertifyEmailView = view.findViewById<TextView>(R.id.CertifyEmailView)
-            CertifyEmailView.text = "${MyApplication.email}"
+            binding.CertifyEmailView.text = "${MyApplication.email}"
         }
 
-
-        return view
+        return binding.root
     }
 
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
-//        val reviewListBtn = view.findViewById<Button>(R.id.btnGoList)
-//        reviewListBtn.setOnClickListener {
-//                    }
+//    override fun onStart() {
+//        super.onStart()
+//        fetchUserLevel()
 //    }
 
     private fun loadFragment(fragment: Fragment) {
@@ -87,15 +86,29 @@ class FragmentFive : Fragment() {
         transaction.commit()
     }
 
-
-    // 로그아웃 로직을 처리하는 메서드
     private fun logout() {
         val intent = Intent(requireContext(), AuthActivity::class.java)
         startActivity(intent)
-
     }
-    private fun loadLayout(){
 
+    private fun fetchUserLevel() {
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            val userId = currentUser.uid
+
+            val userRef = db.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val userLevel = documentSnapshot.getString("userLevel")
+                        binding.userLevelTextView.text = "Level.${userLevel}"
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 
     companion object {
