@@ -22,6 +22,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
+import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.MyApplication.Companion.storage
 import com.example.reviewmate.databinding.FragmentThreeBinding
@@ -59,6 +60,10 @@ class FragmentThree : Fragment() {
         }
 
     }
+    override fun onStart() {
+        super.onStart()
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,40 +72,43 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentThreeBinding.inflate(inflater, container, false)
 
-        binding.userLevel.text = UserModel().userLevel
+        fetchLevel()
 
         imageView = binding.userProfile
+
 
         // 이미지 다운로드 및 비트맵으로 변환하여 표시
         downloadAndDisplayImage()
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
+    private fun fetchLevel() {
+        val currentUser = auth.currentUser
+        var userLevel :String? = null
+        currentUser?.let {
+            val userId = currentUser.uid
 
+            val userRef = db.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
 
-        val UserLevel = binding.userLevel.text.toString()
-        val IntUL: Int? = UserLevel.toIntOrNull()
+                        userLevel = documentSnapshot.getString("userLevel")
+                        if (userLevel != null) { // 업로드 & 다이얼로그
+                            binding.userLevel.text = userLevel
+                            openCharacters(Integer.parseInt(userLevel))
+                            openDialog(Integer.parseInt(userLevel))
 
-        if (IntUL !== null) { // 업로드 & 다이얼로그
+                        } else {
+                            Toast.makeText(requireContext(), "사용자의 레벨을 가져오는데 실패했습니다...", Toast.LENGTH_SHORT).show()
+                        }
 
-            openCharacters(IntUL)
-            openDialog(IntUL)
-
-        } else {
-            Toast.makeText(requireContext(), "사용자의 레벨을 가져오는데 실패했습니다...", Toast.LENGTH_SHORT).show()
-        }
-
-
-    }
-
-    fun updateUserProfileImage() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-
-        if (userId != null) {
-            val userDocumentRef =
-                FirebaseFirestore.getInstance().collection("users").document(userId)
+                        Toast.makeText(requireContext(), "사용자의 레벨은 ${userLevel}입니다.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 
@@ -157,10 +165,6 @@ class FragmentThree : Fragment() {
         arrayOf("/profile_images/hyein_1.png", "이름7", "설명7"),
         arrayOf("/profile_images/hyein_2.png", "이름8", "설명8"),
         arrayOf("/profile_images/minji_1.png", "이름9", "설명9")
-    )
-    val ex = arrayOf(
-        arrayOf(R.drawable.danielle_1, "이름1", "설명1"),
-        arrayOf(R.drawable.danielle_2, "이름2", "설명2"),
     )
 
     val imgResourceIds = arrayOf(
@@ -220,8 +224,9 @@ class FragmentThree : Fragment() {
     }
 
     fun openCharacters(level : Int) {
-        val level = 7 //  테스트용!!!!!!!!!!
-        when (level) {
+        val level = binding.userLevel.text.toString()
+        val intLevel = Integer.parseInt(level)
+        when (intLevel) {
             1 -> openLevel1()
             2-> openLevel2()
             3-> openLevel3()
@@ -344,24 +349,3 @@ class FragmentThree : Fragment() {
         }
     }
 }
-
-//    companion object {
-//        /**
-//         * Use this factory method to create a new instance of
-//         * this fragment using the provided parameters.
-//         *
-//         * @param param1 Parameter 1.
-//         * @param param2 Parameter 2.
-//         * @return A new instance of fragment FragmentThree.
-//         */
-//        // TODO: Rename and change types and number of parameters
-//        @JvmStatic
-//        fun newInstance(param1: String, param2: String) =
-//            FragmentThree().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-//                }
-//            }
-//    }
-//}

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,14 +22,10 @@ public final class FragmentFourBinding implements ViewBinding {
   @NonNull
   public final RecyclerView feedRecyclerView;
 
-  @NonNull
-  public final ExtendedFloatingActionButton mainFab;
-
   private FragmentFourBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView feedRecyclerView, @NonNull ExtendedFloatingActionButton mainFab) {
+      @NonNull RecyclerView feedRecyclerView) {
     this.rootView = rootView;
     this.feedRecyclerView = feedRecyclerView;
-    this.mainFab = mainFab;
   }
 
   @Override
@@ -66,13 +61,7 @@ public final class FragmentFourBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.main_fab;
-      ExtendedFloatingActionButton mainFab = ViewBindings.findChildViewById(rootView, id);
-      if (mainFab == null) {
-        break missingId;
-      }
-
-      return new FragmentFourBinding((RelativeLayout) rootView, feedRecyclerView, mainFab);
+      return new FragmentFourBinding((RelativeLayout) rootView, feedRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

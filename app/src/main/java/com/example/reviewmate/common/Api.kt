@@ -11,4 +11,15 @@ interface Api {
         @Query("page") page : Int,
         @Query("language") language : String = "ko"
     ): Call<GetMoviesResponse>
+
+//===============
+    @GET("search/movie")
+    fun getSearchMovies(
+        @Query("api_key") apiKey: String = "348eefabae0631d8003f24551c45a05c",
+        @Query("page") page : Int,
+        @Query("query") query : String,
+        @Query("language") language : String = "ko,en-US"
+    ): Call<GetMoviesResponse>
+
+    //=======================
 }

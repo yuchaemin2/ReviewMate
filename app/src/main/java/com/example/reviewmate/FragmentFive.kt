@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.reviewmate.databinding.FragmentFiveBinding
 import com.example.reviewmate.databinding.FragmentFourBinding
@@ -75,6 +76,25 @@ class FragmentFive : Fragment() {
 
         }
         return binding.root
+    }
+    private fun fetchUserLevel() {
+        val currentUser = MyApplication.auth.currentUser
+
+        currentUser?.let {
+            val userId = currentUser.uid
+
+            val userRef = MyApplication.db.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val userLevel = documentSnapshot.getString("userLevel")
+                        binding.userLevelTextView.text = userLevel
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
     private fun downloadAndDisplayImage() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid

@@ -3226,6 +3226,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id accountDeleteButton
 id action0
 id actionDown
 id actionDownUp
@@ -3253,6 +3254,7 @@ id add
 id addEditView
 id addImageView
 id addTitleEditView
+id add_review_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3275,6 +3277,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id bSearch
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3336,7 +3339,6 @@ id custom
 id customPanel
 id cut
 id dark
-id date
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3366,6 +3368,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id eSearchWord
 id easeIn
 id easeInOut
 id easeOut
@@ -3414,6 +3417,7 @@ id grouping
 id groups
 id header_title
 id hideable
+id history_fragment_container
 id home
 id homeAsUp
 id honorRequest
@@ -3438,9 +3442,9 @@ id itemDateView
 id itemEmailView
 id itemImageView
 id itemMovieView
-id itemProfileImageView
 id itemRateView
 id itemTitleView
+id item_img
 id item_movie_poster
 id item_movie_title
 id item_touch_helper_previous_elevation
@@ -3483,7 +3487,6 @@ id logoutBtn
 id logoutButton
 id ltr
 id m3_side_sheet
-id main_fab
 id main_layout
 id marquee
 id masked
@@ -3521,6 +3524,9 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id movieDetailRecyclerView
+id movieId
+id movieOverview
 id moviePoster
 id movieRate
 id movieTitle
@@ -3600,7 +3606,6 @@ id profileImage
 id progress_circular
 id progress_horizontal
 id radio
-id rate
 id ratio
 id recent_movies
 id rectangles
@@ -3628,7 +3633,6 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id search
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -3637,6 +3641,7 @@ id search_close_btn
 id search_edit_frame
 id search_go_btn
 id search_mag_icon
+id search_movies
 id search_plate
 id search_src_text
 id search_view_background
@@ -3754,11 +3759,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id user
 id userEmail
 id userLevel
+id userLevelTextView
 id userProfile
-id user_name
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3898,6 +3902,7 @@ layout activity_add
 layout activity_add_activiity
 layout activity_auth
 layout activity_main
+layout activity_movie_details
 layout activity_review_detail
 layout activity_setting
 layout activity_splash
@@ -3948,6 +3953,7 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
+layout movie_detail
 layout movie_detail_item
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

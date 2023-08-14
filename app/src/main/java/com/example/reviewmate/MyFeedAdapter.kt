@@ -65,7 +65,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                             // Glide를 사용하여 프로필 이미지 로드
                             Glide.with(context)
                                 .load(profileImageUrl)
-                                .into(holder.binding.itemProfileImageView)
+                                .into(holder.binding.itemImg)
                         }
                     }
                 }

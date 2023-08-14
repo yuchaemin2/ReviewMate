@@ -54,15 +54,7 @@ class FragmentFour : Fragment() {
 
         //         myCheckPermission(requireActivity() as AppCompatActivity)
 
-        binding.mainFab.setOnClickListener {
-            if(MyApplication.checkAuth()){
-                val intent = Intent(requireContext(), AddActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                Toast.makeText(requireContext(), "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
-            }
-        }
+
 
         return binding.root
     }

@@ -4,10 +4,12 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
@@ -20,11 +22,29 @@ public final class FragmentTwoBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final EditText search;
+  public final Button bSearch;
 
-  private FragmentTwoBinding(@NonNull LinearLayout rootView, @NonNull EditText search) {
+  @NonNull
+  public final EditText eSearchWord;
+
+  @NonNull
+  public final LinearLayout linearLayout;
+
+  @NonNull
+  public final LinearLayout linearLayout2;
+
+  @NonNull
+  public final RecyclerView searchMovies;
+
+  private FragmentTwoBinding(@NonNull LinearLayout rootView, @NonNull Button bSearch,
+      @NonNull EditText eSearchWord, @NonNull LinearLayout linearLayout,
+      @NonNull LinearLayout linearLayout2, @NonNull RecyclerView searchMovies) {
     this.rootView = rootView;
-    this.search = search;
+    this.bSearch = bSearch;
+    this.eSearchWord = eSearchWord;
+    this.linearLayout = linearLayout;
+    this.linearLayout2 = linearLayout2;
+    this.searchMovies = searchMovies;
   }
 
   @Override
@@ -54,13 +74,38 @@ public final class FragmentTwoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.search;
-      EditText search = ViewBindings.findChildViewById(rootView, id);
-      if (search == null) {
+      id = R.id.bSearch;
+      Button bSearch = ViewBindings.findChildViewById(rootView, id);
+      if (bSearch == null) {
         break missingId;
       }
 
-      return new FragmentTwoBinding((LinearLayout) rootView, search);
+      id = R.id.eSearchWord;
+      EditText eSearchWord = ViewBindings.findChildViewById(rootView, id);
+      if (eSearchWord == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout2;
+      LinearLayout linearLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout2 == null) {
+        break missingId;
+      }
+
+      id = R.id.search_movies;
+      RecyclerView searchMovies = ViewBindings.findChildViewById(rootView, id);
+      if (searchMovies == null) {
+        break missingId;
+      }
+
+      return new FragmentTwoBinding((LinearLayout) rootView, bSearch, eSearchWord, linearLayout,
+          linearLayout2, searchMovies);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

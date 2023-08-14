@@ -140,4 +140,22 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
     }
+    companion object {
+        const val MOVIE_ID = "extra_movie_id"
+        const val MOVIE_POSTER = "extra_movie_poster"
+        const val MOVIE_TITLE = "extra_movie_title"
+        const val MOVIE_RATING = "extra_movie_rating"
+        const val MOVIE_OVERVIEW = "extra_movie_overview"
+    }
 }
+/*
+* intent.putExtra(MainActivity.MOVIE_BACKDROP, movie.backdrop_path)
+        intent.putExtra(MainActivity.MOVIE_POSTER, movie.poster_path)
+        intent.putExtra(MainActivity.MOVIE_TITLE, movie.title)
+        intent.putExtra(MainActivity.MOVIE_RATING, movie.rating)
+        intent.putExtra(MainActivity.MOVIE_RELEASE_DATE, movie.releaseDate)
+        intent.putExtra(MainActivity.MOVIE_OVERVIEW, movie.overview)
+        startActivity(intent)
+*
+*
+* */

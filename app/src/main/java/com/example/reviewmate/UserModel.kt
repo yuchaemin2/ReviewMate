@@ -8,5 +8,6 @@ data class UserModel(
     var uid : String? = null,
     var userEmail : String? = null,
     var imageUrl : String? = null,
-    var userLevel : String? = "7"
+    var userLevel : String? = "1",
+    var userReviewCount: Int = 0,
 )

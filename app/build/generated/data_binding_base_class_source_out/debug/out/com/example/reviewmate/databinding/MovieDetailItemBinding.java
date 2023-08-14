@@ -21,24 +21,29 @@ public final class MovieDetailItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView date;
+  public final TextView itemContentView;
 
   @NonNull
-  public final TextView rate;
+  public final TextView itemDateView;
 
   @NonNull
-  public final ImageView user;
+  public final TextView itemEmailView;
 
   @NonNull
-  public final TextView userName;
+  public final ImageView itemImg;
 
-  private MovieDetailItemBinding(@NonNull LinearLayout rootView, @NonNull TextView date,
-      @NonNull TextView rate, @NonNull ImageView user, @NonNull TextView userName) {
+  @NonNull
+  public final TextView itemTitleView;
+
+  private MovieDetailItemBinding(@NonNull LinearLayout rootView, @NonNull TextView itemContentView,
+      @NonNull TextView itemDateView, @NonNull TextView itemEmailView, @NonNull ImageView itemImg,
+      @NonNull TextView itemTitleView) {
     this.rootView = rootView;
-    this.date = date;
-    this.rate = rate;
-    this.user = user;
-    this.userName = userName;
+    this.itemContentView = itemContentView;
+    this.itemDateView = itemDateView;
+    this.itemEmailView = itemEmailView;
+    this.itemImg = itemImg;
+    this.itemTitleView = itemTitleView;
   }
 
   @Override
@@ -68,31 +73,38 @@ public final class MovieDetailItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.date;
-      TextView date = ViewBindings.findChildViewById(rootView, id);
-      if (date == null) {
+      id = R.id.itemContentView;
+      TextView itemContentView = ViewBindings.findChildViewById(rootView, id);
+      if (itemContentView == null) {
         break missingId;
       }
 
-      id = R.id.rate;
-      TextView rate = ViewBindings.findChildViewById(rootView, id);
-      if (rate == null) {
+      id = R.id.itemDateView;
+      TextView itemDateView = ViewBindings.findChildViewById(rootView, id);
+      if (itemDateView == null) {
         break missingId;
       }
 
-      id = R.id.user;
-      ImageView user = ViewBindings.findChildViewById(rootView, id);
-      if (user == null) {
+      id = R.id.itemEmailView;
+      TextView itemEmailView = ViewBindings.findChildViewById(rootView, id);
+      if (itemEmailView == null) {
         break missingId;
       }
 
-      id = R.id.user_name;
-      TextView userName = ViewBindings.findChildViewById(rootView, id);
-      if (userName == null) {
+      id = R.id.item_img;
+      ImageView itemImg = ViewBindings.findChildViewById(rootView, id);
+      if (itemImg == null) {
         break missingId;
       }
 
-      return new MovieDetailItemBinding((LinearLayout) rootView, date, rate, user, userName);
+      id = R.id.itemTitleView;
+      TextView itemTitleView = ViewBindings.findChildViewById(rootView, id);
+      if (itemTitleView == null) {
+        break missingId;
+      }
+
+      return new MovieDetailItemBinding((LinearLayout) rootView, itemContentView, itemDateView,
+          itemEmailView, itemImg, itemTitleView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

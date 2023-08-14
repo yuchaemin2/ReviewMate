@@ -25,6 +25,9 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final TextView CertifyEmailView;
 
   @NonNull
+  public final Button accountDeleteButton;
+
+  @NonNull
   public final Button btnMove;
 
   @NonNull
@@ -37,17 +40,23 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final ImageView reviewImg;
 
   @NonNull
+  public final TextView userLevelTextView;
+
+  @NonNull
   public final ImageView userProfile;
 
   private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull TextView CertifyEmailView,
-      @NonNull Button btnMove, @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton,
-      @NonNull ImageView reviewImg, @NonNull ImageView userProfile) {
+      @NonNull Button accountDeleteButton, @NonNull Button btnMove,
+      @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton, @NonNull ImageView reviewImg,
+      @NonNull TextView userLevelTextView, @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
+    this.accountDeleteButton = accountDeleteButton;
     this.btnMove = btnMove;
     this.fiveLayout = fiveLayout;
     this.logoutButton = logoutButton;
     this.reviewImg = reviewImg;
+    this.userLevelTextView = userLevelTextView;
     this.userProfile = userProfile;
   }
 
@@ -84,6 +93,12 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.accountDeleteButton;
+      Button accountDeleteButton = ViewBindings.findChildViewById(rootView, id);
+      if (accountDeleteButton == null) {
+        break missingId;
+      }
+
       id = R.id.btn_move;
       Button btnMove = ViewBindings.findChildViewById(rootView, id);
       if (btnMove == null) {
@@ -104,14 +119,20 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.userLevelTextView;
+      TextView userLevelTextView = ViewBindings.findChildViewById(rootView, id);
+      if (userLevelTextView == null) {
+        break missingId;
+      }
+
       id = R.id.userProfile;
       ImageView userProfile = ViewBindings.findChildViewById(rootView, id);
       if (userProfile == null) {
         break missingId;
       }
 
-      return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, btnMove, fiveLayout,
-          logoutButton, reviewImg, userProfile);
+      return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, accountDeleteButton,
+          btnMove, fiveLayout, logoutButton, reviewImg, userLevelTextView, userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
