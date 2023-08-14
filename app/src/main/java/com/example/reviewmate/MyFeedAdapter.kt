@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.checkAuth
@@ -52,6 +53,30 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             itemDateView.text=data.date
             itemMovieView.text=data.movie
             itemRateView.text=data.rate
+
+            val db = FirebaseFirestore.getInstance()
+            val usersCollection = db.collection("users")
+            var userEmail = data.email
+            var profileImageUrl : String? = null
+            usersCollection.whereEqualTo("userEmail", userEmail)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    if (!querySnapshot.isEmpty) {
+
+                        val userDocument = querySnapshot.documents[0]
+                        profileImageUrl = userDocument.getString("imageUrl")
+
+                        if( profileImageUrl != null){
+                            // Glide를 사용하여 프로필 이미지 로드
+                            Glide.with(context)
+                                .load(profileImageUrl)
+                                .into(holder.binding.itemImg)
+                        }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("MyFeedAdapter", "Error getting user document: $exception")
+                }
 
             if(itemContentView.text.isNotEmpty()) itemContentView.visibility = View.VISIBLE
 

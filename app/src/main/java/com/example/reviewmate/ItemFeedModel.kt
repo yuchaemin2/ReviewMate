@@ -7,6 +7,7 @@ data class ItemFeedModel(
     var content: String? = null,
     var date: String? = null,
     var movie: String? = null,
-    var rate: String? = null
+    var rate: String? = null,
+    var movieId: String? = null
 )
 

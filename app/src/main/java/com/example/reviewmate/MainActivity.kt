@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
+        const val MOVIE_ID = "extra_movie_id"
         const val MOVIE_POSTER = "extra_movie_poster"
         const val MOVIE_TITLE = "extra_movie_title"
         const val MOVIE_RATING = "extra_movie_rating"

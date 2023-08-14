@@ -9,7 +9,6 @@ import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
 import android.util.Log
 import android.widget.DatePicker
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -18,10 +17,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
-import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
-import com.example.reviewmate.MainActivity.Companion.MOVIE_TITLE
+import com.example.reviewmate.MainActivity.Companion.MOVIE_ID
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.ActivityAddBinding
 import com.google.firebase.auth.ktx.auth
@@ -38,13 +35,10 @@ class AddActivity : AppCompatActivity() {
     lateinit var binding: ActivityAddBinding
     lateinit var filePath: String
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val requestLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if(it.resultCode === android.app.Activity.RESULT_OK) {
@@ -69,6 +63,17 @@ class AddActivity : AppCompatActivity() {
 //            requestLauncher.launch(intent)
 //        }
 
+        val movieTitle = intent.getStringExtra(MainActivity.MOVIE_TITLE)
+        val moviePoster = intent.getStringExtra(MainActivity.MOVIE_POSTER)
+        val movieId = intent.getStringExtra(MainActivity.MOVIE_ID)
+
+        binding.movieTitle.text = movieTitle
+        binding.movieId.text = movieId
+        Glide.with(this)
+            .load("https://image.tmdb.org/t/p/w342${moviePoster}")
+            .apply(RequestOptions().override(150, 230).centerCrop())
+            .into(binding.addImageView)
+
         binding.btnSave.setOnClickListener {
             if(binding.addTitleEditView.text.isNotEmpty()){
                 saveStore()
@@ -77,16 +82,6 @@ class AddActivity : AppCompatActivity() {
             }
             finish()
         }
-
-        val movieTitle = intent.getStringExtra(MOVIE_TITLE)
-        val moviePoster = intent.getStringExtra(MOVIE_POSTER)
-
-        // 영화 제목과 포스터 정보를 UI에 설정
-        binding.movieTitle.text = movieTitle
-        Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w342$moviePoster")
-            .apply(RequestOptions().override(150, 230).centerCrop())
-            .into(binding.addImageView)
 
     }
 
@@ -103,14 +98,15 @@ class AddActivity : AppCompatActivity() {
             "date" to dateToString(Date()),
             "movie" to binding.movieTitle.text.toString(),
             "rate" to binding.movieRate.text.toString(),
-            "uid" to auth.uid
+            "uid" to auth.uid,
+            "movieId" to binding.movieId.text.toString()
         )
 
         MyApplication.db.collection("reviews")
             .add(data)
             .addOnSuccessListener {
                 Log.d("ToyProject", "data firestore save ok")
-                uploadImage(it.id)
+//                uploadImage(it.id)
             }
             .addOnFailureListener {
                 Log.d("ToyProject", "data firestore save error")

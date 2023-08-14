@@ -42,18 +42,17 @@ class FragmentOne : Fragment() {
             binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
         }
 
+        popularMovies = binding.root.findViewById(R.id.popular_movies)
+        popularMoviesLayoutMgr = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        popularMovies.layoutManager = popularMoviesLayoutMgr
+        popularMoviesAdapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
+        popularMovies.adapter = popularMoviesAdapter
 
-            popularMovies = binding.root.findViewById(R.id.popular_movies)
-            popularMoviesLayoutMgr = LinearLayoutManager(
-                context,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-            popularMovies.layoutManager = popularMoviesLayoutMgr
-            popularMoviesAdapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
-            popularMovies.adapter = popularMoviesAdapter
-
-            getPopularMovies()
+        getPopularMovies()
 
         return binding.root
     }
@@ -64,6 +63,7 @@ class FragmentOne : Fragment() {
         intent.putExtra(MainActivity.MOVIE_TITLE, movie.movieTitle)
         intent.putExtra(MainActivity.MOVIE_RATING, movie.movieRate)
         intent.putExtra(MainActivity.MOVIE_OVERVIEW, movie.movieOverview)
+        intent.putExtra(MainActivity.MOVIE_ID, movie.movieId)
         startActivity(intent)
     }
 

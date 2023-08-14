@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.example.reviewmate.MainActivity.Companion.MOVIE_ID
 import com.example.reviewmate.MainActivity.Companion.MOVIE_OVERVIEW
 import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
 import com.example.reviewmate.MainActivity.Companion.MOVIE_RATING
@@ -25,6 +26,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var title: TextView
     private lateinit var rating: RatingBar
     private lateinit var overview: TextView
+    private lateinit var id: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         title = binding.movieTitle
         rating = binding.movieRate
         overview = binding.movieOverview
+        id = binding.movieId
 
         val extras = intent.extras
         if (extras != null) {
@@ -49,6 +52,8 @@ class MovieDetailsActivity : AppCompatActivity() {
                 if (extras != null) {
                     intent.putExtra(MOVIE_TITLE, title.text.toString())
                     intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
+                    intent.putExtra(MOVIE_ID, id.text.toString())
+//                    intent.putExtra(MOVIE_ID, extras.getString(MOVIE_ID))
                 }
                 startActivity(intent)
             }
@@ -69,15 +74,16 @@ class MovieDetailsActivity : AppCompatActivity() {
                     val itemList = mutableListOf<ItemFeedModel>()
                     for(document in result){
                         val item = document.toObject(ItemFeedModel::class.java)
-                        if(MyApplication.email.equals(item.email)){
+                        // movieId로 바꾸기
+                        if(id.text.equals(item.movieId)){
                             //Toast.makeText(context, "${MyApplication.email}", Toast.LENGTH_SHORT).show()
                             item.docId = document.id
                             itemList.add(item)
                         }
+                        Log.d("ToyProject", "영화 아이디: ${id.text}")
                     }
                     binding.movieDetailRecyclerView.layoutManager = LinearLayoutManager(this)
                     binding.movieDetailRecyclerView.adapter = MyFeedAdapter(this, itemList)
-                    Log.d("ToyProject", "${itemList}")
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "데이터 획득 실패", Toast.LENGTH_SHORT).show()
@@ -88,7 +94,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     private fun populateDetails(extras: Bundle) {
         extras.getString(MOVIE_POSTER)?.let { posterPath ->
             Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w342$posterPath")
+                .load("https://image.tmdb.org/t/p/w342${posterPath}")
                 .transform(CenterCrop())
                 .into(poster)
         }
@@ -96,5 +102,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         title.text = extras.getString(MOVIE_TITLE, "")
         rating.rating = extras.getFloat(MOVIE_RATING, 0f) / 2
         overview.text = extras.getString(MOVIE_OVERVIEW, "")
+        id.text = extras.getString(MOVIE_ID, "")
     }
 }
