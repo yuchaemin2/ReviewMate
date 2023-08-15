@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.reviewmate.MainActivity.Companion.MOVIE_TITLE
 import com.example.reviewmate.databinding.ActivityReviewDetailBinding
 
 class ReviewDetailActivity : AppCompatActivity() {
@@ -18,24 +16,44 @@ class ReviewDetailActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
+        /*
+        *
+        val bundle : Bundle = Bundle()
+                        bundle.putString("email", data.email)
+                        bundle.putString("title", data.title)
+                        bundle.putString("content", data.content)
+                        bundle.putString("date", data.date)
+                        bundle.putString("movie", data.movie)
+                        bundle.putString("rate", data.rate)
+        * */
+
         // ------------- API : 영화 제목, 포스터 추가해야 함 --------------
-        val movieTitle = intent.getStringExtra(MOVIE_TITLE)
-        val moviePoster = intent.getStringExtra(MainActivity.MOVIE_POSTER)
-
-        // 영화 제목과 포스터 정보를 UI에 설정
-        binding.movieTitle.text = movieTitle
-        Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w342${moviePoster}")
-            .apply(RequestOptions().override(150, 230).centerCrop())
-            .into(binding.addImageView)
-
+        binding.movieTitle.text = intent.getStringExtra("영화제목API")
         binding.movieRate.text = intent.getStringExtra("rate")
         binding.reviewTitle.text = intent.getStringExtra("title")
         binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
         binding.reviewDate.text = intent.getStringExtra("date")
-        // 영화 API사용하여 데이터 가져와야 함
 
+        var profileImageUrl = intent.getStringExtra("image_url")
+
+        // 영화 API사용하여 데이터 가져와야 함
+        if(profileImageUrl != null && profileImageUrl != "null"){
+            // Glide를 사용하여 프로필 이미지 로드
+            Glide.with(baseContext)
+                .load(profileImageUrl)
+                .into(binding.profileImage)
+        }
+        var movieImage = intent.getStringExtra("movieImage")
+        Toast.makeText(baseContext, "${movieImage}영화 이미지 왜안돼?..????", Toast.LENGTH_SHORT).show()
+        if(movieImage != null && movieImage != "null"){
+            // Glide를 사용하여 프로필 이미지 로드
+            Glide.with(baseContext)
+                .load(movieImage)
+                .into(binding.addImageView)
+            Toast.makeText(baseContext, "${movieImage}영화 이미지 왜안돼?..????", Toast.LENGTH_SHORT).show()
+        }
     }
 
 //    override fun onBackPressed() {
@@ -44,7 +62,6 @@ class ReviewDetailActivity : AppCompatActivity() {
 //    }
 
 }
-
 
 
 

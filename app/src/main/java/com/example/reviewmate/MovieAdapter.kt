@@ -21,6 +21,7 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
                 .into(poster)
             binding.itemMovieTitle.text = movie.movieTitle
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
+
         }
     }
 
@@ -49,4 +50,9 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             movies.size - 1
         )
     }
+
+    fun removeMovies(movies: List<Movie>) {
+        this.movies.removeAll(movies)
+    }
+
 }
