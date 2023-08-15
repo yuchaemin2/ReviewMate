@@ -20,6 +20,13 @@ class MainActivity : AppCompatActivity() {
     var html = "http://openapi.airkorea.or.kr/openapi/services/rest/MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=244148.546388&tmY=412423.75772&pageNo=1&numOfRows=10&ServiceKey=서비스키"
 
 
+    companion object {
+        const val MOVIE_POSTER = "extra_movie_poster"
+        const val MOVIE_TITLE = "extra_movie_title"
+        const val MOVIE_RATING = "extra_movie_rating"
+        const val MOVIE_OVERVIEW = "extra_movie_overview"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
