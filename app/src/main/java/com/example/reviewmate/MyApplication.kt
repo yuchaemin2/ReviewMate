@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.tasks.await
 
 
 class MyApplication : MultiDexApplication() {
@@ -27,6 +28,41 @@ class MyApplication : MultiDexApplication() {
                 if(currentuser.isEmailVerified) true
                 else false
             } ?: false
+        }
+
+//        fun getImageUrl(userEmail : String?) : String? {
+//            var profileImageUrl : String? = null
+//            db.collection("users")
+//                .whereEqualTo("userEmail", userEmail)
+//                .get()
+//                .addOnSuccessListener { querySnapshot ->
+//                    if (!querySnapshot.isEmpty) {
+//                        val userDocument = querySnapshot.documents[0]
+//                        profileImageUrl = userDocument.getString("imageUrl")
+//                    }
+//                }
+//                .addOnFailureListener { exception ->
+//                    Log.e("MyFeedAdapter", "Error getting user document: $exception")
+//                }
+//            return profileImageUrl
+//        }
+
+        suspend fun getImageUrl(userEmail: String?): String? {
+            return try {
+                val querySnapshot = MyApplication.db.collection("users")
+                    .whereEqualTo("userEmail", userEmail)
+                    .get().await()
+
+                if (!querySnapshot.isEmpty) {
+                    val userDocument = querySnapshot.documents[0]
+                    userDocument.getString("imageUrl")
+                } else {
+                    null
+                }
+            } catch (exception: Exception) {
+                Log.e("MyFeedAdapter", "Error getting user document: $exception")
+                null
+            }
         }
 
     }

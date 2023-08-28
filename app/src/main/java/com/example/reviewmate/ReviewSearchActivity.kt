@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +16,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.ActivityReviewSearchBinding
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ReviewSearchActivity : AppCompatActivity() {
     lateinit var binding: ActivityReviewSearchBinding
@@ -106,11 +111,12 @@ class ReviewSearchActivity : AppCompatActivity() {
 
             viewHolder.findViewById<TextView>(R.id.itemTitleView).text = itemList[position].title
             viewHolder.findViewById<TextView>(R.id.itemEmailView).text = itemList[position].email
-            viewHolder.findViewById<TextView>(R.id.itemContentView).text = itemList[position].content
+            viewHolder.findViewById<TextView>(R.id.itemContentView).text =
+                itemList[position].content
             viewHolder.findViewById<TextView>(R.id.itemMovieView).text = itemList[position].movie
 
-            viewHolder.findViewById<TextView>(R.id.itemTitleView).setOnClickListener{
-                val bundle : Bundle = Bundle()
+            viewHolder.findViewById<TextView>(R.id.itemTitleView).setOnClickListener {
+                val bundle: Bundle = Bundle()
                 bundle.putString("title", data.title)
                 bundle.putString("content", data.content)
                 bundle.putString("date", data.date)
@@ -120,7 +126,7 @@ class ReviewSearchActivity : AppCompatActivity() {
                 bundle.putString("date", data.date)
                 bundle.putString("movieImage", data.movieImage)
 
-                Intent(this@ReviewSearchActivity, ReviewDetailActivity::class.java).apply{
+                Intent(this@ReviewSearchActivity, ReviewDetailActivity::class.java).apply {
                     putExtras(bundle)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }.run {
@@ -128,26 +134,53 @@ class ReviewSearchActivity : AppCompatActivity() {
                 }
             }
 
-            delete.setOnClickListener {
-                val alertHandler = object: DialogInterface.OnClickListener {
+            CoroutineScope(Dispatchers.Main).launch {
+                val profileImageUrl = MyApplication.getImageUrl(data.email)
+                if (!profileImageUrl.isNullOrEmpty()) {
+                    // Glide를 사용하여 프로필 이미지 로드
+                    Glide.with(this@ReviewSearchActivity)
+                        .load(profileImageUrl)
+                        .into(viewHolder.findViewById<ImageView>(R.id.itemImageView))
+
+                } else {
+                    Toast.makeText(this@ReviewSearchActivity, "no profile", Toast.LENGTH_SHORT)
+                        .show()
+                    //profileImageUrl=MyApplication.getImageUrl(data.email)
+                    Toast.makeText(
+                        this@ReviewSearchActivity,
+                        "${profileImageUrl}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                val alertHandler = object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
-                        when(which) {
+                        when (which) {
                             DialogInterface.BUTTON_POSITIVE -> {
-                                if(data.docId !== null){
-                                    MyApplication.storage.getReference().child("images").child("${data.docId!!}.jpg")
+                                if (data.docId !== null) {
+                                    MyApplication.storage.getReference().child("images")
+                                        .child("${data.docId!!}.jpg")
                                         .delete()
                                     db.collection("reviews").document("${data.docId}")
                                         .delete()
                                         .addOnSuccessListener {
-                                            Toast.makeText(this@ReviewSearchActivity, "삭제가 완료되었습니다.", Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(
+                                                this@ReviewSearchActivity,
+                                                "삭제가 완료되었습니다.",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
 
-                                            val userDocRef = MyApplication.db.collection("users").document(
-                                                MyApplication.auth.uid.toString())
-                                            MyApplication.db.collection("users").document("${MyApplication.auth.uid}")
+                                            val userDocRef =
+                                                MyApplication.db.collection("users").document(
+                                                    MyApplication.auth.uid.toString()
+                                                )
+                                            MyApplication.db.collection("users")
+                                                .document("${MyApplication.auth.uid}")
                                                 .get()
-                                                .addOnSuccessListener {  documentSnapshot ->
-                                                    if(documentSnapshot.exists()) {
-                                                        val currentCount = documentSnapshot.getLong("userReviewCount")
+                                                .addOnSuccessListener { documentSnapshot ->
+                                                    if (documentSnapshot.exists()) {
+                                                        val currentCount =
+                                                            documentSnapshot.getLong("userReviewCount")
                                                         currentCount?.let {
                                                             val updatedCount = it - 1
                                                             updateCount(userDocRef, updatedCount)
@@ -156,9 +189,19 @@ class ReviewSearchActivity : AppCompatActivity() {
                                                     }
                                                 }
                                         }
-                                        .addOnFailureListener { Toast.makeText(this@ReviewSearchActivity, "삭제가 실패하였습니다.", Toast.LENGTH_SHORT).show() }
-                                }else{
-                                    Toast.makeText(this@ReviewSearchActivity, "문서가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+                                        .addOnFailureListener {
+                                            Toast.makeText(
+                                                this@ReviewSearchActivity,
+                                                "삭제가 실패하였습니다.",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                } else {
+                                    Toast.makeText(
+                                        this@ReviewSearchActivity,
+                                        "문서가 존재하지 않습니다.",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
                             DialogInterface.BUTTON_NEGATIVE -> {
@@ -167,8 +210,33 @@ class ReviewSearchActivity : AppCompatActivity() {
                         }
                     }
                 }
-            }
 
+                if (data.email == MyApplication.email) {
+                    delete.visibility = View.VISIBLE
+                    delete.setOnClickListener {
+                        AlertDialog.Builder(this@ReviewSearchActivity).run {
+                            setTitle("정말 삭제하시겠습니까?")
+                            setMessage("한 번 삭제하면 되돌릴 수 없습니다.")
+                            setNegativeButton("Cancle", alertHandler)
+                            setPositiveButton("Yes", alertHandler)
+                            show()
+                        }
+                    }
+                } else {
+                    delete.visibility = View.GONE
+                }
+
+                val imageRef = MyApplication.storage.reference.child("images/${data.docId}.jpg")
+                imageRef.downloadUrl.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+//                // 다운로드 이미지를 ImageView에 보여줌
+                        GlideApp.with(this@ReviewSearchActivity)
+                            .load(task.result)
+                            .into(viewHolder.findViewById<ImageView>(R.id.itemImageView))
+                    }
+                }
+
+            }
         }
 
         private fun removeItem(position: Int) {

@@ -32,7 +32,6 @@
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="#B70050"
             android:layout_marginRight="5dp"
             android:text="검색" />
 

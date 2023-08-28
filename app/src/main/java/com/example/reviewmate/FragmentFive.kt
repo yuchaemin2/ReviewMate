@@ -71,9 +71,15 @@ class FragmentFive : Fragment() {
             transaction.commit()
         }
 
-        // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
-        binding.logoutButton.setOnClickListener {
-            logout()
+        binding.myComments.setOnClickListener {
+            var bundle : Bundle = Bundle()
+            bundle.putString("fromFrag", "프래그먼트2")
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            val fragmentfive_comment: Fragment = FragmentFive_CommentList()
+            fragmentfive_comment.arguments = bundle
+            transaction.replace(R.id.main_layout, fragmentfive_comment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         if(MyApplication.checkAuth()){
@@ -96,6 +102,11 @@ class FragmentFive : Fragment() {
                 }
                 else -> return@setOnMenuItemClickListener true
             }
+        }
+
+        binding.introDevelopers.setOnClickListener {
+            val intent = Intent(requireContext(), IntroActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root
