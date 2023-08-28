@@ -10,6 +10,8 @@ class MoviesRepository {
 
     companion object { // 정적 변수 설정
         fun getPopularMovies(page: Int = 1,
+                             onSuccess : (movies:List<Movie>) -> Unit,
+                             onError: () -> Unit) {
             val api = TMDBClient.api
             api.getPopularMovies(page = page)
                 .enqueue(object : Callback<GetMoviesResponse>{

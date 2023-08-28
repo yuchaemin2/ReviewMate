@@ -4,69 +4,61 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
+import com.google.android.material.appbar.MaterialToolbar;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentFiveBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final TextView CertifyEmailView;
 
   @NonNull
-  public final Button accountDeleteButton;
+  public final TextView btnMove;
 
   @NonNull
-  public final Button btnDevelopers;
+  public final MaterialToolbar chatListToolbar;
 
   @NonNull
-  public final Button btnMove;
+  public final RelativeLayout fiveLayout;
 
   @NonNull
-  public final LinearLayout fiveLayout;
+  public final TextView introDevelopers;
 
   @NonNull
-  public final Button logoutButton;
-
-  @NonNull
-  public final ImageView reviewImg;
-
-  @NonNull
-  public final TextView userLevelTextView;
+  public final TextView myComments;
 
   @NonNull
   public final ImageView userProfile;
 
-  private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull TextView CertifyEmailView,
-      @NonNull Button accountDeleteButton, @NonNull Button btnDevelopers, @NonNull Button btnMove,
-      @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton, @NonNull ImageView reviewImg,
-      @NonNull TextView userLevelTextView, @NonNull ImageView userProfile) {
+  private FragmentFiveBinding(@NonNull RelativeLayout rootView, @NonNull TextView CertifyEmailView,
+      @NonNull TextView btnMove, @NonNull MaterialToolbar chatListToolbar,
+      @NonNull RelativeLayout fiveLayout, @NonNull TextView introDevelopers,
+      @NonNull TextView myComments, @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
-    this.accountDeleteButton = accountDeleteButton;
-    this.btnDevelopers = btnDevelopers;
     this.btnMove = btnMove;
+    this.chatListToolbar = chatListToolbar;
     this.fiveLayout = fiveLayout;
-    this.logoutButton = logoutButton;
-    this.reviewImg = reviewImg;
-    this.userLevelTextView = userLevelTextView;
+    this.introDevelopers = introDevelopers;
+    this.myComments = myComments;
     this.userProfile = userProfile;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -97,41 +89,29 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.accountDeleteButton;
-      Button accountDeleteButton = ViewBindings.findChildViewById(rootView, id);
-      if (accountDeleteButton == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_developers;
-      Button btnDevelopers = ViewBindings.findChildViewById(rootView, id);
-      if (btnDevelopers == null) {
-        break missingId;
-      }
-
       id = R.id.btn_move;
-      Button btnMove = ViewBindings.findChildViewById(rootView, id);
+      TextView btnMove = ViewBindings.findChildViewById(rootView, id);
       if (btnMove == null) {
         break missingId;
       }
 
-      LinearLayout fiveLayout = (LinearLayout) rootView;
-
-      id = R.id.logoutButton;
-      Button logoutButton = ViewBindings.findChildViewById(rootView, id);
-      if (logoutButton == null) {
+      id = R.id.chatList_toolbar;
+      MaterialToolbar chatListToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (chatListToolbar == null) {
         break missingId;
       }
 
-      id = R.id.reviewImg;
-      ImageView reviewImg = ViewBindings.findChildViewById(rootView, id);
-      if (reviewImg == null) {
+      RelativeLayout fiveLayout = (RelativeLayout) rootView;
+
+      id = R.id.intro_developers;
+      TextView introDevelopers = ViewBindings.findChildViewById(rootView, id);
+      if (introDevelopers == null) {
         break missingId;
       }
 
-      id = R.id.userLevelTextView;
-      TextView userLevelTextView = ViewBindings.findChildViewById(rootView, id);
-      if (userLevelTextView == null) {
+      id = R.id.my_comments;
+      TextView myComments = ViewBindings.findChildViewById(rootView, id);
+      if (myComments == null) {
         break missingId;
       }
 
@@ -141,9 +121,8 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, accountDeleteButton,
-          btnDevelopers, btnMove, fiveLayout, logoutButton, reviewImg, userLevelTextView,
-          userProfile);
+      return new FragmentFiveBinding((RelativeLayout) rootView, CertifyEmailView, btnMove,
+          chatListToolbar, fiveLayout, introDevelopers, myComments, userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

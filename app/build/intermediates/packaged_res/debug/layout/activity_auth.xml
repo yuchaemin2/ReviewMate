@@ -30,6 +30,16 @@
             android:visibility="gone" />
 
         <Button
+            android:id="@+id/UnsubscribingBtn"
+            android:background="@drawable/round_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="회원탈퇴"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
             android:id="@+id/goSignInBtn"
             android:background="@drawable/round_button"
             android:layout_width="match_parent"

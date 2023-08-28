@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
+import com.google.android.material.appbar.MaterialToolbar;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,15 +22,24 @@ public final class FragmentFiveReviewListBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final MaterialToolbar chatListToolbar;
+
+  @NonNull
   public final RecyclerView feedRecyclerView;
+
+  @NonNull
+  public final TextView semester;
 
   @NonNull
   public final TextView textView;
 
   private FragmentFiveReviewListBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView feedRecyclerView, @NonNull TextView textView) {
+      @NonNull MaterialToolbar chatListToolbar, @NonNull RecyclerView feedRecyclerView,
+      @NonNull TextView semester, @NonNull TextView textView) {
     this.rootView = rootView;
+    this.chatListToolbar = chatListToolbar;
     this.feedRecyclerView = feedRecyclerView;
+    this.semester = semester;
     this.textView = textView;
   }
 
@@ -60,9 +70,21 @@ public final class FragmentFiveReviewListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.chatList_toolbar;
+      MaterialToolbar chatListToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (chatListToolbar == null) {
+        break missingId;
+      }
+
       id = R.id.feedRecyclerView;
       RecyclerView feedRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (feedRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.semester;
+      TextView semester = ViewBindings.findChildViewById(rootView, id);
+      if (semester == null) {
         break missingId;
       }
 
@@ -72,8 +94,8 @@ public final class FragmentFiveReviewListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFiveReviewListBinding((RelativeLayout) rootView, feedRecyclerView,
-          textView);
+      return new FragmentFiveReviewListBinding((RelativeLayout) rootView, chatListToolbar,
+          feedRecyclerView, semester, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -22,6 +22,9 @@ public final class ActivityAuthBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Button UnsubscribingBtn;
+
+  @NonNull
   public final EditText authEmailEditView;
 
   @NonNull
@@ -45,11 +48,13 @@ public final class ActivityAuthBinding implements ViewBinding {
   @NonNull
   public final Button signBtn;
 
-  private ActivityAuthBinding(@NonNull ScrollView rootView, @NonNull EditText authEmailEditView,
-      @NonNull TextView authMainTextView, @NonNull EditText authPasswordEditView,
-      @NonNull Button goSignInBtn, @NonNull Button googleLoginBtn, @NonNull Button loginBtn,
-      @NonNull Button logoutBtn, @NonNull Button signBtn) {
+  private ActivityAuthBinding(@NonNull ScrollView rootView, @NonNull Button UnsubscribingBtn,
+      @NonNull EditText authEmailEditView, @NonNull TextView authMainTextView,
+      @NonNull EditText authPasswordEditView, @NonNull Button goSignInBtn,
+      @NonNull Button googleLoginBtn, @NonNull Button loginBtn, @NonNull Button logoutBtn,
+      @NonNull Button signBtn) {
     this.rootView = rootView;
+    this.UnsubscribingBtn = UnsubscribingBtn;
     this.authEmailEditView = authEmailEditView;
     this.authMainTextView = authMainTextView;
     this.authPasswordEditView = authPasswordEditView;
@@ -87,6 +92,12 @@ public final class ActivityAuthBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.UnsubscribingBtn;
+      Button UnsubscribingBtn = ViewBindings.findChildViewById(rootView, id);
+      if (UnsubscribingBtn == null) {
+        break missingId;
+      }
+
       id = R.id.authEmailEditView;
       EditText authEmailEditView = ViewBindings.findChildViewById(rootView, id);
       if (authEmailEditView == null) {
@@ -135,8 +146,9 @@ public final class ActivityAuthBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAuthBinding((ScrollView) rootView, authEmailEditView, authMainTextView,
-          authPasswordEditView, goSignInBtn, googleLoginBtn, loginBtn, logoutBtn, signBtn);
+      return new ActivityAuthBinding((ScrollView) rootView, UnsubscribingBtn, authEmailEditView,
+          authMainTextView, authPasswordEditView, goSignInBtn, googleLoginBtn, loginBtn, logoutBtn,
+          signBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

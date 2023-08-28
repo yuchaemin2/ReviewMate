@@ -4,6 +4,7 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
+import com.google.android.material.appbar.MaterialToolbar;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,12 +22,21 @@ public final class FragmentFourBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final MaterialToolbar chatListToolbar;
+
+  @NonNull
   public final RecyclerView feedRecyclerView;
 
+  @NonNull
+  public final ImageView menuSearch;
+
   private FragmentFourBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView feedRecyclerView) {
+      @NonNull MaterialToolbar chatListToolbar, @NonNull RecyclerView feedRecyclerView,
+      @NonNull ImageView menuSearch) {
     this.rootView = rootView;
+    this.chatListToolbar = chatListToolbar;
     this.feedRecyclerView = feedRecyclerView;
+    this.menuSearch = menuSearch;
   }
 
   @Override
@@ -55,13 +66,26 @@ public final class FragmentFourBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.chatList_toolbar;
+      MaterialToolbar chatListToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (chatListToolbar == null) {
+        break missingId;
+      }
+
       id = R.id.feedRecyclerView;
       RecyclerView feedRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (feedRecyclerView == null) {
         break missingId;
       }
 
-      return new FragmentFourBinding((RelativeLayout) rootView, feedRecyclerView);
+      id = R.id.menu_search;
+      ImageView menuSearch = ViewBindings.findChildViewById(rootView, id);
+      if (menuSearch == null) {
+        break missingId;
+      }
+
+      return new FragmentFourBinding((RelativeLayout) rootView, chatListToolbar, feedRecyclerView,
+          menuSearch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,7 +4,6 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,13 +45,13 @@ public final class ItemFeedBinding implements ViewBinding {
   public final TextView itemTitleView;
 
   @NonNull
-  public final Button reviewDelete;
+  public final ImageView reviewDelete;
 
   private ItemFeedBinding(@NonNull LinearLayout rootView, @NonNull TextView itemContentView,
       @NonNull TextView itemDateView, @NonNull TextView itemEmailView,
       @NonNull ImageView itemImageView, @NonNull ImageView itemImg, @NonNull TextView itemMovieView,
       @NonNull TextView itemRateView, @NonNull TextView itemTitleView,
-      @NonNull Button reviewDelete) {
+      @NonNull ImageView reviewDelete) {
     this.rootView = rootView;
     this.itemContentView = itemContentView;
     this.itemDateView = itemDateView;
@@ -141,7 +140,7 @@ public final class ItemFeedBinding implements ViewBinding {
       }
 
       id = R.id.review_delete;
-      Button reviewDelete = ViewBindings.findChildViewById(rootView, id);
+      ImageView reviewDelete = ViewBindings.findChildViewById(rootView, id);
       if (reviewDelete == null) {
         break missingId;
       }

@@ -75,6 +75,9 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array my_color
+array my_color_values
+array option
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -1485,6 +1488,7 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color floating_button
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
@@ -3019,6 +3023,8 @@ drawable abc_vector_test
 drawable add_review_btn
 drawable avd_hide_password
 drawable avd_show_password
+drawable bin
+drawable bottle
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3027,6 +3033,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cancel
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3046,6 +3053,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable custom_bs
 drawable custom_button_shape
 drawable delete
 drawable design_fab_background
@@ -3054,8 +3062,13 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable developers
+drawable email
+drawable error404
+drawable essay
+drawable faq
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable heart
 drawable home
 drawable home_1
 drawable ic_arrow_back_black_24
@@ -3076,6 +3089,7 @@ drawable ic_search_black_24
 drawable icon
 drawable img
 drawable img_1
+drawable kangchaewon
 drawable level_1
 drawable level_2
 drawable level_3
@@ -3085,6 +3099,7 @@ drawable level_6
 drawable level_7
 drawable level_8
 drawable level_9
+drawable logout
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3106,8 +3121,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
-drawable minji_1
-drawable minji_2
+drawable message
+drawable messages
 drawable movie_poster
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
@@ -3163,6 +3178,8 @@ drawable paw
 drawable paw_1
 drawable preference_list_divider_material
 drawable profile_7
+drawable questionmark
+drawable report
 drawable round_button
 drawable round_item
 drawable rounded_bottom_sheet
@@ -3180,6 +3197,8 @@ drawable user
 drawable user_1
 drawable user_folder
 drawable user_question
+drawable yebeen
+drawable yuchaemin
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3197,6 +3216,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id UnsubscribingBtn
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3231,7 +3251,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id accountDeleteButton
 id action0
 id actionDown
 id actionDownUp
@@ -3259,6 +3278,7 @@ id add
 id addEditView
 id addImageView
 id addTitleEditView
+id add_review_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3291,6 +3311,7 @@ id bestChoice
 id blocking
 id bottom
 id bottomNavigationView
+id bottomSheetRecyclerView
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3300,9 +3321,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnSave
-id btn_developers
-id btn_go_search
+id btn_addlecture
 id btn_move
 id buttonPanel
 id cache_measures
@@ -3319,6 +3338,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chatList_toolbar
 id checkbox
 id checked
 id chronometer
@@ -3346,6 +3366,7 @@ id custom
 id customPanel
 id cut
 id dark
+id dateString
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3381,7 +3402,10 @@ id easeInOut
 id easeOut
 id east
 id edge
+id edit_btn
+id edit_layout
 id edit_query
+id edit_txt
 id elastic
 id embed
 id end
@@ -3408,7 +3432,6 @@ id fixed
 id flip
 id floating
 id forever
-id fragmentOne_layout
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3441,9 +3464,12 @@ id immediateStop
 id included
 id indeterminate
 id info
+id intro_developers
 id invisible
 id inward
 id italic
+id itemCommentDateView
+id itemCommentView
 id itemContentView
 id itemDateView
 id itemEmailView
@@ -3457,6 +3483,8 @@ id item_movie_title
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id kangchaewon
+id kimyebeen
 id labeled
 id layout
 id left
@@ -3492,7 +3520,6 @@ id list_item
 id locale
 id loginBtn
 id logoutBtn
-id logoutButton
 id ltr
 id m3_side_sheet
 id main_layout
@@ -3522,7 +3549,14 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id media_actions
+id menu_board
+id menu_delete
 id menu_delete_all
+id menu_logout
+id menu_main_setting
+id menu_reviewList
+id menu_search
+id menu_update
 id message
 id middle
 id mini
@@ -3571,6 +3605,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_comments
 id nav1
 id nav2
 id nav3
@@ -3627,9 +3662,10 @@ id radio
 id ratio
 id rectangles
 id recycler_view
+id recyclerview
 id reverseSawtooth
 id reviewDate
-id reviewImg
+id reviewId
 id reviewTitle
 id review_delete
 id reviewsPage
@@ -3642,6 +3678,7 @@ id row_index_key
 id rtl
 id save_non_transition_alpha
 id save_overlay_view
+id save_review
 id sawtooth
 id scale
 id screen
@@ -3650,6 +3687,8 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchBtn
+id searchWord
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -3680,6 +3719,7 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
+id semester
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3762,6 +3802,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar_back
 id top
 id topPanel
 id top_rated_movies
@@ -3802,6 +3843,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yuchaemin
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -3921,12 +3963,16 @@ layout abc_tooltip
 layout activity_add
 layout activity_add_activiity
 layout activity_auth
+layout activity_intro
 layout activity_main
 layout activity_movie_details
 layout activity_review_detail
+layout activity_review_search
 layout activity_search
 layout activity_setting
 layout activity_splash
+layout activity_update
+layout bottom_sheet_review_list
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -3947,6 +3993,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout expand_button
 layout fragment_five
+layout fragment_five__comment_list
 layout fragment_five__review_list
 layout fragment_four
 layout fragment_list
@@ -3954,6 +4001,7 @@ layout fragment_one
 layout fragment_three
 layout fragment_two
 layout image_frame
+layout item_comment
 layout item_feed
 layout item_movie
 layout list_reviews
@@ -4049,7 +4097,12 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_navigation
+menu menu_back
+menu menu_detail
 menu menu_list
+menu menu_main
+menu menu_mypage
+menu menu_nav
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -4535,6 +4588,7 @@ style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
 style BasePreferenceThemeOverlay
+style CalendarViewTheme
 style CardView
 style CardView_Dark
 style CardView_Light

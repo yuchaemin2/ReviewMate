@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
 import android.widget.Toast
 import androidx.multidex.MultiDexApplication
 import com.bumptech.glide.Glide

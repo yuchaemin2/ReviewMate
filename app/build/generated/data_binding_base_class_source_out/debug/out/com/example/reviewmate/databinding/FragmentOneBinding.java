@@ -4,11 +4,10 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CalendarView;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,28 +15,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
+import com.google.android.material.appbar.MaterialToolbar;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentOneBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final TextView HomeEmailView;
 
   @NonNull
-  public final Button btnGoSearch;
-
-  @NonNull
   public final CalendarView calendarView;
 
   @NonNull
-  public final RecyclerView feedRecyclerView;
+  public final MaterialToolbar chatListToolbar;
 
   @NonNull
-  public final ScrollView fragmentOneLayout;
+  public final RecyclerView feedRecyclerView;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -47,6 +44,9 @@ public final class FragmentOneBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout linearLayout3;
+
+  @NonNull
+  public final ImageView menuSearch;
 
   @NonNull
   public final RecyclerView popularMovies;
@@ -66,22 +66,22 @@ public final class FragmentOneBinding implements ViewBinding {
   @NonNull
   public final RecyclerView upcomingMovies;
 
-  private FragmentOneBinding(@NonNull FrameLayout rootView, @NonNull TextView HomeEmailView,
-      @NonNull Button btnGoSearch, @NonNull CalendarView calendarView,
-      @NonNull RecyclerView feedRecyclerView, @NonNull ScrollView fragmentOneLayout,
-      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
-      @NonNull LinearLayout linearLayout3, @NonNull RecyclerView popularMovies,
+  private FragmentOneBinding(@NonNull RelativeLayout rootView, @NonNull TextView HomeEmailView,
+      @NonNull CalendarView calendarView, @NonNull MaterialToolbar chatListToolbar,
+      @NonNull RecyclerView feedRecyclerView, @NonNull LinearLayout linearLayout,
+      @NonNull LinearLayout linearLayout2, @NonNull LinearLayout linearLayout3,
+      @NonNull ImageView menuSearch, @NonNull RecyclerView popularMovies,
       @NonNull TextView textView1, @NonNull TextView textView2, @NonNull TextView textView3,
       @NonNull RecyclerView topRatedMovies, @NonNull RecyclerView upcomingMovies) {
     this.rootView = rootView;
     this.HomeEmailView = HomeEmailView;
-    this.btnGoSearch = btnGoSearch;
     this.calendarView = calendarView;
+    this.chatListToolbar = chatListToolbar;
     this.feedRecyclerView = feedRecyclerView;
-    this.fragmentOneLayout = fragmentOneLayout;
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
     this.linearLayout3 = linearLayout3;
+    this.menuSearch = menuSearch;
     this.popularMovies = popularMovies;
     this.textView1 = textView1;
     this.textView2 = textView2;
@@ -92,7 +92,7 @@ public final class FragmentOneBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -123,27 +123,21 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btn_go_search;
-      Button btnGoSearch = ViewBindings.findChildViewById(rootView, id);
-      if (btnGoSearch == null) {
-        break missingId;
-      }
-
       id = R.id.calendarView;
       CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
 
-      id = R.id.feedRecyclerView;
-      RecyclerView feedRecyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (feedRecyclerView == null) {
+      id = R.id.chatList_toolbar;
+      MaterialToolbar chatListToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (chatListToolbar == null) {
         break missingId;
       }
 
-      id = R.id.fragmentOne_layout;
-      ScrollView fragmentOneLayout = ViewBindings.findChildViewById(rootView, id);
-      if (fragmentOneLayout == null) {
+      id = R.id.feedRecyclerView;
+      RecyclerView feedRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (feedRecyclerView == null) {
         break missingId;
       }
 
@@ -162,6 +156,12 @@ public final class FragmentOneBinding implements ViewBinding {
       id = R.id.linearLayout3;
       LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout3 == null) {
+        break missingId;
+      }
+
+      id = R.id.menu_search;
+      ImageView menuSearch = ViewBindings.findChildViewById(rootView, id);
+      if (menuSearch == null) {
         break missingId;
       }
 
@@ -201,10 +201,9 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentOneBinding((FrameLayout) rootView, HomeEmailView, btnGoSearch,
-          calendarView, feedRecyclerView, fragmentOneLayout, linearLayout, linearLayout2,
-          linearLayout3, popularMovies, textView1, textView2, textView3, topRatedMovies,
-          upcomingMovies);
+      return new FragmentOneBinding((RelativeLayout) rootView, HomeEmailView, calendarView,
+          chatListToolbar, feedRecyclerView, linearLayout, linearLayout2, linearLayout3, menuSearch,
+          popularMovies, textView1, textView2, textView3, topRatedMovies, upcomingMovies);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

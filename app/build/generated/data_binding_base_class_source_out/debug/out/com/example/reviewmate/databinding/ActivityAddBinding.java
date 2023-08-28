@@ -6,21 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityAddBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final EditText addEditView;
@@ -32,9 +32,6 @@ public final class ActivityAddBinding implements ViewBinding {
   public final EditText addTitleEditView;
 
   @NonNull
-  public final ExtendedFloatingActionButton btnSave;
-
-  @NonNull
   public final TextView movieId;
 
   @NonNull
@@ -43,23 +40,26 @@ public final class ActivityAddBinding implements ViewBinding {
   @NonNull
   public final TextView movieTitle;
 
-  private ActivityAddBinding(@NonNull LinearLayout rootView, @NonNull EditText addEditView,
+  @NonNull
+  public final Toolbar toolbarBack;
+
+  private ActivityAddBinding(@NonNull RelativeLayout rootView, @NonNull EditText addEditView,
       @NonNull ImageView addImageView, @NonNull EditText addTitleEditView,
-      @NonNull ExtendedFloatingActionButton btnSave, @NonNull TextView movieId,
-      @NonNull TextView movieRate, @NonNull TextView movieTitle) {
+      @NonNull TextView movieId, @NonNull TextView movieRate, @NonNull TextView movieTitle,
+      @NonNull Toolbar toolbarBack) {
     this.rootView = rootView;
     this.addEditView = addEditView;
     this.addImageView = addImageView;
     this.addTitleEditView = addTitleEditView;
-    this.btnSave = btnSave;
     this.movieId = movieId;
     this.movieRate = movieRate;
     this.movieTitle = movieTitle;
+    this.toolbarBack = toolbarBack;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -102,12 +102,6 @@ public final class ActivityAddBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnSave;
-      ExtendedFloatingActionButton btnSave = ViewBindings.findChildViewById(rootView, id);
-      if (btnSave == null) {
-        break missingId;
-      }
-
       id = R.id.movieId;
       TextView movieId = ViewBindings.findChildViewById(rootView, id);
       if (movieId == null) {
@@ -126,8 +120,14 @@ public final class ActivityAddBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddBinding((LinearLayout) rootView, addEditView, addImageView,
-          addTitleEditView, btnSave, movieId, movieRate, movieTitle);
+      id = R.id.toolbar_back;
+      Toolbar toolbarBack = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarBack == null) {
+        break missingId;
+      }
+
+      return new ActivityAddBinding((RelativeLayout) rootView, addEditView, addImageView,
+          addTitleEditView, movieId, movieRate, movieTitle, toolbarBack);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
