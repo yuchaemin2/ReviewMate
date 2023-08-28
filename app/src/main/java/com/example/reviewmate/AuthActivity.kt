@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewmate.MyApplication
 import com.example.reviewmate.R
 import com.example.reviewmate.databinding.ActivityAuthBinding
@@ -14,6 +16,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.Query
 
 class AuthActivity : AppCompatActivity() {
     lateinit var binding: ActivityAuthBinding
@@ -103,6 +107,31 @@ class AuthActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.UnsubscribingBtn.setOnClickListener {
+            MyApplication.auth.currentUser!!.delete()
+
+            val userDocRef = MyApplication.db.collection("users").document(MyApplication.auth.uid.toString())
+            MyApplication.db.collection("users").document("${MyApplication.auth.uid}")
+                .get()
+                .addOnSuccessListener {  documentSnapshot ->
+                    if(documentSnapshot.exists()) {
+                        val currentEmail = documentSnapshot.getString("userEmail")
+                        currentEmail?.let {
+                            val updatedEmail = "Unsubscribed members"
+                            updateEmail(userDocRef, updatedEmail)
+                        }
+                        val currentImage = documentSnapshot.getString("imageUrl")
+                        currentImage?.let {
+                            val updatedImage = "https://firebasestorage.googleapis.com/v0/b/reviewmate-59794.appspot.com/o/profile_images%2Fimg_1.png?alt=media&token=eb7e37c7-bbc3-4ef5-9491-bbca0f8c60bc"
+                            updateProfile(userDocRef, updatedImage)
+                        }
+                    }
+                }
+
+            MyApplication.email = null
+            finish()
+        }
+
         val requestLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
             // ApiException : Google Play 서비스 호출이 실패했을 때 태스크에서 반환할 예외
@@ -139,6 +168,35 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+    fun updateEmail(docRef: DocumentReference, updatedValue: String) {
+        val updates = hashMapOf<String, Any>(
+            "userEmail" to updatedValue
+        )
+
+        docRef.update(updates)
+            .addOnSuccessListener {
+                // 업데이트 성공 처리
+            }
+            .addOnFailureListener { e ->
+                // 업데이트 실패 처리
+            }
+
+    }
+    fun updateProfile(docRef: DocumentReference, updatedValue: String) {
+        val updates = hashMapOf<String, Any>(
+            "imageUrl" to updatedValue
+        )
+
+        docRef.update(updates)
+            .addOnSuccessListener {
+                // 업데이트 성공 처리
+            }
+            .addOnFailureListener { e ->
+                // 업데이트 실패 처리
+            }
+
+    }
+
     fun changeVisibility(mode: String){
         if(mode.equals("signin")){
             binding.run {
@@ -154,6 +212,7 @@ class AuthActivity : AppCompatActivity() {
             binding.run {
                 authMainTextView.text = "${MyApplication.email} 님 반갑습니다."
                 logoutBtn.visibility= View.VISIBLE
+                UnsubscribingBtn.visibility= View.VISIBLE
                 goSignInBtn.visibility= View.GONE
                 googleLoginBtn.visibility= View.GONE
                 authEmailEditView.visibility= View.GONE

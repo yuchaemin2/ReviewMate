@@ -16,4 +16,10 @@
         <item>#5589C5</item>
         <item>#ffFFff</item>
     </string-array>
+    <string-array name="option">
+        <item>제목</item>
+        <item>사용자</item>
+        <item>내용</item>
+        <item>영화제목</item>
+    </string-array>
 </resources>

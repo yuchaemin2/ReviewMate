@@ -1,8 +1,11 @@
 package com.example.reviewmate
 
+import android.content.ContentValues
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.icu.lang.UCharacter.GraphemeClusterBreak.V
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +15,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFiveBinding
 import com.example.reviewmate.databinding.FragmentFourBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +38,9 @@ class FragmentFive : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding: FragmentFiveBinding
+    lateinit var profile: ImageView
+    private lateinit var imageView: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +56,8 @@ class FragmentFive : Fragment() {
     ): View? {
         binding = FragmentFiveBinding.inflate(inflater, container, false)
 
-        fetchUserLevel()
+        profile = binding.userProfile
+//        downloadAndDisplayImage()
 
         // button 클릭시 fragmenrFive_ReviwList로 이동
         binding.btnMove.setOnClickListener { // 람다식 리스너 setOnclickListener{}
@@ -71,44 +80,69 @@ class FragmentFive : Fragment() {
             binding.CertifyEmailView.text = "${MyApplication.email}"
         }
 
+        val imageUrl : String = MyApplication.imageurl.toString()
+        imageView = binding.userProfile
+        if( imageUrl != null){
+            Glide.with(requireContext())
+                .load(imageUrl)
+                .into(binding.userProfile)
+        }
+
+        binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.menu_logout -> {
+                    logout()
+                    return@setOnMenuItemClickListener true
+                }
+                else -> return@setOnMenuItemClickListener true
+            }
+        }
+
         return binding.root
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        fetchUserLevel()
-//    }
+    private fun downloadAndDisplayImage() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            val userDocumentRef =
+                FirebaseFirestore.getInstance().collection("users").document(userId)
+            var imageUrl: String? = null
 
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = childFragmentManager.beginTransaction() // fragment-fragment는 chid
-        transaction.replace(R.id.five_layout, fragment)
-        transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
-        transaction.commit()
+            userDocumentRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val user = documentSnapshot.toObject(UserModel::class.java)
+
+                        if (!user?.imageUrl.isNullOrEmpty()) {
+                            user?.imageUrl?.let { imageUrl ->
+                                val storageReference = MyApplication.storage.getReferenceFromUrl(imageUrl)
+                                // 이미지 다운로드 및 처리 로직
+
+                                storageReference.getBytes(1024 * 1024)
+                                    .addOnSuccessListener { bytes ->
+                                        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                                        profile.setImageBitmap(bitmap)
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        // 다운로드 실패 처리
+                                        // 예를 들어, 에러 로그를 출력하거나 기본 이미지를 표시할 수 있습니다.
+                                    }
+                            }
+                        }
+                    } else {
+                        Log.d(ContentValues.TAG, "사용자 문서가 존재하지 않습니다.")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e(ContentValues.TAG, "사용자 데이터 가져오기 중 오류 발생: $exception")
+                }
+        }
     }
+
 
     private fun logout() {
         val intent = Intent(requireContext(), AuthActivity::class.java)
         startActivity(intent)
-    }
-
-    private fun fetchUserLevel() {
-        val currentUser = auth.currentUser
-
-        currentUser?.let {
-            val userId = currentUser.uid
-
-            val userRef = db.collection("users").document(userId)
-            userRef.get()
-                .addOnSuccessListener { documentSnapshot ->
-                    if (documentSnapshot.exists()) {
-                        val userLevel = documentSnapshot.getString("userLevel")
-                        binding.userLevelTextView.text = "Level.${userLevel}"
-                    }
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
-                }
-        }
     }
 
     companion object {

@@ -60,16 +60,9 @@ class FragmentFour : Fragment() {
     ): View? {
         binding = FragmentFourBinding.inflate(inflater, container, false)
 
-        //         myCheckPermission(requireActivity() as AppCompatActivity)
-
-        binding.mainFab.setOnClickListener {
-            if(MyApplication.checkAuth()){
-                val intent = Intent(requireContext(), AddActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                Toast.makeText(requireContext(), "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
-            }
+        binding.menuSearch.setOnClickListener {
+            val intent = Intent(requireContext(), ReviewSearchActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root
@@ -90,7 +83,6 @@ class FragmentFour : Fragment() {
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
-//                    Log.d("ToyProject", "${itemList}")
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
@@ -98,39 +90,6 @@ class FragmentFour : Fragment() {
         }
 
     }
-
-
-//    fun myCheckPermission(activity: AppCompatActivity) {
-//        val requestPermissionLauncher = activity.registerForActivityResult(
-//            ActivityResultContracts.RequestPermission()
-//        ) {
-//            if (it) {
-//                Toast.makeText(activity, "권한 승인", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(activity, "권한 거부", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(
-//                activity, Manifest.permission.READ_EXTERNAL_STORAGE
-//            ) !== PackageManager.PERMISSION_GRANTED
-//        ) {
-//            requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-//        }
-//        if (ContextCompat.checkSelfPermission(
-//                activity, Manifest.permission.WRITE_EXTERNAL_STORAGE
-//            ) !== PackageManager.PERMISSION_GRANTED
-//        ) {
-//            requestPermissionLauncher.launch((Manifest.permission.WRITE_EXTERNAL_STORAGE))
-//        }
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            if (!Environment.isExternalStorageManager()) {
-//                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
-//                activity.startActivity(intent)
-//            }
-//        }
-//    }
 
     companion object {
         /**

@@ -14,9 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.QuerySnapshot
-import okhttp3.internal.notify
-import okhttp3.internal.notifyAll
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.RecyclerView
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -53,25 +52,38 @@ class FragmentFive_ReviewList : Fragment() {
         setHasOptionsMenu(true)
         setupReviewCountListener()
 
+        binding.chatListToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.menu_delete_all -> {
+                    showDeleteConfirmationDialog()
+                    return@setOnMenuItemClickListener true
+                }
+                else -> return@setOnMenuItemClickListener true
+            }
+        }
+
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_list, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_delete_all -> {
-                showDeleteConfirmationDialog()
-//                deleteAllUserReview(MyApplication.email.toString())
-                return true
-            }
-            // 다른 메뉴 항목 처리를 추가하려면 여기에 추가합니다.
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        inflater.inflate(R.menu.menu_list, menu)
+//        super.onCreateOptionsMenu(menu, inflater)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.menu_delete_all -> {
+//                showDeleteConfirmationDialog()
+////                deleteAllUserReview(MyApplication.email.toString())
+//                return true
+//            }
+//            // 다른 메뉴 항목 처리를 추가하려면 여기에 추가합니다.
+//            else -> return super.onOptionsItemSelected(item)
+//        }
+//    }
 
     override fun onStart() {
         super.onStart()
@@ -117,11 +129,40 @@ class FragmentFive_ReviewList : Fragment() {
                             .addOnSuccessListener {
                                 Toast.makeText(requireContext(), "리뷰가 모두 삭제되었습니다.", Toast.LENGTH_SHORT).show()
                                 updateUserReviewCount(auth.uid.toString(), 0)
+                                refreshRecyclerView()
                             }
                             .addOnFailureListener {  }
+                        isRemoving
                     }
                 }
                 .addOnFailureListener {  }
+        }
+    }
+
+    private fun refreshRecyclerView() {
+        // 리사이클러뷰를 새로고침하고 데이터를 다시 로드
+        val currentUser = auth.currentUser
+
+        currentUser?.let {
+            MyApplication.db.collection("reviews")
+                .orderBy("date", Query.Direction.DESCENDING)
+                .get()
+                .addOnSuccessListener { result ->
+                    val itemList = mutableListOf<ItemFeedModel>()
+                    for(document in result){
+                        val item = document.toObject(ItemFeedModel::class.java)
+                        if(MyApplication.email.equals(item.email)){
+                            item.docId = document.id
+                            itemList.add(item)
+                        }
+                    }
+                    // 기존 리사이클러뷰 어댑터에 새 데이터 설정
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
+                    binding.textView.visibility = View.VISIBLE
+                }
+                .addOnFailureListener{
+                    Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 

@@ -14,7 +14,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.checkAuth
@@ -42,7 +44,13 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
         return itemList.size
     }
 
-    override fun onBindViewHolder(holder: MyFeedViewHolder, @SuppressLint("RecyclerView") position: Int) {
+    private fun removeItem(position: Int) {
+        itemList.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    override fun onBindViewHolder(holder: MyFeedViewHolder, position: Int) {
+        val position = holder.getAdapterPosition()
         val data = itemList.get(position)
 
         holder.binding.run {
@@ -51,9 +59,37 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             itemContentView.text=data.content
             itemDateView.text=data.date
             itemMovieView.text=data.movie
-            itemRateView.text=data.rate
+            itemRateView.text= data.rate
 
-            if(itemContentView.text.isNotEmpty()) itemContentView.visibility = View.VISIBLE
+            val db = FirebaseFirestore.getInstance()
+            val usersCollection = db.collection("users")
+            var userEmail = data.email
+            var profileImageUrl : String? = null
+            usersCollection.whereEqualTo("userEmail", userEmail)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    if (!querySnapshot.isEmpty) {
+
+                        val userDocument = querySnapshot.documents[0]
+                        profileImageUrl = userDocument.getString("imageUrl")
+
+                        if( profileImageUrl != null){
+                            // Glide를 사용하여 프로필 이미지 로드
+                            Glide.with(context)
+                                .load(profileImageUrl)
+                                .into(holder.binding.itemImg)
+                        }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("MyFeedAdapter", "Error getting user document: $exception")
+                }
+
+            if(itemContentView.text.isNotEmpty()) {
+                itemContentView.visibility = View.VISIBLE
+            }else{
+                itemContentView.visibility = View.GONE
+            }
 
             itemTitleView.setOnClickListener {
                 val bundle : Bundle = Bundle()
@@ -65,6 +101,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 bundle.putString("rate", data.rate)
                 bundle.putString("userEmail", data.email)
                 bundle.putString("date", data.date)
+                bundle.putString("movieImage", data.movieImage)
 
                 Intent(context, ReviewDetailActivity::class.java).apply {
                     putExtras(bundle)
@@ -93,12 +130,12 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                                                     currentCount?.let {
                                                         val updatedCount = it - 1
                                                         updateCount(userDocRef, updatedCount)
+                                                        removeItem(holder.adapterPosition)
                                                     }
                                                 }
                                             }
                                     }
                                     .addOnFailureListener { Toast.makeText(context, "삭제가 실패하였습니다.", Toast.LENGTH_SHORT).show() }
-                                notifyItemRemoved(position)
                             }else{
                                 Toast.makeText(context, "문서가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
                             }
@@ -152,7 +189,6 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
             }
 
     }
-
 
 }
 

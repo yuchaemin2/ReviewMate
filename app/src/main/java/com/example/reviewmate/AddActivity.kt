@@ -1,13 +1,19 @@
 package com.example.reviewmate
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
+import android.util.AttributeSet
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
@@ -18,10 +24,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.reviewmate.MainActivity.Companion.MOVIE_ID
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.ActivityAddBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import org.checkerframework.checker.units.qual.mm
 import java.io.File
@@ -33,6 +41,8 @@ import java.util.*
 class AddActivity : AppCompatActivity() {
     lateinit var binding: ActivityAddBinding
     lateinit var filePath: String
+    lateinit var movieImage: String
+    lateinit var userEmail: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +51,12 @@ class AddActivity : AppCompatActivity() {
 
         val requestLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if(it.resultCode === android.app.Activity.RESULT_OK) {
-                Glide
-                    .with(applicationContext)
-                    .load(it.data?.data)
-                    .apply(RequestOptions().override(150,230))
-                    .centerCrop()
-                    .into(binding.addImageView)
+//                Glide
+//                    .with(applicationContext)
+//                    .load(it.data?.data)
+//                    .apply(RequestOptions().override(150,230))
+//                    .centerCrop()
+//                    .into(binding.addImageView)
                 val cursor = contentResolver.query(it.data?.data as Uri, arrayOf<String>(MediaStore.Images.Media.DATA), null, null, null)
                 cursor?.moveToFirst().let{
                     filePath = cursor?.getString(0) as String
@@ -55,22 +65,54 @@ class AddActivity : AppCompatActivity() {
             }
         }
 
-        binding.addImageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*") // 갤러리에 있는 이미지 불러오는 방법
-            //intent.type = "image/*"
-            requestLauncher.launch(intent)
-        }
+        val movieTitle = intent.getStringExtra(MainActivity.MOVIE_TITLE)
+        val moviePoster = intent.getStringExtra(MainActivity.MOVIE_POSTER)
+        if(moviePoster !== null) { movieImage = moviePoster.toString() }
+        val movieId = intent.getStringExtra(MainActivity.MOVIE_ID)
 
-        binding.btnSave.setOnClickListener {
-            if(binding.addTitleEditView.text.isNotEmpty()){
-                saveStore()
-            } else {
-                Toast.makeText(this, "제목을 입력해주세요..", Toast.LENGTH_SHORT).show()
+        binding.movieTitle.text = movieTitle
+        binding.movieId.text = movieId
+        Glide.with(this)
+            .load("https://image.tmdb.org/t/p/w342${moviePoster}")
+            .apply(RequestOptions().override(150, 230).centerCrop())
+            .into(binding.addImageView)
+
+//        binding.btnSave.setOnClickListener {
+//            if(binding.addTitleEditView.text.isNotEmpty()){
+//                saveStore()
+//                finish()
+//            } else {
+//                Toast.makeText(this, "제목을 입력해주세요..", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+
+        var toolbar = binding.toolbarBack
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
+        supportActionBar?.setDisplayShowTitleEnabled(false)//타이틀 없애기
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_nav, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> { //뒤로 가기 버튼
+                onBackPressed() // 기본 뒤로가기 동작 수행
+                return true
             }
-            finish()
+            R.id.save_review ->{
+                if(binding.addTitleEditView.text.isNotEmpty()){
+                    saveStore()
+                    finish()
+                } else {
+                    Toast.makeText(this, "제목을 입력해주세요..", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
-
+        return super.onOptionsItemSelected(item)
     }
 
     fun dateToString(date: Date): String {
@@ -80,20 +122,22 @@ class AddActivity : AppCompatActivity() {
 
     fun saveStore() {
         val data = mapOf(
-            "email" to Firebase.auth.currentUser!!.email,
+            "email" to MyApplication.email,
             "title" to binding.addTitleEditView.text.toString(),
             "content" to binding.addEditView.text.toString(),
             "date" to dateToString(Date()),
             "movie" to binding.movieTitle.text.toString(),
             "rate" to binding.movieRate.text.toString(),
-            "uid" to auth.uid
+            "uid" to auth.uid,
+            "movieId" to binding.movieId.text.toString(),
+            "movieImage" to "https://image.tmdb.org/t/p/w342${movieImage}"
         )
 
         MyApplication.db.collection("reviews")
             .add(data)
             .addOnSuccessListener {
                 Log.d("ToyProject", "data firestore save ok")
-                uploadImage(it.id)
+//                uploadImage(it.id)
             }
             .addOnFailureListener {
                 Log.d("ToyProject", "data firestore save error")
@@ -128,10 +172,10 @@ class AddActivity : AppCompatActivity() {
 
     }
 
-    fun uploadImage(docId:String){
+    fun uploadImage(movieId:String){
         val storage = MyApplication.storage
         val storageRef = storage.reference
-        val imageRef = storageRef.child("images/${docId}.jpg")
+        val imageRef = storageRef.child("images/${movieId}.jpg")
         val file = Uri.fromFile(File(filePath))
         imageRef.putFile(file)
             .addOnSuccessListener {

@@ -5,10 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_back"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="과목 추가하기"-->
+<!--            android:textSize="18dp"-->
+<!--            android:layout_gravity="center"/>-->
+
+        <TextView
+            android:id="@+id/menu_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"
+            android:textSize="15dp"
+            android:textColor="#C6878F"
+            android:text="삭제"
+            android:layout_gravity="right"/>
+        <TextView
+            android:id="@+id/menu_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"
+            android:textSize="15dp"
+            android:text="수정"
+            android:layout_gravity="right"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
+        android:layout_below="@id/toolbar_back"
         android:orientation="vertical">
 
         <TextView
@@ -80,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="영화제목"
-                    android:textSize="18dp"/>
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"

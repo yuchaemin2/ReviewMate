@@ -1,17 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ReviewMate" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.ReviewMate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#1398D3</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">#70A9A1</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">#1398D3</item>
+        <item name="android:statusBarColor">#70A9A1</item>
         <!-- Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
@@ -19,6 +20,19 @@
     </style>
     <style name="LoginTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorOnSecondary">@color/black</item>
-        <item name="colorButtonNormal">@color/teal_200</item>
+        <item name="colorButtonNormal">#70A9A1</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/custom_bs</item>
+    </style>
+    <style name="CalendarViewTheme" parent="Theme.ReviewMate">
+        <item name="colorAccent">#70A9A1</item>
     </style>
 </resources>
