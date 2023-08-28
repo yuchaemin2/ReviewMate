@@ -96,6 +96,8 @@ class ListFragment : Fragment() {
 
     }
 
+
+
     private fun showMovieDetails(movie: Movie) {
         val intent = Intent(activity, MovieDetailsActivity::class.java)
         intent.putExtra(MainActivity.MOVIE_BACKDROP, movie.movieBackdrop)

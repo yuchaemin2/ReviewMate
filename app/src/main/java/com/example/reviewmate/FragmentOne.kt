@@ -65,17 +65,14 @@ class FragmentOne : Fragment() {
         binding.textView1.setOnClickListener {
             (activity as MainActivity).loadFragment(ListFragment(), 1)
 
-            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
         }
         binding.textView2.setOnClickListener {
             (activity as MainActivity).loadFragment(ListFragment(), 2)
 
-            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
         }
         binding.textView3.setOnClickListener {
             (activity as MainActivity).loadFragment(ListFragment(), 3)
 
-            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
         }
 
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
