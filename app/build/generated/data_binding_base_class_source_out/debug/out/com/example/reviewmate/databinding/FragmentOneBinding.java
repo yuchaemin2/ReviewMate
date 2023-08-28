@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +35,9 @@ public final class FragmentOneBinding implements ViewBinding {
 
   @NonNull
   public final RecyclerView feedRecyclerView;
+
+  @NonNull
+  public final ScrollView fragmentOneLayout;
 
   @NonNull
   public final LinearLayout linearLayout;
@@ -64,16 +68,17 @@ public final class FragmentOneBinding implements ViewBinding {
 
   private FragmentOneBinding(@NonNull FrameLayout rootView, @NonNull TextView HomeEmailView,
       @NonNull Button btnGoSearch, @NonNull CalendarView calendarView,
-      @NonNull RecyclerView feedRecyclerView, @NonNull LinearLayout linearLayout,
-      @NonNull LinearLayout linearLayout2, @NonNull LinearLayout linearLayout3,
-      @NonNull RecyclerView popularMovies, @NonNull TextView textView1, @NonNull TextView textView2,
-      @NonNull TextView textView3, @NonNull RecyclerView topRatedMovies,
-      @NonNull RecyclerView upcomingMovies) {
+      @NonNull RecyclerView feedRecyclerView, @NonNull ScrollView fragmentOneLayout,
+      @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2,
+      @NonNull LinearLayout linearLayout3, @NonNull RecyclerView popularMovies,
+      @NonNull TextView textView1, @NonNull TextView textView2, @NonNull TextView textView3,
+      @NonNull RecyclerView topRatedMovies, @NonNull RecyclerView upcomingMovies) {
     this.rootView = rootView;
     this.HomeEmailView = HomeEmailView;
     this.btnGoSearch = btnGoSearch;
     this.calendarView = calendarView;
     this.feedRecyclerView = feedRecyclerView;
+    this.fragmentOneLayout = fragmentOneLayout;
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
     this.linearLayout3 = linearLayout3;
@@ -136,6 +141,12 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fragmentOne_layout;
+      ScrollView fragmentOneLayout = ViewBindings.findChildViewById(rootView, id);
+      if (fragmentOneLayout == null) {
+        break missingId;
+      }
+
       id = R.id.linearLayout;
       LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
@@ -191,8 +202,9 @@ public final class FragmentOneBinding implements ViewBinding {
       }
 
       return new FragmentOneBinding((FrameLayout) rootView, HomeEmailView, btnGoSearch,
-          calendarView, feedRecyclerView, linearLayout, linearLayout2, linearLayout3, popularMovies,
-          textView1, textView2, textView3, topRatedMovies, upcomingMovies);
+          calendarView, feedRecyclerView, fragmentOneLayout, linearLayout, linearLayout2,
+          linearLayout3, popularMovies, textView1, textView2, textView3, topRatedMovies,
+          upcomingMovies);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

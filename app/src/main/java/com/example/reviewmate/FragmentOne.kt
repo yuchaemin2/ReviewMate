@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewmate.common.Movie
 import com.example.reviewmate.common.MoviesRepository
-import com.example.reviewmate.common.MoviesRepository.Companion.getTopRatedMovies
-import com.example.reviewmate.common.MoviesRepository.Companion.getUpcomingMovies
 import com.example.reviewmate.databinding.FragmentOneBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.Query
@@ -63,6 +61,21 @@ class FragmentOne : Fragment() {
         binding.btnGoSearch.setOnClickListener {
             val intent = Intent(context, SearchActivity::class.java)
             startActivity(intent)
+        }
+        binding.textView1.setOnClickListener {
+            (activity as MainActivity).loadFragment(ListFragment(), 1)
+
+            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
+        }
+        binding.textView2.setOnClickListener {
+            (activity as MainActivity).loadFragment(ListFragment(), 2)
+
+            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
+        }
+        binding.textView3.setOnClickListener {
+            (activity as MainActivity).loadFragment(ListFragment(), 3)
+
+            //((MainActivity)getActivity()).replaceFragment(NewFragment.newInstance());
         }
 
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
@@ -213,35 +226,11 @@ class FragmentOne : Fragment() {
             bottomSheetDialog.show()
         }
     }
-//    private fun updateReviewListForSelectedDate() {
-//
-//        if(MyApplication.checkAuth()){
-//            MyApplication.db.collection("reviews")
-//                .whereGreaterThanOrEqualTo("date", selectedDate)// 비효율적이잖아...........
-//                .whereLessThan("date", selectedDate_add1)
-//                .orderBy("date", Query.Direction.DESCENDING)
-//                .get()
-//                .addOnSuccessListener { result ->
-//                    val itemList = mutableListOf<ItemFeedModel>()
-//                    for(document in result){
-//                        val item = document.toObject(ItemFeedModel::class.java)
-//                        if(MyApplication.email.equals(item.email)){
-//                            item.docId = document.id
-//                            itemList.add(item)
-//                        }
-//                    }
-//                    binding.feedRecyclerView.layoutManager = LinearLayoutManager(
-//                        context,
-//                        LinearLayoutManager.HORIZONTAL,
-//                        false
-//                    )
-//                    binding.feedRecyclerView.adapter = ItemFeedModel(requireContext(), itemList, "FragmentOne")
-//                    Log.d("ToyProject", "${itemList}")
-//                }
-//                .addOnFailureListener{
-//                    onError()
-//                }
-//        }
+//    private fun loadFragment(fragment: Fragment, page: Int) {
+//        val transaction = parentFragmentManager.beginTransaction()
+//        transaction.replace(R.id.fragmentOne_layout, fragment)
+//        transaction.addToBackStack(null) // 이 부분이 추가되었습니다.
+//        transaction.commit()
 //    }
 
 

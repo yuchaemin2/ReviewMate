@@ -23,6 +23,7 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     lateinit var binding: ActivityMainBinding
@@ -155,12 +156,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun loadFragment(fragment: Fragment) {
+    public fun loadFragment(fragment: Fragment, message : Int = 0) {
+        val bundle = Bundle()
+        bundle.putInt("message", message)
+        fragment.arguments = bundle
+
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_layout, fragment)
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
     }
+
 
     private fun updateUserLevelBasedOnReviewCount(userId: String) {
         val userRef = db.collection("users").document(userId)
