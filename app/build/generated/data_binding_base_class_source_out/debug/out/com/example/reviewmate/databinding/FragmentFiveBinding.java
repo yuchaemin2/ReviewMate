@@ -28,6 +28,9 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final Button accountDeleteButton;
 
   @NonNull
+  public final Button btnDevelopers;
+
+  @NonNull
   public final Button btnMove;
 
   @NonNull
@@ -46,12 +49,13 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final ImageView userProfile;
 
   private FragmentFiveBinding(@NonNull LinearLayout rootView, @NonNull TextView CertifyEmailView,
-      @NonNull Button accountDeleteButton, @NonNull Button btnMove,
+      @NonNull Button accountDeleteButton, @NonNull Button btnDevelopers, @NonNull Button btnMove,
       @NonNull LinearLayout fiveLayout, @NonNull Button logoutButton, @NonNull ImageView reviewImg,
       @NonNull TextView userLevelTextView, @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
     this.accountDeleteButton = accountDeleteButton;
+    this.btnDevelopers = btnDevelopers;
     this.btnMove = btnMove;
     this.fiveLayout = fiveLayout;
     this.logoutButton = logoutButton;
@@ -99,6 +103,12 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_developers;
+      Button btnDevelopers = ViewBindings.findChildViewById(rootView, id);
+      if (btnDevelopers == null) {
+        break missingId;
+      }
+
       id = R.id.btn_move;
       Button btnMove = ViewBindings.findChildViewById(rootView, id);
       if (btnMove == null) {
@@ -132,7 +142,8 @@ public final class FragmentFiveBinding implements ViewBinding {
       }
 
       return new FragmentFiveBinding((LinearLayout) rootView, CertifyEmailView, accountDeleteButton,
-          btnMove, fiveLayout, logoutButton, reviewImg, userLevelTextView, userProfile);
+          btnDevelopers, btnMove, fiveLayout, logoutButton, reviewImg, userLevelTextView,
+          userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

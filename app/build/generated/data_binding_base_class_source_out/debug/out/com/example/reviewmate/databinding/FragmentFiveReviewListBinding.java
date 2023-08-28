@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,10 +23,14 @@ public final class FragmentFiveReviewListBinding implements ViewBinding {
   @NonNull
   public final RecyclerView feedRecyclerView;
 
+  @NonNull
+  public final TextView textView;
+
   private FragmentFiveReviewListBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView feedRecyclerView) {
+      @NonNull RecyclerView feedRecyclerView, @NonNull TextView textView) {
     this.rootView = rootView;
     this.feedRecyclerView = feedRecyclerView;
+    this.textView = textView;
   }
 
   @Override
@@ -61,7 +66,14 @@ public final class FragmentFiveReviewListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFiveReviewListBinding((RelativeLayout) rootView, feedRecyclerView);
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      return new FragmentFiveReviewListBinding((RelativeLayout) rootView, feedRecyclerView,
+          textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

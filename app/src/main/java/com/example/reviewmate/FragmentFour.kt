@@ -73,7 +73,7 @@ class FragmentFour : Fragment() {
                         itemList.add(item)
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList, "FragmnetFour")
                     Log.d("ToyProject", "${itemList}")
                 }
                 .addOnFailureListener{

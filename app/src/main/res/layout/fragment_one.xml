@@ -27,22 +27,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="현재 작성 리뷰: n개 " />
+            <Button
+                android:id="@+id/btn_go_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="돋보기" />
 
 
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="#40000000" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/feedRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="가장 인기있는 영화"
                 android:textSize="17sp" />
 
@@ -64,18 +75,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:clipToPadding="false"
-                        android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_marginTop="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="최근 리뷰 작성된 영화"
+                android:textStyle="bold"
+                android:text="Top Rated 평점"
                 android:textSize="17sp" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,19 +102,48 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recent_movies"
+                        android:id="@+id/top_rated_movies"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:clipToPadding="false"
-                        android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Upcoming"
+                android:textSize="17sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/upcoming_movies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:paddingEnd="16dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

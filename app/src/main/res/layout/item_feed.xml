@@ -22,7 +22,8 @@
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:src="@drawable/img_1"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:visibility="visible"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -35,13 +36,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="사용자 이메일"
-                    android:layout_marginBottom="2dp"/>
+                    android:layout_marginBottom="2dp"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/itemDateView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2023-00-00" />
+                    android:text="2023-00-00"
+                    android:visibility="visible"/>
 
             </LinearLayout>
 
@@ -66,7 +69,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp">
 
@@ -83,29 +86,48 @@
             <!--                android:layout_height="0dp"-->
             <!--                android:layout_weight="1" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold"
-                android:text="·"
-                />
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp">
 
-            <TextView
-                android:id="@+id/itemMovieView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="영화 제목"
-                />
+                <TextView
+                    android:id="@+id/itemMovieView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="영화 제목"
+                    />
 
-            <TextView
-                android:id="@+id/itemRateView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="별점"
-                android:textColor="@android:color/holo_orange_light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:text="·"
+                    />
+
+                <TextView
+                    android:id="@+id/itemRateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="별점"
+                    android:textColor="@android:color/holo_orange_light" />
+
+                <!--                <RatingBar-->
+                <!--                    android:id="@+id/itemRateView"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    style="@style/Widget.AppCompat.RatingBar.Small"-->
+                <!--                    android:contentDescription="영화 평점:"-->
+                <!--                    android:layout_marginBottom="5dp"-->
+                <!--                    android:isIndicator="true"/>-->
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -131,7 +153,7 @@
             android:layout_height="match_parent"
             android:visibility="gone"
             android:text="글 내용"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 

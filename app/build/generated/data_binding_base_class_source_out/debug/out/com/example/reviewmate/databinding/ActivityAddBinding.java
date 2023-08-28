@@ -35,6 +35,9 @@ public final class ActivityAddBinding implements ViewBinding {
   public final ExtendedFloatingActionButton btnSave;
 
   @NonNull
+  public final TextView movieId;
+
+  @NonNull
   public final TextView movieRate;
 
   @NonNull
@@ -42,13 +45,14 @@ public final class ActivityAddBinding implements ViewBinding {
 
   private ActivityAddBinding(@NonNull LinearLayout rootView, @NonNull EditText addEditView,
       @NonNull ImageView addImageView, @NonNull EditText addTitleEditView,
-      @NonNull ExtendedFloatingActionButton btnSave, @NonNull TextView movieRate,
-      @NonNull TextView movieTitle) {
+      @NonNull ExtendedFloatingActionButton btnSave, @NonNull TextView movieId,
+      @NonNull TextView movieRate, @NonNull TextView movieTitle) {
     this.rootView = rootView;
     this.addEditView = addEditView;
     this.addImageView = addImageView;
     this.addTitleEditView = addTitleEditView;
     this.btnSave = btnSave;
+    this.movieId = movieId;
     this.movieRate = movieRate;
     this.movieTitle = movieTitle;
   }
@@ -104,6 +108,12 @@ public final class ActivityAddBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.movieId;
+      TextView movieId = ViewBindings.findChildViewById(rootView, id);
+      if (movieId == null) {
+        break missingId;
+      }
+
       id = R.id.movieRate;
       TextView movieRate = ViewBindings.findChildViewById(rootView, id);
       if (movieRate == null) {
@@ -117,7 +127,7 @@ public final class ActivityAddBinding implements ViewBinding {
       }
 
       return new ActivityAddBinding((LinearLayout) rootView, addEditView, addImageView,
-          addTitleEditView, btnSave, movieRate, movieTitle);
+          addTitleEditView, btnSave, movieId, movieRate, movieTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

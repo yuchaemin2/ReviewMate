@@ -26,7 +26,7 @@ import okhttp3.internal.notifyAll
 
 class MyFeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedModel>): RecyclerView.Adapter<MyFeedViewHolder>() {
+class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedModel>, val sourceFragment: String): RecyclerView.Adapter<MyFeedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFeedViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -84,6 +84,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 bundle.putString("userEmail", data.email)
                 bundle.putString("date", data.date)
                 bundle.putString("image_url", profileImageUrl)
+                bundle.putString("movieImage", data.movieImage)
 
                 Intent(context, ReviewDetailActivity::class.java).apply {
                     putExtras(bundle)
@@ -111,9 +112,19 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 }
             }
 
-            if(itemEmailView.text == MyApplication.email){
-                reviewDelete.visibility = View.VISIBLE
+
+            if(sourceFragment.equals("FragmentOne") ){
+                reviewDelete.visibility = View.INVISIBLE
+                itemImg.visibility = View.GONE
+                itemEmailView.visibility = View.GONE
+                itemDateView.visibility = View.GONE
             }
+            else if (sourceFragment.equals("FragmentTwo")) {
+                if(itemEmailView.text == MyApplication.email){
+                    reviewDelete.visibility = View.VISIBLE
+                }
+            }
+
 
             reviewDelete.setOnClickListener {
                 AlertDialog.Builder(context).run{

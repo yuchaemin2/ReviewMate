@@ -92,7 +92,7 @@ class FragmentFive_ReviewList : Fragment() {
 
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList, "FragmentFive_ReviewList")
                     //goReviewDtaill()
                 }
                 .addOnFailureListener{

@@ -75,7 +75,7 @@ public final class FragmentThreeBinding implements ViewBinding {
   public final TextView level9Text;
 
   @NonNull
-  public final TextView userLevel;
+  public final TextView userLevelTextView;
 
   @NonNull
   public final ImageView userProfile;
@@ -86,7 +86,7 @@ public final class FragmentThreeBinding implements ViewBinding {
       @NonNull TextView level4Text, @NonNull ImageView level5, @NonNull TextView level5Text,
       @NonNull ImageView level6, @NonNull TextView level6Text, @NonNull ImageView level7,
       @NonNull TextView level7Text, @NonNull ImageView level8, @NonNull TextView level8Text,
-      @NonNull ImageView level9, @NonNull TextView level9Text, @NonNull TextView userLevel,
+      @NonNull ImageView level9, @NonNull TextView level9Text, @NonNull TextView userLevelTextView,
       @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.level1 = level1;
@@ -107,7 +107,7 @@ public final class FragmentThreeBinding implements ViewBinding {
     this.level8Text = level8Text;
     this.level9 = level9;
     this.level9Text = level9Text;
-    this.userLevel = userLevel;
+    this.userLevelTextView = userLevelTextView;
     this.userProfile = userProfile;
   }
 
@@ -246,9 +246,9 @@ public final class FragmentThreeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.userLevel;
-      TextView userLevel = ViewBindings.findChildViewById(rootView, id);
-      if (userLevel == null) {
+      id = R.id.userLevelTextView;
+      TextView userLevelTextView = ViewBindings.findChildViewById(rootView, id);
+      if (userLevelTextView == null) {
         break missingId;
       }
 
@@ -260,7 +260,7 @@ public final class FragmentThreeBinding implements ViewBinding {
 
       return new FragmentThreeBinding((LinearLayout) rootView, level1, level1Text, level2,
           level2Text, level3, level3Text, level4, level4Text, level5, level5Text, level6,
-          level6Text, level7, level7Text, level8, level8Text, level9, level9Text, userLevel,
+          level6Text, level7, level7Text, level8, level8Text, level9, level9Text, userLevelTextView,
           userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);

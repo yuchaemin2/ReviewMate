@@ -12,14 +12,25 @@ interface Api {
         @Query("language") language : String = "ko"
     ): Call<GetMoviesResponse>
 
-//===============
-    @GET("search/movie")
-    fun getSearchMovies(
-        @Query("api_key") apiKey: String = "348eefabae0631d8003f24551c45a05c",
+    @GET("movie/top_rated")
+    fun getTopRatedMovies(
+        @Query("api_key") apiKey: String = "8f3a3db8280b0610b5e33cee7ce41c59",
         @Query("page") page : Int,
-        @Query("query") query : String,
-        @Query("language") language : String = "ko,en-US"
+        @Query("language") language : String = "ko"
     ): Call<GetMoviesResponse>
 
-    //=======================
+    @GET("movie/upcoming")
+    fun getUpcomingMovies(
+        @Query("api_key") apiKey: String = "8f3a3db8280b0610b5e33cee7ce41c59",
+        @Query("page") page : Int,
+        @Query("language") language : String = "ko"
+    ): Call<GetMoviesResponse>
+
+    @GET("search/movie")
+    fun getSearchMovies(
+        @Query("api_key") apiKey: String = "8f3a3db8280b0610b5e33cee7ce41c59",
+        @Query("page") page : Int,
+        @Query("query") query : String,
+        @Query("language") language : String = "ko"
+    ): Call<GetMoviesResponse>
 }

@@ -13,6 +13,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentTransaction
 import com.example.reviewmate.databinding.FragmentFiveBinding
 import com.example.reviewmate.databinding.FragmentFourBinding
@@ -52,6 +54,7 @@ class FragmentFive : Fragment() {
         downloadAndDisplayImage()
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
         // button 클릭시 fragmenrFive_ReviwList로 이동
         var btn_move: Button = binding.btnMove
         btn_move.setOnClickListener { // 람다식 리스너 setOnclickListener{}
@@ -65,6 +68,23 @@ class FragmentFive : Fragment() {
             transaction.commit()
 
         }
+        var changeLayoutButton : Button = binding.btnDevelopers
+        fun setContentView(fragmentFive: Int) {
+
+        }
+        changeLayoutButton.setOnClickListener(View.OnClickListener() {
+            var isSecondLayout = false // 초기값을 false로 설정
+            fun onClick(v : View) {
+                if (isSecondLayout) {
+
+                    setContentView(R.layout.fragment_five);
+                } else {
+                    setContentView(R.layout.activity_main);
+                }
+                isSecondLayout = !isSecondLayout;
+            }
+        });
+
 
         // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
         val logoutButton = binding.logoutButton

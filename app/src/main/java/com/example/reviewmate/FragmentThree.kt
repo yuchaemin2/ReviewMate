@@ -95,7 +95,7 @@ class FragmentThree : Fragment() {
 
                         userLevel = documentSnapshot.getString("userLevel")
                         if (userLevel != null) { // 업로드 & 다이얼로그
-                            binding.userLevel.text = userLevel
+                            binding.userLevelTextView.text = userLevel
                             openCharacters(Integer.parseInt(userLevel))
                             openDialog(Integer.parseInt(userLevel))
 
@@ -156,75 +156,75 @@ class FragmentThree : Fragment() {
 
 
     val characters = arrayOf(
-        arrayOf("/profile_images/danielle_1.png", "이름1", "설명1"),
-        arrayOf("/profile_images/danielle_2.png", "이름2", "설명2"),
-        arrayOf("/profile_images/haerin_1.png", "이름3", "설명3"),
-        arrayOf("/profile_images/haerin_2.png", "이름4", "설명4"),
-        arrayOf("/profile_images/hanni_1.png", "이름5", "설명5"),
-        arrayOf("/profile_images/hanni_2.png", "이름6", "설명6"),
-        arrayOf("/profile_images/hyein_1.png", "이름7", "설명7"),
-        arrayOf("/profile_images/hyein_2.png", "이름8", "설명8"),
-        arrayOf("/profile_images/minji_1.png", "이름9", "설명9")
+        arrayOf("/profile_images/level_1.png", "하품하는 고양이", "하품하고 피곤해 보이는 고양이입니다."),
+        arrayOf("/profile_images/level_2.png", "그루밍하는 고양이", "털을 그루밍하는 고양이입니다."),
+        arrayOf("/profile_images/level_3.png", "경계하는 고양이", "호기심 가득한 눈으로 주변을 늘 경계하는 고양이입니다."),
+        arrayOf("/profile_images/level_4.png", "하품하는 고양이", "졸려서 하품하는 검정색 고양이입니다."),
+        arrayOf("/profile_images/level_5.png", "삼색콩떡 고양이", "독특한 삼색 모습으로 사람들의 관심을 끄는 고양이입니다."),
+        arrayOf("/profile_images/level_6.png", "멍때리는 고양이", "눈을 반쯤 감고 먼 곳을 응시하는 듯한 고요한 고양이입니다."),
+        arrayOf("/profile_images/level_7.png", "노려보는 고양이", "까칠한 느낌으로 주변을 바라보는 고양이입니다."),
+        arrayOf("/profile_images/level_8.png", "햇빛쬐는 고양이", "따뜻한 햇살 아래에서 편안함을 느끼는 고양이입니다."),
+        arrayOf("/profile_images/level_9.png", "미소짓는 고양이", "마치 미소를 짓는 듯한 표정으로 귀여움을 뽐내는 고양이입니다.")
     )
 
+
     val imgResourceIds = arrayOf(
-        R.drawable.danielle_1,
-        R.drawable.danielle_2,
-        R.drawable.haerin_1,
-        R.drawable.haerin_2,
-        R.drawable.hanni_1,
-        R.drawable.hanni_2,
-        R.drawable.hyein_1,
-        R.drawable.hyein_2,
-        R.drawable.minji_1
-        // ... 나머지 이미지 리소스 ID
+        R.drawable.level_1,
+        R.drawable.level_2,
+        R.drawable.level_3,
+        R.drawable.level_4,
+        R.drawable.level_5,
+        R.drawable.level_6,
+        R.drawable.level_7,
+        R.drawable.level_8,
+        R.drawable.level_9
     )
 
     fun openLevel1() {
-        binding.level1.setImageResource(R.drawable.danielle_1)
+        binding.level1.setImageResource(R.drawable.level_1)
     }
     fun openLevel2() {
-        binding.level2.setImageResource(R.drawable.danielle_2)
+        binding.level2.setImageResource(R.drawable.level_2)
         binding.level2Text.text=characters[1][1]
     }
     fun openLevel3() {
         openLevel2()
-        binding.level3.setImageResource(R.drawable.haerin_1)
+        binding.level3.setImageResource(R.drawable.level_3)
         binding.level3Text.text=characters[2][1]
     }
     fun openLevel4() {
         openLevel3()
-        binding.level4.setImageResource(R.drawable.haerin_2)
+        binding.level4.setImageResource(R.drawable.level_4)
         binding.level4Text.text=characters[3][1]
     }
     fun openLevel5() {
         openLevel4()
-        binding.level5.setImageResource(R.drawable.hanni_1)
+        binding.level5.setImageResource(R.drawable.level_5)
         binding.level5Text.text=characters[4][1]
     }
     fun openLevel6() {
         openLevel5()
-        binding.level6.setImageResource(R.drawable.hanni_2)
+        binding.level6.setImageResource(R.drawable.level_6)
         binding.level6Text.text=characters[5][1]
     }
     fun openLevel7() {
         openLevel6()
-        binding.level7.setImageResource(R.drawable.hyein_1)
+        binding.level7.setImageResource(R.drawable.level_7)
         binding.level7Text.text=characters[6][1]
     }
     fun openLevel8() {
         openLevel7()
-        binding.level8.setImageResource(R.drawable.hyein_2)
+        binding.level8.setImageResource(R.drawable.level_8)
         binding.level8Text.text=characters[7][1]
     }
     fun openLevel9() {
         openLevel8()
-        binding.level9.setImageResource(R.drawable.haerin_2)
+        binding.level9.setImageResource(R.drawable.level_9)
         binding.level9Text.text=characters[8][1]
     }
 
     fun openCharacters(level : Int) {
-        val level = binding.userLevel.text.toString()
+        val level = binding.userLevelTextView.text.toString()
         val intLevel = Integer.parseInt(level)
         when (intLevel) {
             1 -> openLevel1()
@@ -269,7 +269,7 @@ class FragmentThree : Fragment() {
                         upLoadProfileImg(characters[i][0]) // 이미지 파일 전달 해줘야함
                         binding.userProfile.setImageResource(imgResourceIds[i])
                     }
-                    setNegativeButton("OK", alertHandler)
+                    setNegativeButton("닫기", alertHandler)
                     show()
                 }
             }

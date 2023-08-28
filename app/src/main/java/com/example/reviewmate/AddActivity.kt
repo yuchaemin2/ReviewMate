@@ -34,6 +34,7 @@ import java.util.*
 class AddActivity : AppCompatActivity() {
     lateinit var binding: ActivityAddBinding
     lateinit var filePath: String
+    lateinit var movieImage : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +66,10 @@ class AddActivity : AppCompatActivity() {
 
         val movieTitle = intent.getStringExtra(MainActivity.MOVIE_TITLE)
         val moviePoster = intent.getStringExtra(MainActivity.MOVIE_POSTER)
+        if(moviePoster != null){
+            movieImage = moviePoster.toString()
+        }
+
         val movieId = intent.getStringExtra(MainActivity.MOVIE_ID)
 
         binding.movieTitle.text = movieTitle
@@ -73,6 +78,7 @@ class AddActivity : AppCompatActivity() {
             .load("https://image.tmdb.org/t/p/w342${moviePoster}")
             .apply(RequestOptions().override(150, 230).centerCrop())
             .into(binding.addImageView)
+        Log.d("ToyProject", "https://image.tmdb.org/t/p/w342${moviePoster}")
 
         binding.btnSave.setOnClickListener {
             if(binding.addTitleEditView.text.isNotEmpty()){
@@ -99,7 +105,8 @@ class AddActivity : AppCompatActivity() {
             "movie" to binding.movieTitle.text.toString(),
             "rate" to binding.movieRate.text.toString(),
             "uid" to auth.uid,
-            "movieId" to binding.movieId.text.toString()
+            "movieId" to binding.movieId.text.toString(),
+            "movieImage" to "https://image.tmdb.org/t/p/w342${movieImage}"
         )
 
         MyApplication.db.collection("reviews")

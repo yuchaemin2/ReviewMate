@@ -31,8 +31,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.ReviewMate" >
         <activity
-            android:name="com.example.reviewmate.MovieDetailsActivity"
+            android:name="com.example.reviewmate.SearchActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.reviewmate.NestedScrollViewTestActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.reviewmate.MovieDetailsActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.reviewmate.ReviewDetailActivity"
             android:exported="false" />

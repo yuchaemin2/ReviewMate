@@ -1,13 +1,16 @@
 package com.example.reviewmate
 
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewmate.common.Movie
@@ -43,11 +46,15 @@ class FragmentTwo : Fragment() {
         val binding = FragmentTwoBinding.inflate(inflater, container, false)
 
         searchMovies = binding.searchMovies
-        searchMoviesLayoutMgr = LinearLayoutManager(
+        searchMoviesLayoutMgr = GridLayoutManager(
             context,
-            LinearLayoutManager.HORIZONTAL,
-            false
+            3, // 열의 개수
+            RecyclerView.VERTICAL, // 아이템의 배치 방향 (수직)
+            false // 리사이클러뷰 크기가 변하지 않음
         )
+
+
+
         searchMovies.layoutManager = searchMoviesLayoutMgr
         searchMoviesAdapter = MovieAdapter(mutableListOf()) { movie -> showMovieDetails(movie) }
         searchMovies.adapter = searchMoviesAdapter
@@ -63,13 +70,14 @@ class FragmentTwo : Fragment() {
                 getSearchMovies()
 
             }
+            removeData()
         }
 
         return binding.root
     }
-    private fun removeData() { // 초기설정
-        searchMovies.removeAllViews()
 
+    private fun removeData() {
+        searchMovies.removeAllViews()
         searchMoviesAdapter.removeMovies(searchMoviesAdapter.movies)
         searchMoviesAdapter.notifyDataSetChanged()
 
@@ -113,11 +121,38 @@ class FragmentTwo : Fragment() {
 
     private fun showMovieDetails(movie: Movie) {
         val intent = Intent(activity, MovieDetailsActivity::class.java)
+        intent.putExtra(MainActivity.MOVIE_ID, movie.movieId)
         intent.putExtra(MainActivity.MOVIE_POSTER, movie.moviePoster)
         intent.putExtra(MainActivity.MOVIE_TITLE, movie.movieTitle)
         intent.putExtra(MainActivity.MOVIE_RATING, movie.movieRate)
         intent.putExtra(MainActivity.MOVIE_OVERVIEW, movie.movieOverview)
         startActivity(intent)
     }
+
+    // 패딩설정 나중에!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    class GridSpacingItemDecoration(private val spanCount: Int, private val spacing: Int, private val includeEdge: Boolean) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            val position = parent.getChildAdapterPosition(view)
+            val column = position % spanCount
+
+            if (includeEdge) {
+                outRect.left = spacing - column * spacing / spanCount
+                outRect.right = (column + 1) * spacing / spanCount
+
+                if (position < spanCount) {
+                    outRect.top = spacing
+                }
+                outRect.bottom = spacing
+            } else {
+                outRect.left = column * spacing / spanCount
+                outRect.right = spacing - (column + 1) * spacing / spanCount
+
+                if (position >= spanCount) {
+                    outRect.top = spacing
+                }
+            }
+        }
+    }
+
 
 }

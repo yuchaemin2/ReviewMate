@@ -29,12 +29,13 @@ val bundle : Bundle = Bundle()
 * */
 
         // ------------- API : 영화 제목, 포스터 추가해야 함 --------------
-        binding.movieTitle.text = intent.getStringExtra("영화제목API")
+        binding.movieTitle.text = intent.getStringExtra("movie")
         binding.movieRate.text = intent.getStringExtra("rate")
         binding.reviewTitle.text = intent.getStringExtra("title")
         binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
         binding.reviewDate.text = intent.getStringExtra("date")
+
         var profileImageUrl = intent.getStringExtra("image_url")
 
         // 영화 API사용하여 데이터 가져와야 함
@@ -43,6 +44,15 @@ val bundle : Bundle = Bundle()
             Glide.with(baseContext)
                 .load(profileImageUrl)
                 .into(binding.profileImage)
+        }
+        var movieImage = intent.getStringExtra("movieImage")
+        Toast.makeText(baseContext, "${movieImage}영화 이미지 왜안돼?..????", Toast.LENGTH_SHORT).show()
+        if(movieImage != null && movieImage != "null"){
+            // Glide를 사용하여 프로필 이미지 로드
+            Glide.with(baseContext)
+                .load(movieImage)
+                .into(binding.addImageView)
+            Toast.makeText(baseContext, "${movieImage}영화 이미지 왜안돼?..????", Toast.LENGTH_SHORT).show()
         }
     }
 

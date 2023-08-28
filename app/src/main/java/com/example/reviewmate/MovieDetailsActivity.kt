@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.example.reviewmate.MainActivity.Companion.MOVIE_BACKDROP
 import com.example.reviewmate.MainActivity.Companion.MOVIE_ID
 import com.example.reviewmate.MainActivity.Companion.MOVIE_OVERVIEW
 import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
@@ -27,12 +28,13 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var rating: RatingBar
     private lateinit var overview: TextView
     private lateinit var id: TextView
+    private lateinit var backdrop: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = MovieDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        backdrop = binding.movieBackdrop
         poster = binding.moviePoster
         title = binding.movieTitle
         rating = binding.movieRate
@@ -46,21 +48,21 @@ class MovieDetailsActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.addReviewBtn.setOnClickListener {
-            if(MyApplication.checkAuth()){
-                val intent = Intent(this, AddActivity::class.java)
-                if (extras != null) {
-                    intent.putExtra(MOVIE_TITLE, title.text.toString())
-                    intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
-                    intent.putExtra(MOVIE_ID, id.text.toString())
-//                    intent.putExtra(MOVIE_ID, extras.getString(MOVIE_ID))
-                }
-                startActivity(intent)
-            }
-            else {
-                Toast.makeText(this, "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        binding.addReviewBtn.setOnClickListener {
+//            if(MyApplication.checkAuth()){
+//                val intent = Intent(this, AddActivity::class.java)
+//                if (extras != null) {
+//                    intent.putExtra(MOVIE_TITLE, title.text.toString())
+//                    intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
+//                    intent.putExtra(MOVIE_ID, id.text.toString())
+////                    intent.putExtra(MOVIE_ID, extras.getString(MOVIE_ID))
+//                }
+//                startActivity(intent)
+//            }
+//            else {
+//                Toast.makeText(this, "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
+//            }
+//        }
     }
 
     override fun onStart() {
@@ -83,7 +85,7 @@ class MovieDetailsActivity : AppCompatActivity() {
                         Log.d("ToyProject", "영화 아이디: ${id.text}")
                     }
                     binding.movieDetailRecyclerView.layoutManager = LinearLayoutManager(this)
-                    binding.movieDetailRecyclerView.adapter = MyFeedAdapter(this, itemList)
+                    binding.movieDetailRecyclerView.adapter = MyFeedAdapter(this, itemList, "MovieDetails")
                 }
                 .addOnFailureListener{
                     Toast.makeText(this, "데이터 획득 실패", Toast.LENGTH_SHORT).show()
@@ -92,11 +94,18 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun populateDetails(extras: Bundle) {
+        extras.getString(MOVIE_BACKDROP)?.let { backdropPath ->
+            Glide.with(this)
+                .load("https://image.tmdb.org/t/p/w1280${backdropPath}")
+                .transform(CenterCrop())
+                .into(backdrop)
+        }
         extras.getString(MOVIE_POSTER)?.let { posterPath ->
             Glide.with(this)
                 .load("https://image.tmdb.org/t/p/w342${posterPath}")
                 .transform(CenterCrop())
                 .into(poster)
+
         }
 
         title.text = extras.getString(MOVIE_TITLE, "")

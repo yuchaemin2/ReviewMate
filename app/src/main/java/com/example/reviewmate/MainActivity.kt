@@ -1,29 +1,39 @@
 package com.example.reviewmate
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.ActivityMainBinding
+import com.example.reviewmate.databinding.FragmentThreeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     lateinit var binding: ActivityMainBinding
-    var html = "http://openapi.airkorea.or.kr/openapi/services/rest/MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=244148.546388&tmY=412423.75772&pageNo=1&numOfRows=10&ServiceKey=서비스키"
-
 
     companion object {
+        const val MOVIE_BACKDROP = "extra_movie_backdrop"
+        const val MOVIE_ID = "extra_movie_id"
         const val MOVIE_POSTER = "extra_movie_poster"
         const val MOVIE_TITLE = "extra_movie_title"
         const val MOVIE_RATING = "extra_movie_rating"
+        const val MOVIE_RELEASE_DATE = "extra_movie_release_date"
         const val MOVIE_OVERVIEW = "extra_movie_overview"
     }
 
@@ -74,6 +84,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
+
+        MyApplication.db.collection("users").document(auth.uid.toString())
+            .get()
+            .addOnSuccessListener {  }
     }
 
     override fun onStart() {
@@ -81,9 +95,9 @@ class MainActivity : AppCompatActivity() {
         // onCreate -> onStart
         super.onStart()
 
-        if(MyApplication.checkAuth()){
+        updateUserLevelBasedOnReviewCount(auth.uid.toString())
 
-//            Toast.makeText(baseContext, "로그인 성공", Toast.LENGTH_SHORT).show()
+        if(MyApplication.checkAuth()){
 
             bottomNavigationView = findViewById(R.id.bottomNavigationView)
             bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -147,22 +161,47 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
     }
-    companion object {
-        const val MOVIE_ID = "extra_movie_id"
-        const val MOVIE_POSTER = "extra_movie_poster"
-        const val MOVIE_TITLE = "extra_movie_title"
-        const val MOVIE_RATING = "extra_movie_rating"
-        const val MOVIE_OVERVIEW = "extra_movie_overview"
+
+    private fun updateUserLevelBasedOnReviewCount(userId: String) {
+        val userRef = db.collection("users").document(userId)
+
+        userRef.get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    val userReviewCount = documentSnapshot.getLong("userReviewCount") ?: 0
+                    val newUserLevel = calculateUserLevel(userReviewCount)
+
+                    // userLevel 업데이트
+                    userRef.update("userLevel", newUserLevel)
+                        .addOnSuccessListener {
+                            // 업데이트 성공 시 처리
+                        }
+                        .addOnFailureListener { e ->
+                            // 업데이트 실패 시 처리
+                        }
+                }
+            }
+            .addOnFailureListener { e ->
+                // 문서 가져오기 실패 시 처리
+            }
+    }
+
+    private fun calculateUserLevel(userReviewCount: Long): String {
+        val zero: Long = 0
+        if(userReviewCount % 10 == zero && userReviewCount != zero) {
+            Toast.makeText(this, "사용자의 레벨이 올랐습니다!", Toast.LENGTH_SHORT).show()
+        }
+        return when {
+            userReviewCount < 10 -> "1"
+            userReviewCount < 20 -> "2"
+            userReviewCount < 30 -> "3"
+            userReviewCount < 40 -> "4"
+            userReviewCount < 50 -> "5"
+            userReviewCount < 60 -> "6"
+            userReviewCount < 70 -> "7"
+            userReviewCount < 80 -> "8"
+            userReviewCount < 90 -> "9"
+            else -> "1"
+        }
     }
 }
-/*
-* intent.putExtra(MainActivity.MOVIE_BACKDROP, movie.backdrop_path)
-        intent.putExtra(MainActivity.MOVIE_POSTER, movie.poster_path)
-        intent.putExtra(MainActivity.MOVIE_TITLE, movie.title)
-        intent.putExtra(MainActivity.MOVIE_RATING, movie.rating)
-        intent.putExtra(MainActivity.MOVIE_RELEASE_DATE, movie.releaseDate)
-        intent.putExtra(MainActivity.MOVIE_OVERVIEW, movie.overview)
-        startActivity(intent)
-*
-*
-* */
