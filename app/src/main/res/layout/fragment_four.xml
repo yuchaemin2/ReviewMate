@@ -6,11 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".FragmentFour">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/chatList_toolbar"
+        android:background="?android:attr/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:title="Reviews" >
+
+        <ImageView
+            android:id="@+id/menu_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_marginRight="11dp"
+            android:layout_gravity="right"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/feedRecyclerView"
+        android:layout_below="@id/chatList_toolbar"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_feed"
+        tools:itemCount="3"/>
 
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--        android:id="@+id/main_fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="30dp"-->
+<!--        app:icon="@android:drawable/ic_input_add"-->
+<!--        android:text="Add Review"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"/>-->
 
 </RelativeLayout>

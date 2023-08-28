@@ -17,9 +17,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFourBinding
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,14 +40,18 @@ class FragmentFour : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var binding: FragmentFourBinding
+
+    lateinit var storage: FirebaseStorage
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        storage = FirebaseStorage.getInstance()
     }
 
     override fun onCreateView(
@@ -52,9 +60,10 @@ class FragmentFour : Fragment() {
     ): View? {
         binding = FragmentFourBinding.inflate(inflater, container, false)
 
-        //         myCheckPermission(requireActivity() as AppCompatActivity)
-
-
+        binding.menuSearch.setOnClickListener {
+            val intent = Intent(requireContext(), ReviewSearchActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }
@@ -73,47 +82,14 @@ class FragmentFour : Fragment() {
                         itemList.add(item)
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList, "FragmnetFour")
-                    Log.d("ToyProject", "${itemList}")
+                    binding.feedRecyclerView.adapter = MyFeedAdapter(requireContext(), itemList)
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
+
     }
-
-
-//    fun myCheckPermission(activity: AppCompatActivity) {
-//        val requestPermissionLauncher = activity.registerForActivityResult(
-//            ActivityResultContracts.RequestPermission()
-//        ) {
-//            if (it) {
-//                Toast.makeText(activity, "권한 승인", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(activity, "권한 거부", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(
-//                activity, Manifest.permission.READ_EXTERNAL_STORAGE
-//            ) !== PackageManager.PERMISSION_GRANTED
-//        ) {
-//            requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-//        }
-//        if (ContextCompat.checkSelfPermission(
-//                activity, Manifest.permission.WRITE_EXTERNAL_STORAGE
-//            ) !== PackageManager.PERMISSION_GRANTED
-//        ) {
-//            requestPermissionLauncher.launch((Manifest.permission.WRITE_EXTERNAL_STORAGE))
-//        }
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            if (!Environment.isExternalStorageManager()) {
-//                val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
-//                activity.startActivity(intent)
-//            }
-//        }
-//    }
 
     companion object {
         /**

@@ -20,11 +20,15 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
                 .transform(CenterCrop())
                 .into(poster)
             binding.itemMovieTitle.text = movie.movieTitle
+
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
 
         }
     }
 
+//    override fun getItemViewType(position: Int): Int {
+//        return super.getItemViewType(position)
+//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater
@@ -43,6 +47,10 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
         holder.bind(movies[position])
     }
 
+    fun removeMovies(movies: List<Movie>) {
+        this.movies.removeAll(movies)
+    }
+
     fun appendMovies(movies: List<Movie>) {
         this.movies.addAll(movies)
         notifyItemRangeInserted(
@@ -50,9 +58,4 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             movies.size - 1
         )
     }
-
-    fun removeMovies(movies: List<Movie>) {
-        this.movies.removeAll(movies)
-    }
-
 }

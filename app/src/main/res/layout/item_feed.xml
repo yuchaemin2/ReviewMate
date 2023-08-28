@@ -22,8 +22,7 @@
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:src="@drawable/img_1"
-                android:layout_gravity="center_vertical"
-                android:visibility="visible"/>
+                android:layout_gravity="center_vertical" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -36,31 +35,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="사용자 이메일"
-                    android:layout_marginBottom="2dp"
-                    android:visibility="visible"/>
+                    android:layout_marginBottom="2dp"/>
 
                 <TextView
                     android:id="@+id/itemDateView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2023-00-00"
-                    android:visibility="visible"/>
+                    android:text="2023-00-00" />
 
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
 
-                <Button
+                <ImageView
                     android:id="@+id/review_delete"
-                    android:visibility="invisible"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentRight="true"
-                    android:textSize="9dp"
-                    android:background="@drawable/round_button"
-                    android:text="삭제" />
+                    android:visibility="visible"
+                    android:src="@drawable/bin"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true" />
 
             </RelativeLayout>
 
@@ -153,7 +150,9 @@
             android:layout_height="match_parent"
             android:visibility="gone"
             android:text="글 내용"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
 
     </LinearLayout>
 

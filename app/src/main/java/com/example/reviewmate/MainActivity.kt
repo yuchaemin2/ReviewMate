@@ -8,6 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.example.reviewmate.MyApplication.Companion.auth
@@ -22,6 +24,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -166,7 +171,6 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
         transaction.commit()
     }
-
 
     private fun updateUserLevelBasedOnReviewCount(userId: String) {
         val userRef = db.collection("users").document(userId)

@@ -12,25 +12,34 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
+import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFiveBinding
 import com.example.reviewmate.databinding.FragmentFourBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+/**
+ * A simple [Fragment] subclass.
+ * Use the [FragmentFive.newInstance] factory method to
+ * create an instance of this fragment.
+ */
 class FragmentFive : Fragment() {
-
+    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var binding: FragmentFiveBinding
-    private lateinit var profile: ImageView
-
+    lateinit var binding: FragmentFiveBinding
+    lateinit var profile: ImageView
+    private lateinit var imageView: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +48,6 @@ class FragmentFive : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-
-
     }
 
     override fun onCreateView(
@@ -49,73 +55,63 @@ class FragmentFive : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFiveBinding.inflate(inflater, container, false)
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        profile = binding.userProfile // 사용자의 프로필 가져옴
-        downloadAndDisplayImage()
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+        profile = binding.userProfile
+//        downloadAndDisplayImage()
 
         // button 클릭시 fragmenrFive_ReviwList로 이동
-        var btn_move: Button = binding.btnMove
-        btn_move.setOnClickListener { // 람다식 리스너 setOnclickListener{}
-                 var bundle : Bundle = Bundle()
-                  bundle.putString("fromFrag", "프래그먼트1")
-                  val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                  val fragmentfive_review: Fragment = FragmentFive_ReviewList()
-                    fragmentfive_review.arguments = bundle
+        binding.btnMove.setOnClickListener { // 람다식 리스너 setOnclickListener{}
+            var bundle : Bundle = Bundle()
+            bundle.putString("fromFrag", "프래그먼트1")
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            val fragmentfive_review: Fragment = FragmentFive_ReviewList()
+            fragmentfive_review.arguments = bundle
             transaction.replace(R.id.main_layout, fragmentfive_review)
             transaction.addToBackStack(null)
             transaction.commit()
-
         }
-        var changeLayoutButton : Button = binding.btnDevelopers
-        fun setContentView(fragmentFive: Int) {
 
+        binding.myComments.setOnClickListener {
+            var bundle : Bundle = Bundle()
+            bundle.putString("fromFrag", "프래그먼트2")
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            val fragmentfive_comment: Fragment = FragmentFive_CommentList()
+            fragmentfive_comment.arguments = bundle
+            transaction.replace(R.id.main_layout, fragmentfive_comment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
-        changeLayoutButton.setOnClickListener(View.OnClickListener() {
-            var isSecondLayout = false // 초기값을 false로 설정
-            fun onClick(v : View) {
-                if (isSecondLayout) {
 
-                    setContentView(R.layout.fragment_five);
-                } else {
-                    setContentView(R.layout.activity_main);
+        if(MyApplication.checkAuth()){
+            binding.CertifyEmailView.text = "${MyApplication.email}"
+        }
+
+        val imageUrl : String = MyApplication.imageurl.toString()
+        imageView = binding.userProfile
+        if( imageUrl != null){
+            Glide.with(requireContext())
+                .load(imageUrl)
+                .into(binding.userProfile)
+        }
+
+        binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.menu_logout -> {
+                    logout()
+                    return@setOnMenuItemClickListener true
                 }
-                isSecondLayout = !isSecondLayout;
+                else -> return@setOnMenuItemClickListener true
             }
-        });
-
-
-        // 로그아웃 버튼을 레이아웃에서 찾아서 클릭 리스너를 추가
-        val logoutButton = binding.logoutButton
-        logoutButton.setOnClickListener {
-            logout()
         }
-        val accountDeleteButton = binding.accountDeleteButton
-        accountDeleteButton.setOnClickListener{
 
+        binding.introDevelopers.setOnClickListener {
+            val intent = Intent(requireContext(), IntroActivity::class.java)
+            startActivity(intent)
         }
+
         return binding.root
     }
-    private fun fetchUserLevel() {
-        val currentUser = MyApplication.auth.currentUser
 
-        currentUser?.let {
-            val userId = currentUser.uid
-
-            val userRef = MyApplication.db.collection("users").document(userId)
-            userRef.get()
-                .addOnSuccessListener { documentSnapshot ->
-                    if (documentSnapshot.exists()) {
-                        val userLevel = documentSnapshot.getString("userLevel")
-                        binding.userLevelTextView.text = userLevel
-                    }
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(requireContext(), "사용자의 레벨을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
-                }
-        }
-    }
     private fun downloadAndDisplayImage() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
@@ -151,27 +147,13 @@ class FragmentFive : Fragment() {
                 .addOnFailureListener { exception ->
                     Log.e(ContentValues.TAG, "사용자 데이터 가져오기 중 오류 발생: $exception")
                 }
-
         }
-
-
-
     }
 
 
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = childFragmentManager.beginTransaction() // fragment-fragment는 chid
-        transaction.replace(R.id.five_layout, fragment)
-        transaction.addToBackStack(null) // Optional: Add the fragment to the back stack
-        transaction.commit()
-    }
-
-
-    // 로그아웃 로직을 처리하는 메서드
     private fun logout() {
         val intent = Intent(requireContext(), AuthActivity::class.java)
         startActivity(intent)
-
     }
 
     companion object {
