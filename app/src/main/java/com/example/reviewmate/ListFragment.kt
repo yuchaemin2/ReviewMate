@@ -33,19 +33,11 @@ class ListFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: FragmentListBinding
+
     private lateinit var ListMoviesRecyclerView: RecyclerView
     private lateinit var ListMoviesAdapter: MovieAdapter
     private lateinit var ListMoviesLayoutManager: LinearLayoutManager
-//
-//    private lateinit var topRatedMovies: RecyclerView
-//    private lateinit var topRatedMoviesAdapter: MovieAdapter
-//    private lateinit var topRatedMoviesLayoutMgr: LinearLayoutManager
-//
-//    private lateinit var upcomingMovies: RecyclerView
-//    private lateinit var upcomingMoviesAdapter: MovieAdapter
-//    private lateinit var upcomingMoviesLayoutMgr: LinearLayoutManager
-
-    private lateinit var binding : FragmentListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,17 +47,39 @@ class ListFragment : Fragment() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
         binding = FragmentListBinding.inflate(inflater, container, false)
+
+        setHasOptionsMenu(true)
+
+        binding.chatListToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.popular -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 1)
+                    binding.movieDirectory.text = "가장 인기있는 영화"
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.toprated -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 2)
+//                    getTopRatedMovies()
+                    binding.movieDirectory.text = "Top Rated 평점"
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.upcoming -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 3)
+                    binding.movieDirectory.text = "Upcoming"
+                    return@setOnMenuItemClickListener true
+                }
+                else -> return@setOnMenuItemClickListener true
+            }
+        }
 
         // recyclerView Setting
         ListMoviesRecyclerView = binding.root.findViewById(R.id.feedRecyclerView)
@@ -83,17 +97,18 @@ class ListFragment : Fragment() {
         when(message){
             1 -> {
                 getPopularMovies()
+                binding.movieDirectory.text = "가장 인기있는 영화"
             }
             2 -> {
                 getTopRatedMovies()
+                binding.movieDirectory.text = "Top Rated 평점"
             }
             3 -> {
                 getUpcomingMovies()
+                binding.movieDirectory.text = "Upcoming"
             }
         }
-        getPopularMovies()
         return binding.root
-
     }
 
 

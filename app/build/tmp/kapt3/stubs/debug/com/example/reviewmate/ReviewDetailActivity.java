@@ -16,62 +16,62 @@ public final class ReviewDetailActivity extends androidx.appcompat.app.AppCompat
         super();
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final com.example.reviewmate.databinding.ActivityReviewDetailBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull
+    public final void setBinding(@org.jetbrains.annotations.NotNull()
     com.example.reviewmate.databinding.ActivityReviewDetailBinding p0) {
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final java.util.List<com.example.reviewmate.ItemCommentModel> getItemList() {
         return null;
     }
     
-    public final void setItemList(@org.jetbrains.annotations.NotNull
+    public final void setItemList(@org.jetbrains.annotations.NotNull()
     java.util.List<com.example.reviewmate.ItemCommentModel> p0) {
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final java.lang.String getReviewId() {
         return null;
     }
     
-    public final void setReviewId(@org.jetbrains.annotations.NotNull
+    public final void setReviewId(@org.jetbrains.annotations.NotNull()
     java.lang.String p0) {
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final java.io.File getFile() {
         return null;
     }
     
-    public final void setFile(@org.jetbrains.annotations.NotNull
+    public final void setFile(@org.jetbrains.annotations.NotNull()
     java.io.File p0) {
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final java.lang.String getFilePath() {
         return null;
     }
     
-    public final void setFilePath(@org.jetbrains.annotations.NotNull
+    public final void setFilePath(@org.jetbrains.annotations.NotNull()
     java.lang.String p0) {
     }
     
-    @java.lang.Override
-    protected void onCreate(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    protected void onCreate(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
     }
     
-    public final void updateCount(@org.jetbrains.annotations.NotNull
+    public final void updateCount(@org.jetbrains.annotations.NotNull()
     com.google.firebase.firestore.DocumentReference docRef, long updatedValue) {
     }
     
-    @org.jetbrains.annotations.NotNull
-    public final java.lang.String dateToString(@org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
+    public final java.lang.String dateToString(@org.jetbrains.annotations.NotNull()
     java.util.Date date) {
         return null;
     }
@@ -82,14 +82,14 @@ public final class ReviewDetailActivity extends androidx.appcompat.app.AppCompat
     public final void getStore() {
     }
     
-    @java.lang.Override
-    public boolean onCreateOptionsMenu(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    public boolean onCreateOptionsMenu(@org.jetbrains.annotations.Nullable()
     android.view.Menu menu) {
         return false;
     }
     
-    @java.lang.Override
-    public boolean onOptionsItemSelected(@org.jetbrains.annotations.NotNull
+    @java.lang.Override()
+    public boolean onOptionsItemSelected(@org.jetbrains.annotations.NotNull()
     android.view.MenuItem item) {
         return false;
     }

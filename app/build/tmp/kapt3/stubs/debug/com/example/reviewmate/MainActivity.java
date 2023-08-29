@@ -6,49 +6,49 @@ import java.lang.System;
 public final class MainActivity extends androidx.appcompat.app.AppCompatActivity {
     private com.google.android.material.bottomnavigation.BottomNavigationView bottomNavigationView;
     public com.example.reviewmate.databinding.ActivityMainBinding binding;
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final com.example.reviewmate.MainActivity.Companion Companion = null;
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_BACKDROP = "extra_movie_backdrop";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_ID = "extra_movie_id";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_POSTER = "extra_movie_poster";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_TITLE = "extra_movie_title";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_RATING = "extra_movie_rating";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_RELEASE_DATE = "extra_movie_release_date";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final java.lang.String MOVIE_OVERVIEW = "extra_movie_overview";
     
     public MainActivity() {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final com.example.reviewmate.databinding.ActivityMainBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull
+    public final void setBinding(@org.jetbrains.annotations.NotNull()
     com.example.reviewmate.databinding.ActivityMainBinding p0) {
     }
     
-    @java.lang.Override
-    protected void onCreate(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    protected void onCreate(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
     }
     
-    @java.lang.Override
+    @java.lang.Override()
     protected void onStart() {
     }
     
     private final void updateIcons(android.view.MenuItem selectedItem, int selectedIconRes) {
     }
     
-    public final void loadFragment(@org.jetbrains.annotations.NotNull
+    public final void loadFragment(@org.jetbrains.annotations.NotNull()
     androidx.fragment.app.Fragment fragment, int message) {
     }
     

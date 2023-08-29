@@ -4,7 +4,7 @@
             "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/solor/.gradle/caches/transforms-3/b4e8f07a04fb83369f81d22b45ab5a35/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
+                    "source": "/Users/yuchaemin/.gradle/caches/transforms-3/b4e8f07a04fb83369f81d22b45ab5a35/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

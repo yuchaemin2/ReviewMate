@@ -13,37 +13,37 @@ public final class FragmentFive_ReviewList extends androidx.fragment.app.Fragmen
     private java.lang.String param2;
     public com.example.reviewmate.databinding.FragmentFiveReviewListBinding binding;
     private com.google.firebase.firestore.ListenerRegistration reviewCountListener;
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final com.example.reviewmate.FragmentFive_ReviewList.Companion Companion = null;
     
     public FragmentFive_ReviewList() {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public final com.example.reviewmate.databinding.FragmentFiveReviewListBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull
+    public final void setBinding(@org.jetbrains.annotations.NotNull()
     com.example.reviewmate.databinding.FragmentFiveReviewListBinding p0) {
     }
     
-    @java.lang.Override
-    public void onCreate(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    public void onCreate(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
     }
     
-    @org.jetbrains.annotations.Nullable
-    @java.lang.Override
-    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
-    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
-    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
+    @org.jetbrains.annotations.Nullable()
+    @java.lang.Override()
+    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
+    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable()
+    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
         return null;
     }
     
-    @java.lang.Override
+    @java.lang.Override()
     public void onStart() {
     }
     
@@ -62,7 +62,7 @@ public final class FragmentFive_ReviewList extends androidx.fragment.app.Fragmen
     private final void setupReviewCountListener() {
     }
     
-    @java.lang.Override
+    @java.lang.Override()
     public void onDestroyView() {
     }
     
@@ -74,10 +74,10 @@ public final class FragmentFive_ReviewList extends androidx.fragment.app.Fragmen
      * @param param2 Parameter 2.
      * @return A new instance of fragment FragmentFive_ReviewList.
      */
-    @org.jetbrains.annotations.NotNull
-    @kotlin.jvm.JvmStatic
-    public static final com.example.reviewmate.FragmentFive_ReviewList newInstance(@org.jetbrains.annotations.NotNull
-    java.lang.String param1, @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
+    @kotlin.jvm.JvmStatic()
+    public static final com.example.reviewmate.FragmentFive_ReviewList newInstance(@org.jetbrains.annotations.NotNull()
+    java.lang.String param1, @org.jetbrains.annotations.NotNull()
     java.lang.String param2) {
         return null;
     }
@@ -97,10 +97,10 @@ public final class FragmentFive_ReviewList extends androidx.fragment.app.Fragmen
          * @param param2 Parameter 2.
          * @return A new instance of fragment FragmentFive_ReviewList.
          */
-        @org.jetbrains.annotations.NotNull
-        @kotlin.jvm.JvmStatic
-        public final com.example.reviewmate.FragmentFive_ReviewList newInstance(@org.jetbrains.annotations.NotNull
-        java.lang.String param1, @org.jetbrains.annotations.NotNull
+        @org.jetbrains.annotations.NotNull()
+        @kotlin.jvm.JvmStatic()
+        public final com.example.reviewmate.FragmentFive_ReviewList newInstance(@org.jetbrains.annotations.NotNull()
+        java.lang.String param1, @org.jetbrains.annotations.NotNull()
         java.lang.String param2) {
             return null;
         }
