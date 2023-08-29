@@ -26,8 +26,10 @@ import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.ActivityReviewDetailBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -238,6 +240,15 @@ class ReviewDetailActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        // 데이터를 다시 불러오는 로직을 이곳에 추가
+//        getUpdate()
+    }
+
+
+
     fun updateCount(docRef: DocumentReference, updatedValue: Long) {
         val updates = hashMapOf<String, Any>(
             "userReviewCount" to updatedValue
@@ -296,6 +307,24 @@ class ReviewDetailActivity : AppCompatActivity() {
                 adapter.setData(itemList) // 어댑터 데이터 갱신
             }
     }
+
+//    fun getUpdate() {
+//        MyApplication.db.collection("reviews")
+//            .addSnapshotListener{ snapshot, error ->
+//                if (error != null) {
+//                    Log.w(ContentValues.TAG, "Listen failed.", error)
+//                    return@addSnapshotListener
+//            }
+//                val itemList = mutableListOf<ItemFeedModel>()
+//                for (document in snapshot!!) {
+//                    val item = document.toObject(ItemFeedModel::class.java)
+//                    item.docId = document.id
+//                    itemList.add(item)
+//                }
+//
+//                adapter.notifyDataSetChanged(itemList) // 어댑터 데이터 갱신
+//            }
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detail, menu)

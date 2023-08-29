@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:src="@drawable/img_1"
+                android:layout_gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemEmailView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 이메일"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:id="@+id/itemDateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023-00-00" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+                <ImageView
+                    android:id="@+id/review_delete"
+                    android:visibility="visible"
+                    android:src="@drawable/bin"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/itemTitleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="글 제목"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <!--            <Space-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_weight="1" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/itemMovieView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="영화 제목"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:text="·"
+                    />
+
+                <TextView
+                    android:id="@+id/itemRateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="별점"
+                    android:textColor="@android:color/holo_orange_light" />
+
+                <!--                <RatingBar-->
+                <!--                    android:id="@+id/itemRateView"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    style="@style/Widget.AppCompat.RatingBar.Small"-->
+                <!--                    android:contentDescription="영화 평점:"-->
+                <!--                    android:layout_marginBottom="5dp"-->
+                <!--                    android:isIndicator="true"/>-->
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/itemImageView"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemContentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:text="글 내용"
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_vertical"
+        android:background="#40000000" />
+
+</LinearLayout>
