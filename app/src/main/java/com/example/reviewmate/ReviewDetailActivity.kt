@@ -31,6 +31,9 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -70,13 +73,7 @@ class ReviewDetailActivity : AppCompatActivity() {
         Log.d("get테스트", ""+ reviewId)
         // 영화 API사용하여 데이터 가져와야 함
 
-        var profileImageUrl = intent.getStringExtra("image_url")
-        if(profileImageUrl != null && profileImageUrl != "null"){
-            // Glide를 사용하여 프로필 이미지 로드
-            Glide.with(baseContext)
-                .load(profileImageUrl)
-                .into(binding.profileImage)
-        }
+        setProfileImage()
 
         var movieImage = intent.getStringExtra("movieImage")
         if(movieImage != null && movieImage != "null"){
@@ -225,6 +222,20 @@ class ReviewDetailActivity : AppCompatActivity() {
                 // 가장 아래의 아이템으로 스크롤
                 binding.feedRecyclerView.scrollToPosition(adapter.itemCount - 1)
             }
+    }
+    fun setProfileImage() {
+        CoroutineScope(Dispatchers.Main).launch {
+            var userProfile = MyApplication.getImageUrl(intent.getStringExtra("userEmail"))
+            Toast.makeText(baseContext, "get profile${userProfile}", Toast.LENGTH_SHORT).show()
+            if (!userProfile.isNullOrEmpty()) {
+                // Glide를 사용하여 프로필 이미지 로드
+                Glide.with(baseContext)
+                    .load(userProfile)
+                    .into(binding.profileImage)
+
+            }
+
+        }
     }
 
     fun updateCount(docRef: DocumentReference, updatedValue: Long) {

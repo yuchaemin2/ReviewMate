@@ -85,26 +85,6 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 }
 
 
-//            usersCollection.whereEqualTo("userEmail", userEmail)
-//                .get()
-//                .addOnSuccessListener { querySnapshot ->
-//                    if (!querySnapshot.isEmpty) {
-//
-//                        val userDocument = querySnapshot.documents[0]
-//                        profileImageUrl = userDocument.getString("imageUrl")
-//
-//                        if( profileImageUrl != null){
-//                            // Glide를 사용하여 프로필 이미지 로드
-//                            Glide.with(context)
-//                                .load(profileImageUrl)
-//                                .into(holder.binding.itemImg)
-//                        }
-//                    }
-//                }
-//                .addOnFailureListener { exception ->
-//                    Log.e("MyFeedAdapter", "Error getting user document: $exception")
-//                }
-
                 if (itemContentView.text.isNotEmpty()) {
                     itemContentView.visibility = View.VISIBLE
                 } else {

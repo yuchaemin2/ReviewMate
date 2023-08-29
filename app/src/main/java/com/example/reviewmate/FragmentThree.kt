@@ -36,6 +36,9 @@ import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -77,8 +80,15 @@ class FragmentThree : Fragment() {
         imageView = binding.userProfile
 
 
-        // 이미지 다운로드 및 비트맵으로 변환하여 표시
-        downloadAndDisplayImage()
+        val imageUrl : String = MyApplication.imageurl.toString()
+        imageView = binding.userProfile
+        if( imageUrl != null){
+            Glide.with(requireContext())
+                .load(imageUrl)
+                .into(binding.userProfile)
+        }
+
+
         return binding.root
     }
 
@@ -331,6 +341,7 @@ class FragmentThree : Fragment() {
             Log.e(TAG, "다운로드 URL을 가져오는 중 오류 발생: $exception")
         }
     }
+
 
 
     val alertHandler = object:DialogInterface.OnClickListener {

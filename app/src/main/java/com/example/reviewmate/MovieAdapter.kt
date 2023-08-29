@@ -15,7 +15,7 @@ import com.example.reviewmate.databinding.ItemMovieBinding
 import com.google.android.material.color.utilities.MaterialDynamicColors.onError
 
 class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
-    val extraPlus = Movie()
+
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         private val poster: ImageView = itemView.findViewById(R.id.item_movie_poster)
         fun bind(movie: Movie) {
@@ -26,11 +26,7 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             binding.itemMovieTitle.text = movie.movieTitle
 
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
-            if(movie == extraPlus) {
-                binding.itemMoviePoster.setOnClickListener {
-                    Log.d("movies", "add movies")
-                }
-            }
+
 
         }
     }
