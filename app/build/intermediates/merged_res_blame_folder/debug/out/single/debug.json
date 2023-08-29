@@ -36,8 +36,8 @@
         "source": "com.example.reviewmate.app-main-47:/layout/fragment_one.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_movie_details.xml.flat",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_movie_details.xml"
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_notion.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/notion.png"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_yebeen.png.flat",
@@ -116,6 +116,10 @@
         "source": "com.example.reviewmate.app-main-47:/drawable/level_1.png"
     },
     {
+        "merged": "com.example.reviewmate.app-merged_res-45:/menu_menu_movie_list.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/menu/menu_movie_list.xml"
+    },
+    {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_satisfaction.png.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/satisfaction.png"
     },
@@ -154,6 +158,10 @@
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_level_9.png.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/level_9.png"
+    },
+    {
+        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_github.png.flat",
+        "source": "com.example.reviewmate.app-main-47:/drawable/github.png"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_email.png.flat",
@@ -246,10 +254,6 @@
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/drawable_error404.png.flat",
         "source": "com.example.reviewmate.app-main-47:/drawable/error404.png"
-    },
-    {
-        "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_add_activiity.xml.flat",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_add_activiity.xml"
     },
     {
         "merged": "com.example.reviewmate.app-merged_res-45:/xml_backup_rules.xml.flat",

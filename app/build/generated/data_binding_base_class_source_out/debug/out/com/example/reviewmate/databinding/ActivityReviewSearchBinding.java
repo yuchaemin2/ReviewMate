@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -22,7 +24,7 @@ import java.lang.String;
 
 public final class ActivityReviewSearchBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final ExtendedFloatingActionButton btnAddlecture;
@@ -45,10 +47,13 @@ public final class ActivityReviewSearchBinding implements ViewBinding {
   @NonNull
   public final TextView textView;
 
-  private ActivityReviewSearchBinding(@NonNull LinearLayout rootView,
+  @NonNull
+  public final Toolbar toolbarBack;
+
+  private ActivityReviewSearchBinding(@NonNull RelativeLayout rootView,
       @NonNull ExtendedFloatingActionButton btnAddlecture, @NonNull LinearLayout linearLayout,
       @NonNull RecyclerView recyclerview, @NonNull Button searchBtn, @NonNull EditText searchWord,
-      @NonNull Spinner spinner, @NonNull TextView textView) {
+      @NonNull Spinner spinner, @NonNull TextView textView, @NonNull Toolbar toolbarBack) {
     this.rootView = rootView;
     this.btnAddlecture = btnAddlecture;
     this.linearLayout = linearLayout;
@@ -57,11 +62,12 @@ public final class ActivityReviewSearchBinding implements ViewBinding {
     this.searchWord = searchWord;
     this.spinner = spinner;
     this.textView = textView;
+    this.toolbarBack = toolbarBack;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -128,8 +134,14 @@ public final class ActivityReviewSearchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityReviewSearchBinding((LinearLayout) rootView, btnAddlecture, linearLayout,
-          recyclerview, searchBtn, searchWord, spinner, textView);
+      id = R.id.toolbar_back;
+      Toolbar toolbarBack = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarBack == null) {
+        break missingId;
+      }
+
+      return new ActivityReviewSearchBinding((RelativeLayout) rootView, btnAddlecture, linearLayout,
+          recyclerview, searchBtn, searchWord, spinner, textView, toolbarBack);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

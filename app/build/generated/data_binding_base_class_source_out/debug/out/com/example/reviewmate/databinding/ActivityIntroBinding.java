@@ -4,10 +4,11 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -21,23 +22,54 @@ public final class ActivityIntroBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final ImageView cGit;
+
+  @NonNull
+  public final ImageView cNotion;
+
+  @NonNull
+  public final ImageView kGit;
+
+  @NonNull
+  public final ImageView kNotion;
+
+  @NonNull
   public final CardView kangchaewon;
 
   @NonNull
   public final CardView kimyebeen;
 
   @NonNull
-  public final TextView title;
+  public final ImageView title;
+
+  @NonNull
+  public final Toolbar toolbarBack;
+
+  @NonNull
+  public final ImageView yGit;
+
+  @NonNull
+  public final ImageView yNotion;
 
   @NonNull
   public final CardView yuchaemin;
 
-  private ActivityIntroBinding(@NonNull RelativeLayout rootView, @NonNull CardView kangchaewon,
-      @NonNull CardView kimyebeen, @NonNull TextView title, @NonNull CardView yuchaemin) {
+  private ActivityIntroBinding(@NonNull RelativeLayout rootView, @NonNull ImageView cGit,
+      @NonNull ImageView cNotion, @NonNull ImageView kGit, @NonNull ImageView kNotion,
+      @NonNull CardView kangchaewon, @NonNull CardView kimyebeen, @NonNull ImageView title,
+      @NonNull Toolbar toolbarBack, @NonNull ImageView yGit, @NonNull ImageView yNotion,
+      @NonNull CardView yuchaemin) {
     this.rootView = rootView;
+    this.cGit = cGit;
+    this.cNotion = cNotion;
+    this.kGit = kGit;
+    this.kNotion = kNotion;
     this.kangchaewon = kangchaewon;
     this.kimyebeen = kimyebeen;
     this.title = title;
+    this.toolbarBack = toolbarBack;
+    this.yGit = yGit;
+    this.yNotion = yNotion;
     this.yuchaemin = yuchaemin;
   }
 
@@ -68,6 +100,30 @@ public final class ActivityIntroBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cGit;
+      ImageView cGit = ViewBindings.findChildViewById(rootView, id);
+      if (cGit == null) {
+        break missingId;
+      }
+
+      id = R.id.cNotion;
+      ImageView cNotion = ViewBindings.findChildViewById(rootView, id);
+      if (cNotion == null) {
+        break missingId;
+      }
+
+      id = R.id.kGit;
+      ImageView kGit = ViewBindings.findChildViewById(rootView, id);
+      if (kGit == null) {
+        break missingId;
+      }
+
+      id = R.id.kNotion;
+      ImageView kNotion = ViewBindings.findChildViewById(rootView, id);
+      if (kNotion == null) {
+        break missingId;
+      }
+
       id = R.id.kangchaewon;
       CardView kangchaewon = ViewBindings.findChildViewById(rootView, id);
       if (kangchaewon == null) {
@@ -81,8 +137,26 @@ public final class ActivityIntroBinding implements ViewBinding {
       }
 
       id = R.id.title;
-      TextView title = ViewBindings.findChildViewById(rootView, id);
+      ImageView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbar_back;
+      Toolbar toolbarBack = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarBack == null) {
+        break missingId;
+      }
+
+      id = R.id.yGit;
+      ImageView yGit = ViewBindings.findChildViewById(rootView, id);
+      if (yGit == null) {
+        break missingId;
+      }
+
+      id = R.id.yNotion;
+      ImageView yNotion = ViewBindings.findChildViewById(rootView, id);
+      if (yNotion == null) {
         break missingId;
       }
 
@@ -92,8 +166,8 @@ public final class ActivityIntroBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityIntroBinding((RelativeLayout) rootView, kangchaewon, kimyebeen, title,
-          yuchaemin);
+      return new ActivityIntroBinding((RelativeLayout) rootView, cGit, cNotion, kGit, kNotion,
+          kangchaewon, kimyebeen, title, toolbarBack, yGit, yNotion, yuchaemin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

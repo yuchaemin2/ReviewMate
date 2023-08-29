@@ -36,10 +36,6 @@
         "source": "com.example.reviewmate.app-main-47:/layout/item_comment.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_movie_details.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_movie_details.xml"
-    },
-    {
         "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five.xml",
         "source": "com.example.reviewmate.app-main-47:/layout/fragment_five.xml"
     },
@@ -82,10 +78,6 @@
     {
         "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/bottom_sheet_review_list.xml",
         "source": "com.example.reviewmate.app-main-47:/layout/bottom_sheet_review_list.xml"
-    },
-    {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_add_activiity.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_add_activiity.xml"
     },
     {
         "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/review_write_page.xml",

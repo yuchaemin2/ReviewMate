@@ -28,6 +28,7 @@ drawable email
 drawable error404
 drawable essay
 drawable faq
+drawable github
 drawable heart
 drawable home
 drawable home_1
@@ -50,6 +51,7 @@ drawable logout
 drawable message
 drawable messages
 drawable movie_poster
+drawable notion
 drawable paw
 drawable paw_1
 drawable profile_7
@@ -88,6 +90,8 @@ id bottomNavigationView
 id bottomSheetRecyclerView
 id btn_addlecture
 id btn_move
+id cGit
+id cNotion
 id calendarView
 id chatList_toolbar
 id content
@@ -113,6 +117,8 @@ id itemTitleView
 id item_img
 id item_movie_poster
 id item_movie_title
+id kGit
+id kNotion
 id kangchaewon
 id kimyebeen
 id level_1
@@ -153,6 +159,7 @@ id moviePoster
 id movieRate
 id movieTitle
 id movie_backdrop
+id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
@@ -168,6 +175,7 @@ id nav3
 id nav4
 id nav5
 id nestedScrollView
+id popular
 id popular_movies
 id profileImage
 id recyclerview
@@ -191,17 +199,19 @@ id textView3
 id title
 id toolbar_back
 id top_rated_movies
+id toprated
+id upcoming
 id upcoming_movies
 id userEmail
 id userLevelTextView
 id userProfile
+id yGit
+id yNotion
 id yuchaemin
 layout activity_add
-layout activity_add_activiity
 layout activity_auth
 layout activity_intro
 layout activity_main
-layout activity_movie_details
 layout activity_review_detail
 layout activity_review_search
 layout activity_search
@@ -231,6 +241,7 @@ menu menu_back
 menu menu_detail
 menu menu_list
 menu menu_main
+menu menu_movie_list
 menu menu_mypage
 menu menu_nav
 mipmap ic_launcher

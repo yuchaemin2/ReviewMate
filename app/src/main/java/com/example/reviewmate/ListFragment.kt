@@ -46,6 +46,7 @@ class ListFragment : Fragment() {
 //    private lateinit var upcomingMoviesLayoutMgr: LinearLayoutManager
 
     private lateinit var binding : FragmentListBinding
+     var page : Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +67,12 @@ class ListFragment : Fragment() {
 
     ): View? {
         binding = FragmentListBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
+
+        binding.chatListToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        setToolbar()
 
         // recyclerView Setting
         ListMoviesRecyclerView = binding.root.findViewById(R.id.feedRecyclerView)
@@ -83,17 +90,66 @@ class ListFragment : Fragment() {
         when(message){
             1 -> {
                 getPopularMovies()
+                binding.movieDirectory.text = "가장 인기있는 영화"
             }
             2 -> {
                 getTopRatedMovies()
+                binding.movieDirectory.text = "Top Rated 평점"
             }
             3 -> {
                 getUpcomingMovies()
+                binding.movieDirectory.text = "Upcoming"
             }
         }
         getPopularMovies()
         return binding.root
 
+    }
+    private fun setToolbar() {
+        binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.popular -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 1)
+                    binding.movieDirectory.text = "가장 인기있는 영화"
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.toprated -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 2)
+//                    getTopRatedMovies()
+                    binding.movieDirectory.text = "Top Rated 평점"
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.upcoming -> {
+                    (activity as MainActivity).loadFragment(ListFragment(), 3)
+                    binding.movieDirectory.text = "Upcoming"
+                    return@setOnMenuItemClickListener true
+                }
+                else -> return@setOnMenuItemClickListener true
+            }
+        }
+    }
+
+    private fun MoviesFetched(movies: List<Movie>) {
+        ListMoviesAdapter.appendMovies(movies)
+        // 스클롤로
+        attachListMoviesOnScrollListener()
+    }
+
+    // scroll
+    private fun attachListMoviesOnScrollListener() {
+        ListMoviesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val totalItemCount = ListMoviesLayoutManager.itemCount
+                val visibleItemCount = ListMoviesLayoutManager.childCount
+                val firstVisibleItem = ListMoviesLayoutManager.findFirstVisibleItemPosition()
+
+                if (firstVisibleItem + visibleItemCount >= totalItemCount / 2) {
+                    ListMoviesRecyclerView.removeOnScrollListener(this)
+                    page++
+                    getPopularMovies()
+                }
+            }
+        })
     }
 
 
@@ -109,17 +165,19 @@ class ListFragment : Fragment() {
         intent.putExtra(MainActivity.MOVIE_ID, movie.movieId)
         startActivity(intent)
     }
+
     private fun getPopularMovies() {
         MoviesRepository.getPopularMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
+
     }
 
     private fun getTopRatedMovies() {
         MoviesRepository.getTopRatedMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
@@ -127,15 +185,10 @@ class ListFragment : Fragment() {
 
     private fun getUpcomingMovies() {
         MoviesRepository.getUpcomingMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
-    }
-
-
-    private fun MoviesFetched(movies: List<Movie>) {
-        ListMoviesAdapter.appendMovies(movies)
     }
 
 

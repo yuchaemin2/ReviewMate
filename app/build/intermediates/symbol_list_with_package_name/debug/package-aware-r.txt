@@ -3066,6 +3066,7 @@ drawable email
 drawable error404
 drawable essay
 drawable faq
+drawable github
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable heart
@@ -3174,6 +3175,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable notion
 drawable paw
 drawable paw_1
 drawable preference_list_divider_material
@@ -3324,6 +3326,8 @@ id browser_actions_menu_view
 id btn_addlecture
 id btn_move
 id buttonPanel
+id cGit
+id cNotion
 id cache_measures
 id calendarView
 id callMeasure
@@ -3483,6 +3487,8 @@ id item_movie_title
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id kGit
+id kNotion
 id kangchaewon
 id kimyebeen
 id labeled
@@ -3573,6 +3579,7 @@ id moviePoster
 id movieRate
 id movieTitle
 id movie_backdrop
+id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
@@ -3648,6 +3655,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id popular
 id popular_movies
 id position
 id postLayout
@@ -3806,6 +3814,7 @@ id toolbar_back
 id top
 id topPanel
 id top_rated_movies
+id toprated
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3819,6 +3828,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id upcoming
 id upcoming_movies
 id useLogo
 id userEmail
@@ -3843,6 +3853,8 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yGit
+id yNotion
 id yuchaemin
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -3961,11 +3973,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add
-layout activity_add_activiity
 layout activity_auth
 layout activity_intro
 layout activity_main
-layout activity_movie_details
 layout activity_review_detail
 layout activity_review_search
 layout activity_search
@@ -4101,6 +4111,7 @@ menu menu_back
 menu menu_detail
 menu menu_list
 menu menu_main
+menu menu_movie_list
 menu menu_mypage
 menu menu_nav
 mipmap ic_launcher
