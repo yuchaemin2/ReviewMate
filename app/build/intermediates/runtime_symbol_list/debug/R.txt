@@ -3964,7 +3964,6 @@ int layout activity_add_activiity 0x7f0c001d
 int layout activity_auth 0x7f0c001e
 int layout activity_intro 0x7f0c001f
 int layout activity_main 0x7f0c0020
-int layout activity_movie_details 0x7f0c0021
 int layout activity_review_detail 0x7f0c0022
 int layout activity_review_search 0x7f0c0023
 int layout activity_search 0x7f0c0024

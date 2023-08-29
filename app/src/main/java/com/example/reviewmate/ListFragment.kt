@@ -46,6 +46,7 @@ class ListFragment : Fragment() {
 //    private lateinit var upcomingMoviesLayoutMgr: LinearLayoutManager
 
     private lateinit var binding : FragmentListBinding
+     var page : Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +97,29 @@ class ListFragment : Fragment() {
 
     }
 
+    private fun MoviesFetched(movies: List<Movie>) {
+        ListMoviesAdapter.appendMovies(movies)
+        // 스클롤로
+        attachListMoviesOnScrollListener()
+    }
+
+    // scroll
+    private fun attachListMoviesOnScrollListener() {
+        ListMoviesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val totalItemCount = ListMoviesLayoutManager.itemCount
+                val visibleItemCount = ListMoviesLayoutManager.childCount
+                val firstVisibleItem = ListMoviesLayoutManager.findFirstVisibleItemPosition()
+
+                if (firstVisibleItem + visibleItemCount >= totalItemCount / 2) {
+                    ListMoviesRecyclerView.removeOnScrollListener(this)
+                    page++
+                    getPopularMovies()
+                }
+            }
+        })
+    }
+
 
 
     private fun showMovieDetails(movie: Movie) {
@@ -109,17 +133,19 @@ class ListFragment : Fragment() {
         intent.putExtra(MainActivity.MOVIE_ID, movie.movieId)
         startActivity(intent)
     }
+
     private fun getPopularMovies() {
         MoviesRepository.getPopularMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
+
     }
 
     private fun getTopRatedMovies() {
         MoviesRepository.getTopRatedMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
@@ -127,15 +153,10 @@ class ListFragment : Fragment() {
 
     private fun getUpcomingMovies() {
         MoviesRepository.getUpcomingMovies(
-            1,
+            page,
             ::MoviesFetched,
             ::onError
         )
-    }
-
-
-    private fun MoviesFetched(movies: List<Movie>) {
-        ListMoviesAdapter.appendMovies(movies)
     }
 
 

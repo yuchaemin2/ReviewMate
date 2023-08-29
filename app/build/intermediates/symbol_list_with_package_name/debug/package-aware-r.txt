@@ -3965,7 +3965,6 @@ layout activity_add_activiity
 layout activity_auth
 layout activity_intro
 layout activity_main
-layout activity_movie_details
 layout activity_review_detail
 layout activity_review_search
 layout activity_search

@@ -1,17 +1,21 @@
 package com.example.reviewmate
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.reviewmate.common.Movie
+import com.example.reviewmate.common.MoviesRepository
 import com.example.reviewmate.databinding.ItemMovieBinding
+import com.google.android.material.color.utilities.MaterialDynamicColors.onError
 
 class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Movie) -> Unit) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
-
+    val extraPlus = Movie()
     inner class MovieViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         private val poster: ImageView = itemView.findViewById(R.id.item_movie_poster)
         fun bind(movie: Movie) {
@@ -22,13 +26,15 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             binding.itemMovieTitle.text = movie.movieTitle
 
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
+            if(movie == extraPlus) {
+                binding.itemMoviePoster.setOnClickListener {
+                    Log.d("movies", "add movies")
+                }
+            }
 
         }
     }
 
-//    override fun getItemViewType(position: Int): Int {
-//        return super.getItemViewType(position)
-//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater
@@ -57,5 +63,6 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             this.movies.size,
             movies.size - 1
         )
+
     }
 }

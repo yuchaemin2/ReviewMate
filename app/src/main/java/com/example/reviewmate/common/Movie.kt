@@ -12,4 +12,6 @@ data class Movie(
     @SerializedName("release_date") val movieDate: String,
     @SerializedName("popularity") val movieView: Float
 
-) {}
+) {
+    constructor() : this("", "+", "", "", "", 0f, "", 0f) // 빈 생성자 추가
+}

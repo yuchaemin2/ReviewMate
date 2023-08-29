@@ -81,7 +81,7 @@ class FragmentOne : Fragment() {
         }
 
         binding.menuSearch.setOnClickListener {
-            val intent = Intent(requireContext(), AddActivity::class.java)
+            val intent = Intent(requireContext(), SearchActivity::class.java)
             startActivity(intent)
         }
         binding.textView1.setOnClickListener {
