@@ -64,21 +64,21 @@ class FragmentFive_CommentList : Fragment() {
         super.onStart()
         if(MyApplication.checkAuth()){
             MyApplication.db.collection("comments")
-                .whereEqualTo("user", MyApplication.email)
                 .orderBy("time", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { result ->
                     val itemList = mutableListOf<ItemCommentModel>()
                     for(document in result){
                         val item = document.toObject(ItemCommentModel::class.java)
-                        item.docId = document.id
-                        itemList.add(item)
-                        if(result.size() == 0){
-                            binding.textView.visibility = View.VISIBLE
-                        }else{
-                            binding.textView.visibility = View.INVISIBLE
+                        if(item.user == MyApplication.email){
+                            item.docId = document.id
+                            itemList.add(item)
+                            if(result.size() == 0){
+                                binding.textView.visibility = View.VISIBLE
+                            }else{
+                                binding.textView.visibility = View.INVISIBLE
+                            }
                         }
-
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyCommentAdapter(requireContext(), itemList)

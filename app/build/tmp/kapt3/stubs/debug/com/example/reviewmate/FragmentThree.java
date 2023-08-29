@@ -8,40 +8,40 @@ public final class FragmentThree extends androidx.fragment.app.Fragment {
     private java.lang.String param2;
     public com.example.reviewmate.databinding.FragmentThreeBinding binding;
     private android.widget.ImageView imageView;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private final java.lang.String[][] characters = {{"/profile_images/level_1.png", "\ud558\ud488\ud558\ub294 \uace0\uc591\uc774", "\ud558\ud488\ud558\uace0 \ud53c\uace4\ud574 \ubcf4\uc774\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_2.png", "\uadf8\ub8e8\ubc0d\ud558\ub294 \uace0\uc591\uc774", "\ud138\uc744 \uadf8\ub8e8\ubc0d\ud558\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_3.png", "\uacbd\uacc4\ud558\ub294 \uace0\uc591\uc774", "\ud638\uae30\uc2ec \uac00\ub4dd\ud55c \ub208\uc73c\ub85c \uc8fc\ubcc0\uc744 \ub298 \uacbd\uacc4\ud558\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_4.png", "\ud558\ud488\ud558\ub294 \uace0\uc591\uc774", "\uc878\ub824\uc11c \ud558\ud488\ud558\ub294 \uac80\uc815\uc0c9 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_5.png", "\uc0bc\uc0c9\ucf69\ub5a1 \uace0\uc591\uc774", "\ub3c5\ud2b9\ud55c \uc0bc\uc0c9 \ubaa8\uc2b5\uc73c\ub85c \uc0ac\ub78c\ub4e4\uc758 \uad00\uc2ec\uc744 \ub044\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_6.png", "\uba4d\ub54c\ub9ac\ub294 \uace0\uc591\uc774", "\ub208\uc744 \ubc18\ucbe4 \uac10\uace0 \uba3c \uacf3\uc744 \uc751\uc2dc\ud558\ub294 \ub4ef\ud55c \uace0\uc694\ud55c \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_7.png", "\ub178\ub824\ubcf4\ub294 \uace0\uc591\uc774", "\uae4c\uce60\ud55c \ub290\ub08c\uc73c\ub85c \uc8fc\ubcc0\uc744 \ubc14\ub77c\ubcf4\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_8.png", "\ud587\ube5b\ucb10\ub294 \uace0\uc591\uc774", "\ub530\ub73b\ud55c \ud587\uc0b4 \uc544\ub798\uc5d0\uc11c \ud3b8\uc548\ud568\uc744 \ub290\ub07c\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}, {"/profile_images/level_9.png", "\ubbf8\uc18c\uc9d3\ub294 \uace0\uc591\uc774", "\ub9c8\uce58 \ubbf8\uc18c\ub97c \uc9d3\ub294 \ub4ef\ud55c \ud45c\uc815\uc73c\ub85c \uadc0\uc5ec\uc6c0\uc744 \ubf50\ub0b4\ub294 \uace0\uc591\uc774\uc785\ub2c8\ub2e4."}};
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private final java.lang.Integer[] imgResourceIds = {com.example.reviewmate.R.drawable.level_1, com.example.reviewmate.R.drawable.level_2, com.example.reviewmate.R.drawable.level_3, com.example.reviewmate.R.drawable.level_4, com.example.reviewmate.R.drawable.level_5, com.example.reviewmate.R.drawable.level_6, com.example.reviewmate.R.drawable.level_7, com.example.reviewmate.R.drawable.level_8, com.example.reviewmate.R.drawable.level_9};
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private final android.content.DialogInterface.OnClickListener alertHandler = null;
     
     public FragmentThree() {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final com.example.reviewmate.databinding.FragmentThreeBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull()
+    public final void setBinding(@org.jetbrains.annotations.NotNull
     com.example.reviewmate.databinding.FragmentThreeBinding p0) {
     }
     
-    @java.lang.Override()
-    public void onCreate(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    public void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     public void onStart() {
     }
     
-    @org.jetbrains.annotations.Nullable()
-    @java.lang.Override()
-    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
-    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable()
-    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
+    @java.lang.Override
+    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
+    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
+    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
         return null;
     }
@@ -52,12 +52,12 @@ public final class FragmentThree extends androidx.fragment.app.Fragment {
     private final void downloadAndDisplayImage() {
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String[][] getCharacters() {
         return null;
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.Integer[] getImgResourceIds() {
         return null;
     }
@@ -95,11 +95,11 @@ public final class FragmentThree extends androidx.fragment.app.Fragment {
     public final void openDialog(int level) {
     }
     
-    public final void upLoadProfileImg(@org.jetbrains.annotations.NotNull()
+    public final void upLoadProfileImg(@org.jetbrains.annotations.NotNull
     java.lang.String strImg) {
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final android.content.DialogInterface.OnClickListener getAlertHandler() {
         return null;
     }

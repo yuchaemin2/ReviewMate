@@ -4,25 +4,25 @@ import java.lang.System;
 
 @kotlin.Metadata(mv = {1, 8, 0}, k = 1, d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\u0018\u0000 \u00052\u00020\u0001:\u0001\u0005B\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0016\u00a8\u0006\u0006"}, d2 = {"Lcom/example/reviewmate/MyApplication;", "Landroidx/multidex/MultiDexApplication;", "()V", "onCreate", "", "Companion", "app_debug"})
 public final class MyApplication extends androidx.multidex.MultiDexApplication {
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public static final com.example.reviewmate.MyApplication.Companion Companion = null;
     public static com.google.firebase.firestore.FirebaseFirestore db;
     public static com.google.firebase.storage.FirebaseStorage storage;
     public static com.google.firebase.auth.FirebaseAuth auth;
-    @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
     private static java.lang.String email;
-    @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
     private static java.lang.String userlevel;
-    @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
     private static java.lang.String imageurl;
-    @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
     private static java.lang.String level;
     
     public MyApplication() {
         super();
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     public void onCreate() {
     }
     
@@ -33,66 +33,66 @@ public final class MyApplication extends androidx.multidex.MultiDexApplication {
             super();
         }
         
-        @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
         public final com.google.firebase.firestore.FirebaseFirestore getDb() {
             return null;
         }
         
-        public final void setDb(@org.jetbrains.annotations.NotNull()
+        public final void setDb(@org.jetbrains.annotations.NotNull
         com.google.firebase.firestore.FirebaseFirestore p0) {
         }
         
-        @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
         public final com.google.firebase.storage.FirebaseStorage getStorage() {
             return null;
         }
         
-        public final void setStorage(@org.jetbrains.annotations.NotNull()
+        public final void setStorage(@org.jetbrains.annotations.NotNull
         com.google.firebase.storage.FirebaseStorage p0) {
         }
         
-        @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
         public final com.google.firebase.auth.FirebaseAuth getAuth() {
             return null;
         }
         
-        public final void setAuth(@org.jetbrains.annotations.NotNull()
+        public final void setAuth(@org.jetbrains.annotations.NotNull
         com.google.firebase.auth.FirebaseAuth p0) {
         }
         
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         public final java.lang.String getEmail() {
             return null;
         }
         
-        public final void setEmail(@org.jetbrains.annotations.Nullable()
+        public final void setEmail(@org.jetbrains.annotations.Nullable
         java.lang.String p0) {
         }
         
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         public final java.lang.String getUserlevel() {
             return null;
         }
         
-        public final void setUserlevel(@org.jetbrains.annotations.Nullable()
+        public final void setUserlevel(@org.jetbrains.annotations.Nullable
         java.lang.String p0) {
         }
         
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         public final java.lang.String getImageurl() {
             return null;
         }
         
-        public final void setImageurl(@org.jetbrains.annotations.Nullable()
+        public final void setImageurl(@org.jetbrains.annotations.Nullable
         java.lang.String p0) {
         }
         
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         public final java.lang.String getLevel() {
             return null;
         }
         
-        public final void setLevel(@org.jetbrains.annotations.Nullable()
+        public final void setLevel(@org.jetbrains.annotations.Nullable
         java.lang.String p0) {
         }
         
@@ -100,9 +100,9 @@ public final class MyApplication extends androidx.multidex.MultiDexApplication {
             return false;
         }
         
-        @org.jetbrains.annotations.Nullable()
-        public final java.lang.Object getImageUrl(@org.jetbrains.annotations.Nullable()
-        java.lang.String userEmail, @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.Nullable
+        public final java.lang.Object getImageUrl(@org.jetbrains.annotations.Nullable
+        java.lang.String userEmail, @org.jetbrains.annotations.NotNull
         kotlin.coroutines.Continuation<? super java.lang.String> continuation) {
             return null;
         }

@@ -26,20 +26,20 @@ public final class FragmentOne extends androidx.fragment.app.Fragment {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final com.example.reviewmate.databinding.FragmentOneBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull()
+    public final void setBinding(@org.jetbrains.annotations.NotNull
     com.example.reviewmate.databinding.FragmentOneBinding p0) {
     }
     
-    @org.jetbrains.annotations.Nullable()
-    @java.lang.Override()
-    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
-    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable()
-    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
+    @java.lang.Override
+    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
+    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
+    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
         return null;
     }

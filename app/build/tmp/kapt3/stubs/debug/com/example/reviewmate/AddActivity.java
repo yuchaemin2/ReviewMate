@@ -13,61 +13,61 @@ public final class AddActivity extends androidx.appcompat.app.AppCompatActivity 
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final com.example.reviewmate.databinding.ActivityAddBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull()
+    public final void setBinding(@org.jetbrains.annotations.NotNull
     com.example.reviewmate.databinding.ActivityAddBinding p0) {
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String getFilePath() {
         return null;
     }
     
-    public final void setFilePath(@org.jetbrains.annotations.NotNull()
+    public final void setFilePath(@org.jetbrains.annotations.NotNull
     java.lang.String p0) {
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String getMovieImage() {
         return null;
     }
     
-    public final void setMovieImage(@org.jetbrains.annotations.NotNull()
+    public final void setMovieImage(@org.jetbrains.annotations.NotNull
     java.lang.String p0) {
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String getUserEmail() {
         return null;
     }
     
-    public final void setUserEmail(@org.jetbrains.annotations.NotNull()
+    public final void setUserEmail(@org.jetbrains.annotations.NotNull
     java.lang.String p0) {
     }
     
-    @java.lang.Override()
-    protected void onCreate(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    protected void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
     
-    @java.lang.Override()
-    public boolean onCreateOptionsMenu(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    public boolean onCreateOptionsMenu(@org.jetbrains.annotations.Nullable
     android.view.Menu menu) {
         return false;
     }
     
-    @java.lang.Override()
-    public boolean onOptionsItemSelected(@org.jetbrains.annotations.NotNull()
+    @java.lang.Override
+    public boolean onOptionsItemSelected(@org.jetbrains.annotations.NotNull
     android.view.MenuItem item) {
         return false;
     }
     
-    @org.jetbrains.annotations.NotNull()
-    public final java.lang.String dateToString(@org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
+    public final java.lang.String dateToString(@org.jetbrains.annotations.NotNull
     java.util.Date date) {
         return null;
     }
@@ -75,11 +75,11 @@ public final class AddActivity extends androidx.appcompat.app.AppCompatActivity 
     public final void saveStore() {
     }
     
-    public final void updateCount(@org.jetbrains.annotations.NotNull()
+    public final void updateCount(@org.jetbrains.annotations.NotNull
     com.google.firebase.firestore.DocumentReference docRef, long updatedValue) {
     }
     
-    public final void uploadImage(@org.jetbrains.annotations.NotNull()
+    public final void uploadImage(@org.jetbrains.annotations.NotNull
     java.lang.String movieId) {
     }
 }

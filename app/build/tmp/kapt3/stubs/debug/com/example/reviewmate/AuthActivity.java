@@ -10,31 +10,31 @@ public final class AuthActivity extends androidx.appcompat.app.AppCompatActivity
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final com.example.reviewmate.databinding.ActivityAuthBinding getBinding() {
         return null;
     }
     
-    public final void setBinding(@org.jetbrains.annotations.NotNull()
+    public final void setBinding(@org.jetbrains.annotations.NotNull
     com.example.reviewmate.databinding.ActivityAuthBinding p0) {
     }
     
-    @java.lang.Override()
-    protected void onCreate(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    protected void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
     
-    public final void updateEmail(@org.jetbrains.annotations.NotNull()
-    com.google.firebase.firestore.DocumentReference docRef, @org.jetbrains.annotations.NotNull()
+    public final void updateEmail(@org.jetbrains.annotations.NotNull
+    com.google.firebase.firestore.DocumentReference docRef, @org.jetbrains.annotations.NotNull
     java.lang.String updatedValue) {
     }
     
-    public final void updateProfile(@org.jetbrains.annotations.NotNull()
-    com.google.firebase.firestore.DocumentReference docRef, @org.jetbrains.annotations.NotNull()
+    public final void updateProfile(@org.jetbrains.annotations.NotNull
+    com.google.firebase.firestore.DocumentReference docRef, @org.jetbrains.annotations.NotNull
     java.lang.String updatedValue) {
     }
     
-    public final void changeVisibility(@org.jetbrains.annotations.NotNull()
+    public final void changeVisibility(@org.jetbrains.annotations.NotNull
     java.lang.String mode) {
     }
 }
