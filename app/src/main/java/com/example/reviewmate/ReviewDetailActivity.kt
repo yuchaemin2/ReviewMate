@@ -233,7 +233,7 @@ class ReviewDetailActivity : AppCompatActivity() {
         super.onResume()
 
         // 데이터를 다시 불러오는 로직을 이곳에 추가
-        getUpdate()
+//        getUpdate()
     }
 
 
@@ -297,23 +297,23 @@ class ReviewDetailActivity : AppCompatActivity() {
             }
     }
 
-    fun getUpdate() {
-        MyApplication.db.collection("reviews")
-            .addSnapshotListener{ snapshot, error ->
-                if (error != null) {
-                    Log.w(ContentValues.TAG, "Listen failed.", error)
-                    return@addSnapshotListener
-            }
-                val itemList = mutableListOf<ItemCommentModel>()
-                for (document in snapshot!!) {
-                    val item = document.toObject(ItemCommentModel::class.java)
-                    item.docId = document.id
-                    itemList.add(item)
-                }
-
-                adapter.setData(itemList) // 어댑터 데이터 갱신
-            }
-    }
+//    fun getUpdate() {
+//        MyApplication.db.collection("reviews")
+//            .addSnapshotListener{ snapshot, error ->
+//                if (error != null) {
+//                    Log.w(ContentValues.TAG, "Listen failed.", error)
+//                    return@addSnapshotListener
+//            }
+//                val itemList = mutableListOf<ItemFeedModel>()
+//                for (document in snapshot!!) {
+//                    val item = document.toObject(ItemFeedModel::class.java)
+//                    item.docId = document.id
+//                    itemList.add(item)
+//                }
+//
+//                adapter.notifyDataSetChanged(itemList) // 어댑터 데이터 갱신
+//            }
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detail, menu)
