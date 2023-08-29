@@ -48,10 +48,6 @@
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_two.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_notion.png.flat",
-        "source": "com.example.reviewmate.app-main-47:/drawable/notion.png"
-    },
-    {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/layout_review_write_page.xml.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/review_write_page.xml"
     },
@@ -172,6 +168,10 @@
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/splash_back.xml"
     },
     {
+        "merged": "com.example.reviewmate.app-merged_res-45:/layout_movie_detail.xml.flat",
+        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail.xml"
+    },
+    {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/ic_launcher_background.xml"
     },
@@ -198,6 +198,10 @@
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/menu_menu_list.xml.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/menu/menu_list.xml"
+    },
+    {
+        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_github.png.flat",
+        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/github.png"
     },
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_report.png.flat",
@@ -244,8 +248,8 @@
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-45:/drawable_github.png.flat",
-        "source": "com.example.reviewmate.app-main-47:/drawable/github.png"
+        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_add.png.flat",
+        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/add.png"
     },
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/layout_activity_review_detail.xml.flat",
@@ -260,12 +264,20 @@
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/delete.png"
     },
     {
+        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/menu_menu_movie_detail.xml.flat",
+        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/menu/menu_movie_detail.xml"
+    },
+    {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_star.png.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/star.png"
+    },
+    {
+        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_notion.png.flat",
+        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/notion.png"
     },
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/layout_fragment_one.xml.flat",
@@ -290,10 +302,6 @@
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/drawable_custom_bs.xml.flat",
         "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/drawable/custom_bs.xml"
-    },
-    {
-        "merged": "com.example.reviewmate.app-merged_res-45:/layout_activity_intro.xml.flat",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_intro.xml"
     },
     {
         "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-45:/layout_fragment_four.xml.flat",

@@ -53,9 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="댓글 내용"
-            android:layout_marginTop="5dp"
-            android:maxLines="1"
-            android:ellipsize="end"/>
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 

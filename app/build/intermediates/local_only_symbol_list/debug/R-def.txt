@@ -16,6 +16,7 @@ color selector_bottom_nav_color
 color teal_200
 color teal_700
 color white
+drawable add
 drawable add_review_btn
 drawable bin
 drawable bottle
@@ -155,9 +156,11 @@ id linearLayout3
 id loginBtn
 id logoutBtn
 id main_layout
+id menu_add_review
 id menu_board
 id menu_delete
 id menu_delete_all
+id menu_like
 id menu_logout
 id menu_main_setting
 id menu_reviewList
@@ -251,6 +254,7 @@ menu menu_back
 menu menu_detail
 menu menu_list
 menu menu_main
+menu menu_movie_detail
 menu menu_movie_list
 menu menu_mypage
 menu menu_nav

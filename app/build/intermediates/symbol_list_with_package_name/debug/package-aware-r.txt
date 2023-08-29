@@ -3020,6 +3020,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable add_review_btn
 drawable avd_hide_password
 drawable avd_show_password
@@ -3565,9 +3566,11 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id media_actions
+id menu_add_review
 id menu_board
 id menu_delete
 id menu_delete_all
+id menu_like
 id menu_logout
 id menu_main_setting
 id menu_reviewList
@@ -4121,6 +4124,7 @@ menu menu_back
 menu menu_detail
 menu menu_list
 menu menu_main
+menu menu_movie_detail
 menu menu_movie_list
 menu menu_mypage
 menu menu_nav
