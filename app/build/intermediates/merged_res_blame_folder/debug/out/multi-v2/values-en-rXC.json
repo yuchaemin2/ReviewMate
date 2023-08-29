@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-47:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/res/values-en-rXC/values-en-rXC.xml",

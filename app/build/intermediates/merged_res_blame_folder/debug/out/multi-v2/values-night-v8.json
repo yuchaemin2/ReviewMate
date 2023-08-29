@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-47:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/dbe79e1d9285d59f7434c1d1a39f34ac/transformed/material-1.9.0/res/values-night-v8/values-night-v8.xml",

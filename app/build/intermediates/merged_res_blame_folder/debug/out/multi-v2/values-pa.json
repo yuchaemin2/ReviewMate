@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-47:/values-pa/values-pa.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/0badd5b2b9e0b66f9c03d077ceda0c9b/transformed/play-services-base-18.0.1/res/values-pa/values.xml",

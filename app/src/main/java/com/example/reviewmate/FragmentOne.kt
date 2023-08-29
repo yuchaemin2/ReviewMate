@@ -20,11 +20,6 @@ import com.example.reviewmate.common.MoviesRepository
 import com.example.reviewmate.databinding.FragmentOneBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.Query
-import com.prolificinteractive.materialcalendarview.CalendarDay
-import com.prolificinteractive.materialcalendarview.DayViewDecorator
-import com.prolificinteractive.materialcalendarview.DayViewFacade
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
-import com.prolificinteractive.materialcalendarview.spans.DotSpan
 import java.text.SimpleDateFormat
 
 
@@ -63,8 +58,8 @@ class FragmentOne : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentOneBinding.inflate(inflater, container, false)
 
-        // 날짜 선택 리스너
-//        calendarView.setOnDateChangedListener { widget, date, selected ->
+//        // 날짜 선택 리스너
+//        binding.calendarView.setOnDateChangedListener { widget, date, selected ->
 //            // 선택한 날짜 처리
 //            val calendar = Calendar.getInstance() // 일단 현재 날짝 가져옴
 //            calendar.set(2023, 8, 28) // 사용자가 선택한 날짜로 Calendar 객체를 업데이트

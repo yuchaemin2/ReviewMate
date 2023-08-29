@@ -68,7 +68,6 @@ MERGED from [androidx.core:core-ktx:1.9.0] /Users/yuchaemin/.gradle/caches/trans
 MERGED from [com.android.volley:volley:1.2.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ccad7fca80ae85a8aaf94b8ab6b3bfe/transformed/volley-1.2.1/AndroidManifest.xml:2:1-7:12
 MERGED from [io.grpc:grpc-android:1.52.1] /Users/yuchaemin/.gradle/caches/transforms-3/2eb4a24afd661c727d853efd7da2eec2/transformed/grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/5e5e5464818720657090f3259b24ab69/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/0e4f4e6e380aa36bbda939a3b7458987/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/yuchaemin/.gradle/caches/transforms-3/f32ec43619996c04ce239847486fe572/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
@@ -90,18 +89,7 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/yuchaemin/.gradle/
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] /Users/yuchaemin/.gradle/caches/transforms-3/6ccacf86b2b5a46c820e44cf3e6d349d/transformed/gifdecoder-4.11.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/391d15aa74a7b0c96af17c07e92eecb0/transformed/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/yuchaemin/.gradle/caches/transforms-3/39d175689564aecabe5d5356a13373d0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/b0d797bdc2592a82322b366e036ecf38/transformed/threetenabp-1.1.1/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-v4:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/57d4cdcd515f3ebe13b3e6a11fc3e339/transformed/support-v4-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a03e17a00086769d122002dc666f9b68/transformed/appcompat-v7-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/0c6d1add82bcc297c8af73271c524979/transformed/support-media-compat-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/36a1f020dc5b9c1760719bd424f29aa5/transformed/support-fragment-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/7454c682ac1550098c275738d2741bc6/transformed/support-core-utils-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/cf559a2ec07acbc0f9f98ec073dfef7f/transformed/animated-vector-drawable-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/22256bfd03226edeb66ffdb41b1677f1/transformed/support-core-ui-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a9e56bda05d4310ddc651df3b3816426/transformed/support-vector-drawable-27.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/c898fb6b60ed8bff9293df12876ccf12/transformed/support-compat-27.0.2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/1869534c284bd76435f7ba42acd9c2d7/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/yuchaemin/.gradle/caches/transforms-3/49f658970605aff0dfe158b2987f0f23/transformed/runtime-1.0.3/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:2:1-65:12
 INJECTED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:2:1-65:12
 INJECTED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:2:1-65:12
@@ -179,8 +167,6 @@ MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/trans
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
-MERGED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:11:5-17:19
-MERGED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:11:5-17:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/29dd6f1d38a8be56191c506f799eb448/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
@@ -189,8 +175,6 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yuchaemin/.gradle/ca
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/f0830dc3430e4e83943602d48b719db5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] /Users/yuchaemin/.gradle/caches/transforms-3/6ccacf86b2b5a46c820e44cf3e6d349d/transformed/gifdecoder-4.11.0/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] /Users/yuchaemin/.gradle/caches/transforms-3/6ccacf86b2b5a46c820e44cf3e6d349d/transformed/gifdecoder-4.11.0/AndroidManifest.xml:9:5-20
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/b0d797bdc2592a82322b366e036ecf38/transformed/threetenabp-1.1.1/AndroidManifest.xml:7:5-20
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/b0d797bdc2592a82322b366e036ecf38/transformed/threetenabp-1.1.1/AndroidManifest.xml:7:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
@@ -427,8 +411,6 @@ MERGED from [io.grpc:grpc-android:1.52.1] /Users/yuchaemin/.gradle/caches/transf
 MERGED from [io.grpc:grpc-android:1.52.1] /Users/yuchaemin/.gradle/caches/transforms-3/2eb4a24afd661c727d853efd7da2eec2/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/5e5e5464818720657090f3259b24ab69/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/5e5e5464818720657090f3259b24ab69/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/0e4f4e6e380aa36bbda939a3b7458987/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/0e4f4e6e380aa36bbda939a3b7458987/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
@@ -471,30 +453,8 @@ MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/yuchaemin/.gradl
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/391d15aa74a7b0c96af17c07e92eecb0/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/yuchaemin/.gradle/caches/transforms-3/39d175689564aecabe5d5356a13373d0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/yuchaemin/.gradle/caches/transforms-3/39d175689564aecabe5d5356a13373d0/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/b0d797bdc2592a82322b366e036ecf38/transformed/threetenabp-1.1.1/AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.1] /Users/yuchaemin/.gradle/caches/transforms-3/b0d797bdc2592a82322b366e036ecf38/transformed/threetenabp-1.1.1/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-v4:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/57d4cdcd515f3ebe13b3e6a11fc3e339/transformed/support-v4-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/57d4cdcd515f3ebe13b3e6a11fc3e339/transformed/support-v4-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a03e17a00086769d122002dc666f9b68/transformed/appcompat-v7-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a03e17a00086769d122002dc666f9b68/transformed/appcompat-v7-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/0c6d1add82bcc297c8af73271c524979/transformed/support-media-compat-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/0c6d1add82bcc297c8af73271c524979/transformed/support-media-compat-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/36a1f020dc5b9c1760719bd424f29aa5/transformed/support-fragment-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/36a1f020dc5b9c1760719bd424f29aa5/transformed/support-fragment-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/7454c682ac1550098c275738d2741bc6/transformed/support-core-utils-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/7454c682ac1550098c275738d2741bc6/transformed/support-core-utils-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/cf559a2ec07acbc0f9f98ec073dfef7f/transformed/animated-vector-drawable-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/cf559a2ec07acbc0f9f98ec073dfef7f/transformed/animated-vector-drawable-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/22256bfd03226edeb66ffdb41b1677f1/transformed/support-core-ui-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/22256bfd03226edeb66ffdb41b1677f1/transformed/support-core-ui-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a9e56bda05d4310ddc651df3b3816426/transformed/support-vector-drawable-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/a9e56bda05d4310ddc651df3b3816426/transformed/support-vector-drawable-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/c898fb6b60ed8bff9293df12876ccf12/transformed/support-compat-27.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /Users/yuchaemin/.gradle/caches/transforms-3/c898fb6b60ed8bff9293df12876ccf12/transformed/support-compat-27.0.2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/1869534c284bd76435f7ba42acd9c2d7/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/1869534c284bd76435f7ba42acd9c2d7/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/yuchaemin/.gradle/caches/transforms-3/49f658970605aff0dfe158b2987f0f23/transformed/runtime-1.0.3/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/yuchaemin/.gradle/caches/transforms-3/49f658970605aff0dfe158b2987f0f23/transformed/runtime-1.0.3/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml
 INJECTED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
@@ -731,16 +691,6 @@ uses-permission#com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-provider#com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider
-ADDED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:12:9-16:40
-	android:enabled
-		ADDED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:15:13-35
-	android:authorities
-		ADDED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:14:13-84
-	android:exported
-		ADDED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:16:13-37
-	android:name
-		ADDED from [com.github.prolificinteractive:material-calendarview:2.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/2ed47cd4e546e0d42afcfb15c70cb843/transformed/material-calendarview-2.0.1/AndroidManifest.xml:13:13-105
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
 	android:value

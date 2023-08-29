@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-47:/values-v24/values-v24.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/2ef8ab298a0c94614a26c68f91421624/transformed/media-1.0.0/res/values-v24/values-v24.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-47:/values-ro/values-ro.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/fdbf308feaaa6ac56e2f816a8b0e8883/transformed/preference-1.2.0/res/values-ro/values-ro.xml",
