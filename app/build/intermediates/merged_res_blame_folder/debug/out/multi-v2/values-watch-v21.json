@@ -4,7 +4,7 @@
             "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/Users/yuchaemin/.gradle/caches/transforms-3/b4e8f07a04fb83369f81d22b45ab5a35/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "C:\\Users\\82106\\.gradle\\caches\\transforms-3\\b4e8f07a04fb83369f81d22b45ab5a35\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

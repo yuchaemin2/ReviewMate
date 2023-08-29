@@ -22,8 +22,6 @@ drawable bottle
 drawable cancel
 drawable custom_bs
 drawable custom_button_shape
-drawable danielle_1
-drawable danielle_2
 drawable delete
 drawable developers
 drawable email
@@ -31,15 +29,9 @@ drawable error404
 drawable essay
 drawable faq
 drawable github
-drawable haerin_1
-drawable haerin_2
-drawable hanni_1
-drawable hanni_2
 drawable heart
 drawable home
 drawable home_1
-drawable hyein_1
-drawable hyein_2
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable icon
@@ -58,8 +50,6 @@ drawable level_9
 drawable logout
 drawable message
 drawable messages
-drawable minji_1
-drawable minji_2
 drawable movie_poster
 drawable notion
 drawable paw

@@ -3055,8 +3055,6 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable custom_bs
 drawable custom_button_shape
-drawable danielle_1
-drawable danielle_2
 drawable delete
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3071,15 +3069,9 @@ drawable faq
 drawable github
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
-drawable haerin_1
-drawable haerin_2
-drawable hanni_1
-drawable hanni_2
 drawable heart
 drawable home
 drawable home_1
-drawable hyein_1
-drawable hyein_2
 drawable ic_arrow_back_black_24
 drawable ic_arrow_down_24dp
 drawable ic_clear_black_24
@@ -3132,8 +3124,6 @@ drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
 drawable message
 drawable messages
-drawable minji_1
-drawable minji_2
 drawable movie_poster
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button

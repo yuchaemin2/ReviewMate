@@ -1,118 +1,114 @@
 [
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/review_write_page.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/review_write_page.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/my_review.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/my_review.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_movie.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/item_movie.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__review_list.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_five__review_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_four.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_four.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_search.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_search.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_splash.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_splash.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_add.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_add.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_feed.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/item_feed.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/item_movie.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/item_movie.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail_item.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail_item.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_one.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_one.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__review_list.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five__review_list.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/movie_detail.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_update.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_update.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_four.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_four.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_comment.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/item_comment.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_intro.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_intro.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__comment_list.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_five__comment_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_search.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_search.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/search_item.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/search_item.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_detail.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_review_detail.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_list.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_two.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_two.xml"
+    },
+    {
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_three.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_three.xml"
+    },
+    {
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/search_item.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/search_item.xml"
     },
     {
         "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_intro.xml",
         "source": "com.example.reviewmate.app-main-47:/layout/activity_intro.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_detail.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_review_detail.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/list_reviews.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/list_reviews.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/bottom_sheet_review_list.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/bottom_sheet_review_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_one.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_one.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/item_feed.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/item_feed.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__comment_list.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five__comment_list.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/item_comment.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/item_comment.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/bottom_sheet_review_list.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/bottom_sheet_review_list.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_main.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_main.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/review_write_page.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/review_write_page.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_three.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_three.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_setting.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_setting.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail_item.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/movie_detail_item.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_list.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/fragment_list.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_update.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_update.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_auth.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_auth.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_auth.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_auth.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_search.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_review_search.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_two.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_two.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_add.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_add.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_search.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_review_search.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/my_review.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/my_review.xml"
     },
     {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_splash.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_splash.xml"
-    },
-    {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/fragment_five.xml"
-    },
-    {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/list_reviews.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/list_reviews.xml"
-    },
-    {
-        "merged": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_setting.xml",
-        "source": "/Users/yuchaemin/.gradle/daemon/8.0/com.example.reviewmate.app-main-47:/layout/activity_setting.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "com.example.reviewmate.app-main-47:/layout/activity_main.xml"
     }
 ]
