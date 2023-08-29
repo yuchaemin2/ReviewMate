@@ -85,7 +85,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onStart()
         if(MyApplication.checkAuth()){
             MyApplication.db.collection("reviews")
-                //.whereEqualTo("email", MyApplication.email)
                 .orderBy("date", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { result ->

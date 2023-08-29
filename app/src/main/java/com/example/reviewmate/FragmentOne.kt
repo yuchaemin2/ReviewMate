@@ -63,8 +63,6 @@ class FragmentOne : Fragment() {
             binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
         }
 
-
-
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val calendar = Calendar.getInstance() // 일단 현재 날짝 가져옴
             calendar.set(year, month, dayOfMonth) // 사용자가 선택한 날짜로 Calendar 객체를 업데이트

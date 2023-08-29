@@ -83,6 +83,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     //profileImageUrl=MyApplication.getImageUrl(data.email)
                     Toast.makeText(context, "${profileImageUrl}", Toast.LENGTH_SHORT).show()
                 }
+            }
 
 
                 if (itemContentView.text.isNotEmpty()) {
@@ -103,7 +104,6 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     bundle.putString("date", data.date)
                     bundle.putString("movieImage", data.movieImage)
                     bundle.putString("reviewId", data.docId)
-                    bundle.putString("image_url", profileImageUrl)
 
                     Intent(context, ReviewDetailActivity::class.java).apply {
                         putExtras(bundle)
@@ -164,6 +164,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     }
                 }
 
+
                 if (data.email == MyApplication.email) {
                     reviewDelete.visibility = View.VISIBLE
                     reviewDelete.setOnClickListener {
@@ -178,7 +179,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 } else {
                     reviewDelete.visibility = View.GONE
                 }
-            }
+
 
             //스토리지 이미지 다운로드........................
             val imageRef = MyApplication.storage.reference.child("images/${data.docId}.jpg")
