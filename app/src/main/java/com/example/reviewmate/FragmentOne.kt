@@ -1,6 +1,7 @@
 package com.example.reviewmate
 
 import android.content.Intent
+import android.graphics.Color
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,11 @@ import com.example.reviewmate.common.MoviesRepository
 import com.example.reviewmate.databinding.FragmentOneBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.Query
+import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.DayViewDecorator
+import com.prolificinteractive.materialcalendarview.DayViewFacade
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import com.prolificinteractive.materialcalendarview.spans.DotSpan
 import java.text.SimpleDateFormat
 
 
@@ -57,27 +63,25 @@ class FragmentOne : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentOneBinding.inflate(inflater, container, false)
 
+        // 날짜 선택 리스너
+//        calendarView.setOnDateChangedListener { widget, date, selected ->
+//            // 선택한 날짜 처리
+//            val calendar = Calendar.getInstance() // 일단 현재 날짝 가져옴
+//            calendar.set(2023, 8, 28) // 사용자가 선택한 날짜로 Calendar 객체를 업데이트
+//
+//            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+//            selectedDate = dateFormat.format(calendar.time)
+//            calendar.add(Calendar.DAY_OF_MONTH, 1)
+//            selectedDate_add1 = dateFormat.format(calendar.time) //
+//
+//            Toast.makeText(context, "선택한 날짜: $selectedDate", Toast.LENGTH_SHORT).show()
+//            updateReviewListForSelectedDate()
+//        }
+
         if(MyApplication.checkAuth()){
             binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
         } else {
             binding.HomeEmailView.text = "로그인 혹은 회원가입을 진행해주세요."
-        }
-
-
-
-        binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val calendar = Calendar.getInstance() // 일단 현재 날짝 가져옴
-            calendar.set(year, month, dayOfMonth) // 사용자가 선택한 날짜로 Calendar 객체를 업데이트
-
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-            selectedDate = dateFormat.format(calendar.time)
-            calendar.add(Calendar.DAY_OF_MONTH, 1)
-            selectedDate_add1 = dateFormat.format(calendar.time) //
-
-            Toast.makeText(context, "선택한 날짜: $selectedDate", Toast.LENGTH_SHORT).show()
-            updateReviewListForSelectedDate()
-            // 사용자가 선택한 날짜에 대한 처리를 수행하도록 코드를 추가하세요.
-            // 예: updateReviewListForSelectedDate(formattedDate)
         }
 
         binding.menuSearch.setOnClickListener {

@@ -50,10 +50,14 @@
                 android:text="현재 작성 리뷰: n개 " />
 
 
-            <CalendarView
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
                 android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:mcv_selectionColor="#5a7fbf"
+                app:mcv_arrowColor="@color/white"
+                tools:ignore="MissingConstraints" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/feedRecyclerView"

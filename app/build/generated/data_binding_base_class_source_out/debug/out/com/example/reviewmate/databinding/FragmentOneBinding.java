@@ -4,7 +4,6 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -16,6 +15,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +28,7 @@ public final class FragmentOneBinding implements ViewBinding {
   public final TextView HomeEmailView;
 
   @NonNull
-  public final CalendarView calendarView;
+  public final MaterialCalendarView calendarView;
 
   @NonNull
   public final MaterialToolbar chatListToolbar;
@@ -67,7 +67,7 @@ public final class FragmentOneBinding implements ViewBinding {
   public final RecyclerView upcomingMovies;
 
   private FragmentOneBinding(@NonNull RelativeLayout rootView, @NonNull TextView HomeEmailView,
-      @NonNull CalendarView calendarView, @NonNull MaterialToolbar chatListToolbar,
+      @NonNull MaterialCalendarView calendarView, @NonNull MaterialToolbar chatListToolbar,
       @NonNull RecyclerView feedRecyclerView, @NonNull LinearLayout linearLayout,
       @NonNull LinearLayout linearLayout2, @NonNull LinearLayout linearLayout3,
       @NonNull ImageView menuSearch, @NonNull RecyclerView popularMovies,
@@ -124,7 +124,7 @@ public final class FragmentOneBinding implements ViewBinding {
       }
 
       id = R.id.calendarView;
-      CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
+      MaterialCalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
