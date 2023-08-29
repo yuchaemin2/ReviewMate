@@ -58,13 +58,13 @@
 35            android:exported="false" />
 35-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:19:13-37
 36        <activity
-36-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:47
+36-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:55
 37            android:name="com.example.reviewmate.MovieDetailsActivity"
 37-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:22:13-49
 38            android:exported="false"
 38-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:23:13-37
-39            android:theme="@style/AppTheme" />
-39-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-44
+39            android:theme="@style/Theme.ReviewMate" />
+39-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-52
 40        <activity
 40-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:9-27:40
 41            android:name="com.example.reviewmate.UpdateActivity"

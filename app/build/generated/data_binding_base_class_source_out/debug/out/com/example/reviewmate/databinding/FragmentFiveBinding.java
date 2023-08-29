@@ -40,12 +40,16 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final TextView myComments;
 
   @NonNull
+  public final TextView myLikedmovies;
+
+  @NonNull
   public final ImageView userProfile;
 
   private FragmentFiveBinding(@NonNull RelativeLayout rootView, @NonNull TextView CertifyEmailView,
       @NonNull TextView btnMove, @NonNull MaterialToolbar chatListToolbar,
       @NonNull RelativeLayout fiveLayout, @NonNull TextView introDevelopers,
-      @NonNull TextView myComments, @NonNull ImageView userProfile) {
+      @NonNull TextView myComments, @NonNull TextView myLikedmovies,
+      @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
     this.btnMove = btnMove;
@@ -53,6 +57,7 @@ public final class FragmentFiveBinding implements ViewBinding {
     this.fiveLayout = fiveLayout;
     this.introDevelopers = introDevelopers;
     this.myComments = myComments;
+    this.myLikedmovies = myLikedmovies;
     this.userProfile = userProfile;
   }
 
@@ -115,6 +120,12 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.my_likedmovies;
+      TextView myLikedmovies = ViewBindings.findChildViewById(rootView, id);
+      if (myLikedmovies == null) {
+        break missingId;
+      }
+
       id = R.id.userProfile;
       ImageView userProfile = ViewBindings.findChildViewById(rootView, id);
       if (userProfile == null) {
@@ -122,7 +133,7 @@ public final class FragmentFiveBinding implements ViewBinding {
       }
 
       return new FragmentFiveBinding((RelativeLayout) rootView, CertifyEmailView, btnMove,
-          chatListToolbar, fiveLayout, introDevelopers, myComments, userProfile);
+          chatListToolbar, fiveLayout, introDevelopers, myComments, myLikedmovies, userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

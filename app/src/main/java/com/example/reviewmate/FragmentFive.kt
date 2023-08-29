@@ -82,6 +82,17 @@ class FragmentFive : Fragment() {
             transaction.commit()
         }
 
+        binding.myLikedmovies.setOnClickListener {
+            var bundle : Bundle = Bundle()
+            bundle.putString("fromFrag", "프래그먼트3")
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            val fragmentfive_likedmovie: Fragment = FragmentFive_LikedMovieList()
+            fragmentfive_likedmovie.arguments = bundle
+            transaction.replace(R.id.main_layout, fragmentfive_likedmovie)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
         if(MyApplication.checkAuth()){
             binding.CertifyEmailView.text = "${MyApplication.email}"
         }

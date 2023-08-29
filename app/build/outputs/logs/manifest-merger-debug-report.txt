@@ -202,11 +202,11 @@ ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidM
 	android:name
 		ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:18:13-43
 activity#com.example.reviewmate.MovieDetailsActivity
-ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:47
+ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:55
 	android:exported
 		ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:23:13-37
 	android:theme
-		ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-44
+		ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-52
 	android:name
 		ADDED from /Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:22:13-49
 activity#com.example.reviewmate.UpdateActivity

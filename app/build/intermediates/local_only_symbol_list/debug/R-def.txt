@@ -17,6 +17,7 @@ color teal_200
 color teal_700
 color white
 drawable add
+drawable add_1
 drawable add_review_btn
 drawable bin
 drawable bottle
@@ -87,11 +88,13 @@ drawable yuchaemin
 id BottomSeetRecyclerView
 id CertifyEmailView
 id HomeEmailView
+id MovieLikeMenu
+id MovieTitleMenu
 id UnsubscribingBtn
 id addEditView
 id addImageView
+id addReviewMenu
 id addTitleEditView
-id add_review_btn
 id authEmailEditView
 id authMainTextView
 id authPasswordEditView
@@ -182,6 +185,7 @@ id movie_release_date
 id movie_review_barrier
 id movie_title
 id my_comments
+id my_likedmovies
 id nav1
 id nav2
 id nav3
@@ -234,6 +238,7 @@ layout activity_update
 layout bottom_sheet_review_list
 layout fragment_five
 layout fragment_five__comment_list
+layout fragment_five__liked_movie_list
 layout fragment_five__review_list
 layout fragment_four
 layout fragment_list

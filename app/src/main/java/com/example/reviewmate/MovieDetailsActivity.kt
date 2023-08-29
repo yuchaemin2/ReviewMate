@@ -3,6 +3,7 @@ package com.example.reviewmate
 import android.R.menu
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -22,9 +23,11 @@ import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
 import com.example.reviewmate.MainActivity.Companion.MOVIE_RATING
 import com.example.reviewmate.MainActivity.Companion.MOVIE_RELEASE_DATE
 import com.example.reviewmate.MainActivity.Companion.MOVIE_TITLE
+import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.MovieDetailBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.Query
+import java.util.*
 
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -37,6 +40,9 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var overview: TextView
     private lateinit var releaseDate: TextView
     private lateinit var id: TextView
+
+    private lateinit var movieId: String
+    private lateinit var movieLikeMenu: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +64,18 @@ class MovieDetailsActivity : AppCompatActivity() {
             finish()
         }
 
+        movieId = extras!!.getString(MOVIE_ID, "")
+        movieLikeMenu = binding.MovieLikeMenu
 
-        binding.addReviewBtn.setOnClickListener {
+        setLikeImage()
+
+        movieLikeMenu.setOnClickListener {
+            toggleLikeStatus()
+        }
+
+        binding.MovieTitleMenu.setText(binding.movieTitle.text)
+
+        binding.addReviewMenu.setOnClickListener {
             if(MyApplication.checkAuth()){
                 val intent = Intent(this, AddActivity::class.java)
                 if (extras != null) {
@@ -105,6 +121,61 @@ class MovieDetailsActivity : AppCompatActivity() {
                     Toast.makeText(this, "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
+    }
+
+    private fun setLikeImage() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            val likedRef = MyApplication.db.collection("liked_movies")
+                .whereEqualTo("movieId", movieId)
+                .whereEqualTo("userId", userId)
+
+            likedRef.get().addOnSuccessListener { querySnapshot ->
+                val isLiked = !querySnapshot.isEmpty
+                val likeIconRes = if (isLiked) R.drawable.add_1 else R.drawable.add
+                movieLikeMenu.setImageResource(likeIconRes)
+            }
+        }
+    }
+
+    private fun toggleLikeStatus() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            val likedRef = MyApplication.db.collection("liked_movies")
+                .whereEqualTo("movieId", movieId)
+                .whereEqualTo("userId", userId)
+
+            likedRef.get().addOnSuccessListener { querySnapshot ->
+                if (querySnapshot.isEmpty) {
+                    saveStore()
+                } else {
+                    querySnapshot.documents.firstOrNull()?.reference?.delete()
+                }
+                setLikeImage()
+            }
+        }
+    }
+
+    fun saveStore() {
+        val data = mapOf(
+            "movieId" to binding.movieId.text.toString(),
+            "userId" to auth.uid,
+//            "backdrop" = binding.movieBackdrop.text.toString(),
+//            "poster" = binding.moviePoster.text.toString(),
+//            "title" = binding.movieTitle.text.toString(),
+//            "rating" = binding.movieRate.text.toString(),
+//            "overview" = binding.movieOverview,
+//            "releaseDate" = binding.movieReleaseDate,
+        )
+
+        MyApplication.db.collection("liked_movies")
+            .add(data)
+            .addOnSuccessListener {
+                Log.d("ToyProject", "data firestore save ok")
+            }
+            .addOnFailureListener {
+                Log.d("ToyProject", "data firestore save error")
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
