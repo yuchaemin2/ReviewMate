@@ -62,7 +62,7 @@ class ReviewDetailActivity : AppCompatActivity() {
 
         // ------------- API : 영화 제목, 포스터 추가해야 함 --------------
         binding.movieTitle.text = intent.getStringExtra("movie")
-        binding.movieRate.text = intent.getStringExtra("rate")
+        binding.movieRate.text= intent.getStringExtra("rate").toString()
         binding.reviewTitle.text = intent.getStringExtra("title")
         binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
@@ -72,6 +72,7 @@ class ReviewDetailActivity : AppCompatActivity() {
         reviewId = intent.getStringExtra("reviewId").toString()
         Log.d("get테스트", ""+ reviewId)
         // 영화 API사용하여 데이터 가져와야 함
+
 
         setProfileImage()
 
@@ -140,6 +141,7 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.menuDelete.visibility = View.VISIBLE
                 binding.menuUpdate.visibility = View.VISIBLE
 
+                // 수정버튼
                 binding.menuUpdate.setOnClickListener {
                     intent = Intent(this, UpdateActivity::class.java)
                     intent.putExtra("reviewId", reviewId)
