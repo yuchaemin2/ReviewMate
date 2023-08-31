@@ -32,6 +32,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.checkerframework.checker.units.qual.mm
 import java.io.File
@@ -97,8 +98,10 @@ class AddActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
         supportActionBar?.setDisplayShowTitleEnabled(false)//타이틀 없애기
     }
+   // ===================================================
 
 
+// ===============================================================================
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_nav, menu)
         return super.onCreateOptionsMenu(menu)

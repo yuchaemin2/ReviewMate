@@ -143,8 +143,12 @@ class ReviewDetailActivity : AppCompatActivity() {
 
                 // 수정버튼
                 binding.menuUpdate.setOnClickListener {
+                    //val reviewInfoBundle : Bundle? = intent.extras
+
                     intent = Intent(this, UpdateActivity::class.java)
                     intent.putExtra("reviewId", reviewId)
+
+                    //intent.putExtra("reviewInfoBundle", reviewInfoBundle)
                     startActivity(intent)
                 }
                 binding.menuDelete.setOnClickListener {
@@ -196,6 +200,7 @@ class ReviewDetailActivity : AppCompatActivity() {
             }
             false
         }
+
 
         // 키보드가 활성화되면 리사이클러뷰의 크기 조정
         binding.feedRecyclerView.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->

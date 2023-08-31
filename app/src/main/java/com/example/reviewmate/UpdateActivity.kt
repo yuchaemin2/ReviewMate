@@ -8,6 +8,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.RatingBar
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
@@ -27,6 +28,7 @@ class UpdateActivity : AppCompatActivity() {
     lateinit var reviewId: String
     lateinit var filePath: String
     lateinit var movieImage: String
+    lateinit var ratingbar: RatingBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,10 @@ class UpdateActivity : AppCompatActivity() {
 
         reviewId = intent.getStringExtra("reviewId") ?: ""
 
+        setListenerRatingBar()
         // 리뷰 데이터 가져와서 화면에 표시
         fetchReviewData()
+
 
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)
@@ -66,6 +70,14 @@ class UpdateActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    fun setListenerRatingBar() {
+        ratingbar = binding.movieRate
+        ratingbar.setOnRatingBarChangeListener { ratingbar, rating, fromUser ->
+            ratingbar.rating=rating
+            Toast.makeText(baseContext, "${rating}", Toast.LENGTH_SHORT).show()
+
+        }
+    }
 
     private fun fetchReviewData() {
         // reviewId를 사용하여 해당 리뷰 데이터 가져오기
@@ -78,10 +90,20 @@ class UpdateActivity : AppCompatActivity() {
                     val title = document.getString("title")
                     val content = document.getString("content")
                     val rate = document.getString("rate")
+                    val movieImage = document.getString("movieImage")
+
+                    val movieTitle = document.getString("movie")
 
                     binding.addTitleEditView.setText(title)
                     binding.addEditView.setText(content)
-                    binding.movieRate.setText(rate)
+                    binding.movieRate.rating=rate!!.toFloat()
+                    binding.movieTitle.text = movieTitle
+                    if(movieImage != null && movieImage != "null"){
+                        // Glide를 사용하여 프로필 이미지 로드
+                        Glide.with(baseContext)
+                            .load(movieImage)
+                            .into(binding.addImageView)
+                    }
                 }
             }
             .addOnFailureListener { exception ->
@@ -93,7 +115,7 @@ class UpdateActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val title = binding.addTitleEditView.text.toString()
         val content = binding.addEditView.text.toString()
-        val rate = binding.movieRate.text.toString()
+        val rate = binding.movieRate.rating.toString()
 
         if (title.isNotEmpty()) {
             // 리뷰 데이터 업데이트

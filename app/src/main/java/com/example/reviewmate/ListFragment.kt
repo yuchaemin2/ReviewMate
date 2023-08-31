@@ -132,7 +132,7 @@ class ListFragment : Fragment() {
     private fun MoviesFetched(movies: List<Movie>) {
         ListMoviesAdapter.appendMovies(movies)
         // 스클롤로
-        attachListMoviesOnScrollListener()
+        attachListMoviesOnScrollListener()/////////////////////////////////////////
     }
 
     // scroll

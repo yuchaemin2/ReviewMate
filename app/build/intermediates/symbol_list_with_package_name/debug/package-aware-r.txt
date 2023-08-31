@@ -3020,6 +3020,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable add_review_btn
 drawable avd_hide_password
 drawable avd_show_password
@@ -3210,6 +3211,8 @@ id CertifyEmailView
 id FUNCTION
 id HomeEmailView
 id META
+id MovieLikeMenu
+id MovieTitleMenu
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -3279,8 +3282,8 @@ id activity_chooser_view_content
 id add
 id addEditView
 id addImageView
+id addReviewMenu
 id addTitleEditView
-id add_review_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3304,7 +3307,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id bSearch
-id backdrop_guideline
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3582,10 +3584,8 @@ id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
-id movie_poster_title_barrier
 id movie_rate
 id movie_release_date
-id movie_review_barrier
 id movie_title
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3835,6 +3835,8 @@ id userEmail
 id userLevelTextView
 id userProfile
 id vertical_only
+id view1
+id view2
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
