@@ -79,10 +79,12 @@ drawable search_1
 drawable splash
 drawable splash_back
 drawable star
+drawable text
 drawable user
 drawable user_1
 drawable user_folder
 drawable user_question
+drawable video
 drawable yebeen
 drawable yuchaemin
 id BottomSeetRecyclerView
@@ -99,7 +101,6 @@ id authEmailEditView
 id authMainTextView
 id authPasswordEditView
 id bSearch
-id backdrop_guideline
 id bottomNavigationView
 id bottomSheetRecyclerView
 id btn_addlecture
@@ -118,6 +119,7 @@ id feedRecyclerView
 id five_layout
 id goSignInBtn
 id googleLoginBtn
+id info
 id intro_developers
 id itemCommentDateView
 id itemCommentView
@@ -179,10 +181,8 @@ id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
-id movie_poster_title_barrier
 id movie_rate
 id movie_release_date
-id movie_review_barrier
 id movie_title
 id my_comments
 id my_likedmovies
@@ -222,6 +222,8 @@ id upcoming_movies
 id userEmail
 id userLevelTextView
 id userProfile
+id view1
+id view2
 id yGit
 id yNotion
 id yuchaemin

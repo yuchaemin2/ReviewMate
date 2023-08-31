@@ -1,6 +1,7 @@
 package com.example.reviewmate
 
 import android.R.menu
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -8,6 +9,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -42,6 +45,14 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var id: TextView
 
     private lateinit var movieId: String
+    private lateinit var moviePoster: String
+    private lateinit var movieTitle: String
+    private lateinit var movieOverview: String
+    private lateinit var movieBackdrop: String
+    private var movieRate: Double = 0.0
+    private lateinit var movieDate: String
+    private lateinit var movieView: String
+
     private lateinit var movieLikeMenu: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +76,13 @@ class MovieDetailsActivity : AppCompatActivity() {
         }
 
         movieId = extras!!.getString(MOVIE_ID, "")
+        moviePoster = extras!!.getString(MOVIE_POSTER, "")
+        movieTitle = extras!!.getString(MOVIE_TITLE, "")
+        movieOverview = extras!!.getString(MOVIE_OVERVIEW, "")
+        movieBackdrop = extras!!.getString(MOVIE_BACKDROP, "")
+        movieRate = extras!!.getDouble(MOVIE_RATING, 0.0) / 2
+        movieDate = extras!!.getString(MOVIE_RELEASE_DATE, "")
+
         movieLikeMenu = binding.MovieLikeMenu
 
         setLikeImage()
@@ -124,51 +142,42 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun setLikeImage() {
-        val userId = auth.currentUser?.uid
-        if (userId != null) {
-            val likedRef = MyApplication.db.collection("liked_movies")
-                .whereEqualTo("movieId", movieId)
-                .whereEqualTo("userId", userId)
+        val likedRef = MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .whereEqualTo("movieId", movieId)
 
-            likedRef.get().addOnSuccessListener { querySnapshot ->
-                val isLiked = !querySnapshot.isEmpty
-                val likeIconRes = if (isLiked) R.drawable.add_1 else R.drawable.add
-                movieLikeMenu.setImageResource(likeIconRes)
-            }
+        likedRef.get().addOnSuccessListener { querySnapshot ->
+            val isLiked = !querySnapshot.isEmpty
+            val likeIconRes = if (isLiked) R.drawable.add_1 else R.drawable.add
+            movieLikeMenu.setImageResource(likeIconRes)
         }
     }
 
     private fun toggleLikeStatus() {
-        val userId = auth.currentUser?.uid
-        if (userId != null) {
-            val likedRef = MyApplication.db.collection("liked_movies")
-                .whereEqualTo("movieId", movieId)
-                .whereEqualTo("userId", userId)
+        val likedRef = MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .whereEqualTo("movieId", movieId)
 
-            likedRef.get().addOnSuccessListener { querySnapshot ->
-                if (querySnapshot.isEmpty) {
-                    saveStore()
-                } else {
-                    querySnapshot.documents.firstOrNull()?.reference?.delete()
-                }
-                setLikeImage()
+        likedRef.get().addOnSuccessListener { querySnapshot ->
+            if (querySnapshot.isEmpty) {
+                saveStore()
+            } else {
+                querySnapshot.documents.firstOrNull()?.reference?.delete()
             }
+            setLikeImage()
         }
     }
 
     fun saveStore() {
         val data = mapOf(
             "movieId" to binding.movieId.text.toString(),
-            "userId" to auth.uid,
-//            "backdrop" = binding.movieBackdrop.text.toString(),
-//            "poster" = binding.moviePoster.text.toString(),
-//            "title" = binding.movieTitle.text.toString(),
-//            "rating" = binding.movieRate.text.toString(),
-//            "overview" = binding.movieOverview,
-//            "releaseDate" = binding.movieReleaseDate,
+            "moviePoster" to moviePoster,
+            "movieTitle" to movieTitle,
+            "movieOverview" to movieOverview,
+            "movieBackdrop" to movieBackdrop,
+            "movieDate" to movieDate,
+            "movieRate" to movieRate,
         )
 
-        MyApplication.db.collection("liked_movies")
+        MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
             .add(data)
             .addOnSuccessListener {
                 Log.d("ToyProject", "data firestore save ok")
@@ -191,12 +200,6 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun likeMovies() {
-        binding.moviePoster.setOnClickListener{
-
-        }
     }
 
     private fun populateDetails(extras: Bundle) {

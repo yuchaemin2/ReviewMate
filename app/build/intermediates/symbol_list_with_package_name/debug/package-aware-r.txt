@@ -3205,12 +3205,14 @@ drawable splash
 drawable splash_back
 drawable star
 drawable test_level_drawable
+drawable text
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
 drawable user_1
 drawable user_folder
 drawable user_question
+drawable video
 drawable yebeen
 drawable yuchaemin
 id ALT
@@ -3318,7 +3320,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id bSearch
-id backdrop_guideline
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3599,10 +3600,8 @@ id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
-id movie_poster_title_barrier
 id movie_rate
 id movie_release_date
-id movie_review_barrier
 id movie_title
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3852,6 +3851,8 @@ id userEmail
 id userLevelTextView
 id userProfile
 id vertical_only
+id view1
+id view2
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner

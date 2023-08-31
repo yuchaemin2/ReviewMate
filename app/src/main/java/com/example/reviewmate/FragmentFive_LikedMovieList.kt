@@ -3,21 +3,20 @@ package com.example.reviewmate
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewmate.MyApplication.Companion.auth
+import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.common.Movie
 import com.example.reviewmate.common.MoviesRepository
-import com.example.reviewmate.common.MoviesRepository.Companion.getLikedMovies
-import com.example.reviewmate.common.MoviesRepository.Companion.getUpcomingMovies
 import com.example.reviewmate.databinding.FragmentFiveLikedMovieListBinding
-import com.google.android.material.color.utilities.MaterialDynamicColors.onError
-import com.google.firebase.firestore.Query
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +34,10 @@ class FragmentFive_LikedMovieList : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentFiveLikedMovieListBinding
 
+    private lateinit var ListMoviesRecyclerView: RecyclerView
+    private lateinit var ListMoviesAdapter: MovieAdapter
+    private lateinit var ListMoviesLayoutManager: LinearLayoutManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -50,6 +53,35 @@ class FragmentFive_LikedMovieList : Fragment() {
         binding = FragmentFiveLikedMovieListBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
+
+        // recyclerView Setting
+        ListMoviesRecyclerView = binding.feedRecyclerView
+        ListMoviesLayoutManager = GridLayoutManager(
+            context,
+            3, // 열의 개수
+            RecyclerView.VERTICAL, // 아이템의 배치 방향 (수직)
+            false // 리사이클러뷰 크기가 변하지 않음
+        )
+        ListMoviesRecyclerView.layoutManager = ListMoviesLayoutManager
+        ListMoviesAdapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
+        ListMoviesRecyclerView.adapter = ListMoviesAdapter
+
+        getLikedMovies()
+
+        db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                // Get the number of documents in the collection
+                querySnapshot.size()
+                // Now you can use the collectionSize as needed
+                if(querySnapshot.size() == 0){
+                    binding.textView.visibility = View.VISIBLE
+                }
+                Log.d("ToyProject", "${querySnapshot.size()}")
+            }.addOnFailureListener { exception ->
+                // Handle any errors
+                Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
+            }
 
         binding.chatListToolbar.setNavigationOnClickListener {
             requireActivity().onBackPressed()
@@ -67,36 +99,6 @@ class FragmentFive_LikedMovieList : Fragment() {
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
-        if(MyApplication.checkAuth()){
-            MyApplication.db.collection("liked_movies")
-                .orderBy("movieId", Query.Direction.DESCENDING)
-                .get()
-                .addOnSuccessListener { result ->
-                    val itemList = mutableListOf<LikedMovieModel>()
-                    for(document in result){
-                        val item = document.toObject(LikedMovieModel::class.java)
-                        if(item.userId == auth.uid){
-                            item.docId = document.id
-                            itemList.add(item)
-                            if(result.size() == 0){
-                                binding.textView.visibility = View.VISIBLE
-                            }else{
-                                binding.textView.visibility = View.INVISIBLE
-                            }
-                        }
-                    }
-                    binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    binding.feedRecyclerView.adapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
-                    //goReviewDtaill()
-                }
-                .addOnFailureListener{
-                    Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
-                }
-        }
-    }
-
     private fun showMovieDetails(movie: Movie) {
         val intent = Intent(activity, MovieDetailsActivity::class.java)
         intent.putExtra(MainActivity.MOVIE_BACKDROP, movie.movieBackdrop)
@@ -109,17 +111,32 @@ class FragmentFive_LikedMovieList : Fragment() {
         startActivity(intent)
     }
 
+    private fun getLikedMovies() {
+        MoviesRepository.getLikedMovies(
+            1,
+            ::MoviesFetched,
+            ::onError
+        )
+    }
+
+    private fun MoviesFetched(movies: List<Movie>) {
+        ListMoviesAdapter.appendMovies(movies)
+    }
+
+    private fun onError() {
+        Toast.makeText(activity, "error Movies", Toast.LENGTH_SHORT).show()
+    }
+
     private fun deleteAllUserLikedMovie(userEmail: String) {
         val currentUser = MyApplication.auth.currentUser
 
         currentUser?.let {
-            MyApplication.db.collection("liked_movies")
-                .whereEqualTo("userId", auth.uid)
+            MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
                 .get()
                 .addOnSuccessListener { querySnapshot ->
                     for (documentSnapshot in querySnapshot.documents) {
                         val docId = documentSnapshot.id
-                        MyApplication.db.collection("liked_movies").document(docId)
+                        MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies").document(docId)
                             .delete()
                             .addOnSuccessListener {
                                 Toast.makeText(requireContext(), "관심영화가 모두 삭제되었습니다.", Toast.LENGTH_SHORT).show()
@@ -138,20 +155,18 @@ class FragmentFive_LikedMovieList : Fragment() {
         val currentUser = auth.currentUser
 
         currentUser?.let {
-            MyApplication.db.collection("liked_movies")
-                .orderBy("movieId", Query.Direction.DESCENDING)
+            MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
                 .get()
                 .addOnSuccessListener { result ->
-                    val itemList = mutableListOf<LikedMovieModel>()
+                    val itemList = mutableListOf<Movie>()
                     for(document in result){
-                        val item = document.toObject(LikedMovieModel::class.java)
-                        if(auth.uid.equals(item.userId)){
-                            item.docId = document.id
-                            itemList.add(item)
-                        }
+                        val item = document.toObject(Movie::class.java)
+//                        item.docId = document.id
+                        itemList.add(item)
+
                     }
                     // 기존 리사이클러뷰 어댑터에 새 데이터 설정
-                    binding.feedRecyclerView.adapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
+                    ListMoviesRecyclerView.adapter = MovieAdapter(mutableListOf()){ movie -> showMovieDetails(movie) }
                     binding.textView.visibility = View.VISIBLE
                 }
                 .addOnFailureListener{
