@@ -44,7 +44,9 @@ class ReviewDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityReviewDetailBinding
     private var myName = MyApplication.email
     lateinit var itemList: MutableList<ItemCommentModel>
+    lateinit var itemListF: MutableList<ItemFeedModel>
     private lateinit var adapter: MyCommentAdapter
+    private lateinit var adapterF: MyFeedAdapter
     lateinit var reviewId: String
 
     lateinit var file: File
@@ -66,24 +68,42 @@ class ReviewDetailActivity : AppCompatActivity() {
         binding.movieTitle.text = intent.getStringExtra("movie")
         binding.movieRate.text = intent.getStringExtra("rate")
         binding.reviewTitle.text = intent.getStringExtra("title")
-        binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
         binding.reviewDate.text = intent.getStringExtra("date")
         binding.reviewId.text = intent.getStringExtra("reviewId")
 
         reviewId = intent.getStringExtra("reviewId").toString()
-        Log.d("get테스트", ""+ reviewId)
-        // 영화 API사용하여 데이터 가져와야 함
+        Log.d("get테스트", "" + reviewId)
+        // 영화 API 사용하여 데이터 가져와야 함
 
         setProfileImage()
 
-        var movieImage = intent.getStringExtra("movieImage")
-        if(movieImage != null && movieImage != "null"){
+        val movieImage = intent.getStringExtra("movieImage")
+        if (movieImage != null && movieImage != "null") {
             // Glide를 사용하여 프로필 이미지 로드
             Glide.with(baseContext)
                 .load(movieImage)
                 .into(binding.addImageView)
         }
+
+        // Firestore에서 데이터 가져오기
+        val db = FirebaseFirestore.getInstance()
+        val reviewRef = db.collection("reviews").document(reviewId)
+
+        reviewRef.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val content = document.getString("content")
+                    if (content != null) {
+                        binding.content.text = content
+                    }
+                } else {
+                    // 문서가 없는 경우 처리
+                }
+            }
+            .addOnFailureListener { exception ->
+                // 데이터 가져오기 실패 처리
+            }
 
         val alertHandler = DialogInterface.OnClickListener { dialog, which ->
             when (which) {

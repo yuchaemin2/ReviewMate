@@ -59,7 +59,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         }
 
 
-        binding.addReviewBtn.setOnClickListener {
+        binding.addReviewMenu.setOnClickListener {
             if(MyApplication.checkAuth()){
                 val intent = Intent(this, AddActivity::class.java)
                 if (extras != null) {

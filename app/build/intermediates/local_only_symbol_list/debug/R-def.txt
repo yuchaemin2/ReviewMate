@@ -16,6 +16,7 @@ color selector_bottom_nav_color
 color teal_200
 color teal_700
 color white
+drawable add
 drawable add_review_btn
 drawable bin
 drawable bottle
@@ -76,16 +77,17 @@ drawable yuchaemin
 id BottomSeetRecyclerView
 id CertifyEmailView
 id HomeEmailView
+id MovieLikeMenu
+id MovieTitleMenu
 id UnsubscribingBtn
 id addEditView
 id addImageView
+id addReviewMenu
 id addTitleEditView
-id add_review_btn
 id authEmailEditView
 id authMainTextView
 id authPasswordEditView
 id bSearch
-id backdrop_guideline
 id bottomNavigationView
 id bottomSheetRecyclerView
 id btn_addlecture
@@ -104,6 +106,7 @@ id feedRecyclerView
 id five_layout
 id goSignInBtn
 id googleLoginBtn
+id info
 id intro_developers
 id itemCommentDateView
 id itemCommentView
@@ -163,10 +166,8 @@ id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
-id movie_poster_title_barrier
 id movie_rate
 id movie_release_date
-id movie_review_barrier
 id movie_title
 id my_comments
 id nav1
@@ -196,6 +197,7 @@ id textView
 id textView1
 id textView2
 id textView3
+id textViewMovieRate
 id title
 id toolbar_back
 id top_rated_movies
@@ -205,6 +207,8 @@ id upcoming_movies
 id userEmail
 id userLevelTextView
 id userProfile
+id view1
+id view2
 id yGit
 id yNotion
 id yuchaemin

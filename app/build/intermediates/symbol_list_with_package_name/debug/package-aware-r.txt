@@ -877,6 +877,25 @@ attr maxImageSize
 attr maxLines
 attr maxVelocity
 attr maxWidth
+attr mcv_allowClickDaysOutsideCurrentMonth
+attr mcv_arrowColor
+attr mcv_calendarMode
+attr mcv_dateTextAppearance
+attr mcv_firstDayOfWeek
+attr mcv_headerTextAppearance
+attr mcv_leftArrowMask
+attr mcv_monthLabels
+attr mcv_rightArrowMask
+attr mcv_selectionColor
+attr mcv_selectionMode
+attr mcv_showOtherDates
+attr mcv_showWeekDays
+attr mcv_tileHeight
+attr mcv_tileSize
+attr mcv_tileWidth
+attr mcv_titleAnimationOrientation
+attr mcv_weekDayLabels
+attr mcv_weekDayTextAppearance
 attr measureWithLargestChild
 attr menu
 attr menuAlignmentMode
@@ -2061,6 +2080,8 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
+color mcv_text_date_dark
+color mcv_text_date_light
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -2711,6 +2732,8 @@ dimen material_textinput_min_width
 dimen material_time_picker_minimum_screen_height
 dimen material_time_picker_minimum_screen_width
 dimen material_timepicker_dialog_buttons_margin_top
+dimen mcv_arrow_margin
+dimen mcv_arrow_padding
 dimen mtrl_alert_dialog_background_inset_bottom
 dimen mtrl_alert_dialog_background_inset_end
 dimen mtrl_alert_dialog_background_inset_start
@@ -3020,6 +3043,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable add_review_btn
 drawable avd_hide_password
 drawable avd_show_password
@@ -3122,6 +3146,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable mcv_action_next
+drawable mcv_action_previous
 drawable message
 drawable messages
 drawable movie_poster
@@ -3210,6 +3236,8 @@ id CertifyEmailView
 id FUNCTION
 id HomeEmailView
 id META
+id MovieLikeMenu
+id MovieTitleMenu
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -3279,8 +3307,8 @@ id activity_chooser_view_content
 id add
 id addEditView
 id addImageView
+id addReviewMenu
 id addTitleEditView
-id add_review_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3304,7 +3332,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id bSearch
-id backdrop_guideline
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3375,7 +3402,9 @@ id date_picker_actions
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
+id decorated_disabled
 id default_activity_button
+id defaults
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3437,6 +3466,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id friday
 id frost
 id fullscreen_header
 id ghost_view
@@ -3450,11 +3480,13 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id header
 id header_title
 id hideable
 id home
 id homeAsUp
 id honorRequest
+id horizontal
 id horizontal_only
 id icon
 id icon_frame
@@ -3554,6 +3586,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id mcv_pager
 id media_actions
 id menu_board
 id menu_delete
@@ -3566,7 +3599,10 @@ id menu_update
 id message
 id middle
 id mini
+id monday
+id month
 id month_grid
+id month_name
 id month_navigation_bar
 id month_navigation_fragment_toggle
 id month_navigation_next
@@ -3583,10 +3619,8 @@ id movie_directory
 id movie_overview
 id movie_poster
 id movie_poster_card
-id movie_poster_title_barrier
 id movie_rate
 id movie_release_date
-id movie_review_barrier
 id movie_title
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3611,6 +3645,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
+id multiple
 id multiply
 id my_comments
 id nav1
@@ -3629,6 +3664,7 @@ id nestedScrollView
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id next
 id noScroll
 id noState
 id none
@@ -3640,6 +3676,8 @@ id notification_main_column_container
 id off
 id on
 id onInterceptTouchReturnSwipe
+id other_months
+id out_of_range
 id outline
 id outward
 id overshoot
@@ -3663,10 +3701,12 @@ id preferences_detail
 id preferences_header
 id preferences_sliding_pane_layout
 id pressed
+id previous
 id profileImage
 id progress_circular
 id progress_horizontal
 id radio
+id range
 id ratio
 id rectangles
 id recycler_view
@@ -3684,6 +3724,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id saturday
 id save_non_transition_alpha
 id save_overlay_view
 id save_review
@@ -3736,6 +3777,7 @@ id showHome
 id showTitle
 id signBtn
 id sin
+id single
 id skipCollapsed
 id skipped
 id slide
@@ -3768,6 +3810,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id sunday
 id supportScrollUp
 id switchWidget
 id tabMode
@@ -3796,6 +3839,7 @@ id textView
 id textView1
 id textView2
 id textView3
+id textViewMovieRate
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3805,6 +3849,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id thursday
 id time
 id title
 id titleDividerNoCustom
@@ -3824,6 +3869,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tuesday
 id unchecked
 id uniform
 id unlabeled
@@ -3834,7 +3880,10 @@ id useLogo
 id userEmail
 id userLevelTextView
 id userProfile
+id vertical
 id vertical_only
+id view1
+id view2
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3843,6 +3892,8 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id wednesday
+id week
 id west
 id wide
 id withText
@@ -3985,6 +4036,7 @@ layout activity_update
 layout bottom_sheet_review_list
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout calendar_view
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4154,6 +4206,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string calendar
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4296,6 +4349,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string next
 string not_set
 string password_toggle_content_description
 string path_password_eye
@@ -4303,6 +4357,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string preference_copied
+string previous
 string project_id
 string search_menu_title
 string searchbar_scrolling_view_behavior
@@ -4851,6 +4906,9 @@ style TextAppearance_Material3_SearchView_Prefix
 style TextAppearance_Material3_TitleLarge
 style TextAppearance_Material3_TitleMedium
 style TextAppearance_Material3_TitleSmall
+style TextAppearance_MaterialCalendarWidget_Date
+style TextAppearance_MaterialCalendarWidget_Header
+style TextAppearance_MaterialCalendarWidget_WeekDay
 style TextAppearance_MaterialComponents_Badge
 style TextAppearance_MaterialComponents_Body1
 style TextAppearance_MaterialComponents_Body2
@@ -5550,6 +5608,7 @@ styleable MaterialButton android_background android_insetLeft android_insetRight
 styleable MaterialButtonToggleGroup android_enabled checkedButton selectionRequired singleSelection
 styleable MaterialCalendar android_windowFullscreen dayInvalidStyle daySelectedStyle dayStyle dayTodayStyle nestedScrollable rangeFillColor yearSelectedStyle yearStyle yearTodayStyle
 styleable MaterialCalendarItem android_insetLeft android_insetRight android_insetTop android_insetBottom itemFillColor itemShapeAppearance itemShapeAppearanceOverlay itemStrokeColor itemStrokeWidth itemTextColor
+styleable MaterialCalendarView mcv_allowClickDaysOutsideCurrentMonth mcv_arrowColor mcv_calendarMode mcv_dateTextAppearance mcv_firstDayOfWeek mcv_headerTextAppearance mcv_leftArrowMask mcv_monthLabels mcv_rightArrowMask mcv_selectionColor mcv_selectionMode mcv_showOtherDates mcv_showWeekDays mcv_tileHeight mcv_tileSize mcv_tileWidth mcv_titleAnimationOrientation mcv_weekDayLabels mcv_weekDayTextAppearance
 styleable MaterialCardView android_checkable cardForegroundColor checkedIcon checkedIconGravity checkedIconMargin checkedIconSize checkedIconTint rippleColor shapeAppearance shapeAppearanceOverlay state_dragged strokeColor strokeWidth
 styleable MaterialCheckBox android_button buttonCompat buttonIcon buttonIconTint buttonIconTintMode buttonTint centerIfNoTextEnabled checkedState errorAccessibilityLabel errorShown useMaterialThemeColors
 styleable MaterialCheckBoxStates state_error state_indeterminate

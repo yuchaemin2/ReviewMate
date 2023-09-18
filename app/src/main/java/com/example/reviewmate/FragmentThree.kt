@@ -52,7 +52,7 @@ class FragmentThree : Fragment() {
     private var param2: String? = null
     lateinit var binding: FragmentThreeBinding
     private lateinit var imageView: ImageView
-   // var imageView : ImageView
+    // var imageView : ImageView
     //lateinit var userLevel : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -166,15 +166,15 @@ class FragmentThree : Fragment() {
 
 
     val characters = arrayOf(
-        arrayOf("/profile_images/level_1.png", "하품하는 고양이", "하품하고 피곤해 보이는 고양이입니다."),
-        arrayOf("/profile_images/level_2.png", "그루밍하는 고양이", "털을 그루밍하는 고양이입니다."),
-        arrayOf("/profile_images/level_3.png", "경계하는 고양이", "호기심 가득한 눈으로 주변을 늘 경계하는 고양이입니다."),
-        arrayOf("/profile_images/level_4.png", "하품하는 고양이", "졸려서 하품하는 검정색 고양이입니다."),
-        arrayOf("/profile_images/level_5.png", "삼색콩떡 고양이", "독특한 삼색 모습으로 사람들의 관심을 끄는 고양이입니다."),
-        arrayOf("/profile_images/level_6.png", "멍때리는 고양이", "눈을 반쯤 감고 먼 곳을 응시하는 듯한 고요한 고양이입니다."),
-        arrayOf("/profile_images/level_7.png", "노려보는 고양이", "까칠한 느낌으로 주변을 바라보는 고양이입니다."),
-        arrayOf("/profile_images/level_8.png", "햇빛쬐는 고양이", "따뜻한 햇살 아래에서 편안함을 느끼는 고양이입니다."),
-        arrayOf("/profile_images/level_9.png", "미소짓는 고양이", "마치 미소를 짓는 듯한 표정으로 귀여움을 뽐내는 고양이입니다.")
+        arrayOf("/profile_images/level_1.png", "하품하는 고양이", "하품하고 피곤해 보이는 고양이다."),
+        arrayOf("/profile_images/level_2.png", "그루밍하는 고양이", "털을 그루밍하는 고양이다."),
+        arrayOf("/profile_images/level_3.png", "경계하는 고양이", "호기심 가득한 눈으로 주변을 늘 경계하는 고양이다."),
+        arrayOf("/profile_images/level_4.png", "하품하는 고양이", "졸려서 하품하는 검정색 고양이다."),
+        arrayOf("/profile_images/level_5.png", "삼색콩떡 고양이", "독특한 삼색 모습으로 사람들의 관심을 끄는 고양이다."),
+        arrayOf("/profile_images/level_6.png", "멍때리는 고양이", "눈을 반쯤 감고 먼 곳을 응시하는 듯한 고요한 고양이다."),
+        arrayOf("/profile_images/level_7.png", "노려보는 고양이", "까칠한 느낌으로 주변을 바라보는 고양이다."),
+        arrayOf("/profile_images/level_8.png", "햇빛쬐는 고양이", "따뜻한 햇살 아래에서 편안함을 느끼는 고양이다."),
+        arrayOf("/profile_images/level_9.png", "미소짓는 고양이", "마치 미소를 짓는 듯한 표정으로 귀여움을 뽐내는 고양이다.")
     )
 
 
@@ -246,10 +246,10 @@ class FragmentThree : Fragment() {
             7 -> openLevel7()
             8 -> openLevel8()
             9 -> openLevel9()
-                else -> {
-                    // 기본 이미지 또는 처리할 로직 설정
-                }
-            }}
+            else -> {
+                // 기본 이미지 또는 처리할 로직 설정
+            }
+        }}
 
 
     fun openDialog(level: Int) {

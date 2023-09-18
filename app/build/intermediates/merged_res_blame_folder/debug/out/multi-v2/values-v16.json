@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-v16/values-v16.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-44:/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "/Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/res/values-v16/values-v16.xml",

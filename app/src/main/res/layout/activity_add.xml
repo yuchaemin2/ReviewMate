@@ -52,13 +52,22 @@
                     android:text="영화제목"
                     android:textSize="20dp"/>
 
-                <TextView
+                <RatingBar
                     android:id="@+id/movieRate"
+                    android:rating="2.0"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="별점"
-                    android:textColor="@android:color/holo_orange_light"
-                    android:layout_marginTop="10dp"/>
+                    android:isIndicator="false"
+                    android:progressTint="@color/navigation_color_habit"
+                    android:numStars="5"
+                    android:stepSize="0.5" />
+                <TextView
+                    android:id="@+id/textViewMovieRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/movieId"

@@ -15,6 +15,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.DatePicker
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -28,8 +29,10 @@ import com.example.reviewmate.MainActivity.Companion.MOVIE_ID
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.ActivityAddBinding
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.checkerframework.checker.units.qual.mm
 import java.io.File
@@ -43,6 +46,8 @@ class AddActivity : AppCompatActivity() {
     lateinit var filePath: String
     lateinit var movieImage: String
     lateinit var userEmail: String
+    lateinit  var ratingbar : RatingBar
+    lateinit var userRateStr : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +75,7 @@ class AddActivity : AppCompatActivity() {
         if(moviePoster !== null) { movieImage = moviePoster.toString() }
         val movieId = intent.getStringExtra(MainActivity.MOVIE_ID)
 
+
         binding.movieTitle.text = movieTitle
         binding.movieId.text = movieId
         Glide.with(this)
@@ -77,14 +83,15 @@ class AddActivity : AppCompatActivity() {
             .apply(RequestOptions().override(150, 230).centerCrop())
             .into(binding.addImageView)
 
-//        binding.btnSave.setOnClickListener {
-//            if(binding.addTitleEditView.text.isNotEmpty()){
-//                saveStore()
-//                finish()
-//            } else {
-//                Toast.makeText(this, "제목을 입력해주세요..", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+        ratingbar = binding.movieRate
+        ratingbar.setOnRatingBarChangeListener { ratingbar, rating, fromUser ->
+            ratingbar.rating=rating
+            Toast.makeText(baseContext, "${rating}", Toast.LENGTH_SHORT).show()
+            //binding.textViewMovieRate.text= rating.toString()
+            userRateStr = rating.toString()
+
+        }
+
 
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)
@@ -127,7 +134,7 @@ class AddActivity : AppCompatActivity() {
             "content" to binding.addEditView.text.toString(),
             "date" to dateToString(Date()),
             "movie" to binding.movieTitle.text.toString(),
-            "rate" to binding.movieRate.text.toString(),
+            "rate" to userRateStr,
             "uid" to auth.uid,
             "movieId" to binding.movieId.text.toString(),
             "movieImage" to "https://image.tmdb.org/t/p/w342${movieImage}"

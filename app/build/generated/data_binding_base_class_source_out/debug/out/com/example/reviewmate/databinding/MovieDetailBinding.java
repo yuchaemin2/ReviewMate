@@ -12,14 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.Barrier;
-import androidx.constraintlayout.widget.Guideline;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -29,10 +26,16 @@ public final class MovieDetailBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final ExtendedFloatingActionButton addReviewBtn;
+  public final ImageView MovieLikeMenu;
 
   @NonNull
-  public final Guideline backdropGuideline;
+  public final TextView MovieTitleMenu;
+
+  @NonNull
+  public final TextView addReviewMenu;
+
+  @NonNull
+  public final TextView info;
 
   @NonNull
   public final ImageView movieBackdrop;
@@ -53,16 +56,10 @@ public final class MovieDetailBinding implements ViewBinding {
   public final CardView moviePosterCard;
 
   @NonNull
-  public final Barrier moviePosterTitleBarrier;
-
-  @NonNull
   public final RatingBar movieRate;
 
   @NonNull
   public final TextView movieReleaseDate;
-
-  @NonNull
-  public final Barrier movieReviewBarrier;
 
   @NonNull
   public final TextView movieTitle;
@@ -73,30 +70,38 @@ public final class MovieDetailBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbarBack;
 
-  private MovieDetailBinding(@NonNull RelativeLayout rootView,
-      @NonNull ExtendedFloatingActionButton addReviewBtn, @NonNull Guideline backdropGuideline,
+  @NonNull
+  public final View view1;
+
+  @NonNull
+  public final View view2;
+
+  private MovieDetailBinding(@NonNull RelativeLayout rootView, @NonNull ImageView MovieLikeMenu,
+      @NonNull TextView MovieTitleMenu, @NonNull TextView addReviewMenu, @NonNull TextView info,
       @NonNull ImageView movieBackdrop, @NonNull RecyclerView movieDetailRecyclerView,
       @NonNull TextView movieId, @NonNull TextView movieOverview, @NonNull ImageView moviePoster,
-      @NonNull CardView moviePosterCard, @NonNull Barrier moviePosterTitleBarrier,
-      @NonNull RatingBar movieRate, @NonNull TextView movieReleaseDate,
-      @NonNull Barrier movieReviewBarrier, @NonNull TextView movieTitle,
-      @NonNull NestedScrollView nestedScrollView, @NonNull Toolbar toolbarBack) {
+      @NonNull CardView moviePosterCard, @NonNull RatingBar movieRate,
+      @NonNull TextView movieReleaseDate, @NonNull TextView movieTitle,
+      @NonNull NestedScrollView nestedScrollView, @NonNull Toolbar toolbarBack, @NonNull View view1,
+      @NonNull View view2) {
     this.rootView = rootView;
-    this.addReviewBtn = addReviewBtn;
-    this.backdropGuideline = backdropGuideline;
+    this.MovieLikeMenu = MovieLikeMenu;
+    this.MovieTitleMenu = MovieTitleMenu;
+    this.addReviewMenu = addReviewMenu;
+    this.info = info;
     this.movieBackdrop = movieBackdrop;
     this.movieDetailRecyclerView = movieDetailRecyclerView;
     this.movieId = movieId;
     this.movieOverview = movieOverview;
     this.moviePoster = moviePoster;
     this.moviePosterCard = moviePosterCard;
-    this.moviePosterTitleBarrier = moviePosterTitleBarrier;
     this.movieRate = movieRate;
     this.movieReleaseDate = movieReleaseDate;
-    this.movieReviewBarrier = movieReviewBarrier;
     this.movieTitle = movieTitle;
     this.nestedScrollView = nestedScrollView;
     this.toolbarBack = toolbarBack;
+    this.view1 = view1;
+    this.view2 = view2;
   }
 
   @Override
@@ -126,15 +131,27 @@ public final class MovieDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.add_review_btn;
-      ExtendedFloatingActionButton addReviewBtn = ViewBindings.findChildViewById(rootView, id);
-      if (addReviewBtn == null) {
+      id = R.id.MovieLikeMenu;
+      ImageView MovieLikeMenu = ViewBindings.findChildViewById(rootView, id);
+      if (MovieLikeMenu == null) {
         break missingId;
       }
 
-      id = R.id.backdrop_guideline;
-      Guideline backdropGuideline = ViewBindings.findChildViewById(rootView, id);
-      if (backdropGuideline == null) {
+      id = R.id.MovieTitleMenu;
+      TextView MovieTitleMenu = ViewBindings.findChildViewById(rootView, id);
+      if (MovieTitleMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.addReviewMenu;
+      TextView addReviewMenu = ViewBindings.findChildViewById(rootView, id);
+      if (addReviewMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.info;
+      TextView info = ViewBindings.findChildViewById(rootView, id);
+      if (info == null) {
         break missingId;
       }
 
@@ -174,12 +191,6 @@ public final class MovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.movie_poster_title_barrier;
-      Barrier moviePosterTitleBarrier = ViewBindings.findChildViewById(rootView, id);
-      if (moviePosterTitleBarrier == null) {
-        break missingId;
-      }
-
       id = R.id.movie_rate;
       RatingBar movieRate = ViewBindings.findChildViewById(rootView, id);
       if (movieRate == null) {
@@ -189,12 +200,6 @@ public final class MovieDetailBinding implements ViewBinding {
       id = R.id.movie_release_date;
       TextView movieReleaseDate = ViewBindings.findChildViewById(rootView, id);
       if (movieReleaseDate == null) {
-        break missingId;
-      }
-
-      id = R.id.movie_review_barrier;
-      Barrier movieReviewBarrier = ViewBindings.findChildViewById(rootView, id);
-      if (movieReviewBarrier == null) {
         break missingId;
       }
 
@@ -216,10 +221,22 @@ public final class MovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new MovieDetailBinding((RelativeLayout) rootView, addReviewBtn, backdropGuideline,
-          movieBackdrop, movieDetailRecyclerView, movieId, movieOverview, moviePoster,
-          moviePosterCard, moviePosterTitleBarrier, movieRate, movieReleaseDate, movieReviewBarrier,
-          movieTitle, nestedScrollView, toolbarBack);
+      id = R.id.view1;
+      View view1 = ViewBindings.findChildViewById(rootView, id);
+      if (view1 == null) {
+        break missingId;
+      }
+
+      id = R.id.view2;
+      View view2 = ViewBindings.findChildViewById(rootView, id);
+      if (view2 == null) {
+        break missingId;
+      }
+
+      return new MovieDetailBinding((RelativeLayout) rootView, MovieLikeMenu, MovieTitleMenu,
+          addReviewMenu, info, movieBackdrop, movieDetailRecyclerView, movieId, movieOverview,
+          moviePoster, moviePosterCard, movieRate, movieReleaseDate, movieTitle, nestedScrollView,
+          toolbarBack, view1, view2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

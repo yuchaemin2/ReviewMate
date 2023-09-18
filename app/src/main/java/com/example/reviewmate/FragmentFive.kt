@@ -14,6 +14,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.auth
@@ -22,6 +24,9 @@ import com.example.reviewmate.databinding.FragmentFiveBinding
 import com.example.reviewmate.databinding.FragmentFourBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,6 +45,7 @@ class FragmentFive : Fragment() {
     lateinit var binding: FragmentFiveBinding
     lateinit var profile: ImageView
     private lateinit var imageView: ImageView
+    private var  imageUrl : String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,13 +92,19 @@ class FragmentFive : Fragment() {
             binding.CertifyEmailView.text = "${MyApplication.email}"
         }
 
-        val imageUrl : String = MyApplication.imageurl.toString()
-        imageView = binding.userProfile
-        if( imageUrl != null){
-            Glide.with(requireContext())
-                .load(imageUrl)
-                .into(binding.userProfile)
+        //val imageUrl : String = MyApplication.imageurl.toString()
+
+        CoroutineScope(Dispatchers.Main).launch {
+            imageUrl =  MyApplication.getImageUrl(MyApplication.email).toString()
+            imageView = binding.userProfile
+            if( imageUrl != null){
+                Glide.with(requireContext())
+                    .load(imageUrl)
+                    .into(binding.userProfile)
+            }
         }
+
+
 
         binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
