@@ -16,10 +16,6 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five__review_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_add.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_add.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_setting.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_setting.xml"
     },
@@ -64,10 +60,6 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_update.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_update.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/item_comment.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/item_comment.xml"
     },
@@ -94,6 +86,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_review_detail.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_review_detail.xml"
+    },
+    {
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_review_detail.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_review_detail.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/item_movie.xml",

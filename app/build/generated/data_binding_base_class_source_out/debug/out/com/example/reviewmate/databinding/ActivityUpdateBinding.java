@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public final class ActivityUpdateBinding implements ViewBinding {
   public final TextView movieId;
 
   @NonNull
-  public final TextView movieRate;
+  public final RatingBar movieRate;
 
   @NonNull
   public final TextView movieTitle;
@@ -45,7 +46,7 @@ public final class ActivityUpdateBinding implements ViewBinding {
 
   private ActivityUpdateBinding(@NonNull RelativeLayout rootView, @NonNull EditText addEditView,
       @NonNull ImageView addImageView, @NonNull EditText addTitleEditView,
-      @NonNull TextView movieId, @NonNull TextView movieRate, @NonNull TextView movieTitle,
+      @NonNull TextView movieId, @NonNull RatingBar movieRate, @NonNull TextView movieTitle,
       @NonNull Toolbar toolbarBack) {
     this.rootView = rootView;
     this.addEditView = addEditView;
@@ -109,7 +110,7 @@ public final class ActivityUpdateBinding implements ViewBinding {
       }
 
       id = R.id.movieRate;
-      TextView movieRate = ViewBindings.findChildViewById(rootView, id);
+      RatingBar movieRate = ViewBindings.findChildViewById(rootView, id);
       if (movieRate == null) {
         break missingId;
       }

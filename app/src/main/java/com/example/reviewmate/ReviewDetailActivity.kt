@@ -3,6 +3,7 @@ package com.example.reviewmate
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.ContentValues
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
@@ -18,6 +19,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.net.toUri
@@ -201,6 +203,7 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.editTxt.setText("") // 텍스트창 초기화
                 // 어댑터 재실행
                 getStore()
+                hideKeyboard()
             }
         }
 
@@ -212,6 +215,7 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.editTxt.setText("") // 텍스트창 초기화
                 // 어댑터 재실행
                 getStore()
+                hideKeyboard() // 키보드를 숨기는 사용자 정의 함수 호출
                 return@setOnEditorActionListener true
             }
             false
@@ -259,6 +263,12 @@ class ReviewDetailActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTxt.windowToken, 0)
+    }
+
 
     override fun onResume() {
         super.onResume()

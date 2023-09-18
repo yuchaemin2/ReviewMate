@@ -176,8 +176,8 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_activity_update.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_update.xml"
+        "merged": "com.example.reviewmate.app-merged_res-46:/layout_activity_review_detail.xml.flat",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_review_detail.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_essay.png.flat",
@@ -198,10 +198,6 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-anydpi-v33_ic_launcher.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-anydpi-v33/ic_launcher.xml"
-    },
-    {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_activity_add.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_add.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_custom_bs.xml.flat",

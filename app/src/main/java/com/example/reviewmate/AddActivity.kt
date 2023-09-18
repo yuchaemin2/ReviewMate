@@ -88,10 +88,10 @@ class AddActivity : AppCompatActivity() {
             ratingbar.rating=rating
             Toast.makeText(baseContext, "${rating}", Toast.LENGTH_SHORT).show()
             //binding.textViewMovieRate.text= rating.toString()
-            userRateStr = rating.toString()
 
         }
 
+        userRateStr = ratingbar.rating.toString()
 
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)
