@@ -3225,6 +3225,7 @@ drawable user
 drawable user_1
 drawable user_folder
 drawable user_question
+drawable video
 drawable yebeen
 drawable yuchaemin
 id ALT
@@ -3647,7 +3648,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiple
 id multiply
-id my_comments
+id my_likedmovies
 id nav1
 id nav2
 id nav3
@@ -3676,6 +3677,7 @@ id notification_main_column_container
 id off
 id on
 id onInterceptTouchReturnSwipe
+id opinion
 id other_months
 id out_of_range
 id outline
@@ -3711,7 +3713,9 @@ id ratio
 id rectangles
 id recycler_view
 id recyclerview
+id report
 id reverseSawtooth
+id reviewCount
 id reviewDate
 id reviewId
 id reviewTitle
@@ -3878,6 +3882,7 @@ id upcoming
 id upcoming_movies
 id useLogo
 id userEmail
+id userLevel
 id userLevelTextView
 id userProfile
 id vertical
@@ -3892,6 +3897,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id webView
 id wednesday
 id week
 id west
@@ -4027,6 +4033,7 @@ layout activity_add
 layout activity_auth
 layout activity_intro
 layout activity_main
+layout activity_opinion
 layout activity_review_detail
 layout activity_review_search
 layout activity_search
@@ -4056,6 +4063,7 @@ layout design_text_input_start_icon
 layout expand_button
 layout fragment_five
 layout fragment_five__comment_list
+layout fragment_five__liked_movie_list
 layout fragment_five__review_list
 layout fragment_four
 layout fragment_list

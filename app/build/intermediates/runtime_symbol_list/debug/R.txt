@@ -3224,6 +3224,7 @@ int drawable user 0x7f08012a
 int drawable user_1 0x7f08012b
 int drawable user_folder 0x7f08012c
 int drawable user_question 0x7f08012d
+int drawable video 0x7f080130
 int drawable yebeen 0x7f08012e
 int drawable yuchaemin 0x7f08012f
 int id ALT 0x7f090000
@@ -3646,7 +3647,7 @@ int id mtrl_picker_title_text 0x7f0901a0
 int id mtrl_view_tag_bottom_padding 0x7f0901a1
 int id multiple 0x7f0901a2
 int id multiply 0x7f0901a3
-int id my_comments 0x7f0901a4
+int id my_likedmovies 0x7f0902a8
 int id nav1 0x7f0901a5
 int id nav2 0x7f0901a6
 int id nav3 0x7f0901a7
@@ -3675,6 +3676,7 @@ int id notification_main_column_container 0x7f0901bd
 int id off 0x7f0901be
 int id on 0x7f0901bf
 int id onInterceptTouchReturnSwipe 0x7f0901c0
+int id opinion 0x7f0902a9
 int id other_months 0x7f0901c1
 int id out_of_range 0x7f0901c2
 int id outline 0x7f0901c3
@@ -3710,7 +3712,9 @@ int id ratio 0x7f0901e0
 int id rectangles 0x7f0901e1
 int id recycler_view 0x7f0901e2
 int id recyclerview 0x7f0901e3
+int id report 0x7f0902aa
 int id reverseSawtooth 0x7f0901e4
+int id reviewCount 0x7f0902ab
 int id reviewDate 0x7f0901e5
 int id reviewId 0x7f0901e6
 int id reviewTitle 0x7f0901e7
@@ -3877,6 +3881,7 @@ int id upcoming 0x7f090286
 int id upcoming_movies 0x7f090287
 int id useLogo 0x7f090288
 int id userEmail 0x7f090289
+int id userLevel 0x7f0902ac
 int id userLevelTextView 0x7f09028a
 int id userProfile 0x7f09028b
 int id vertical 0x7f09028c
@@ -3891,6 +3896,7 @@ int id view_tree_saved_state_registry_owner 0x7f090294
 int id view_tree_view_model_store_owner 0x7f090295
 int id visible 0x7f090296
 int id visible_removing_fragment_view_tag 0x7f090297
+int id webView 0x7f0902ad
 int id wednesday 0x7f090298
 int id week 0x7f090299
 int id west 0x7f09029a
@@ -4026,6 +4032,7 @@ int layout activity_add 0x7f0c001c
 int layout activity_auth 0x7f0c001d
 int layout activity_intro 0x7f0c001e
 int layout activity_main 0x7f0c001f
+int layout activity_opinion 0x7f0c00a3
 int layout activity_review_detail 0x7f0c0020
 int layout activity_review_search 0x7f0c0021
 int layout activity_search 0x7f0c0022
@@ -4055,6 +4062,7 @@ int layout design_text_input_start_icon 0x7f0c0039
 int layout expand_button 0x7f0c003a
 int layout fragment_five 0x7f0c003b
 int layout fragment_five__comment_list 0x7f0c003c
+int layout fragment_five__liked_movie_list 0x7f0c00a4
 int layout fragment_five__review_list 0x7f0c003d
 int layout fragment_four 0x7f0c003e
 int layout fragment_list 0x7f0c003f

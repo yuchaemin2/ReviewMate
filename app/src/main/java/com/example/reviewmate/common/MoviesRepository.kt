@@ -1,6 +1,6 @@
 package com.example.reviewmate.common
 
-import android.util.Log
+import com.example.reviewmate.MyApplication
 import com.example.reviewmate.common.TMDBClient.api
 import retrofit2.Call
 import retrofit2.Callback
@@ -94,6 +94,27 @@ class MoviesRepository {
                         onError.invoke()
                     }
                 })
+        }
+
+
+        fun getLikedMovies(
+            page: Int = 1,
+            onSuccess: (movies: List<Movie>) -> Unit,
+            onError: () -> Unit
+        ) {
+            MyApplication.db.collection("users").document(MyApplication.auth.uid.toString()).collection("liked_movies")
+                .get()
+                .addOnSuccessListener { documents ->
+                    val movies = mutableListOf<Movie>()
+                    for (document in documents) {
+                        val movie = document.toObject(Movie::class.java)
+                        movies.add(movie)
+                    }
+                    onSuccess.invoke(movies)
+                }
+                .addOnFailureListener {
+                    onError.invoke()
+                }
         }
 
         fun getSearchMovies( page: Int = 1, query: String,

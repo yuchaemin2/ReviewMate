@@ -9,235 +9,235 @@
 8-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
 9-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
-10    <!-- 인터넷 연결 -->
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:5:5-67
-11-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:5-79
-12-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-19
-20    <application
-20-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:5-63:19
-21        android:name="com.example.reviewmate.MyApplication"
-21-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:9-38
-22        android:allowBackup="true"
-22-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:9:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:10:9-65
-25        android:debuggable="true"
-26        android:extractNativeLibs="false"
-27        android:fullBackupContent="@xml/backup_rules"
-27-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:11:9-54
-28        android:icon="@mipmap/ic_launcher"
-28-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:12:9-43
-29        android:label="@string/app_name"
-29-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:13:9-41
-30        android:supportsRtl="true"
-30-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:14:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.ReviewMate" >
-32-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:15:9-48
-33        <activity
-33-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:17:9-19:40
-34            android:name="com.example.reviewmate.SearchActivity"
-34-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:18:13-43
-35            android:exported="false" />
-35-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:19:13-37
-36        <activity
-36-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:47
-37            android:name="com.example.reviewmate.MovieDetailsActivity"
-37-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:22:13-49
-38            android:exported="false"
-38-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:23:13-37
-39            android:theme="@style/AppTheme" />
-39-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:24:13-44
-40        <activity
-40-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:9-27:40
-41            android:name="com.example.reviewmate.UpdateActivity"
-41-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:26:13-43
-42            android:exported="false" />
-42-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:27:13-37
-43        <activity
-43-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:28:9-30:40
-44            android:name="com.example.reviewmate.IntroActivity"
-44-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:29:13-42
-45            android:exported="false" />
-45-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:30:13-37
-46        <activity
-46-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:31:9-33:40
-47            android:name="com.example.reviewmate.ReviewSearchActivity"
-47-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:32:13-49
-48            android:exported="false" />
-48-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:33:13-37
-49        <activity
-49-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:35:9-37:40
-50            android:name="com.example.reviewmate.ReviewDetailActivity"
-50-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:36:13-49
-51            android:exported="false" />
-51-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:37:13-37
-52        <activity
-52-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:38:9-40:40
-53            android:name="com.example.reviewmate.SettingActivity"
-53-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:39:13-44
-54            android:exported="false" />
-54-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:40:13-37
-55        <activity
-55-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:42:9-45:49
-56            android:name="com.example.reviewmate.AuthActivity"
-56-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:43:13-41
-57            android:exported="false"
-57-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:44:13-37
-58            android:theme="@style/LoginTheme" />
-58-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:45:13-46
-59        <activity
-59-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:46:9-49:58
-60            android:name="com.example.reviewmate.AddActivity"
-60-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:47:13-40
-61            android:exported="false"
-61-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:48:13-37
-62            android:windowSoftInputMode="adjustResize" />
-62-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:49:13-55
-63        <activity
-63-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:50:9-52:40
-64            android:name="com.example.reviewmate.MainActivity"
-64-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:51:13-41
-65            android:exported="false" />
-65-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:52:13-37
-66        <activity
-66-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:53:9-62:20
-67            android:name="com.example.reviewmate.SplashActivity"
-67-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:54:13-43
-68            android:exported="true"
-68-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:55:13-36
-69            android:theme="@style/SplashTheme" >
-69-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:56:13-47
-70            <intent-filter>
-70-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:57:13-61:29
-71                <action android:name="android.intent.action.MAIN" />
-71-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:58:17-69
-71-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:58:25-66
-72
-73                <category android:name="android.intent.category.LAUNCHER" />
-73-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:60:17-77
-73-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:60:27-74
-74            </intent-filter>
-75        </activity>
-76
-77        <service
-77-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:8:9-14:19
-78            android:name="com.google.firebase.components.ComponentDiscoveryService"
-78-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:9:13-84
-79            android:directBootAware="true"
-79-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
-80            android:exported="false" >
-80-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:10:13-37
-81            <meta-data
-81-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:11:13-13:85
-82                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-82-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:12:17-116
-83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:13:17-82
-84            <meta-data
-84-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:14:13-16:85
-85                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-85-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:15:17-126
-86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:16:17-82
-87            <meta-data
-87-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:14:13-16:85
-88                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-88-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:15:17-122
-89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:16:17-82
-90            <meta-data
-90-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
-91                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-91-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
-92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
-93            <meta-data
-93-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
-94                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-94-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
-95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
-96            <meta-data
-96-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:19:13-21:85
-97                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-97-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:20:17-111
-98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:21:17-82
+10
+11    <!-- 인터넷 연결 -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:6:5-67
+12-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.SEND_EMAIL" />
+13-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:5-69
+13-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:22-66
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:5-66
+14-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:22-63
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:5-79
+15-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:22-76
+16
+17    <permission
+17-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+18        android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:10:5-78:19
+24        android:name="com.example.reviewmate.MyApplication"
+24-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:11:9-38
+25        android:allowBackup="true"
+25-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:12:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+27        android:dataExtractionRules="@xml/data_extraction_rules"
+27-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:13:9-65
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:fullBackupContent="@xml/backup_rules"
+30-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:14:9-54
+31        android:icon="@mipmap/ic_launcher"
+31-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:15:9-43
+32        android:label="@string/app_name"
+32-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:16:9-41
+33        android:supportsRtl="true"
+33-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:17:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.ReviewMate" >
+35-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:18:9-48
+36        <service
+36-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:20:9-27:19
+37            android:name="com.example.reviewmate.MyFirebaseMessagingService"
+37-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:21:13-55
+38            android:enabled="true"
+38-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:22:13-35
+39            android:exported="true" >
+39-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:23:13-36
+40            <intent-filter>
+40-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:24:13-26:29
+41                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+41-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:17-78
+41-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:25-75
+42            </intent-filter>
+43        </service>
+44
+45        <activity
+45-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:29:9-31:40
+46            android:name="com.example.reviewmate.OpinionActivity"
+46-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:30:13-44
+47            android:exported="false" />
+47-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:31:13-37
+48        <activity
+48-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:32:9-34:40
+49            android:name="com.example.reviewmate.ReportActivity"
+49-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:33:13-43
+50            android:exported="false" />
+50-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:34:13-37
+51        <activity
+51-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:35:9-37:40
+52            android:name="com.example.reviewmate.SearchActivity"
+52-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:36:13-43
+53            android:exported="false" />
+53-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:37:13-37
+54        <activity
+54-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:38:9-41:55
+55            android:name="com.example.reviewmate.MovieDetailsActivity"
+55-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:39:13-49
+56            android:exported="false"
+56-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:40:13-37
+57            android:theme="@style/Theme.ReviewMate" />
+57-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:41:13-52
+58        <activity
+58-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:42:9-44:40
+59            android:name="com.example.reviewmate.UpdateActivity"
+59-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:43:13-43
+60            android:exported="false" />
+60-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:44:13-37
+61        <activity
+61-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:45:9-47:40
+62            android:name="com.example.reviewmate.IntroActivity"
+62-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:46:13-42
+63            android:exported="false" />
+63-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:47:13-37
+64        <activity
+64-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:48:9-50:40
+65            android:name="com.example.reviewmate.ReviewSearchActivity"
+65-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:49:13-49
+66            android:exported="false" />
+66-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:50:13-37
+67        <activity
+67-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:51:9-53:40
+68            android:name="com.example.reviewmate.ReviewDetailActivity"
+68-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:52:13-49
+69            android:exported="false" />
+69-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:53:13-37
+70        <activity
+70-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:54:9-56:40
+71            android:name="com.example.reviewmate.SettingActivity"
+71-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:55:13-44
+72            android:exported="false" />
+72-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:56:13-37
+73        <activity
+73-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:57:9-60:49
+74            android:name="com.example.reviewmate.AuthActivity"
+74-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:58:13-41
+75            android:exported="false"
+75-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:59:13-37
+76            android:theme="@style/LoginTheme" />
+76-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:60:13-46
+77        <activity
+77-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:61:9-64:58
+78            android:name="com.example.reviewmate.AddActivity"
+78-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:62:13-40
+79            android:exported="false"
+79-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:63:13-37
+80            android:windowSoftInputMode="adjustResize" />
+80-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:64:13-55
+81        <activity
+81-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:65:9-67:40
+82            android:name="com.example.reviewmate.MainActivity"
+82-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:66:13-41
+83            android:exported="false" />
+83-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:67:13-37
+84        <activity
+84-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:68:9-77:20
+85            android:name="com.example.reviewmate.SplashActivity"
+85-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:69:13-43
+86            android:exported="true"
+86-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:70:13-36
+87            android:theme="@style/SplashTheme" >
+87-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:71:13-47
+88            <intent-filter>
+88-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:72:13-76:29
+89                <action android:name="android.intent.action.MAIN" />
+89-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:73:17-69
+89-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:73:25-66
+90
+91                <category android:name="android.intent.category.LAUNCHER" />
+91-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:75:17-77
+91-->/Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:75:27-74
+92            </intent-filter>
+93        </activity>
+94
+95        <service
+95-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:8:9-14:19
+96            android:name="com.google.firebase.components.ComponentDiscoveryService"
+96-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:9:13-84
+97            android:directBootAware="true"
+97-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+98            android:exported="false" >
+98-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:10:13-37
 99            <meta-data
-99-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
-100                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-100-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+99-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:11:13-13:85
+100                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+100-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:12:17-116
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
-102        </service>
-103
-104        <activity
-104-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
-105            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-105-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
-106            android:excludeFromRecents="true"
-106-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
-107            android:exported="true"
-107-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
-108            android:launchMode="singleTask"
-108-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
-109            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-109-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
-110            <intent-filter>
-110-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
-111                <action android:name="android.intent.action.VIEW" />
-111-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-111-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-112
-113                <category android:name="android.intent.category.DEFAULT" />
-113-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-113-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-114                <category android:name="android.intent.category.BROWSABLE" />
-114-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-114-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-115
-116                <data
-116-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-117                    android:host="firebase.auth"
-117-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-118                    android:path="/"
-118-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-119                    android:scheme="genericidp" />
-119-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-120            </intent-filter>
-121        </activity>
+101-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:13:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:14:13-16:85
+103                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+103-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:15:17-126
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:16:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:14:13-16:85
+106                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+106-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:15:17-122
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/solor/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:16:17-82
+108            <meta-data
+108-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
+109                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+109-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/solor/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
+111            <meta-data
+111-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
+112                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+112-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
+114            <meta-data
+114-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:19:13-21:85
+115                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+115-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:20:17-111
+116                android:value="com.google.firebase.components.ComponentRegistrar" />
+116-->[com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:21:17-82
+117            <meta-data
+117-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
+118                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+118-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
+120        </service>
+121
 122        <activity
-122-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
-123            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-123-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+122-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
+123            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+123-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
 124            android:excludeFromRecents="true"
-124-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+124-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
 125            android:exported="true"
-125-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+125-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
 126            android:launchMode="singleTask"
-126-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+126-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
 127            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-127-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+127-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
 128            <intent-filter>
-128-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+128-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
 129                <action android:name="android.intent.action.VIEW" />
 129-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
 129-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
@@ -255,110 +255,145 @@
 135-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
 136                    android:path="/"
 136-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-137                    android:scheme="recaptcha" />
+137                    android:scheme="genericidp" />
 137-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
 138            </intent-filter>
 139        </activity>
-140
-141        <provider
-141-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:12:9-16:40
-142            android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider"
-142-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:13:13-105
-143            android:authorities="com.example.reviewmate.materialcalendarviewinitprovider"
-143-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:14:13-84
-144            android:enabled="true"
-144-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:15:13-35
-145            android:exported="false" />
-145-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:16:13-37
-146
-147        <activity
-147-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
-148            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-148-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
-149            android:excludeFromRecents="true"
-149-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
-150            android:exported="false"
-150-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
-151            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-151-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
-152        <!--
-153            Service handling Google Sign-In user revocation. For apps that do not integrate with
-154            Google Sign-In, this service will never be started.
-155        -->
-156        <service
-156-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
-157            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-157-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
-158            android:exported="true"
-158-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
-159            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-159-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
-160            android:visibleToInstantApps="true" />
-160-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
-161
-162        <activity
-162-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-163            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-163-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-164            android:exported="false"
-164-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-165            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-165-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-166
-167        <provider
-167-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
-168            android:name="com.google.firebase.provider.FirebaseInitProvider"
-168-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-169            android:authorities="com.example.reviewmate.firebaseinitprovider"
-169-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
-170            android:directBootAware="true"
-170-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
-171            android:exported="false"
-171-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
-172            android:initOrder="100" />
-172-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
-173
-174        <meta-data
-174-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-175            android:name="com.google.android.gms.version"
-175-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-176            android:value="@integer/google_play_services_version" />
-176-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-177
-178        <uses-library
-178-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
-179            android:name="androidx.window.extensions"
-179-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
-180            android:required="false" />
-180-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
-181        <uses-library
-181-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
-182            android:name="androidx.window.sidecar"
-182-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
-183            android:required="false" />
-183-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+140        <activity
+140-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
+141            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+141-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+142            android:excludeFromRecents="true"
+142-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+143            android:exported="true"
+143-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+144            android:launchMode="singleTask"
+144-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+145            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+145-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+146            <intent-filter>
+146-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+147                <action android:name="android.intent.action.VIEW" />
+147-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+147-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+148
+149                <category android:name="android.intent.category.DEFAULT" />
+149-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+149-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+150                <category android:name="android.intent.category.BROWSABLE" />
+150-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+150-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+151
+152                <data
+152-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+153                    android:host="firebase.auth"
+153-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+154                    android:path="/"
+154-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+155                    android:scheme="recaptcha" />
+155-->[com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+156            </intent-filter>
+157        </activity>
+158
+159        <provider
+159-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:12:9-16:40
+160            android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider"
+160-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:13:13-105
+161            android:authorities="com.example.reviewmate.materialcalendarviewinitprovider"
+161-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:14:13-84
+162            android:enabled="true"
+162-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:15:13-35
+163            android:exported="false" />
+163-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/solor/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:16:13-37
+164
+165        <activity
+165-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+166            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+166-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+167            android:excludeFromRecents="true"
+167-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+168            android:exported="false"
+168-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+169-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+170        <!--
+171            Service handling Google Sign-In user revocation. For apps that do not integrate with
+172            Google Sign-In, this service will never be started.
+173        -->
+174        <service
+174-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+175            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+175-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+176            android:exported="true"
+176-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+177            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+177-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+178            android:visibleToInstantApps="true" />
+178-->[com.google.android.gms:play-services-auth:20.5.0] /Users/solor/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+179
+180        <activity
+180-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+181            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+181-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+182            android:exported="false"
+182-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+183            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+183-->[com.google.android.gms:play-services-base:18.0.1] /Users/solor/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
 184
 185        <provider
-185-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-186            android:name="androidx.startup.InitializationProvider"
-186-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-187            android:authorities="com.example.reviewmate.androidx-startup"
-187-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-188            android:exported="false" >
-188-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-189            <meta-data
-189-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-190                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-190-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-191                android:value="androidx.startup" />
-191-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-192            <meta-data
-192-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-193                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-193-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-194                android:value="androidx.startup" />
-194-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-195        </provider>
-196    </application>
-197
-198</manifest>
+185-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+186            android:name="com.google.firebase.provider.FirebaseInitProvider"
+186-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+187            android:authorities="com.example.reviewmate.firebaseinitprovider"
+187-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+188            android:directBootAware="true"
+188-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+189            android:exported="false"
+189-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+190            android:initOrder="100" />
+190-->[com.google.firebase:firebase-common:20.3.2] /Users/solor/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+191
+192        <meta-data
+192-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+193            android:name="com.google.android.gms.version"
+193-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+194            android:value="@integer/google_play_services_version" />
+194-->[com.google.android.gms:play-services-basement:18.2.0] /Users/solor/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+195
+196        <uses-library
+196-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+197            android:name="androidx.window.extensions"
+197-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+198            android:required="false" />
+198-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+199        <uses-library
+199-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+200            android:name="androidx.window.sidecar"
+200-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+201            android:required="false" />
+201-->[androidx.window:window:1.0.0] /Users/solor/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+202
+203        <provider
+203-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+204            android:name="androidx.startup.InitializationProvider"
+204-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+205            android:authorities="com.example.reviewmate.androidx-startup"
+205-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+206            android:exported="false" >
+206-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+207            <meta-data
+207-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+208                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+208-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+209                android:value="androidx.startup" />
+209-->[androidx.emoji2:emoji2:1.2.0] /Users/solor/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+210            <meta-data
+210-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+211                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+211-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+212                android:value="androidx.startup" />
+212-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/solor/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+213        </provider>
+214    </application>
+215
+216</manifest>
