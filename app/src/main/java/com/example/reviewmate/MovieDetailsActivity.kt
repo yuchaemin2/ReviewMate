@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
@@ -109,6 +110,22 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
         }
 
+        binding.addReviewButton.setOnClickListener {
+            if(MyApplication.checkAuth()){
+                val intent = Intent(this, AddActivity::class.java)
+                if (extras != null) {
+                    intent.putExtra(MOVIE_TITLE, title.text.toString())
+                    intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
+                    intent.putExtra(MOVIE_ID, id.text.toString())
+//                    intent.putExtra(MOVIE_ID, extras.getString(MOVIE_ID))
+                }
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
@@ -130,6 +147,16 @@ class MovieDetailsActivity : AppCompatActivity() {
                             item.docId = document.id
                             itemList.add(item)
                         }
+
+                        if(itemList.size == 0){
+                            binding.info2.visibility = View.VISIBLE
+                            binding.addReviewButton.visibility = View.VISIBLE
+                        }
+                        else{
+                            binding.info2.visibility = View.INVISIBLE
+                            binding.addReviewButton.visibility = View.GONE
+                        }
+
                         Log.d("ToyProject", "영화 아이디: ${id.text}")
                     }
                     binding.movieDetailRecyclerView.layoutManager = LinearLayoutManager(this)

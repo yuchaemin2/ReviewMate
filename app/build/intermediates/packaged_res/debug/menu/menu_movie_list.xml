@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/popular"
+        android:title="가장 인기있는 영화"
+        />
+    <item
+        android:id="@+id/toprated"
+        android:title="Top Rated 평점"
+        />
+    <item
+        android:id="@+id/upcoming"
+        android:title="Upcoming"
+        />
+
+</menu>

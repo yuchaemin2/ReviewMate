@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity() {
     private fun calculateUserLevel(userReviewCount: Long): String {
         val zero: Long = 0
         if(userReviewCount % 10 == zero && userReviewCount != zero) {
-            Toast.makeText(this, "사용자의 레벨이 올랐습니다!", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "사용자의 레벨이 올랐습니다!", Toast.LENGTH_SHORT).show()
         }
         return when {
             userReviewCount < 10 -> "1"

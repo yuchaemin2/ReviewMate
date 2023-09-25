@@ -4,7 +4,6 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -16,6 +15,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.reviewmate.R;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +28,7 @@ public final class FragmentOneBinding implements ViewBinding {
   public final TextView HomeEmailView;
 
   @NonNull
-  public final CalendarView calendarView;
+  public final MaterialCalendarView calendarView;
 
   @NonNull
   public final MaterialToolbar chatListToolbar;
@@ -52,6 +52,9 @@ public final class FragmentOneBinding implements ViewBinding {
   public final RecyclerView popularMovies;
 
   @NonNull
+  public final TextView reviewCount;
+
+  @NonNull
   public final TextView textView1;
 
   @NonNull
@@ -66,13 +69,17 @@ public final class FragmentOneBinding implements ViewBinding {
   @NonNull
   public final RecyclerView upcomingMovies;
 
+  @NonNull
+  public final TextView userLevel;
+
   private FragmentOneBinding(@NonNull RelativeLayout rootView, @NonNull TextView HomeEmailView,
-      @NonNull CalendarView calendarView, @NonNull MaterialToolbar chatListToolbar,
+      @NonNull MaterialCalendarView calendarView, @NonNull MaterialToolbar chatListToolbar,
       @NonNull RecyclerView feedRecyclerView, @NonNull LinearLayout linearLayout,
       @NonNull LinearLayout linearLayout2, @NonNull LinearLayout linearLayout3,
       @NonNull ImageView menuSearch, @NonNull RecyclerView popularMovies,
-      @NonNull TextView textView1, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull RecyclerView topRatedMovies, @NonNull RecyclerView upcomingMovies) {
+      @NonNull TextView reviewCount, @NonNull TextView textView1, @NonNull TextView textView2,
+      @NonNull TextView textView3, @NonNull RecyclerView topRatedMovies,
+      @NonNull RecyclerView upcomingMovies, @NonNull TextView userLevel) {
     this.rootView = rootView;
     this.HomeEmailView = HomeEmailView;
     this.calendarView = calendarView;
@@ -83,11 +90,13 @@ public final class FragmentOneBinding implements ViewBinding {
     this.linearLayout3 = linearLayout3;
     this.menuSearch = menuSearch;
     this.popularMovies = popularMovies;
+    this.reviewCount = reviewCount;
     this.textView1 = textView1;
     this.textView2 = textView2;
     this.textView3 = textView3;
     this.topRatedMovies = topRatedMovies;
     this.upcomingMovies = upcomingMovies;
+    this.userLevel = userLevel;
   }
 
   @Override
@@ -124,7 +133,7 @@ public final class FragmentOneBinding implements ViewBinding {
       }
 
       id = R.id.calendarView;
-      CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
+      MaterialCalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
@@ -171,6 +180,12 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.reviewCount;
+      TextView reviewCount = ViewBindings.findChildViewById(rootView, id);
+      if (reviewCount == null) {
+        break missingId;
+      }
+
       id = R.id.textView1;
       TextView textView1 = ViewBindings.findChildViewById(rootView, id);
       if (textView1 == null) {
@@ -201,9 +216,16 @@ public final class FragmentOneBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.userLevel;
+      TextView userLevel = ViewBindings.findChildViewById(rootView, id);
+      if (userLevel == null) {
+        break missingId;
+      }
+
       return new FragmentOneBinding((RelativeLayout) rootView, HomeEmailView, calendarView,
           chatListToolbar, feedRecyclerView, linearLayout, linearLayout2, linearLayout3, menuSearch,
-          popularMovies, textView1, textView2, textView3, topRatedMovies, upcomingMovies);
+          popularMovies, reviewCount, textView1, textView2, textView3, topRatedMovies,
+          upcomingMovies, userLevel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

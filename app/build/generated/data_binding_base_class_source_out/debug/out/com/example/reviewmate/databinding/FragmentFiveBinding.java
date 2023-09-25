@@ -37,10 +37,13 @@ public final class FragmentFiveBinding implements ViewBinding {
   public final TextView introDevelopers;
 
   @NonNull
-  public final TextView myComments;
+  public final TextView myLikedmovies;
 
   @NonNull
-  public final TextView myLikedmovies;
+  public final TextView opinion;
+
+  @NonNull
+  public final TextView report;
 
   @NonNull
   public final ImageView userProfile;
@@ -48,7 +51,7 @@ public final class FragmentFiveBinding implements ViewBinding {
   private FragmentFiveBinding(@NonNull RelativeLayout rootView, @NonNull TextView CertifyEmailView,
       @NonNull TextView btnMove, @NonNull MaterialToolbar chatListToolbar,
       @NonNull RelativeLayout fiveLayout, @NonNull TextView introDevelopers,
-      @NonNull TextView myComments, @NonNull TextView myLikedmovies,
+      @NonNull TextView myLikedmovies, @NonNull TextView opinion, @NonNull TextView report,
       @NonNull ImageView userProfile) {
     this.rootView = rootView;
     this.CertifyEmailView = CertifyEmailView;
@@ -56,8 +59,9 @@ public final class FragmentFiveBinding implements ViewBinding {
     this.chatListToolbar = chatListToolbar;
     this.fiveLayout = fiveLayout;
     this.introDevelopers = introDevelopers;
-    this.myComments = myComments;
     this.myLikedmovies = myLikedmovies;
+    this.opinion = opinion;
+    this.report = report;
     this.userProfile = userProfile;
   }
 
@@ -114,15 +118,21 @@ public final class FragmentFiveBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.my_comments;
-      TextView myComments = ViewBindings.findChildViewById(rootView, id);
-      if (myComments == null) {
-        break missingId;
-      }
-
       id = R.id.my_likedmovies;
       TextView myLikedmovies = ViewBindings.findChildViewById(rootView, id);
       if (myLikedmovies == null) {
+        break missingId;
+      }
+
+      id = R.id.opinion;
+      TextView opinion = ViewBindings.findChildViewById(rootView, id);
+      if (opinion == null) {
+        break missingId;
+      }
+
+      id = R.id.report;
+      TextView report = ViewBindings.findChildViewById(rootView, id);
+      if (report == null) {
         break missingId;
       }
 
@@ -133,7 +143,8 @@ public final class FragmentFiveBinding implements ViewBinding {
       }
 
       return new FragmentFiveBinding((RelativeLayout) rootView, CertifyEmailView, btnMove,
-          chatListToolbar, fiveLayout, introDevelopers, myComments, myLikedmovies, userProfile);
+          chatListToolbar, fiveLayout, introDevelopers, myLikedmovies, opinion, report,
+          userProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

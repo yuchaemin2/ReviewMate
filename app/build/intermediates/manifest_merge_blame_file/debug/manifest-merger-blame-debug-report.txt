@@ -5,348 +5,487 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="25"
+8        android:minSdkVersion="26"
 8-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
 9-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml
-10    <!-- 인터넷 연결 -->
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:5:5-67
-11-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:26:5-79
-12-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:26:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+10
+11    <!-- 인터넷 연결 -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:6:5-67
+12-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.SEND_EMAIL" />
+13-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:7:5-69
+13-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:7:22-66
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:8:5-66
+14-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:8:22-63
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:5-79
+15-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:26:22-76
+16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+16-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:25:5-77
+16-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:25:22-74
+17    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+17-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:26:5-68
+17-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:26:22-65
+18    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+18-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:5-82
+18-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
 19
-20    <application
-20-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:7:5-63:19
-21        android:name="com.example.reviewmate.MyApplication"
-21-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:8:9-38
-22        android:allowBackup="true"
-22-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:9:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
-24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:10:9-65
-25        android:debuggable="true"
-26        android:extractNativeLibs="false"
-27        android:fullBackupContent="@xml/backup_rules"
-27-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:11:9-54
-28        android:icon="@mipmap/ic_launcher"
-28-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:12:9-43
-29        android:label="@string/app_name"
-29-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:13:9-41
-30        android:supportsRtl="true"
-30-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:14:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.ReviewMate" >
-32-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:15:9-48
-33        <activity
-33-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:17:9-19:40
-34            android:name="com.example.reviewmate.SearchActivity"
-34-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:18:13-43
-35            android:exported="false" />
-35-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:19:13-37
-36        <activity
-36-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:9-24:55
-37            android:name="com.example.reviewmate.MovieDetailsActivity"
-37-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:22:13-49
-38            android:exported="false"
-38-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:23:13-37
-39            android:theme="@style/Theme.ReviewMate" />
-39-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-52
-40        <activity
-40-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:9-27:40
-41            android:name="com.example.reviewmate.UpdateActivity"
-41-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:26:13-43
-42            android:exported="false" />
-42-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:27:13-37
-43        <activity
-43-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:28:9-30:40
-44            android:name="com.example.reviewmate.IntroActivity"
-44-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:29:13-42
-45            android:exported="false" />
-45-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:30:13-37
-46        <activity
-46-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:31:9-33:40
-47            android:name="com.example.reviewmate.ReviewSearchActivity"
-47-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:32:13-49
-48            android:exported="false" />
-48-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:33:13-37
-49        <activity
-49-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:35:9-37:40
-50            android:name="com.example.reviewmate.ReviewDetailActivity"
-50-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:36:13-49
-51            android:exported="false" />
-51-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:37:13-37
-52        <activity
-52-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:38:9-40:40
-53            android:name="com.example.reviewmate.SettingActivity"
-53-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:39:13-44
-54            android:exported="false" />
-54-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:40:13-37
-55        <activity
-55-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:42:9-45:49
-56            android:name="com.example.reviewmate.AuthActivity"
-56-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:43:13-41
-57            android:exported="false"
-57-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:44:13-37
-58            android:theme="@style/LoginTheme" />
-58-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:45:13-46
-59        <activity
-59-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:46:9-49:58
-60            android:name="com.example.reviewmate.AddActivity"
-60-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:47:13-40
-61            android:exported="false"
-61-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:48:13-37
-62            android:windowSoftInputMode="adjustResize" />
-62-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:49:13-55
-63        <activity
-63-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:50:9-52:40
-64            android:name="com.example.reviewmate.MainActivity"
-64-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:51:13-41
-65            android:exported="false" />
-65-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:52:13-37
-66        <activity
-66-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:53:9-62:20
-67            android:name="com.example.reviewmate.SplashActivity"
-67-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:54:13-43
-68            android:exported="true"
-68-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:55:13-36
-69            android:theme="@style/SplashTheme" >
-69-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:56:13-47
-70            <intent-filter>
-70-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:57:13-61:29
-71                <action android:name="android.intent.action.MAIN" />
-71-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:58:17-69
-71-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:58:25-66
-72
-73                <category android:name="android.intent.category.LAUNCHER" />
-73-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:60:17-77
-73-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:60:27-74
-74            </intent-filter>
-75        </activity>
-76
-77        <service
-77-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:8:9-14:19
-78            android:name="com.google.firebase.components.ComponentDiscoveryService"
-78-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:9:13-84
-79            android:directBootAware="true"
-79-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:34:13-43
-80            android:exported="false" >
-80-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:10:13-37
-81            <meta-data
-81-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:11:13-13:85
-82                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-82-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:12:17-116
-83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/54747ae12bfa65c77bcf310ea205ebba/transformed/firebase-auth-ktx-22.0.0/AndroidManifest.xml:13:17-82
-84            <meta-data
-84-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/52df6f9c3f9ba100af041be97429ec72/transformed/firebase-firestore-ktx-24.6.0/AndroidManifest.xml:14:13-16:85
-85                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-85-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/52df6f9c3f9ba100af041be97429ec72/transformed/firebase-firestore-ktx-24.6.0/AndroidManifest.xml:15:17-126
-86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/52df6f9c3f9ba100af041be97429ec72/transformed/firebase-firestore-ktx-24.6.0/AndroidManifest.xml:16:17-82
-87            <meta-data
-87-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/675a7cf82cc27e9215122dbb892a706e/transformed/firebase-storage-ktx-20.2.0/AndroidManifest.xml:14:13-16:85
-88                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-88-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/675a7cf82cc27e9215122dbb892a706e/transformed/firebase-storage-ktx-20.2.0/AndroidManifest.xml:15:17-122
-89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/675a7cf82cc27e9215122dbb892a706e/transformed/firebase-storage-ktx-20.2.0/AndroidManifest.xml:16:17-82
-90            <meta-data
-90-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/5fd62b74df8a48b25184a44f1b070262/transformed/firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
-91                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-91-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/5fd62b74df8a48b25184a44f1b070262/transformed/firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
-92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/5fd62b74df8a48b25184a44f1b070262/transformed/firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
-93            <meta-data
-93-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
-94                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-94-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
-95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
-96            <meta-data
-96-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/fe2efe3c8e4b41f0e291e59b4b272a9f/transformed/firebase-firestore-24.6.0/AndroidManifest.xml:19:13-21:85
-97                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-97-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/fe2efe3c8e4b41f0e291e59b4b272a9f/transformed/firebase-firestore-24.6.0/AndroidManifest.xml:20:17-111
-98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/fe2efe3c8e4b41f0e291e59b4b272a9f/transformed/firebase-firestore-24.6.0/AndroidManifest.xml:21:17-82
-99            <meta-data
-99-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/d556afb417999df800a12d703f809113/transformed/firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
-100                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-100-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/d556afb417999df800a12d703f809113/transformed/firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
-101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/d556afb417999df800a12d703f809113/transformed/firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
-102        </service>
-103
-104        <activity
-104-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
-105            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-105-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
-106            android:excludeFromRecents="true"
-106-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
-107            android:exported="true"
-107-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
-108            android:launchMode="singleTask"
-108-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
-109            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-109-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
-110            <intent-filter>
-110-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
-111                <action android:name="android.intent.action.VIEW" />
-111-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-111-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-112
-113                <category android:name="android.intent.category.DEFAULT" />
-113-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-113-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-114                <category android:name="android.intent.category.BROWSABLE" />
-114-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-114-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-115
-116                <data
-116-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-117                    android:host="firebase.auth"
-117-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-118                    android:path="/"
-118-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-119                    android:scheme="genericidp" />
-119-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-120            </intent-filter>
-121        </activity>
-122        <activity
-122-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
-123            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-123-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
-124            android:excludeFromRecents="true"
-124-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
-125            android:exported="true"
-125-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
-126            android:launchMode="singleTask"
-126-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
-127            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-127-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
-128            <intent-filter>
-128-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
-129                <action android:name="android.intent.action.VIEW" />
-129-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-129-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-130
-131                <category android:name="android.intent.category.DEFAULT" />
-131-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-131-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-132                <category android:name="android.intent.category.BROWSABLE" />
-132-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-132-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+20    <permission
+20-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+21        android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.example.reviewmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:10:5-78:19
+27        android:name="com.example.reviewmate.MyApplication"
+27-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:11:9-38
+28        android:allowBackup="true"
+28-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:12:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.9.0] /Users/yuchaemin/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+30        android:dataExtractionRules="@xml/data_extraction_rules"
+30-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:13:9-65
+31        android:debuggable="true"
+32        android:extractNativeLibs="false"
+33        android:fullBackupContent="@xml/backup_rules"
+33-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:14:9-54
+34        android:icon="@mipmap/ic_launcher"
+34-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:15:9-43
+35        android:label="@string/app_name"
+35-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:16:9-41
+36        android:supportsRtl="true"
+36-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:17:9-35
+37        android:testOnly="true"
+38        android:theme="@style/Theme.ReviewMate" >
+38-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:18:9-48
+39        <service
+39-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:20:9-27:19
+40            android:name="com.example.reviewmate.MyFirebaseMessagingService"
+40-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:21:13-55
+41            android:enabled="true"
+41-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:22:13-35
+42            android:exported="true" >
+42-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:23:13-36
+43            <intent-filter>
+43-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-26:29
+44                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+44-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:17-78
+44-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:25-75
+45            </intent-filter>
+46        </service>
+47
+48        <activity
+48-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:29:9-31:40
+49            android:name="com.example.reviewmate.OpinionActivity"
+49-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:30:13-44
+50            android:exported="false" />
+50-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:31:13-37
+51        <activity
+51-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:32:9-34:40
+52            android:name="com.example.reviewmate.ReportActivity"
+52-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:33:13-43
+53            android:exported="false" />
+53-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:34:13-37
+54        <activity
+54-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:35:9-37:40
+55            android:name="com.example.reviewmate.SearchActivity"
+55-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:36:13-43
+56            android:exported="false" />
+56-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:37:13-37
+57        <activity
+57-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:38:9-41:55
+58            android:name="com.example.reviewmate.MovieDetailsActivity"
+58-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:39:13-49
+59            android:exported="false"
+59-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:40:13-37
+60            android:theme="@style/Theme.ReviewMate" />
+60-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:41:13-52
+61        <activity
+61-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:42:9-44:40
+62            android:name="com.example.reviewmate.UpdateActivity"
+62-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:43:13-43
+63            android:exported="false" />
+63-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:44:13-37
+64        <activity
+64-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:45:9-47:40
+65            android:name="com.example.reviewmate.IntroActivity"
+65-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:46:13-42
+66            android:exported="false" />
+66-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:47:13-37
+67        <activity
+67-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:48:9-50:40
+68            android:name="com.example.reviewmate.ReviewSearchActivity"
+68-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:49:13-49
+69            android:exported="false" />
+69-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:50:13-37
+70        <activity
+70-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:51:9-53:40
+71            android:name="com.example.reviewmate.ReviewDetailActivity"
+71-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:52:13-49
+72            android:exported="false" />
+72-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:53:13-37
+73        <activity
+73-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:54:9-56:40
+74            android:name="com.example.reviewmate.SettingActivity"
+74-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:55:13-44
+75            android:exported="false" />
+75-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:56:13-37
+76        <activity
+76-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:57:9-60:49
+77            android:name="com.example.reviewmate.AuthActivity"
+77-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:58:13-41
+78            android:exported="false"
+78-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:59:13-37
+79            android:theme="@style/LoginTheme" />
+79-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:60:13-46
+80        <activity
+80-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:61:9-64:58
+81            android:name="com.example.reviewmate.AddActivity"
+81-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:62:13-40
+82            android:exported="false"
+82-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:63:13-37
+83            android:windowSoftInputMode="adjustResize" />
+83-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:64:13-55
+84        <activity
+84-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:65:9-67:40
+85            android:name="com.example.reviewmate.MainActivity"
+85-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:66:13-41
+86            android:exported="false" />
+86-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:67:13-37
+87        <activity
+87-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:68:9-77:20
+88            android:name="com.example.reviewmate.SplashActivity"
+88-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:69:13-43
+89            android:exported="true"
+89-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:70:13-36
+90            android:theme="@style/SplashTheme" >
+90-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:71:13-47
+91            <intent-filter>
+91-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:72:13-76:29
+92                <action android:name="android.intent.action.MAIN" />
+92-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:73:17-69
+92-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:73:25-66
+93
+94                <category android:name="android.intent.category.LAUNCHER" />
+94-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:75:17-77
+94-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:75:27-74
+95            </intent-filter>
+96        </activity>
+97
+98        <service
+98-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:8:9-14:19
+99            android:name="com.google.firebase.components.ComponentDiscoveryService"
+99-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:9:13-84
+100            android:directBootAware="true"
+100-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+101            android:exported="false" >
+101-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:10:13-37
+102            <meta-data
+102-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:11:13-13:85
+103                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+103-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:12:17-116
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-auth-ktx:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:13:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:14:13-16:85
+106                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+106-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:15:17-126
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:16:17-82
+108            <meta-data
+108-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:14:13-16:85
+109                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+109-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:15:17-122
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-storage-ktx:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/efe12601263b8dd1bdeca2a5872ae108/transformed/jetified-firebase-storage-ktx-20.2.0/AndroidManifest.xml:16:17-82
+111            <meta-data
+111-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
+112                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+112-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/1ed8ea429f6c9d727c713ad534b204e1/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
+114            <meta-data
+114-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
+115                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+115-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
+116                android:value="com.google.firebase.components.ComponentRegistrar" />
+116-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
+117            <meta-data
+117-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
+118                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+118-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
+120            <meta-data
+120-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:19:13-21:85
+121                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+121-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:20:17-111
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[com.google.firebase:firebase-firestore:24.6.0] /Users/yuchaemin/.gradle/caches/transforms-3/2bbf64f73b0ec5e403a691f2b844be22/transformed/jetified-firebase-firestore-24.6.0/AndroidManifest.xml:21:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:32:13-34:85
+124                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+124-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:33:17-107
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-storage:20.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:34:17-82
+126            <meta-data
+126-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/yuchaemin/.gradle/caches/transforms-3/c84389f31fe5d8dd00a7698edd6590e3/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+127                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+127-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/yuchaemin/.gradle/caches/transforms-3/c84389f31fe5d8dd00a7698edd6590e3/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+128                android:value="com.google.firebase.components.ComponentRegistrar" />
+128-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/yuchaemin/.gradle/caches/transforms-3/c84389f31fe5d8dd00a7698edd6590e3/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+129            <meta-data
+129-->[com.google.firebase:firebase-installations:17.1.3] /Users/yuchaemin/.gradle/caches/transforms-3/a868ff8cb806eb05b1add6e57cc52fa8/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
+130                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+130-->[com.google.firebase:firebase-installations:17.1.3] /Users/yuchaemin/.gradle/caches/transforms-3/a868ff8cb806eb05b1add6e57cc52fa8/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-installations:17.1.3] /Users/yuchaemin/.gradle/caches/transforms-3/a868ff8cb806eb05b1add6e57cc52fa8/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
+132        </service>
 133
-134                <data
-134-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-135                    android:host="firebase.auth"
-135-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-136                    android:path="/"
-136-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-137                    android:scheme="recaptcha" />
-137-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/a15c449ef5efd72c98c3c832eab46253/transformed/firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-138            </intent-filter>
-139        </activity>
-140        <activity
-140-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
-141            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-141-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
-142            android:excludeFromRecents="true"
-142-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
-143            android:exported="false"
-143-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
-144            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-144-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
-145        <!--
-146            Service handling Google Sign-In user revocation. For apps that do not integrate with
-147            Google Sign-In, this service will never be started.
-148        -->
-149        <service
-149-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
-150            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-150-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
-151            android:exported="true"
-151-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
-152            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-152-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
-153            android:visibleToInstantApps="true" />
-153-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/6107ab59222f4f0c9f32ec5d7d148cdb/transformed/play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
-154
-155        <activity
-155-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/0badd5b2b9e0b66f9c03d077ceda0c9b/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-156            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-156-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/0badd5b2b9e0b66f9c03d077ceda0c9b/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-157            android:exported="false"
-157-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/0badd5b2b9e0b66f9c03d077ceda0c9b/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-158            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-158-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/0badd5b2b9e0b66f9c03d077ceda0c9b/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-159
-160        <provider
-160-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
-161            android:name="com.google.firebase.provider.FirebaseInitProvider"
-161-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-162            android:authorities="com.example.reviewmate.firebaseinitprovider"
-162-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:27:13-72
-163            android:directBootAware="true"
-163-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:28:13-43
-164            android:exported="false"
-164-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:29:13-37
-165            android:initOrder="100" />
-165-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/2ad1b1193b46bbea46e9237c76a8375a/transformed/firebase-common-20.3.2/AndroidManifest.xml:30:13-36
-166
-167        <meta-data
-167-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5906bc69ffe3909afbe69715b6cbd767/transformed/play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-168            android:name="com.google.android.gms.version"
-168-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5906bc69ffe3909afbe69715b6cbd767/transformed/play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-169            android:value="@integer/google_play_services_version" />
-169-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/5906bc69ffe3909afbe69715b6cbd767/transformed/play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+134        <activity
+134-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
+135            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+135-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
+136            android:excludeFromRecents="true"
+136-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
+137            android:exported="true"
+137-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
+138            android:launchMode="singleTask"
+138-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+139-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
+140            <intent-filter>
+140-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
+141                <action android:name="android.intent.action.VIEW" />
+141-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+141-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+142
+143                <category android:name="android.intent.category.DEFAULT" />
+143-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+143-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+144                <category android:name="android.intent.category.BROWSABLE" />
+144-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+144-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+145
+146                <data
+146-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+147                    android:host="firebase.auth"
+147-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+148                    android:path="/"
+148-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+149                    android:scheme="genericidp" />
+149-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+150            </intent-filter>
+151        </activity>
+152        <activity
+152-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
+153            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+153-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+154            android:excludeFromRecents="true"
+154-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+155            android:exported="true"
+155-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+156            android:launchMode="singleTask"
+156-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+157            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+157-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+158            <intent-filter>
+158-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+159                <action android:name="android.intent.action.VIEW" />
+159-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+159-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+160
+161                <category android:name="android.intent.category.DEFAULT" />
+161-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+161-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+162                <category android:name="android.intent.category.BROWSABLE" />
+162-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+162-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+163
+164                <data
+164-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+165                    android:host="firebase.auth"
+165-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+166                    android:path="/"
+166-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+167                    android:scheme="recaptcha" />
+167-->[com.google.firebase:firebase-auth:22.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+168            </intent-filter>
+169        </activity>
 170
-171        <uses-library
-171-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-172            android:name="androidx.window.extensions"
-172-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-173            android:required="false" />
-173-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-174        <uses-library
-174-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-175            android:name="androidx.window.sidecar"
-175-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-176            android:required="false" />
-176-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/d6f00ae28d368b54e1a82b7c225b162e/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
-177
-178        <provider
-178-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-179            android:name="androidx.startup.InitializationProvider"
-179-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-180            android:authorities="com.example.reviewmate.androidx-startup"
-180-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-181            android:exported="false" >
-181-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-182            <meta-data
-182-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-183                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-183-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-184                android:value="androidx.startup" />
-184-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/737b700f931e6da31aaabdddf515c03d/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-185            <meta-data
-185-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-186                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-186-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-187                android:value="androidx.startup" />
-187-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b013ba016584aa257b6ee29556cab612/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-188        </provider>
-189    </application>
-190
-191</manifest>
+171        <provider
+171-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:12:9-16:40
+172            android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider"
+172-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:13:13-105
+173            android:authorities="com.example.reviewmate.materialcalendarviewinitprovider"
+173-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:14:13-84
+174            android:enabled="true"
+174-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:15:13-35
+175            android:exported="false" />
+175-->[com.github.prolificinteractive:material-calendarview:2.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/ff53ffe7b11e0596eadaae5b18535be6/transformed/jetified-material-calendarview-2.0.0/AndroidManifest.xml:16:13-37
+176
+177        <activity
+177-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+178            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+178-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+179            android:excludeFromRecents="true"
+179-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+180            android:exported="false"
+180-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+181            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+181-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+182        <!--
+183            Service handling Google Sign-In user revocation. For apps that do not integrate with
+184            Google Sign-In, this service will never be started.
+185        -->
+186        <service
+186-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+187            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+187-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+188            android:exported="true"
+188-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+189            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+189-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+190            android:visibleToInstantApps="true" />
+190-->[com.google.android.gms:play-services-auth:20.5.0] /Users/yuchaemin/.gradle/caches/transforms-3/82f1d22ec069fcaa4acf529c2b22bcaa/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+191
+192        <receiver
+192-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
+193            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+193-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
+194            android:exported="true"
+194-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
+195            android:permission="com.google.android.c2dm.permission.SEND" >
+195-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
+196            <intent-filter>
+196-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:35:13-37:29
+197                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+197-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:36:17-81
+197-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:36:25-78
+198            </intent-filter>
+199        </receiver>
+200        <!--
+201             FirebaseMessagingService performs security checks at runtime,
+202             but set to not exported to explicitly avoid allowing another app to call it.
+203        -->
+204        <service
+204-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
+205            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+205-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
+206            android:directBootAware="true"
+206-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
+207            android:exported="false" >
+207-->[com.google.firebase:firebase-messaging:23.1.2] /Users/yuchaemin/.gradle/caches/transforms-3/2b236008a21d30ff41d4a1c557ca401b/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
+208            <intent-filter android:priority="-500" >
+208-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:24:13-26:29
+209                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+209-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:17-78
+209-->/Users/yuchaemin/Documents/MobileApp/ReviewMate/app/src/main/AndroidManifest.xml:25:25-75
+210            </intent-filter>
+211        </service>
+212
+213        <activity
+213-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+214            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+214-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+215            android:exported="false"
+215-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+216            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+216-->[com.google.android.gms:play-services-base:18.0.1] /Users/yuchaemin/.gradle/caches/transforms-3/a2ebe4d79da73f4bff3267ff962eb0fd/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+217
+218        <provider
+218-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+219            android:name="com.google.firebase.provider.FirebaseInitProvider"
+219-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+220            android:authorities="com.example.reviewmate.firebaseinitprovider"
+220-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+221            android:directBootAware="true"
+221-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+222            android:exported="false"
+222-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+223            android:initOrder="100" />
+223-->[com.google.firebase:firebase-common:20.3.2] /Users/yuchaemin/.gradle/caches/transforms-3/df81cd1a8f3b9eb9ac9b88dbeef955fa/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+224
+225        <meta-data
+225-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+226            android:name="com.google.android.gms.version"
+226-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+227            android:value="@integer/google_play_services_version" />
+227-->[com.google.android.gms:play-services-basement:18.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/7d35a8b2f5bea81fcdcf6a7ef59f1839/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+228
+229        <uses-library
+229-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+230            android:name="androidx.window.extensions"
+230-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+231            android:required="false" />
+231-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+232        <uses-library
+232-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+233            android:name="androidx.window.sidecar"
+233-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+234            android:required="false" />
+234-->[androidx.window:window:1.0.0] /Users/yuchaemin/.gradle/caches/transforms-3/c56d0f9527e44aebfbdfe09299b15d40/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+235
+236        <provider
+236-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+237            android:name="androidx.startup.InitializationProvider"
+237-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+238            android:authorities="com.example.reviewmate.androidx-startup"
+238-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+239            android:exported="false" >
+239-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+240            <meta-data
+240-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+241                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+241-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+242                android:value="androidx.startup" />
+242-->[androidx.emoji2:emoji2:1.2.0] /Users/yuchaemin/.gradle/caches/transforms-3/870fb957b666b884eac707a4f3df5b51/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+243            <meta-data
+243-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+244                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+244-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+245                android:value="androidx.startup" />
+245-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/yuchaemin/.gradle/caches/transforms-3/b89653ad7a0af06e9b51c30c8f4564fe/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+246        </provider>
+247
+248        <service
+248-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+249            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+249-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+250            android:exported="false" >
+250-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+251            <meta-data
+251-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+252                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+252-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+253                android:value="cct" />
+253-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/d7f137aa77441b431a06d5913b20b8bc/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+254        </service>
+255        <service
+255-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+256            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+256-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+257            android:exported="false"
+257-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+258            android:permission="android.permission.BIND_JOB_SERVICE" >
+258-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+259        </service>
+260
+261        <receiver
+261-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+262            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+262-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+263            android:exported="false" />
+263-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/yuchaemin/.gradle/caches/transforms-3/c75eefbcbd8518305281752a07640dc9/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+264    </application>
+265
+266</manifest>

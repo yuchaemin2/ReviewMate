@@ -3,6 +3,7 @@ package com.example.reviewmate
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.ContentValues
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
@@ -18,6 +19,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.net.toUri
@@ -26,11 +28,16 @@ import com.bumptech.glide.Glide
 import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.ActivityReviewDetailBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -39,7 +46,9 @@ class ReviewDetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityReviewDetailBinding
     private var myName = MyApplication.email
     lateinit var itemList: MutableList<ItemCommentModel>
+    lateinit var itemListF: MutableList<ItemFeedModel>
     private lateinit var adapter: MyCommentAdapter
+    private lateinit var adapterF: MyFeedAdapter
     lateinit var reviewId: String
 
     lateinit var file: File
@@ -61,30 +70,42 @@ class ReviewDetailActivity : AppCompatActivity() {
         binding.movieTitle.text = intent.getStringExtra("movie")
         binding.movieRate.text = intent.getStringExtra("rate")
         binding.reviewTitle.text = intent.getStringExtra("title")
-        binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
         binding.reviewDate.text = intent.getStringExtra("date")
         binding.reviewId.text = intent.getStringExtra("reviewId")
 
         reviewId = intent.getStringExtra("reviewId").toString()
-        Log.d("get테스트", ""+ reviewId)
-        // 영화 API사용하여 데이터 가져와야 함
+        Log.d("get테스트", "" + reviewId)
+        // 영화 API 사용하여 데이터 가져와야 함
 
-        var profileImageUrl = intent.getStringExtra("image_url")
-        if(profileImageUrl != null && profileImageUrl != "null"){
-            // Glide를 사용하여 프로필 이미지 로드
-            Glide.with(baseContext)
-                .load(profileImageUrl)
-                .into(binding.profileImage)
-        }
+        setProfileImage()
 
-        var movieImage = intent.getStringExtra("movieImage")
-        if(movieImage != null && movieImage != "null"){
+        val movieImage = intent.getStringExtra("movieImage")
+        if (movieImage != null && movieImage != "null") {
             // Glide를 사용하여 프로필 이미지 로드
             Glide.with(baseContext)
                 .load(movieImage)
                 .into(binding.addImageView)
         }
+
+        // Firestore에서 데이터 가져오기
+        val db = FirebaseFirestore.getInstance()
+        val reviewRef = db.collection("reviews").document(reviewId)
+
+        reviewRef.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val content = document.getString("content")
+                    if (content != null) {
+                        binding.content.text = content
+                    }
+                } else {
+                    // 문서가 없는 경우 처리
+                }
+            }
+            .addOnFailureListener { exception ->
+                // 데이터 가져오기 실패 처리
+            }
 
         val alertHandler = DialogInterface.OnClickListener { dialog, which ->
             when (which) {
@@ -182,6 +203,7 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.editTxt.setText("") // 텍스트창 초기화
                 // 어댑터 재실행
                 getStore()
+                hideKeyboard()
             }
         }
 
@@ -193,6 +215,7 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.editTxt.setText("") // 텍스트창 초기화
                 // 어댑터 재실행
                 getStore()
+                hideKeyboard() // 키보드를 숨기는 사용자 정의 함수 호출
                 return@setOnEditorActionListener true
             }
             false
@@ -226,6 +249,35 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.feedRecyclerView.scrollToPosition(adapter.itemCount - 1)
             }
     }
+    fun setProfileImage() {
+        CoroutineScope(Dispatchers.Main).launch {
+            var userProfile = MyApplication.getImageUrl(intent.getStringExtra("userEmail"))
+            Toast.makeText(baseContext, "get profile${userProfile}", Toast.LENGTH_SHORT).show()
+            if (!userProfile.isNullOrEmpty()) {
+                // Glide를 사용하여 프로필 이미지 로드
+                Glide.with(baseContext)
+                    .load(userProfile)
+                    .into(binding.profileImage)
+
+            }
+
+        }
+    }
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTxt.windowToken, 0)
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+
+        // 데이터를 다시 불러오는 로직을 이곳에 추가
+//        getUpdate()
+    }
+
+
 
     fun updateCount(docRef: DocumentReference, updatedValue: Long) {
         val updates = hashMapOf<String, Any>(
@@ -285,6 +337,24 @@ class ReviewDetailActivity : AppCompatActivity() {
                 adapter.setData(itemList) // 어댑터 데이터 갱신
             }
     }
+
+//    fun getUpdate() {
+//        MyApplication.db.collection("reviews")
+//            .addSnapshotListener{ snapshot, error ->
+//                if (error != null) {
+//                    Log.w(ContentValues.TAG, "Listen failed.", error)
+//                    return@addSnapshotListener
+//            }
+//                val itemList = mutableListOf<ItemFeedModel>()
+//                for (document in snapshot!!) {
+//                    val item = document.toObject(ItemFeedModel::class.java)
+//                    item.docId = document.id
+//                    itemList.add(item)
+//                }
+//
+//                adapter.notifyDataSetChanged(itemList) // 어댑터 데이터 갱신
+//            }
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detail, menu)

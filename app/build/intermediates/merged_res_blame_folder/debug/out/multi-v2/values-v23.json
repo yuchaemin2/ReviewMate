@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-v23/values-v23.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-45:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/yuchaemin/.gradle/caches/transforms-3/c2cc1a8895bcaa17e0c12501943188cd/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

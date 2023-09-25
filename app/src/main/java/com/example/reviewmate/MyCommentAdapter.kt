@@ -1,6 +1,8 @@
 package com.example.reviewmate
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +36,28 @@ class MyCommentAdapter(val context: Context, val itemList: MutableList<ItemComme
             itemCommentView.text=data.text
             itemCommentDateView.text=data.time
             itemEmailView.text=data.user
+
+            itemCommentView.setOnClickListener {
+                MyApplication.db.collection("reviews").document(data.reviewId.toString())
+                    .get()
+                    .addOnSuccessListener { documentSnapshot ->
+                        val bundle: Bundle = Bundle()
+                        bundle.putString("userEmail", documentSnapshot.getString("email"))
+                        bundle.putString("title", documentSnapshot.getString("title"))
+                        bundle.putString("content", documentSnapshot.getString("content"))
+                        bundle.putString("date", documentSnapshot.getString("date"))
+                        bundle.putString("movie", documentSnapshot.getString("movie"))
+                        bundle.putString("rate", documentSnapshot.getString("rate"))
+                        bundle.putString("movieImage", documentSnapshot.getString("movieImage"))
+                        bundle.putString("movieId", documentSnapshot.getString("movieId"))
+                        bundle.putString("reviewId", data.reviewId)
+
+                        Intent(context, ReviewDetailActivity::class.java).apply {
+                            putExtras(bundle)
+                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }.run { context.startActivity(this) }
+                    }
+            }
 
             CoroutineScope(Dispatchers.Main).launch {
                 val profileImageUrl = MyApplication.getImageUrl(data.user)

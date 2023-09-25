@@ -29,7 +29,6 @@ class MyApplication : MultiDexApplication() {
         var email:String? = null
         var userlevel:String? = null
         var imageurl:String? = null
-        var level:String? = null
 
         fun checkAuth(): Boolean{
             var currentuser = auth.currentUser

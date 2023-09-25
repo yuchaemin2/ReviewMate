@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -35,18 +36,21 @@ public final class ActivityAddBinding implements ViewBinding {
   public final TextView movieId;
 
   @NonNull
-  public final TextView movieRate;
+  public final RatingBar movieRate;
 
   @NonNull
   public final TextView movieTitle;
+
+  @NonNull
+  public final TextView textViewMovieRate;
 
   @NonNull
   public final Toolbar toolbarBack;
 
   private ActivityAddBinding(@NonNull RelativeLayout rootView, @NonNull EditText addEditView,
       @NonNull ImageView addImageView, @NonNull EditText addTitleEditView,
-      @NonNull TextView movieId, @NonNull TextView movieRate, @NonNull TextView movieTitle,
-      @NonNull Toolbar toolbarBack) {
+      @NonNull TextView movieId, @NonNull RatingBar movieRate, @NonNull TextView movieTitle,
+      @NonNull TextView textViewMovieRate, @NonNull Toolbar toolbarBack) {
     this.rootView = rootView;
     this.addEditView = addEditView;
     this.addImageView = addImageView;
@@ -54,6 +58,7 @@ public final class ActivityAddBinding implements ViewBinding {
     this.movieId = movieId;
     this.movieRate = movieRate;
     this.movieTitle = movieTitle;
+    this.textViewMovieRate = textViewMovieRate;
     this.toolbarBack = toolbarBack;
   }
 
@@ -109,7 +114,7 @@ public final class ActivityAddBinding implements ViewBinding {
       }
 
       id = R.id.movieRate;
-      TextView movieRate = ViewBindings.findChildViewById(rootView, id);
+      RatingBar movieRate = ViewBindings.findChildViewById(rootView, id);
       if (movieRate == null) {
         break missingId;
       }
@@ -120,6 +125,12 @@ public final class ActivityAddBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textViewMovieRate;
+      TextView textViewMovieRate = ViewBindings.findChildViewById(rootView, id);
+      if (textViewMovieRate == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar_back;
       Toolbar toolbarBack = ViewBindings.findChildViewById(rootView, id);
       if (toolbarBack == null) {
@@ -127,7 +138,7 @@ public final class ActivityAddBinding implements ViewBinding {
       }
 
       return new ActivityAddBinding((RelativeLayout) rootView, addEditView, addImageView,
-          addTitleEditView, movieId, movieRate, movieTitle, toolbarBack);
+          addTitleEditView, movieId, movieRate, movieTitle, textViewMovieRate, toolbarBack);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
