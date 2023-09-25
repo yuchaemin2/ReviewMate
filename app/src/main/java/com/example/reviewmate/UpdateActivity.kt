@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -62,6 +63,18 @@ class UpdateActivity : AppCompatActivity() {
             R.id.save_review -> {
                 if (binding.addTitleEditView.text.isNotEmpty()) {
                     updateReview()
+                    // UpdateActivity.kt
+
+                    // ===============
+                    // UpdateActivity.kt
+                    // UpdateActivity.kt
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("isUpdated", true)
+                    setResult(Activity.RESULT_OK, resultIntent)
+                    finish()
+
+
+
                     finish()
                 } else {
                     Toast.makeText(this, "제목을 입력해주세요..", Toast.LENGTH_SHORT).show()

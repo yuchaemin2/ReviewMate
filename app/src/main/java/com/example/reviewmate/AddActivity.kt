@@ -47,7 +47,7 @@ class AddActivity : AppCompatActivity() {
     lateinit var movieImage: String
     lateinit var userEmail: String
     lateinit  var ratingbar : RatingBar
-    lateinit var userRateStr : String
+    private var userRateStr : String = "2.0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,24 +84,22 @@ class AddActivity : AppCompatActivity() {
             .into(binding.addImageView)
 
         ratingbar = binding.movieRate
-        ratingbar.setOnRatingBarChangeListener { ratingbar, rating, fromUser ->
-            ratingbar.rating=rating
-            Toast.makeText(baseContext, "${rating}", Toast.LENGTH_SHORT).show()
-            //binding.textViewMovieRate.text= rating.toString()
-            userRateStr = rating.toString()
+        ratingbar.setOnRatingBarChangeListener { _, rating, _ ->
+             ratingbar.rating = rating
+            userRateStr = binding.movieRate.rating.toString()
 
         }
 
+
+        // Toast.makeText(baseContext, "userRateStr: ${userRateStr}", Toast.LENGTH_SHORT).show()
+        Log.d("rating", userRateStr)
 
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
         supportActionBar?.setDisplayShowTitleEnabled(false)//타이틀 없애기
     }
-   // ===================================================
 
-
-// ===============================================================================
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_nav, menu)
         return super.onCreateOptionsMenu(menu)

@@ -1,5 +1,6 @@
 package com.example.reviewmate
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.ContentValues
@@ -44,9 +45,11 @@ class ReviewDetailActivity : AppCompatActivity() {
     lateinit var itemList: MutableList<ItemCommentModel>
     private lateinit var adapter: MyCommentAdapter
     lateinit var reviewId: String
+    lateinit var id : String
 
     lateinit var file: File
     lateinit var filePath: String
+    private var isUpdated = true // 기본값은 수정되지 않음
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,15 +64,18 @@ class ReviewDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)//타이틀 없애기
 
         // ------------- API : 영화 제목, 포스터 추가해야 함 --------------
-        binding.movieTitle.text = intent.getStringExtra("movie")
-        binding.movieRate.text= intent.getStringExtra("rate").toString()
-        binding.reviewTitle.text = intent.getStringExtra("title")
-        binding.content.text = intent.getStringExtra("content")
+//        binding.movieTitle.text = intent.getStringExtra("movie")
+//        binding.movieRate.text= intent.getStringExtra("rate").toString()
+//        binding.reviewTitle.text = intent.getStringExtra("title")
+//        binding.content.text = intent.getStringExtra("content")
         binding.userEmail.text = intent.getStringExtra("userEmail")
-        binding.reviewDate.text = intent.getStringExtra("date")
+//        binding.reviewDate.text = intent.getStringExtra("date")
         binding.reviewId.text = intent.getStringExtra("reviewId")
 
+
         reviewId = intent.getStringExtra("reviewId").toString()
+
+        fetchReviewData()
         Log.d("get테스트", ""+ reviewId)
         // 영화 API사용하여 데이터 가져와야 함
 
@@ -138,13 +144,14 @@ class ReviewDetailActivity : AppCompatActivity() {
 
         if(MyApplication.checkAuth()){
             if(binding.userEmail.text == MyApplication.email){
+                Toast.makeText(baseContext, "open", Toast.LENGTH_SHORT).show()
                 binding.menuDelete.visibility = View.VISIBLE
                 binding.menuUpdate.visibility = View.VISIBLE
 
-                // 수정버튼
+                // 수정버튼///////////////////////////////////////////////////////////////////////////
                 binding.menuUpdate.setOnClickListener {
                     //val reviewInfoBundle : Bundle? = intent.extras
-
+                    isUpdated = true
                     intent = Intent(this, UpdateActivity::class.java)
                     intent.putExtra("reviewId", reviewId)
 
@@ -230,10 +237,61 @@ class ReviewDetailActivity : AppCompatActivity() {
                 binding.feedRecyclerView.scrollToPosition(adapter.itemCount - 1)
             }
     }
+    // ===================================================
+    private fun fetchReviewData() {
+        // reviewId를 사용하여 해당 리뷰 데이터 가져오기
+        val db = Firebase.firestore
+        val reviewRef = db.collection("reviews").document(reviewId)
+
+        reviewRef.get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val title = document.getString("title")
+                    val content = document.getString("content")
+                    val rate = document.getString("rate")
+                    val movieImage = document.getString("movieImage")
+
+                    val movieTitle = document.getString("movie")
+                    //        binding.movieTitle.text = intent.getStringExtra("movie")
+        binding.movieRate.text= intent.getStringExtra("rate").toString()
+        binding.reviewTitle.text = title
+        binding.content.text = content
+        binding.userEmail.text = intent.getStringExtra("userEmail")
+        binding.reviewDate.text = intent.getStringExtra("date")
+        binding.reviewId.text = intent.getStringExtra("reviewId")
+
+//                    binding.reviewTitle.text=title
+//                    binding.content.text=content
+//                    binding.movieRate.rating=rate!!.toFloat()
+                    binding.movieTitle.text = movieTitle
+                    if(movieImage != null && movieImage != "null"){
+                        // Glide를 사용하여 프로필 이미지 로드
+                        Glide.with(baseContext)
+                            .load(movieImage)
+                            .into(binding.addImageView)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                // 데이터 가져오기 실패 처리
+            }
+    }
+
+
+    override fun onBackPressed() {
+        // 수정이 완료되었을 경우
+        if (isUpdated) {
+            setResult(Activity.RESULT_OK)
+            Toast.makeText(baseContext, "end update", Toast.LENGTH_SHORT).show()
+        }
+        super.onBackPressed()
+    }
+
+    // ===============================================================================
     fun setProfileImage() {
         CoroutineScope(Dispatchers.Main).launch {
             var userProfile = MyApplication.getImageUrl(intent.getStringExtra("userEmail"))
-            Toast.makeText(baseContext, "get profile${userProfile}", Toast.LENGTH_SHORT).show()
+
             if (!userProfile.isNullOrEmpty()) {
                 // Glide를 사용하여 프로필 이미지 로드
                 Glide.with(baseContext)

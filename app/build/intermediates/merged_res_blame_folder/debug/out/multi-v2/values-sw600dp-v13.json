@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-44:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\82106\\.gradle\\caches\\transforms-3\\b4e8f07a04fb83369f81d22b45ab5a35\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
