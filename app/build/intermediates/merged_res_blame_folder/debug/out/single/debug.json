@@ -20,6 +20,10 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/user_question.png"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxhdpi_reviewmate_foreground.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxhdpi/reviewmate_foreground.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_activity_intro.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_intro.xml"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_level_8.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/level_8.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xhdpi_reviewmate_round.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xhdpi/reviewmate_round.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -128,6 +136,10 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/round_button.xml"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_add_1.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/add_1.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xhdpi/ic_launcher.webp"
     },
@@ -138,6 +150,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_activity_report.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_report.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_bottle.png.flat",
@@ -154,6 +170,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_message.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/message.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-mdpi_reviewmate_round.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-mdpi/reviewmate_round.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_level_9.png.flat",
@@ -184,6 +204,14 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_add.xml"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-mdpi_reviewmate_foreground.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-mdpi/reviewmate_foreground.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxhdpi_reviewmate_round.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxhdpi/reviewmate_round.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_fragment_five.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five.xml"
     },
@@ -194,6 +222,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-anydpi-v33_ic_launcher.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-anydpi-v33/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxhdpi_reviewmate.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxhdpi/reviewmate.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_custom_bs.xml.flat",
@@ -208,12 +240,24 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/user.png"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-hdpi_reviewmate_round.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-hdpi/reviewmate_round.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_messages.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/messages.png"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-hdpi_reviewmate_foreground.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-hdpi/reviewmate_foreground.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_kangchaewon.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/kangchaewon.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_reviewmate_background.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/reviewmate_background.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_level_7.png.flat",
@@ -228,10 +272,6 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/rounded_bottom_sheet.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_activity_opinion.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_paw.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/paw.png"
     },
@@ -242,6 +282,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_item_comment.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/item_comment.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxxhdpi_reviewmate_round.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxxhdpi/reviewmate_round.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_level_4.png.flat",
@@ -272,8 +316,16 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/xml/settings.xml"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-anydpi-v26_reviewmate.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-anydpi-v26/reviewmate.xml"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_cancel.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/cancel.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-hdpi_reviewmate.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-hdpi/reviewmate.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_round_item.xml.flat",
@@ -294,10 +346,6 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_search_1.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/search_1.png"
-    },
-    {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_fragment_five.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_item_feed.xml.flat",
@@ -328,10 +376,6 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/img.png"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-46:/drawable_video.png.flat",
-        "source": "com.example.reviewmate.app-main-48:/drawable/video.png"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_github.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/github.png"
     },
@@ -340,12 +384,12 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/yuchaemin.png"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_fragment_one.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_one.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_paw_1.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/paw_1.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_activity_opinion.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_fragment_one.xml.flat",
@@ -364,12 +408,20 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/splash.xml"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_fragment_five__liked_movie_list.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five__liked_movie_list.xml"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/layout_activity_review_detail.xml.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_review_detail.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-anydpi-v26_reviewmate_round.xml.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-anydpi-v26/reviewmate_round.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/menu_menu_detail.xml.flat",
@@ -384,12 +436,12 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_search.xml"
     },
     {
-        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xhdpi_reviewmate.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xhdpi/reviewmate.png"
     },
     {
-        "merged": "com.example.reviewmate.app-merged_res-46:/layout_fragment_five__liked_movie_list.xml.flat",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five__liked_movie_list.xml"
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_add.png.flat",
@@ -428,8 +480,24 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxxhdpi_reviewmate_foreground.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxxhdpi/reviewmate_foreground.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_video.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/video.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_error404.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/error404.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-mdpi_reviewmate.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-mdpi/reviewmate.png"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xxxhdpi_reviewmate.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xxxhdpi/reviewmate.png"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_notion.png.flat",
@@ -456,7 +524,15 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five__comment_list.xml"
     },
     {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/mipmap-xhdpi_reviewmate_foreground.png.flat",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/mipmap-xhdpi/reviewmate_foreground.png"
+    },
+    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-merged_res-46:/drawable_bin.png.flat",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/drawable/bin.png"
+    },
+    {
+        "merged": "com.example.reviewmate.app-merged_res-46:/layout_activity_auth.xml.flat",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_auth.xml"
     }
 ]

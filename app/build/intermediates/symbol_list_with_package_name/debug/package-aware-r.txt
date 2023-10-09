@@ -3044,6 +3044,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable add_1
 drawable add_review_btn
 drawable avd_hide_password
 drawable avd_show_password
@@ -3205,9 +3206,9 @@ drawable notion
 drawable paw
 drawable paw_1
 drawable preference_list_divider_material
-drawable profile_7
 drawable questionmark
 drawable report
+drawable reviewmate_background
 drawable round_button
 drawable round_item
 drawable rounded_bottom_sheet
@@ -3310,6 +3311,7 @@ id addEditView
 id addImageView
 id addReviewMenu
 id addTitleEditView
+id add_review_button
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3501,6 +3503,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id info2
 id intro_developers
 id invisible
 id inward
@@ -4034,6 +4037,7 @@ layout activity_auth
 layout activity_intro
 layout activity_main
 layout activity_opinion
+layout activity_report
 layout activity_review_detail
 layout activity_review_search
 layout activity_search
@@ -4176,6 +4180,9 @@ menu menu_mypage
 menu menu_nav
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap reviewmate
+mipmap reviewmate_foreground
+mipmap reviewmate_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 string abc_action_bar_home_description

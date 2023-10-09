@@ -3,6 +3,7 @@ package com.example.reviewmate
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
@@ -81,8 +82,11 @@ class FragmentOne : Fragment() {
 
 
         // CalendarView에 날짜 데코레이터 추가
-        val eventDecorator = EventDecorator(Color.RED, reviewDates)
+        val eventDecorator = EventDecorator(Color.parseColor("#568BF7"), reviewDates)
         binding.calendarView.addDecorator(eventDecorator)
+
+        val eventDecorator1 = EventDecorator1(Color.RED, reviewDates)
+        binding.calendarView.addDecorator(eventDecorator1)
 
         if (MyApplication.checkAuth()) {
             binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
@@ -327,7 +331,7 @@ class FragmentOne : Fragment() {
                         binding.userLevel.text = documentSnapshot.getString("userLevel")
                         var reviewNumber = documentSnapshot.getLong("userReviewCount")
                         if (reviewNumber != null) {
-                            if(reviewNumber > 10){
+                            if(reviewNumber < 10){
                                 binding.reviewCount.text = "${10-reviewNumber}"
                             }
                             else{
@@ -348,16 +352,13 @@ class FragmentOne : Fragment() {
 class EventDecorator() : DayViewDecorator {
 
 
-    private var color = Color.GREEN
+    private var color = Color.parseColor("#568BF7")
     private var dates: HashSet<CalendarDay> =HashSet() // 날짜를 저장할 HashSet 초기화
 
     constructor(color: Int, reviewDates: HashSet<CalendarDay>) : this() {
         this.color = color
         this.dates = reviewDates
         Log.d("days", "dates list size : ${dates.size}")
-
-
-
     }
 
 
@@ -371,8 +372,18 @@ class EventDecorator() : DayViewDecorator {
 
     override fun decorate(view: DayViewFacade?) {
 //        //view?.addSpan(DotSpan(10F, color))
-//        view?.setSelectionDrawable(drawable)
         view?.addSpan(DotSpan(5F, color)) // 원 모양의 도트 추가 (크기와 색상 지정 가능)
     }
 
+}
+
+class EventDecorator1(private val color: Int, private val reviewDates: HashSet<CalendarDay>) : DayViewDecorator {
+
+    override fun shouldDecorate(day: CalendarDay?): Boolean {
+        return reviewDates.contains(day)
+    }
+
+    override fun decorate(view: DayViewFacade?) {
+        view?.setBackgroundDrawable(ColorDrawable(color)) // 배경 색상 변경
+    }
 }

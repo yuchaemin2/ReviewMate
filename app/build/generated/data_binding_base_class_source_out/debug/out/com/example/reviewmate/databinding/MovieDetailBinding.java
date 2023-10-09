@@ -4,6 +4,7 @@ package com.example.reviewmate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
@@ -32,10 +33,16 @@ public final class MovieDetailBinding implements ViewBinding {
   public final TextView MovieTitleMenu;
 
   @NonNull
+  public final Button addReviewButton;
+
+  @NonNull
   public final TextView addReviewMenu;
 
   @NonNull
   public final TextView info;
+
+  @NonNull
+  public final TextView info2;
 
   @NonNull
   public final ImageView movieBackdrop;
@@ -77,7 +84,8 @@ public final class MovieDetailBinding implements ViewBinding {
   public final View view2;
 
   private MovieDetailBinding(@NonNull RelativeLayout rootView, @NonNull ImageView MovieLikeMenu,
-      @NonNull TextView MovieTitleMenu, @NonNull TextView addReviewMenu, @NonNull TextView info,
+      @NonNull TextView MovieTitleMenu, @NonNull Button addReviewButton,
+      @NonNull TextView addReviewMenu, @NonNull TextView info, @NonNull TextView info2,
       @NonNull ImageView movieBackdrop, @NonNull RecyclerView movieDetailRecyclerView,
       @NonNull TextView movieId, @NonNull TextView movieOverview, @NonNull ImageView moviePoster,
       @NonNull CardView moviePosterCard, @NonNull RatingBar movieRate,
@@ -87,8 +95,10 @@ public final class MovieDetailBinding implements ViewBinding {
     this.rootView = rootView;
     this.MovieLikeMenu = MovieLikeMenu;
     this.MovieTitleMenu = MovieTitleMenu;
+    this.addReviewButton = addReviewButton;
     this.addReviewMenu = addReviewMenu;
     this.info = info;
+    this.info2 = info2;
     this.movieBackdrop = movieBackdrop;
     this.movieDetailRecyclerView = movieDetailRecyclerView;
     this.movieId = movieId;
@@ -143,6 +153,12 @@ public final class MovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.add_review_button;
+      Button addReviewButton = ViewBindings.findChildViewById(rootView, id);
+      if (addReviewButton == null) {
+        break missingId;
+      }
+
       id = R.id.addReviewMenu;
       TextView addReviewMenu = ViewBindings.findChildViewById(rootView, id);
       if (addReviewMenu == null) {
@@ -152,6 +168,12 @@ public final class MovieDetailBinding implements ViewBinding {
       id = R.id.info;
       TextView info = ViewBindings.findChildViewById(rootView, id);
       if (info == null) {
+        break missingId;
+      }
+
+      id = R.id.info2;
+      TextView info2 = ViewBindings.findChildViewById(rootView, id);
+      if (info2 == null) {
         break missingId;
       }
 
@@ -234,9 +256,9 @@ public final class MovieDetailBinding implements ViewBinding {
       }
 
       return new MovieDetailBinding((RelativeLayout) rootView, MovieLikeMenu, MovieTitleMenu,
-          addReviewMenu, info, movieBackdrop, movieDetailRecyclerView, movieId, movieOverview,
-          moviePoster, moviePosterCard, movieRate, movieReleaseDate, movieTitle, nestedScrollView,
-          toolbarBack, view1, view2);
+          addReviewButton, addReviewMenu, info, info2, movieBackdrop, movieDetailRecyclerView,
+          movieId, movieOverview, moviePoster, moviePosterCard, movieRate, movieReleaseDate,
+          movieTitle, nestedScrollView, toolbarBack, view1, view2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

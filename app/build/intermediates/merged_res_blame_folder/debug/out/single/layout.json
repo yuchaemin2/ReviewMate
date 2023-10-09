@@ -8,12 +8,12 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_two.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_opinion.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/bottom_sheet_review_list.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/bottom_sheet_review_list.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_report.xml",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_report.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__review_list.xml",
@@ -60,10 +60,6 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_one.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_list.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_list.xml"
     },
@@ -82,6 +78,10 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_auth.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_auth.xml"
+    },
+    {
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_auth.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_auth.xml"
     },
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/item_feed.xml",
@@ -112,19 +112,19 @@
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/search_item.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__liked_movie_list.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five__liked_movie_list.xml"
-    },
-    {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five.xml"
     },
     {
-        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/review_write_page.xml",
-        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/review_write_page.xml"
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__liked_movie_list.xml",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/fragment_five__liked_movie_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_one.xml",
-        "source": "com.example.reviewmate.app-main-48:/layout/fragment_one.xml"
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_opinion.xml",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
+    },
+    {
+        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/review_write_page.xml",
+        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/review_write_page.xml"
     }
 ]

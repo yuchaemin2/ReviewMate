@@ -80,12 +80,14 @@ class FragmentThree : Fragment() {
         imageView = binding.userProfile
 
 
-        val imageUrl : String = MyApplication.imageurl.toString()
-        imageView = binding.userProfile
-        if( imageUrl != null){
-            Glide.with(requireContext())
-                .load(imageUrl)
-                .into(binding.userProfile)
+        CoroutineScope(Dispatchers.Main).launch {
+            val imageUrl =  MyApplication.getImageUrl(MyApplication.email).toString()
+            imageView = binding.userProfile
+            if( imageUrl != null){
+                Glide.with(requireContext())
+                    .load(imageUrl)
+                    .into(binding.userProfile)
+            }
         }
 
 

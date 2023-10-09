@@ -3043,6 +3043,7 @@ int drawable abc_textfield_search_default_mtrl_alpha 0x7f080075
 int drawable abc_textfield_search_material 0x7f080076
 int drawable abc_vector_test 0x7f080077
 int drawable add 0x7f080078
+int drawable add_1 0x7f080131
 int drawable add_review_btn 0x7f080079
 int drawable avd_hide_password 0x7f08007a
 int drawable avd_show_password 0x7f08007b
@@ -3204,9 +3205,9 @@ int drawable notion 0x7f080116
 int drawable paw 0x7f080117
 int drawable paw_1 0x7f080118
 int drawable preference_list_divider_material 0x7f080119
-int drawable profile_7 0x7f08011a
 int drawable questionmark 0x7f08011b
 int drawable report 0x7f08011c
+int drawable reviewmate_background 0x7f080132
 int drawable round_button 0x7f08011d
 int drawable round_item 0x7f08011e
 int drawable rounded_bottom_sheet 0x7f08011f
@@ -3309,6 +3310,7 @@ int id addEditView 0x7f09004e
 int id addImageView 0x7f09004f
 int id addReviewMenu 0x7f090050
 int id addTitleEditView 0x7f090051
+int id add_review_button 0x7f0902ae
 int id adjust_height 0x7f090052
 int id adjust_width 0x7f090053
 int id alertTitle 0x7f090054
@@ -3500,6 +3502,7 @@ int id immediateStop 0x7f09010d
 int id included 0x7f09010e
 int id indeterminate 0x7f09010f
 int id info 0x7f090110
+int id info2 0x7f0902af
 int id intro_developers 0x7f090111
 int id invisible 0x7f090112
 int id inward 0x7f090113
@@ -4033,6 +4036,7 @@ int layout activity_auth 0x7f0c001d
 int layout activity_intro 0x7f0c001e
 int layout activity_main 0x7f0c001f
 int layout activity_opinion 0x7f0c00a3
+int layout activity_report 0x7f0c00a5
 int layout activity_review_detail 0x7f0c0020
 int layout activity_review_search 0x7f0c0021
 int layout activity_search 0x7f0c0022
@@ -4175,6 +4179,9 @@ int menu menu_mypage 0x7f0e0006
 int menu menu_nav 0x7f0e0007
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_round 0x7f0f0001
+int mipmap reviewmate 0x7f0f0002
+int mipmap reviewmate_foreground 0x7f0f0003
+int mipmap reviewmate_round 0x7f0f0004
 int plurals mtrl_badge_content_description 0x7f100000
 int raw firebase_common_keep 0x7f110000
 int string abc_action_bar_home_description 0x7f120000

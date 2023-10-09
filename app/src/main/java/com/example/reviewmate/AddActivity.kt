@@ -47,7 +47,7 @@ class AddActivity : AppCompatActivity() {
     lateinit var movieImage: String
     lateinit var userEmail: String
     lateinit  var ratingbar : RatingBar
-    lateinit var userRateStr : String
+    private var userRateStr : String = "2.0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
