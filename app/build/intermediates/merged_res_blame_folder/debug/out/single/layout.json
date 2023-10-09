@@ -122,9 +122,5 @@
     {
         "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_opinion.xml",
         "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
-    },
-    {
-        "merged": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-mergeDebugResources-45:/layout/review_write_page.xml",
-        "source": "/Users/solor/.gradle/daemon/8.0/com.example.reviewmate.app-main-48:/layout/review_write_page.xml"
     }
 ]

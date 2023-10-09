@@ -114,8 +114,7 @@ class FragmentThree : Fragment() {
                         } else {
                             Toast.makeText(requireContext(), "사용자의 레벨을 가져오는데 실패했습니다...", Toast.LENGTH_SHORT).show()
                         }
-
-                        Toast.makeText(requireContext(), "사용자의 레벨은 ${userLevel}입니다.", Toast.LENGTH_SHORT).show()
+                        
                     }
                 }
                 .addOnFailureListener { e ->
@@ -267,7 +266,7 @@ class FragmentThree : Fragment() {
             binding.level9
         )
         val levelBound = if (level <= 9) level else 1
-        Toast.makeText(context, "my level $level, ${btnLevels[levelBound - 1]}", Toast.LENGTH_SHORT).show()
+
 
         // 모든 버튼에 리스너 설정
         for (i in 0 until levelBound) {

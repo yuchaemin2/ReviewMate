@@ -120,8 +120,6 @@ class FragmentOne : Fragment() {
                 val dateFormat: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
                 val formattedDate: String = selectedDate.toString().format(dateFormat)
 
-                Toast.makeText(context, "선택한 날짜: $formattedDate", Toast.LENGTH_SHORT).show()
-
                 updateReviewListForSelectedDate()
             }
         })
@@ -197,7 +195,6 @@ class FragmentOne : Fragment() {
                             }
 
                             Log.d("days", "reviewDates : ${date}")
-                            Toast.makeText(context, "${date}", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -351,8 +348,7 @@ class FragmentOne : Fragment() {
 
 class EventDecorator() : DayViewDecorator {
 
-
-    private var color = Color.parseColor("#568BF7")
+    private var color = Color.RED
     private var dates: HashSet<CalendarDay> =HashSet() // 날짜를 저장할 HashSet 초기화
 
     constructor(color: Int, reviewDates: HashSet<CalendarDay>) : this() {

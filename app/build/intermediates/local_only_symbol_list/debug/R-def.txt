@@ -24,6 +24,7 @@ drawable bottle
 drawable cancel
 drawable custom_bs
 drawable custom_button_shape
+drawable date_dot
 drawable delete
 drawable developers
 drawable email
@@ -162,7 +163,6 @@ id menu_search
 id menu_update
 id movieDetailRecyclerView
 id movieId
-id moviePoster
 id movieRate
 id movieTitle
 id movie_backdrop
@@ -250,7 +250,6 @@ layout list_reviews
 layout movie_detail
 layout movie_detail_item
 layout my_review
-layout review_write_page
 layout search_item
 menu bottom_navigation
 menu menu_back

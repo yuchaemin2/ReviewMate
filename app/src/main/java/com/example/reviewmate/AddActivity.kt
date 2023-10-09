@@ -84,14 +84,15 @@ class AddActivity : AppCompatActivity() {
             .into(binding.addImageView)
 
         ratingbar = binding.movieRate
-        ratingbar.setOnRatingBarChangeListener { ratingbar, rating, fromUser ->
-            ratingbar.rating=rating
-            Toast.makeText(baseContext, "${rating}", Toast.LENGTH_SHORT).show()
-            //binding.textViewMovieRate.text= rating.toString()
+        ratingbar.setOnRatingBarChangeListener { _, rating, _ ->
+             ratingbar.rating = rating
+            userRateStr = binding.movieRate.rating.toString()
 
         }
 
-        userRateStr = ratingbar.rating.toString()
+
+        // Toast.makeText(baseContext, "userRateStr: ${userRateStr}", Toast.LENGTH_SHORT).show()
+        Log.d("rating", userRateStr)
 
         var toolbar = binding.toolbarBack
         setSupportActionBar(toolbar)

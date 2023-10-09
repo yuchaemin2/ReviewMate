@@ -19,9 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_search"
+            android:visibility="gone"
             android:layout_marginRight="11dp"
-            android:layout_gravity="right"
-            android:visibility="gone"/>
+            android:layout_gravity="right"/>
 
     </com.google.android.material.appbar.MaterialToolbar>
 

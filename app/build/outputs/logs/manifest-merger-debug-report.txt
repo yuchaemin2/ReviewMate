@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
 MERGED from [androidx.databinding:viewbinding:7.4.2] /Users/solor/.gradle/caches/transforms-3/44b01422463a22875bfe0e1e56127207/transformed/jetified-viewbinding-7.4.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.firebaseui:firebase-ui-storage:8.0.1] /Users/solor/.gradle/caches/transforms-3/f6b2cf0c173c528bc33cddbd8543dcb4/transformed/jetified-firebase-ui-storage-8.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:2:1-17:12
@@ -92,27 +92,27 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/solor/.gradle/cach
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/solor/.gradle/caches/transforms-3/7c38bf3e404e9a23f7a37893e08c8c5c/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] /Users/solor/.gradle/caches/transforms-3/b5746df5ca938a442769f28c2fe3ed54/transformed/jetified-threetenabp-1.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/solor/.gradle/caches/transforms-3/1bf8b2544a60aabc3e0480ac9f07e88c/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
-INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
 	package
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-80:12
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:1-68:12
 		INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:5:5-67
 MERGED from [com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.0.0] /Users/solor/.gradle/caches/transforms-3/fa9c04c5bcc9c1813379843bdf5e629d/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/solor/.gradle/caches/transforms-3/95e03a060a05927781e56356279e034b/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
@@ -122,17 +122,9 @@ MERGED from [com.google.firebase:firebase-firestore:24.6.0] /Users/solor/.gradle
 MERGED from [com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-storage:20.2.0] /Users/solor/.gradle/caches/transforms-3/5ce67b6302122b9617464946739f70b0/transformed/jetified-firebase-storage-20.2.0/AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:6:22-64
-uses-permission#android.permission.SEND_EMAIL
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:5-69
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:22-66
-uses-permission#android.permission.VIBRATE
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:5-66
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:22-63
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:10:5-78:19
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:7:5-66:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.0.0] /Users/solor/.gradle/caches/transforms-3/b10401addc1e0afcdd809c35383d314f/transformed/jetified-firebase-auth-ktx-22.0.0/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.6.0] /Users/solor/.gradle/caches/transforms-3/912d4ff3a4158247abaefbf879e8eed3/transformed/jetified-firebase-firestore-ktx-24.6.0/AndroidManifest.xml:10:5-18:19
@@ -192,133 +184,119 @@ MERGED from [com.jakewharton.threetenabp:threetenabp:1.1.0] /Users/solor/.gradle
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/solor/.gradle/caches/transforms-3/c140037bc6254e9d817d6b3da3b0e1a8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:16:9-41
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:11:9-54
 	tools:targetApi
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:19:9-29
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:15:9-42
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:18:9-48
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:15:9-48
 	android:dataExtractionRules
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:13:9-65
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:10:9-65
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:11:9-38
-service#com.example.reviewmate.MyFirebaseMessagingService
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:20:9-27:19
-	android:enabled
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:22:13-35
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:23:13-36
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:21:13-55
-intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:24:13-26:29
-action#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:17-78
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:25-75
-activity#com.example.reviewmate.OpinionActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:29:9-31:40
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:31:13-37
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:30:13-44
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:8:9-38
 activity#com.example.reviewmate.ReportActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:32:9-34:40
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:17:9-19:40
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:34:13-37
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:33:13-43
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:18:13-43
+activity#com.example.reviewmate.OpinionActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:20:9-22:40
+	android:exported
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:21:13-44
 activity#com.example.reviewmate.SearchActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:35:9-37:40
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:23:9-25:40
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:37:13-37
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:36:13-43
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:24:13-43
 activity#com.example.reviewmate.MovieDetailsActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:38:9-41:55
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:26:9-29:47
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:40:13-37
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:28:13-37
 	android:theme
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:41:13-52
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:29:13-44
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:39:13-49
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:27:13-49
 activity#com.example.reviewmate.UpdateActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:30:9-32:40
+	android:exported
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:31:13-43
+activity#com.example.reviewmate.IntroActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:34:13-42
+activity#com.example.reviewmate.ReviewSearchActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:37:13-49
+activity#com.example.reviewmate.ReviewDetailActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:39:9-41:40
+	android:exported
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:40:13-49
+activity#com.example.reviewmate.SettingActivity
 ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:42:9-44:40
 	android:exported
 		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:43:13-43
-activity#com.example.reviewmate.IntroActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:45:9-47:40
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:43:13-44
+activity#com.example.reviewmate.AuthActivity
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:45:9-48:49
 	android:exported
 		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:47:13-37
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:46:13-42
-activity#com.example.reviewmate.ReviewSearchActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:48:9-50:40
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:50:13-37
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:49:13-49
-activity#com.example.reviewmate.ReviewDetailActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:51:9-53:40
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:53:13-37
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:52:13-49
-activity#com.example.reviewmate.SettingActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:54:9-56:40
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:56:13-37
-	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:55:13-44
-activity#com.example.reviewmate.AuthActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:57:9-60:49
-	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:59:13-37
 	android:theme
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:60:13-46
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:48:13-46
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:58:13-41
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:46:13-41
 activity#com.example.reviewmate.AddActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:61:9-64:58
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:49:9-52:58
 	android:windowSoftInputMode
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:64:13-55
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:52:13-55
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:63:13-37
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:62:13-40
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:50:13-40
 activity#com.example.reviewmate.MainActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:65:9-67:40
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:53:9-55:40
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:67:13-37
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:55:13-37
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:66:13-41
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:54:13-41
 activity#com.example.reviewmate.SplashActivity
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:68:9-77:20
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:56:9-65:20
 	android:exported
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:70:13-36
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:58:13-36
 	android:theme
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:71:13-47
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:59:13-47
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:69:13-43
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:57:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:72:13-76:29
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:60:13-64:29
 action#android.intent.action.MAIN
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:73:17-69
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:61:17-69
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:73:25-66
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:61:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:75:17-77
+ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:63:17-77
 	android:name
-		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:75:27-74
+		ADDED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml:63:27-74
 uses-sdk
 INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/solor/StudioProjects/ReviewMate/app/src/main/AndroidManifest.xml
