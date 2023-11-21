@@ -42,7 +42,6 @@ class FragmentFive_CommentList : Fragment() {
         binding = FragmentFiveCommentListBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
-//        setupReviewCountListener()
 
         binding.chatListToolbar.setNavigationOnClickListener {
             requireActivity().onBackPressed()

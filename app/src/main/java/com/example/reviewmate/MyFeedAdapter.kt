@@ -83,27 +83,8 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     //profileImageUrl=MyApplication.getImageUrl(data.email)
                     Toast.makeText(context, "${profileImageUrl}", Toast.LENGTH_SHORT).show()
                 }
+            }
 
-
-//            usersCollection.whereEqualTo("userEmail", userEmail)
-//                .get()
-//                .addOnSuccessListener { querySnapshot ->
-//                    if (!querySnapshot.isEmpty) {
-//
-//                        val userDocument = querySnapshot.documents[0]
-//                        profileImageUrl = userDocument.getString("imageUrl")
-//
-//                        if( profileImageUrl != null){
-//                            // Glide를 사용하여 프로필 이미지 로드
-//                            Glide.with(context)
-//                                .load(profileImageUrl)
-//                                .into(holder.binding.itemImg)
-//                        }
-//                    }
-//                }
-//                .addOnFailureListener { exception ->
-//                    Log.e("MyFeedAdapter", "Error getting user document: $exception")
-//                }
 
                 if (itemContentView.text.isNotEmpty()) {
                     itemContentView.visibility = View.VISIBLE
@@ -123,7 +104,6 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     bundle.putString("date", data.date)
                     bundle.putString("movieImage", data.movieImage)
                     bundle.putString("reviewId", data.docId)
-                    bundle.putString("image_url", profileImageUrl)
 
                     Intent(context, ReviewDetailActivity::class.java).apply {
                         putExtras(bundle)
@@ -184,6 +164,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                     }
                 }
 
+
                 if (data.email == MyApplication.email) {
                     reviewDelete.visibility = View.VISIBLE
                     reviewDelete.setOnClickListener {
@@ -198,7 +179,7 @@ class MyFeedAdapter(val context: Context, val itemList: MutableList<ItemFeedMode
                 } else {
                     reviewDelete.visibility = View.GONE
                 }
-            }
+
 
             //스토리지 이미지 다운로드........................
             val imageRef = MyApplication.storage.reference.child("images/${data.docId}.jpg")

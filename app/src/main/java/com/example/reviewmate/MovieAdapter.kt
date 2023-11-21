@@ -22,7 +22,6 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
             binding.itemMovieTitle.text = movie.movieTitle
 
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
-
         }
     }
 
@@ -55,7 +54,7 @@ class MovieAdapter (var movies : MutableList<Movie>, var onMovieClick:(movie:Mov
         this.movies.addAll(movies)
         notifyItemRangeInserted(
             this.movies.size,
-            movies.size - 1
+            movies.size
         )
     }
 }

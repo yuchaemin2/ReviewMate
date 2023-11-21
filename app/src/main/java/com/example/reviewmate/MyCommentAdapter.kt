@@ -70,4 +70,5 @@ class MyCommentAdapter(val context: Context, val itemList: MutableList<ItemComme
         itemList.addAll(list)
         notifyDataSetChanged()
     }
+
 }

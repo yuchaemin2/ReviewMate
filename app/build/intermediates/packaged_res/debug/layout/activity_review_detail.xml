@@ -40,7 +40,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar_back">
@@ -137,15 +137,21 @@
                         android:textStyle="bold"
                         android:text="·"
                         />
-
                     <TextView
                         android:id="@+id/movieRate"
-                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/holo_orange_light"
+                    android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:textStyle="bold"
                         android:text="별점"
-                        android:textColor="@android:color/holo_orange_light" />
+                        />
+
+
 
                 </LinearLayout>
+
 
             </LinearLayout>
 
@@ -211,10 +217,11 @@
                 android:id="@+id/feedRecyclerView"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="true"/>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

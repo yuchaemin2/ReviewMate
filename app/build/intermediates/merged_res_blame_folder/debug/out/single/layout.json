@@ -1,122 +1,122 @@
 [
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_opinion.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_opinion.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_movie.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/item_movie.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_splash.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_splash.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_four.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_four.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_add.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_add.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_splash.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_splash.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_main.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_feed.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/item_feed.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_intro.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_intro.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/movie_detail_item.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/movie_detail_item.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_review_search.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_review_search.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__review_list.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five__review_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_two.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_two.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_update.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_update.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_setting.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_setting.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/item_comment.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/item_comment.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/movie_detail_item.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/movie_detail_item.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_movie_details.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_movie_details.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/item_movie.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/item_movie.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/list_reviews.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/list_reviews.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_search.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_search.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/item_comment.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/item_comment.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_detail.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_review_detail.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_two.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_two.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/my_review.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/my_review.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_three.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_three.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/item_feed.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/item_feed.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/search_item.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/search_item.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__comment_list.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five__comment_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_intro.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_intro.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_list.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/list_reviews.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/list_reviews.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_report.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_report.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_one.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_one.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_update.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_update.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_five__comment_list.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_five__comment_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_search.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_search.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/bottom_sheet_review_list.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/bottom_sheet_review_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_auth.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_auth.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_add_activiity.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_add_activiity.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__review_list.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five__review_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/review_write_page.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/review_write_page.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/bottom_sheet_review_list.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/bottom_sheet_review_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_setting.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_setting.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/search_item.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/search_item.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/fragment_list.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/fragment_list.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/activity_review_detail.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/activity_review_detail.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_auth.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_auth.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_five__liked_movie_list.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_five__liked_movie_list.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_review_search.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_review_search.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_three.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_three.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_add.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_add.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_one.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_one.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/my_review.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/my_review.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/fragment_four.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/fragment_four.xml"
     },
     {
-        "merged": "com.example.reviewmate.app-mergeDebugResources-44:/layout/activity_main.xml",
-        "source": "com.example.reviewmate.app-main-47:/layout/activity_main.xml"
+        "merged": "com.example.reviewmate.app-mergeDebugResources-45:/layout/movie_detail.xml",
+        "source": "com.example.reviewmate.app-main-48:/layout/movie_detail.xml"
     }
 ]

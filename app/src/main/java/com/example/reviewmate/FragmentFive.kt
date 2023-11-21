@@ -3,25 +3,23 @@ package com.example.reviewmate
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.icu.lang.UCharacter.GraphemeClusterBreak.V
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
-import com.example.reviewmate.MyApplication.Companion.auth
-import com.example.reviewmate.MyApplication.Companion.db
 import com.example.reviewmate.databinding.FragmentFiveBinding
-import com.example.reviewmate.databinding.FragmentFourBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,6 +38,7 @@ class FragmentFive : Fragment() {
     lateinit var binding: FragmentFiveBinding
     lateinit var profile: ImageView
     private lateinit var imageView: ImageView
+    private var  imageUrl : String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,13 +70,24 @@ class FragmentFive : Fragment() {
             transaction.commit()
         }
 
-        binding.myComments.setOnClickListener {
+//        binding.myComments.setOnClickListener {
+//            var bundle : Bundle = Bundle()
+//            bundle.putString("fromFrag", "프래그먼트2")
+//            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//            val fragmentfive_comment: Fragment = FragmentFive_CommentList()
+//            fragmentfive_comment.arguments = bundle
+//            transaction.replace(R.id.main_layout, fragmentfive_comment)
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+//        }
+
+        binding.myLikedmovies.setOnClickListener {
             var bundle : Bundle = Bundle()
-            bundle.putString("fromFrag", "프래그먼트2")
+            bundle.putString("fromFrag", "프래그먼트1")
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            val fragmentfive_comment: Fragment = FragmentFive_CommentList()
-            fragmentfive_comment.arguments = bundle
-            transaction.replace(R.id.main_layout, fragmentfive_comment)
+            val fragmentfive_likedmovie: Fragment = FragmentFive_LikedMovieList()
+            fragmentfive_likedmovie.arguments = bundle
+            transaction.replace(R.id.main_layout, fragmentfive_likedmovie)
             transaction.addToBackStack(null)
             transaction.commit()
         }
@@ -86,13 +96,19 @@ class FragmentFive : Fragment() {
             binding.CertifyEmailView.text = "${MyApplication.email}"
         }
 
-        val imageUrl : String = MyApplication.imageurl.toString()
-        imageView = binding.userProfile
-        if( imageUrl != null){
-            Glide.with(requireContext())
-                .load(imageUrl)
-                .into(binding.userProfile)
+        //val imageUrl : String = MyApplication.imageurl.toString()
+
+        CoroutineScope(Dispatchers.Main).launch {
+            imageUrl =  MyApplication.getImageUrl(MyApplication.email).toString()
+            imageView = binding.userProfile
+            if( imageUrl != null){
+                Glide.with(requireContext())
+                    .load(imageUrl)
+                    .into(binding.userProfile)
+            }
         }
+
+
 
         binding.chatListToolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId){
@@ -109,7 +125,45 @@ class FragmentFive : Fragment() {
             startActivity(intent)
         }
 
+        binding.report.setOnClickListener {
+            sendEmail()
+        }
+
+        binding.opinion.setOnClickListener {
+            val intent = Intent(requireContext(), OpinionActivity::class.java)
+            startActivity(intent)
+        }
+
         return binding.root
+    }
+
+    private fun sendEmail() {
+        val recipientEmail = "reviewmate2023@gmail.com" // 수신자 이메일 주소를 여기에 입력합니다.
+        val subject = "[Android][리뷰메이트]Report"
+        val message = """
+            
+            
+            
+            
+                        ------------------------------
+                        - App Version: 1.0.0
+                        - User Account: ${MyApplication.email}
+                    """.trimIndent()
+
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:$recipientEmail")
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, message)
+        }
+
+        if (intent.resolveActivity(requireContext().packageManager) != null) {
+            startActivity(intent)
+        } else {
+            // 이메일 클라이언트 앱이 설치되어 있지 않은 경우 에러 메시지를 표시할 수 있습니다.
+            // 이 부분을 원하는 방식으로 처리하세요.
+            Toast.makeText(requireContext(), "이메일 전송 오류", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun downloadAndDisplayImage() {

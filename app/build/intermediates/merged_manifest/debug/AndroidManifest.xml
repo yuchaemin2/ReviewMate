@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="25"
+        android:minSdkVersion="26"
         android:targetSdkVersion="33" />
     <!-- 인터넷 연결 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -28,7 +28,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.ReviewMate" >
+        <activity
+            android:name="com.example.reviewmate.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.reviewmate.OpinionActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.reviewmate.SearchActivity"
             android:exported="false" />
@@ -136,6 +143,13 @@
                     android:scheme="recaptcha" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider"
+            android:authorities="com.example.reviewmate.materialcalendarviewinitprovider"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"

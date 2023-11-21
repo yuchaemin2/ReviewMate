@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.reviewmate.app-mergeDebugResources-43:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.reviewmate.app-mergeDebugResources-44:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/yuchaemin/.gradle/caches/transforms-3/dbe79e1d9285d59f7434c1d1a39f34ac/transformed/material-1.9.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/solor/.gradle/caches/transforms-3/dbe79e1d9285d59f7434c1d1a39f34ac/transformed/material-1.9.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,10",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/yuchaemin/.gradle/caches/transforms-3/b4e8f07a04fb83369f81d22b45ab5a35/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/solor/.gradle/caches/transforms-3/b4e8f07a04fb83369f81d22b45ab5a35/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

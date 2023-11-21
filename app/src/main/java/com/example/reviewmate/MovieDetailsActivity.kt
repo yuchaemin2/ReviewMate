@@ -1,12 +1,17 @@
 package com.example.reviewmate
 
 import android.R.menu
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -22,9 +27,11 @@ import com.example.reviewmate.MainActivity.Companion.MOVIE_POSTER
 import com.example.reviewmate.MainActivity.Companion.MOVIE_RATING
 import com.example.reviewmate.MainActivity.Companion.MOVIE_RELEASE_DATE
 import com.example.reviewmate.MainActivity.Companion.MOVIE_TITLE
+import com.example.reviewmate.MyApplication.Companion.auth
 import com.example.reviewmate.databinding.MovieDetailBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.Query
+import java.util.*
 
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -37,6 +44,17 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var overview: TextView
     private lateinit var releaseDate: TextView
     private lateinit var id: TextView
+
+    private lateinit var movieId: String
+    private lateinit var moviePoster: String
+    private lateinit var movieTitle: String
+    private lateinit var movieOverview: String
+    private lateinit var movieBackdrop: String
+    private var movieRate: Double = 0.0
+    private lateinit var movieDate: String
+    private lateinit var movieView: String
+
+    private lateinit var movieLikeMenu: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +76,41 @@ class MovieDetailsActivity : AppCompatActivity() {
             finish()
         }
 
+        movieId = extras!!.getString(MOVIE_ID, "")
+        moviePoster = extras!!.getString(MOVIE_POSTER, "")
+        movieTitle = extras!!.getString(MOVIE_TITLE, "")
+        movieOverview = extras!!.getString(MOVIE_OVERVIEW, "")
+        movieBackdrop = extras!!.getString(MOVIE_BACKDROP, "")
+        movieRate = extras!!.getDouble(MOVIE_RATING, 0.0) / 2
+        movieDate = extras!!.getString(MOVIE_RELEASE_DATE, "")
 
-        binding.addReviewBtn.setOnClickListener {
+        movieLikeMenu = binding.MovieLikeMenu
+
+        setLikeImage()
+
+        movieLikeMenu.setOnClickListener {
+            toggleLikeStatus()
+        }
+
+        binding.MovieTitleMenu.setText(binding.movieTitle.text)
+
+        binding.addReviewMenu.setOnClickListener {
+            if(MyApplication.checkAuth()){
+                val intent = Intent(this, AddActivity::class.java)
+                if (extras != null) {
+                    intent.putExtra(MOVIE_TITLE, title.text.toString())
+                    intent.putExtra(MOVIE_POSTER, extras.getString(MOVIE_POSTER))
+                    intent.putExtra(MOVIE_ID, id.text.toString())
+//                    intent.putExtra(MOVIE_ID, extras.getString(MOVIE_ID))
+                }
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "인증을 진행해 주세요", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.addReviewButton.setOnClickListener {
             if(MyApplication.checkAuth()){
                 val intent = Intent(this, AddActivity::class.java)
                 if (extras != null) {
@@ -85,7 +136,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         super.onStart()
         if(MyApplication.checkAuth()){
             MyApplication.db.collection("reviews")
-                //.whereEqualTo("email", MyApplication.email)
                 .orderBy("date", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener { result ->
@@ -97,6 +147,16 @@ class MovieDetailsActivity : AppCompatActivity() {
                             item.docId = document.id
                             itemList.add(item)
                         }
+
+                        if(itemList.size == 0){
+                            binding.info2.visibility = View.VISIBLE
+                            binding.addReviewButton.visibility = View.VISIBLE
+                        }
+                        else{
+                            binding.info2.visibility = View.INVISIBLE
+                            binding.addReviewButton.visibility = View.GONE
+                        }
+
                         Log.d("ToyProject", "영화 아이디: ${id.text}")
                     }
                     binding.movieDetailRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -106,6 +166,52 @@ class MovieDetailsActivity : AppCompatActivity() {
                     Toast.makeText(this, "데이터 획득 실패", Toast.LENGTH_SHORT).show()
                 }
         }
+    }
+
+    private fun setLikeImage() {
+        val likedRef = MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .whereEqualTo("movieId", movieId)
+
+        likedRef.get().addOnSuccessListener { querySnapshot ->
+            val isLiked = !querySnapshot.isEmpty
+            val likeIconRes = if (isLiked) R.drawable.add_1 else R.drawable.add
+            movieLikeMenu.setImageResource(likeIconRes)
+        }
+    }
+
+    private fun toggleLikeStatus() {
+        val likedRef = MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .whereEqualTo("movieId", movieId)
+
+        likedRef.get().addOnSuccessListener { querySnapshot ->
+            if (querySnapshot.isEmpty) {
+                saveStore()
+            } else {
+                querySnapshot.documents.firstOrNull()?.reference?.delete()
+            }
+            setLikeImage()
+        }
+    }
+
+    fun saveStore() {
+        val data = mapOf(
+            "movieId" to binding.movieId.text.toString(),
+            "moviePoster" to moviePoster,
+            "movieTitle" to movieTitle,
+            "movieOverview" to movieOverview,
+            "movieBackdrop" to movieBackdrop,
+            "movieDate" to movieDate,
+            "movieRate" to movieRate,
+        )
+
+        MyApplication.db.collection("users").document(auth.uid.toString()).collection("liked_movies")
+            .add(data)
+            .addOnSuccessListener {
+                Log.d("ToyProject", "data firestore save ok")
+            }
+            .addOnFailureListener {
+                Log.d("ToyProject", "data firestore save error")
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -121,12 +227,6 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun likeMovies() {
-        binding.moviePoster.setOnClickListener{
-
-        }
     }
 
     private fun populateDetails(extras: Bundle) {

@@ -6,9 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.ImageView
@@ -33,6 +31,11 @@ class ReviewSearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityReviewSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        var toolbar = binding.toolbarBack
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
+        supportActionBar?.setDisplayShowTitleEnabled(false)//타이틀 없애기
 
         // 파이어스토어 인스턴스 초기화
         firestore = FirebaseFirestore.getInstance()
@@ -75,6 +78,21 @@ class ReviewSearchActivity : AppCompatActivity() {
             intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_back, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> { //뒤로 가기 버튼
+                onBackPressed() // 기본 뒤로가기 동작 수행
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     inner class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
