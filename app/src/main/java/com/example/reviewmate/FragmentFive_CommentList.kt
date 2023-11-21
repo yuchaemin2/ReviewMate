@@ -63,7 +63,7 @@ class FragmentFive_CommentList : Fragment() {
         super.onStart()
         if(MyApplication.checkAuth()){
             MyApplication.db.collection("comments")
-                .orderBy("time", Query.Direction.DESCENDING)
+                .orderBy("time", Query.Direction.ASCENDING)
                 .get()
                 .addOnSuccessListener { result ->
                     val itemList = mutableListOf<ItemCommentModel>()
@@ -81,7 +81,6 @@ class FragmentFive_CommentList : Fragment() {
                     }
                     binding.feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.feedRecyclerView.adapter = MyCommentAdapter(requireContext(), itemList)
-                    //goReviewDtaill()
                 }
                 .addOnFailureListener{
                     Toast.makeText(requireContext(), "데이터 획득 실패", Toast.LENGTH_SHORT).show()
@@ -121,7 +120,7 @@ class FragmentFive_CommentList : Fragment() {
 
         currentUser?.let {
             MyApplication.db.collection("comments")
-                .orderBy("time", Query.Direction.DESCENDING)
+                .orderBy("time", Query.Direction.ASCENDING)
                 .get()
                 .addOnSuccessListener { result ->
                     val itemList = mutableListOf<ItemCommentModel>()

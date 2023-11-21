@@ -68,6 +68,21 @@ class FragmentOne : Fragment() {
     ): View? {
         binding = FragmentOneBinding.inflate(inflater, container, false)
 
+//        // 날짜 선택 리스너
+//        binding.calendarView.setOnDateChangedListener { widget, date, selected ->
+//            // 선택한 날짜 처리
+//            val calendar = Calendar.getInstance() // 일단 현재 날짝 가져옴
+//            calendar.set(2023, 8, 28) // 사용자가 선택한 날짜로 Calendar 객체를 업데이트
+//
+//            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+//            selectedDate = dateFormat.format(calendar.time)
+//            calendar.add(Calendar.DAY_OF_MONTH, 1)
+//            selectedDate_add1 = dateFormat.format(calendar.time) //
+//
+//            Toast.makeText(context, "선택한 날짜: $selectedDate", Toast.LENGTH_SHORT).show()
+//            updateReviewListForSelectedDate()
+//        }
+
         if(MyApplication.checkAuth()){
             binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
             userLevelCount()
@@ -81,12 +96,13 @@ class FragmentOne : Fragment() {
         fetchReviewDates()
 
 
-        // CalendarView에 날짜 데코레이터 추가
-        val eventDecorator = EventDecorator(Color.parseColor("#568BF7"), reviewDates)
+        // CalendarView에 날짜 데코레이터 추가, 도트 색상
+        val eventDecorator = EventDecorator(Color.parseColor("#0000ff"), reviewDates)
         binding.calendarView.addDecorator(eventDecorator)
 
-        val eventDecorator1 = EventDecorator1(Color.RED, reviewDates)
-        binding.calendarView.addDecorator(eventDecorator1)
+        // 캘린더 배경 색깔 지정 가능
+//        val eventDecorator1 = EventDecorator1(Color.RED, reviewDates)
+//        binding.calendarView.addDecorator(eventDecorator1)
 
         if (MyApplication.checkAuth()) {
             binding.HomeEmailView.text = "${MyApplication.email}님 환영합니다!"
@@ -123,7 +139,6 @@ class FragmentOne : Fragment() {
                 updateReviewListForSelectedDate()
             }
         })
-
         binding.menuSearch.setOnClickListener {
             val intent = Intent(requireContext(), SearchActivity::class.java)
             startActivity(intent)

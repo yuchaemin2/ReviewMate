@@ -85,7 +85,6 @@
                 app:mcv_showOtherDates="all"
                 app:mcv_selectionColor="#00F"/>
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/feedRecyclerView"
                 android:layout_width="match_parent"
